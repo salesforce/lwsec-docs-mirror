@@ -1,6 +1,18 @@
-# Distorted Worker Constructor (distorted-worker-constructor)
+# Prevent access to Worker constructor (distorted-worker-constructor)
 
-For security the `Worker` constructor is distorted in Lightning Locker.
+A `RangeError` will be thrown accessing the `Worker` constructor when Lightning Web Security is enabled.
+
+See [Related Distortions](#related-distortions) below for more details.
+
+## Rule Details
+
+Example of **incorrect** code:
+
+```js
+const worker = new Worker('/worker.js');
+```
+
+## Related Distortions
 
 <!-- START generated embed: @locker/distortion/src/Worker/docs/constructor-value.md -->
 ## Worker Global Constructor

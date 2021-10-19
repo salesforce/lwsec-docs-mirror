@@ -1,6 +1,6 @@
-# Distorted Element Blocked Properties (distorted-element-blocked-properties)
+# Prevent access to certain Element properties (distorted-element-blocked-properties)
 
-For security the following `Element` properties are prohibited in Lightning Locker:
+The following `Element` properties are prohibited when Lightning Web Security is enabled:
 -   mozRequestFullScreen
 -   onfullscreenchange
 -   onfullscreenerror

@@ -1,6 +1,18 @@
-# Distorted Document#domain Setter (distorted-document-domain-setter)
+# Prevent setting value of document.domain (distorted-document-domain-setter)
 
-For security the `Document#domain` setter is distorted in Lightning Locker.
+Setting the value of `document.domain` is not allowed. Although behavior varies across browsers, setting `document.domain` to any value when Lightning Web Security is enabled will result in an error being thrown.
+
+See [Related Distortions](#related-distortions) below for more details.
+
+## Rule Details
+
+Example of **incorrect** code:
+
+```js
+document.domain = 'example.com';
+```
+
+## Related Distortions
 
 <!-- START generated embed: @locker/distortion/src/Document/docs/domain-setter.md -->
 ## set: Document.prototype.domain
