@@ -11,5 +11,5 @@ The ['define()'](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementR
 ### Distorted Behavior
 
 This distortion prevents accessing `define()` from CustomElementRegistry. An error is thrown when accessing this method.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
 

@@ -40,9 +40,10 @@ sharable configuration package.
 
 | Rule ID | Description | Fixable Using |
 | --- | --- | --- |
-| [@locker/locker/distorted-cookie-store-blocked-properties] | disallow CookieStore properties |   |
+<!-- START generated content -->
+| [@locker/locker/distorted-cookie-store-blocked-properties] | disallowed CookieStore properties |   |
 | [@locker/locker/distorted-cookie-store-properties] | distorted CookieStore properties |   |
-| [@locker/locker/distorted-custom-element-registry-blocked-properties] | disallow CustomElementRegistry blocked properties |   |
+| [@locker/locker/distorted-custom-element-registry-blocked-properties] | disallow blocked CustomElementRegistry properties |   |
 | [@locker/locker/distorted-custom-element-registry-properties] | distorted CustomElementRegistry properties |   |
 | [@locker/locker/distorted-document-blocked-properties] | disallow blocked Document properties |   |
 | [@locker/locker/distorted-document-cookie] | distorted document.cookie |   |
@@ -92,6 +93,7 @@ sharable configuration package.
 | [@locker/locker/uncompiled-null-window-top] | window.top is null | `--fix` or [`@locker/rollup-plugin`]  |
 | [@locker/locker/undefined-document-all] | document.all is undefined |   |
 
+<!-- END generated content, please keep comment -->
 [`@locker/rollup-plugin`]:
 https://www.npmjs.com/package/@locker/rollup-plugin
 [`@locker/eslint-config-locker`]:
@@ -100,12 +102,13 @@ https://www.npmjs.com/package/@locker/eslint-config-locker
 https://eslint.org/
 [`--fix`]:
 https://eslint.org/docs/user-guide/command-line-interface#-fix
+<!-- START generated content -->
 [@locker/locker/distorted-cookie-store-blocked-properties]:
 https://github.com/salesforce/lwsec-docs-mirror/blob/v0.14.21/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-cookie-store-blocked-properties.md
 [@locker/locker/distorted-cookie-store-properties]:
 https://github.com/salesforce/lwsec-docs-mirror/blob/v0.14.21/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-cookie-store-properties.md
-[@locker/locker/distorted-cookie-store-blocked-properties]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.14.21/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-cookie-store-blocked-properties.md
+[@locker/locker/distorted-custom-element-registry-blocked-properties]:
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.14.21/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-custom-element-registry-blocked-properties.md
 [@locker/locker/distorted-custom-element-registry-properties]:
 https://github.com/salesforce/lwsec-docs-mirror/blob/v0.14.21/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-custom-element-registry-properties.md
 [@locker/locker/distorted-document-blocked-properties]:
@@ -203,3 +206,4 @@ https://github.com/salesforce/lwsec-docs-mirror/blob/v0.14.21/packages/%40locker
 [@locker/locker/undefined-document-all]:
 https://github.com/salesforce/lwsec-docs-mirror/blob/v0.14.21/packages/%40locker/eslint-plugin-locker/docs/rules/undefined-document-all.md
 
+<!-- END generated content, please keep comment -->
