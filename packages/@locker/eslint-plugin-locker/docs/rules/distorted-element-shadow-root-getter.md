@@ -1,6 +1,18 @@
-# Distorted Element#shadowRoot Getter (distorted-element-shadow-root-getter)
+# Disallow usage of Element.shadowRoot getter (distorted-element-shadow-root-getter)
 
-For security the `Element#shadowRoot` getter is distorted in Lightning Locker.
+The `Element.shadowRoot` getter returns `null` when Lightning Web Security is enabled.
+
+See [Related Distortions](#related-distortions) below for more details.
+
+## Rule Details
+
+Example of **incorrect** code:
+
+```js
+element.shadowRoot.querySelector('div');
+```
+
+## Related Distortions
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/shadowRoot-getter.md -->
 ## get: Element.prototype.shadowRoot [Main]

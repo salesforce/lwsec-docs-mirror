@@ -1,7 +1,6 @@
-# Disallow Export from 'lightning/platformResourceLoader' (no-export-platform-resource-loader)
+# Disallow export from lightning/platformResourceLoader (no-export-platform-resource-loader)
 
-Lightning Locker does not support exporting directly from the
-`'lightning/platformResourceLoader'` module.
+Lightning Web Security does not support exporting directly from the `lightning/platformResourceLoader` module.
 
 ## Rule Details
 

@@ -1,6 +1,18 @@
-# Distorted SharedWorker Constructor (distorted-shared-worker-constructor)
+# Prevent access to the SharedWorker constructor (distorted-shared-worker-constructor)
 
-For security the `SharedWorker` constructor is distorted in Lightning Locker.
+A `RangeError` will be thrown accessing the `SharedWorker` constructor when Lightning Web Security is enabled.
+
+See [Related Distortions](#related-distortions) below for more details.
+
+## Rule Details
+
+Example of **incorrect** code:
+
+```js
+const worker = new SharedWorker('worker.js');
+```
+
+## Related Distortions
 
 <!-- START generated embed: @locker/distortion/src/SharedWorker/docs/constructor-value.md -->
 ## SharedWorker Global Constructor

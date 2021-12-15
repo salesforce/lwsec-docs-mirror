@@ -1,6 +1,18 @@
-# Distorted Navigator#serviceWorker Getter (distorted-navigator-service-worker-getter)
+# Prevent access to Navigator.serviceWorker and ServiceWorkerContainer properties and methods(distorted-navigator-service-worker-getter)
 
-For security the `Navigator#serviceWorker` getter is distorted in Lightning Locker.
+`Navigator.serviceWorker` returns `undefined` and accessing `ServiceWorkerContainer` properties and methods throws a `TypeError` when Lightning Web Security is enabled.
+
+See [Related Distortions](#related-distortions) below for more details.
+
+## Rule Details
+
+Example of **incorrect** code:
+
+```js
+navigator.serviceWorker.controller;
+```
+
+## Related Distortions
 
 <!-- START generated embed: @locker/distortion/src/Navigator/docs/serviceWorker-getter.md -->
 ## get: Navigator.prototype.serviceWorker

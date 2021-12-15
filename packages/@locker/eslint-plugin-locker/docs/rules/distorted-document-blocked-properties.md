@@ -1,6 +1,6 @@
-# Distorted Document Blocked Properties (distorted-document-blocked-properties)
+# Prevent access to certain Document properties (distorted-document-blocked-properties)
 
-For security the following `Document` properties are prohibited in Lightning Locker:
+The following `Document` properties are prohibited when Lightning Web Security is enabled:
 -   exitFullscreen
 -   fullscreen
 -   fullscreenElement
