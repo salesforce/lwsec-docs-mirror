@@ -39,21 +39,23 @@ sharable configuration package.
 
 ### Locker
 
-| Rule ID                                                                                    | Description                                                       | Fixable |
-| ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- | ------- |
-| [@locker/locker/blocked-document-properties] | disallow blocked Document properties |         |
-| [@locker/locker/blocked-element-properties] | disallow blocked Element properties |         |
-| [@locker/locker/blocked-html-element-properties] | disallow blocked HTMLElement properties |         |
-| [@locker/locker/blocked-html-iframe-element-properties] | disallow blocked HTMLIframeElement properties |         |
-| [@locker/locker/empty-window-location] | `window.location` is empty |         |
-| [@locker/locker/no-async-await] | disallow `async await` syntax usage |         |
-| [@locker/locker/no-document-domain-assignment] | disallow `document.domain` assignment |         |
-| [@locker/locker/no-dynamic-import] | disallow dynamic `import` |         |
-| [@locker/locker/no-import-platform-resource-loader] | disallow `import` or `export` from `'lightning/platformResourceLoader'`|         |
-| [@locker/locker/null-document-location] | `document.location` is `'null'` |         |
-| [@locker/locker/null-shadow-root-host] | `shadowRoot.host` is `'null'` |         |
-| [@locker/locker/null-window-top] | `window.top` is `'null' `                                  | 🔧      |
+| Rule ID | Description | Fixable Using |
+| --- | --- | --- |
+| [@locker/locker/blocked-document-properties] | disallow blocked Document properties |   |
+| [@locker/locker/blocked-element-properties] | disallow blocked Element properties |   |
+| [@locker/locker/blocked-html-element-properties] | disallow blocked HTMLElement properties |   |
+| [@locker/locker/blocked-html-iframe-element-properties] | disallow blocked HTMLIframeElement properties |   |
+| [@locker/locker/empty-window-location] | `window.location` is empty | [`@locker/rollup-plugin`] |
+| [@locker/locker/no-async-await] | disallow `async await` syntax usage | [`@locker/rollup-plugin`] |
+| [@locker/locker/no-document-domain-assignment] | disallow `document.domain` assignment |   |
+| [@locker/locker/no-dynamic-import] | disallow dynamic `import` | [`@locker/rollup-plugin`] |
+| [@locker/locker/no-import-platform-resource-loader] | disallow `import` or `export` from `'lightning/platformResourceLoader'`|   |
+| [@locker/locker/null-document-location] | `document.location` is `'null'` | [`@locker/rollup-plugin`] |
+| [@locker/locker/null-shadow-root-host] | `shadowRoot.host` is `'null'` |   |
+| [@locker/locker/null-window-top] | `window.top` is `'null' ` | [`--fix`] or [`@locker/rollup-plugin`] |
 
+[`@locker/rollup-plugin`]:
+https://www.npmjs.com/package/@locker/rollup-plugin
 [`@locker/eslint-config-locker`]:
 https://www.npmjs.com/package/@locker/eslint-config-locker
 [@locker/locker/blocked-document-properties]:
@@ -82,3 +84,5 @@ https://github.com/salesforce/locker/tree/master/packages/%40locker/eslint-plugi
 https://github.com/salesforce/locker/tree/master/packages/%40locker/eslint-plugin-locker/docs/rules/null-window-top.md
 [ESLint]:
 https://eslint.org/
+[`--fix`]:
+https://eslint.org/docs/user-guide/command-line-interface#-fix
