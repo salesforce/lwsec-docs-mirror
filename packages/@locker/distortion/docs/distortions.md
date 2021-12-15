@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented Locker vNext Distortions.
 
-Version: 0.13.2<br>
-Generated: Apr 7, 2021
+Version: 0.13.3<br>
+Generated: Apr 14, 2021
 
 ## Table of Contents
 
@@ -148,14 +148,10 @@ Generated: Apr 7, 2021
   - [Problem Statement](#problem-statement)
   - [Goal](#goal-22)
   - [Distorted behavior](#distorted-behavior-17)
-- [get: ShadowRoot.prototype.host](#get-shadowrootprototypehost)
+- [get: ShadowRoot.prototype.mode](#get-shadowrootprototypemode)
   - [Goal](#goal-23)
   - [Design](#design-23)
   - [Distorted behavior](#distorted-behavior-18)
-- [get: ShadowRoot.prototype.mode](#get-shadowrootprototypemode)
-  - [Goal](#goal-24)
-  - [Design](#design-24)
-  - [Distorted behavior](#distorted-behavior-19)
 - [SharedWorker Global Constructor](#sharedworker-global-constructor)
   - [Summary](#summary-13)
   - [Distorted Behavior](#distorted-behavior-17)
@@ -181,13 +177,13 @@ Generated: Apr 7, 2021
   - [Summary](#summary-20)
   - [Distorted Behavior](#distorted-behavior-24)
 - [value: URL.createObjectURL](#value-urlcreateobjecturl)
+  - [Goal](#goal-24)
+  - [Design](#design-24)
+  - [Distorted behavior](#distorted-behavior-19)
+- [Window.fetch](#windowfetch)
   - [Goal](#goal-25)
   - [Design](#design-25)
   - [Distorted behavior](#distorted-behavior-20)
-- [Window.fetch](#windowfetch)
-  - [Goal](#goal-26)
-  - [Design](#design-26)
-  - [Distorted behavior](#distorted-behavior-21)
   - [Disallowed endpoints](#disallowed-endpoints)
 - [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
   - [Summary](#summary-21)
@@ -208,9 +204,9 @@ Generated: Apr 7, 2021
   - [Summary](#summary-26)
   - [Distorted Behavior](#distorted-behavior-30)
 - [XMLHttpRequest.open](#xmlhttprequestopen)
-  - [Goal](#goal-27)
-  - [Design](#design-27)
-  - [Distorted behavior](#distorted-behavior-22)
+  - [Goal](#goal-26)
+  - [Design](#design-26)
+  - [Distorted behavior](#distorted-behavior-21)
   - [Disallowed endpoints](#disallowed-endpoints-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -1081,23 +1077,6 @@ To prevent unsandboxed JavaScript code from leaking data, we want to disallow ac
 ### Distorted behavior
 
 This distortion will throw a `TypeError` whenever any of the `ServiceWorkerContainer.prototype` properties or methods is accessed. 
-<hr>
-<a name="shadowrootdocshost-gettermd"></a>
-
-## get: ShadowRoot.prototype.host
-
-### Goal
-
- - To prevent scraping the light DOM through this property.
-
-### Design
-
-- Patch getter on `ShadowRoot.prototype.host` descriptor to return `null`.
-
-### Distorted behavior
-
-- Each time code accesses `host` property on any element with an attached shadow
-  DOM this distortion will return `null`.
 <hr>
 <a name="shadowrootdocsmode-gettermd"></a>
 
