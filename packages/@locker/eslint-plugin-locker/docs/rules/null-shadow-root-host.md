@@ -6,7 +6,6 @@ For security the value of [`shadowRoot.host`][1] in Lightning Locker is `null`.
 
 Example of **incorrect** code:
 
-<!-- eslint-disable no-undef, no-unused-expressions -->
 ```js
 shadowRoot.host;
 shadowRoot.host.nodeName;

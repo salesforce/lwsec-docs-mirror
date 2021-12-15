@@ -19,7 +19,6 @@ references to `window`.
 
 Example of **incorrect** code:
 
-<!-- eslint-disable-next-line no-unused-expressions -->
 ```js
 window.top.pageXOffset;
 ```

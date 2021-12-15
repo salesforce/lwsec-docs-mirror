@@ -6,7 +6,6 @@ For security Lightning Locker prohibits assignment to [`document.domain`][1].
 
 Example of **incorrect** code:
 
-<!-- eslint-disable-next-line no-undef -->
 ```js
 document.domain = value;
 ```

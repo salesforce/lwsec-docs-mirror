@@ -6,7 +6,6 @@ For security the value of [`element.shadowRoot`][1] in Lightning Locker is `null
 
 Example of **incorrect** code:
 
-<!-- eslint-disable no-undef, no-unused-expressions -->
 ```js
 element.shadowRoot;
 element.shadowRoot.activeElement;

@@ -2,7 +2,6 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Locker vNext Distortions](#locker-vnext-distortions)
   - [set: Attr.prototype.value](#set-attrprototypevalue)
     - [Goal](#goal)
     - [Design](#design)
@@ -64,6 +63,7 @@
   - [get: Element.prototype.shadowRoot [Main]](#get-elementprototypeshadowroot-main)
     - [Summary](#summary-7)
     - [Distorted Behavior](#distorted-behavior-7)
+- [Locker vNext Distortions](#locker-vnext-distortions)
   - [nonce: HTMLElement.prototype](#nonce-htmlelementprototype)
   - [WindowEventHandlers: HTMLElement.prototype](#windoweventhandlers-htmlelementprototype)
   - [set: Element.prototype.innerText [Main]](#set-elementprototypeinnertext-main)
@@ -77,6 +77,9 @@
   - [set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]](#set-elementprototypeoutertext-chrome-edge-opera-safari)
     - [Summary](#summary-10)
     - [Distorted Behavior](#distorted-behavior-10)
+  - [get: HTMLElement.prototype.style [Chrome, Edge, Opera, Safari]](#get-htmlelementprototypestyle-chrome-edge-opera-safari)
+    - [Summary](#summary-11)
+    - [Distorted Behavior](#distorted-behavior-11)
   - [get: HTMLIframeElement.prototype.contentWindow](#get-htmliframeelementprototypecontentwindow)
     - [Goal](#goal-8)
     - [Design](#design-8)
@@ -85,31 +88,31 @@
     - [Goal](#goal-9)
     - [Design](#design-9)
     - [Distorted behavior](#distorted-behavior-9)
-  - [value: NamedNodeMap.prototype.setNamedItem](#value-namednodemapprototypesetnameditem)
+  - [get: HTMLScriptElement.prototype.src](#get-htmlscriptelementprototypesrc)
     - [Goal](#goal-10)
     - [Design](#design-10)
     - [Distorted behavior](#distorted-behavior-10)
-  - [get: HTMLScriptElement.prototype.src](#get-htmlscriptelementprototypesrc)
+  - [set: HTMLScriptElement.prototype.src](#set-htmlscriptelementprototypesrc)
     - [Goal](#goal-11)
     - [Design](#design-11)
     - [Distorted behavior](#distorted-behavior-11)
-  - [set: HTMLScriptElement.prototype.src](#set-htmlscriptelementprototypesrc)
+  - [value: NamedNodeMap.prototype.setNamedItem](#value-namednodemapprototypesetnameditem)
     - [Goal](#goal-12)
     - [Design](#design-12)
     - [Distorted behavior](#distorted-behavior-12)
-  - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
-    - [Summary](#summary-11)
-    - [Distorted Behavior](#distorted-behavior-11)
   - [get: Navigator.prototype.serviceWorker](#get-navigatorprototypeserviceworker)
     - [Problem statement](#problem-statement)
     - [Goal](#goal-13)
     - [Design](#design-13)
     - [Distorted behavior](#distorted-behavior-13)
-  - [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
+  - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
     - [Summary](#summary-12)
     - [Distorted Behavior](#distorted-behavior-12)
-  - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
+  - [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
     - [Summary](#summary-13)
+    - [Distorted Behavior](#distorted-behavior-13)
+  - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
+    - [Summary](#summary-14)
     - [Design](#design-14)
     - [Dependencies](#dependencies)
   - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
@@ -125,29 +128,29 @@
     - [Design](#design-16)
     - [Distorted behavior](#distorted-behavior-16)
   - [SharedWorker Global Constructor](#sharedworker-global-constructor)
-    - [Summary](#summary-14)
-    - [Distorted Behavior](#distorted-behavior-13)
-  - [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
     - [Summary](#summary-15)
     - [Distorted Behavior](#distorted-behavior-14)
-  - [Storage API: Storage.prototype](#storage-api-storageprototype)
+  - [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
     - [Summary](#summary-16)
     - [Distorted Behavior](#distorted-behavior-15)
-  - [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
+  - [Storage API: Storage.prototype](#storage-api-storageprototype)
     - [Summary](#summary-17)
     - [Distorted Behavior](#distorted-behavior-16)
-  - [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
+  - [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
     - [Summary](#summary-18)
     - [Distorted Behavior](#distorted-behavior-17)
-  - [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
+  - [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
     - [Summary](#summary-19)
     - [Distorted Behavior](#distorted-behavior-18)
-  - [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
+  - [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
     - [Summary](#summary-20)
     - [Distorted Behavior](#distorted-behavior-19)
-  - [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
+  - [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
     - [Summary](#summary-21)
     - [Distorted Behavior](#distorted-behavior-20)
+  - [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
+    - [Summary](#summary-22)
+    - [Distorted Behavior](#distorted-behavior-21)
   - [value: URL.createObjectURL](#value-urlcreateobjecturl)
     - [Goal](#goal-17)
     - [Design](#design-17)
@@ -158,17 +161,17 @@
     - [Distorted behavior](#distorted-behavior-18)
     - [Disallowed endpoints](#disallowed-endpoints)
   - [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
-    - [Summary](#summary-22)
-    - [Distorted Behavior](#distorted-behavior-21)
-  - [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
     - [Summary](#summary-23)
     - [Distorted Behavior](#distorted-behavior-22)
-  - [value: Window.prototype.setTimeout [Main]](#value-windowprototypesettimeout-main)
+  - [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
     - [Summary](#summary-24)
     - [Distorted Behavior](#distorted-behavior-23)
-  - [Worker Global Constructor](#worker-global-constructor)
+  - [value: Window.prototype.setTimeout [Main]](#value-windowprototypesettimeout-main)
     - [Summary](#summary-25)
     - [Distorted Behavior](#distorted-behavior-24)
+  - [Worker Global Constructor](#worker-global-constructor)
+    - [Summary](#summary-26)
+    - [Distorted Behavior](#distorted-behavior-25)
   - [XMLHttpRequest.open](#xmlhttprequestopen)
     - [Goal](#goal-19)
     - [Design](#design-19)
@@ -178,18 +181,11 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-<a name="headermd"></a>
-
-# Locker vNext Distortions
-
-This is the list of the currently implemented Locker vNext Distortions.
-
-
 <a name="attrdocsvalue-settermd"></a>
 
 ## set: Attr.prototype.value
 
-This distortion acts as a router to subdistortions. It uses a shared registry to identify whether there are any distortions registered for a particular attribute name and invokes them. 
+This distortion acts as a router to subdistortions. It uses a shared registry to identify whether there are any distortions registered for a particular attribute name and invokes them.
 
 
 This only applies to connected attribute nodes, disconnected nodes are covered by setAttributeNode and setAttributeNodeNS distortions.
@@ -201,7 +197,7 @@ This only applies to connected attribute nodes, disconnected nodes are covered b
 const attr = createAttribute('rel');
 const el = createElement('link');
 el.setAttributeNode(attr); // bypass setAttributeNode distortion
-attr.value = 'import'; // attempt to set blacklisted value
+attr.value = 'import'; // attempt to set blocked value
 document.head.appendChild(el); // append to head
 ```
 - to invoke distortions registered for particular attributes
@@ -218,6 +214,7 @@ document.head.appendChild(el); // append to head
 
 - when there is a registered distortion the behavior is strictly dependent of the distortion's behavior
 - native like behavior when no distortions are registered.
+
 
 <a name="customelementregistrydocsdefine-valuemd"></a>
 
@@ -612,6 +609,13 @@ Although in the sandbox elements cannot be created with this mode (see attachSha
 
 This distortion will return `null` when trying to access the `shadowRoot` property on a light-dom element.
 
+<a name="headermd"></a>
+
+# Locker vNext Distortions
+
+This is the list of the currently implemented Locker vNext Distortions.
+
+
 <a name="htmlelementdocsindexmd"></a>
 
 ## nonce: HTMLElement.prototype
@@ -721,6 +725,22 @@ This distortion sanitizes and prevents text from replacing the shared elements: 
 Note that `outerText` [is not a standard property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText#Browser_compatibility), so the descriptor could be undefined, like in the case of Firefox. In this case, this distortion does nothing.
 
 
+<a name="htmlelementdocsstyle-gettermd"></a>
+
+## get: HTMLElement.prototype.style [Chrome, Edge, Opera, Safari]
+
+### Summary
+
+The `style` property on any HTMLElement object allows manipulating CSS styles via Javascript via assignments (element.style.color = 'red'). Any property set on this object will reflect in the DOM via the `style` attribute on an element, making this object "magical" because of this behavior.
+
+### Distorted Behavior
+
+This distortion alters the getter of the style property for any HTMLElement. The `style` object is being marked as live such that
+any properties changed from within the sandbox are reflected on the DOM. 
+
+Furthermore, this distortion does not cover a possible but highly improbable scenario: code passing the style object from system mode to the sandbox via function arguments. The distortion will not apply since the getter has been invoked in system mode. The resulting effect is that sandboxed code will not see changes to `style` being reflected in the DOM. If this scenario does happen then the distortion should be upgraded to a patch on the raw HTMLElement.prototype in native window. 
+
+
 <a name="htmliframeelementdocscontentwindow-gettermd"></a>
 
 ## get: HTMLIframeElement.prototype.contentWindow
@@ -767,40 +787,6 @@ Only allow `src` values with validated schemes to be set.
 - Log a console warning for HTMLIFrameElement.src values that don't sanitize
   to http:// or https:// schemes
 
-
-<a name="namednodemapdocssetnameditem-valuemd"></a>
-
-## value: NamedNodeMap.prototype.setNamedItem
-
-It is possible to set an attribute on an element using the methods available on NamedNodeMap. For example:
-
-```
-const el = document.createElement('link');
-const attr = document.createAttribute('rel');
-attr.value = 'import';
-el.attributes.setNamedItem(attr);
-```
-
-This would bypass our distortions for named properties and setAttribute\*. For this reason we need to distort `NamedNodeMap.prototype.setNamedItem`. 
-
-### Goal
-
-- invoke registered DOM property distortions in situations like `el.attributes.setNamedItem(...)`
-
-### Design
-Inside of a NamedNodeMap distortion `this` does not point to an element but to the `attributes` instance. We have no way of understanding which `attributes` instance is for what element. That is why the shared lib of this module provides a `pairElement` utility used in Element.prototype.attributes distortion to pair an element with a NamedNodeMap instance upon accessing the getter of Element.prototype.attributes. Since all operations are synchronous we are guaranteed that the registration happens first followed by invocation later.
-Example:
-
-el.attributes.setNamedItem(....)
-  |           |
-registration  invocation
-
-The registry is a WeakMap since elements can be removed from the page throughout the lifecycle of an application. The distortions are being retrieved from the `setAttributeNode` registry since both methods accept an instance of `Attr`.
-
-### Distorted behavior
-
-- if no distortion is found for an Attr instance then proceed with native invocation of setNamedItem
-- if a distortion exists then the distorted behavior is relative to what that distortion does
 
 <a name="htmlscriptelementdocssrc-gettermd"></a>
 
@@ -854,18 +840,39 @@ We need to satisfy a few requirements:
 - The behavior will seem native like to code running in the sandbox.
 
 
-<a name="nodedocstextcontent-settermd"></a>
+<a name="namednodemapdocssetnameditem-valuemd"></a>
 
-## set: Node.prototype.textContent [Main]
+## value: NamedNodeMap.prototype.setNamedItem
 
-### Summary
+It is possible to set an attribute on an element using the methods available on NamedNodeMap. For example:
 
-This property allows users to replace DOM inside the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
+```
+const el = document.createElement('link');
+const attr = document.createAttribute('rel');
+attr.value = 'import';
+el.attributes.setNamedItem(attr);
+```
 
-### Distorted Behavior
+This would bypass our distortions for named properties and setAttribute\*. For this reason we need to distort `NamedNodeMap.prototype.setNamedItem`. 
 
-This distortion sanitizes and prevents text from replacing the DOM within shared elements: HEAD and BODY.
+### Goal
 
+- invoke registered DOM property distortions in situations like `el.attributes.setNamedItem(...)`
+
+### Design
+Inside of a NamedNodeMap distortion `this` does not point to an element but to the `attributes` instance. We have no way of understanding which `attributes` instance is for what element. That is why the shared lib of this module provides a `pairElement` utility used in Element.prototype.attributes distortion to pair an element with a NamedNodeMap instance upon accessing the getter of Element.prototype.attributes. Since all operations are synchronous we are guaranteed that the registration happens first followed by invocation later.
+Example:
+
+el.attributes.setNamedItem(....)
+  |           |
+registration  invocation
+
+The registry is a WeakMap since elements can be removed from the page throughout the lifecycle of an application. The distortions are being retrieved from the `setAttributeNode` registry since both methods accept an instance of `Attr`.
+
+### Distorted behavior
+
+- if no distortion is found for an Attr instance then proceed with native invocation of setNamedItem
+- if a distortion exists then the distorted behavior is relative to what that distortion does
 
 <a name="navigatordocsserviceworker-gettermd"></a>
 
@@ -877,15 +884,14 @@ With `ServiceWorker`, it is possible to alter the response of a request to retur
 
 **Example:**
 ```js
-navigator.serviceWorker.register('/static/sw.js').then(function() {
+navigator.serviceWorker.register('/static/sw.js').then(() => {
     window.open('/static/aaa', '_self');
 });
 ```
 
 **File /static/sw.js:**
-<!-- eslint-disable-next-line no-restricted-globals -->
 ```js
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', (event) => {
     const unsandboxed = '<body><script>document.body.innerHTML=document.cookie;</script>';
     event.respondWith(new Response(unsandboxed, { headers: { 'Content-Type': 'text/html' } }));
 });
@@ -902,6 +908,19 @@ Patch getter on `Navigator.prototype.serviceWorker` descriptor to return `undefi
 ### Distorted behavior
 
 Each time code accesses `navigator.serviceWorker` property, this distortion will return `undefined`.
+
+
+<a name="nodedocstextcontent-settermd"></a>
+
+## set: Node.prototype.textContent [Main]
+
+### Summary
+
+This property allows users to replace DOM inside the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
+
+### Distorted Behavior
+
+This distortion sanitizes and prevents text from replacing the DOM within shared elements: HEAD and BODY.
 
 
 <a name="rangedocscreatecontextualfragment-valuemd"></a>
@@ -992,15 +1011,14 @@ With `ServiceWorker`, it is possible to alter the response of a request to retur
 
 **Example:**
 ```js
-navigator.serviceWorker.register('/static/sw.js').then(function() {
+navigator.serviceWorker.register('/static/sw.js').then(() => {
     window.open('/static/aaa', '_self');
 });
 ```
 
 **File /static/sw.js:**
-<!-- eslint-disable-next-line no-restricted-globals -->
 ```js
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', (event) => {
     const unsandboxed = '<body><script>document.body.innerHTML=document.cookie;</script>';
     event.respondWith(new Response(unsandboxed, { headers: { 'Content-Type': 'text/html' } }));
 });

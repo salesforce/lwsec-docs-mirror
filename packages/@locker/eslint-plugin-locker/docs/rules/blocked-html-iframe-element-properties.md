@@ -13,7 +13,6 @@ For security the following HTMLIframeElement properties are prohibited in Lightn
 
 Example of **incorrect** code:
 
-<!-- eslint-disable-next-line no-undef, no-unused-expressions -->
 ```js
 iframe.allowPaymentRequest;
 ```

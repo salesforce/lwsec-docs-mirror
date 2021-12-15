@@ -7,7 +7,6 @@ code from breaking use the [`@locker/rollup-plugin`].
 
 Example of **incorrect** code:
 
-<!-- eslint-disable no-undef, no-unused-expressions -->
 ```js
 document.location;
 document.location.href;
