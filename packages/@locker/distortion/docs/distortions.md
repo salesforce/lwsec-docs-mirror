@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented Locker vNext Distortions.
 
-Version: 0.13.4<br>
-Generated: Apr 20, 2021
+Version: 0.13.5<br>
+Generated: May 18, 2021
 
 ## Table of Contents
 
@@ -1293,6 +1293,7 @@ The `Window.fetch` distortion examines the `hostname` and the `pathname` of the 
 Locker disallows endpoints:
 
 - Containing `"/aura"` in the URL.
+- Containing `"/webruntime"` in the URL.
 
 At the moment this is hard coded, but in the future this will be a configuration option.
 <hr>
@@ -1389,6 +1390,7 @@ The `XMLHttpRequest.open` distortion examines the `hostname` and the `pathname` 
 Locker disallows endpoints:
 
 - Containing `"/aura"` in the URL.
+- Containing `"/webruntime"` in the URL.
 
 At the moment this is hard coded, but in the future this will be a configuration option.
 
