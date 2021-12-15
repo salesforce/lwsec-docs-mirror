@@ -27,7 +27,7 @@ Example of `.eslintrc`:
 ```
 
 For more details about configuration please refer to the dedicated section in
-the ESLint documentation:
+the ESLint documentation:<br>
 https://eslint.org/docs/user-guide/configuring
 
 ## Configurations
