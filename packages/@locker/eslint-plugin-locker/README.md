@@ -49,6 +49,7 @@ sharable configuration package.
 | [@locker/locker/no-async-await] | disallow `async await` syntax usage |         |
 | [@locker/locker/no-document-domain-assignment] | disallow `document.domain` assignment |         |
 | [@locker/locker/no-dynamic-import] | disallow dynamic `import` |         |
+| [@locker/locker/no-import-platform-resource-loader] | disallow `import` or `export` from `'lightning/platformResourceLoader'`|         |
 | [@locker/locker/null-document-location] | `document.location` is `'null'` |         |
 | [@locker/locker/null-shadow-root-host] | `shadowRoot.host` is `'null'` |         |
 | [@locker/locker/null-window-top] | `window.top` is `'null' `                                  | 🔧      |
@@ -71,6 +72,8 @@ https://github.com/salesforce/locker/tree/master/packages/%40locker/eslint-plugi
 https://github.com/salesforce/locker/tree/master/packages/%40locker/eslint-plugin-locker/docs/rules/no-document-domain-assignment.md
 [@locker/locker/no-dynamic-import]:
 https://github.com/salesforce/locker/tree/master/packages/%40locker/eslint-plugin-locker/docs/rules/no-dynamic-import.md
+[@locker/locker/no-import-platform-resource-loader]:
+https://github.com/salesforce/locker/tree/master/packages/%40locker/eslint-plugin-locker/docs/rules/no-import-platform-resource-loader.md
 [@locker/locker/null-document-location]:
 https://github.com/salesforce/locker/tree/master/packages/%40locker/eslint-plugin-locker/docs/rules/null-document-location.md
 [@locker/locker/null-shadow-root-host]:
