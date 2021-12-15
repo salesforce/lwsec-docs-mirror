@@ -12,6 +12,9 @@ The following `window.top` references are prohibited or fixable to `window`:
 -   `self.top`
 -   `window.top`
 
+:bulb: The `@locker/rollup-plugin` may also be used to transform `window.top`
+references to `window`.
+
 ## Rule Details
 
 Example of **incorrect** code:

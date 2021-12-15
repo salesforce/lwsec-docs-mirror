@@ -85,22 +85,22 @@
   - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
     - [Summary](#summary-10)
     - [Distorted Behavior](#distorted-behavior-10)
-  - [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
-    - [Summary](#summary-11)
-    - [Distorted Behavior](#distorted-behavior-11)
   - [get: Navigator.prototype.serviceWorker](#get-navigatorprototypeserviceworker)
     - [Problem statement](#problem-statement)
     - [Goal](#goal-10)
     - [Design](#design-10)
     - [Distorted behavior](#distorted-behavior-10)
-  - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
-    - [Summary](#summary-12)
-    - [Design](#design-11)
-    - [Dependencies](#dependencies)
+  - [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
+    - [Summary](#summary-11)
+    - [Distorted Behavior](#distorted-behavior-11)
   - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
     - [Problem Statement](#problem-statement)
     - [Goal](#goal-11)
     - [Distorted behavior](#distorted-behavior-11)
+  - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
+    - [Summary](#summary-12)
+    - [Design](#design-11)
+    - [Dependencies](#dependencies)
   - [get: ShadowRoot.prototype.host](#get-shadowrootprototypehost)
     - [Goal](#goal-12)
     - [Design](#design-12)
@@ -792,21 +792,6 @@ This property allows users to replace DOM inside the element with his text. In L
 This distortion sanitizes and prevents text from replacing the DOM within shared elements: HEAD and BODY.
 
 
-<a name="rangedocscreatecontextualfragment-valuemd"></a>
-
-## value: Range.prototype.createContextualFragment [Main]
-
-### Summary
-
-The Range.createContextualFragment() method returns a DocumentFragment by invoking the HTML fragment parsing algorithm or the XML fragment parsing algorithm with the start of the range as the context node. This range of HTML elements can be added to the DOM tree.
-
-In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert specified text as HTML into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM. We need to sanitize any elements added to this shared DOM.
-
-### Distorted Behavior
-
-This distortion sanitizes HTML string that is used to create the DocumentFragment.
-
-
 <a name="navigatordocsserviceworker-gettermd"></a>
 
 ## get: Navigator.prototype.serviceWorker
@@ -842,6 +827,54 @@ Patch getter on `Navigator.prototype.serviceWorker` descriptor to return `undefi
 ### Distorted behavior
 
 Each time code accesses `navigator.serviceWorker` property, this distortion will return `undefined`.
+
+
+<a name="rangedocscreatecontextualfragment-valuemd"></a>
+
+## value: Range.prototype.createContextualFragment [Main]
+
+### Summary
+
+The Range.createContextualFragment() method returns a DocumentFragment by invoking the HTML fragment parsing algorithm or the XML fragment parsing algorithm with the start of the range as the context node. This range of HTML elements can be added to the DOM tree.
+
+In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert specified text as HTML into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM. We need to sanitize any elements added to this shared DOM.
+
+### Distorted Behavior
+
+This distortion sanitizes HTML string that is used to create the DocumentFragment.
+
+
+<a name="serviceworkercontainerdocsprototypemd"></a>
+
+## ServiceWorkerContainer.prototype
+
+### Problem Statement
+
+With `ServiceWorker`, it is possible to alter the response of a request to return JavaScript code that would be unsandboxed when evaluated by the browser.
+
+**Example:**
+```js
+navigator.serviceWorker.register('/static/sw.js').then(function() {
+    window.open('/static/aaa', '_self');
+});
+```
+
+**File /static/sw.js:**
+<!-- eslint-disable-next-line no-restricted-globals -->
+```js
+self.addEventListener('fetch', function(event) {
+    const unsandboxed = '<body><script>document.body.innerHTML=document.cookie;</script>';
+    event.respondWith(new Response(unsandboxed, { headers: { 'Content-Type': 'text/html' } }));
+});
+```
+
+### Goal
+
+To prevent unsandboxed JavaScript code from leaking data, we want to disallow access to any of the `ServiceWorkerContainer.prototype` properties or methods. We do this because even though we already prevent access to `navigator.serviceWorker`, there are other ways in which user code could get access to the `ServiceWorkerContainer` singleton, so this distortion prevents access to any of its operations.
+
+### Distorted behavior
+
+This distortion will throw a `TypeError` whenever any of the `ServiceWorkerContainer.prototype` properties or methods is accessed. 
 
 
 <a name="svguseelementdocshref-attributemd"></a>
@@ -905,39 +938,6 @@ Other scenarios that can be used to bypass this distortion are covered by the un
 ### Dependencies
 - DOMPUrify
 - html-sanitizer package
-
-
-<a name="serviceworkercontainerdocsprototypemd"></a>
-
-## ServiceWorkerContainer.prototype
-
-### Problem Statement
-
-With `ServiceWorker`, it is possible to alter the response of a request to return JavaScript code that would be unsandboxed when evaluated by the browser.
-
-**Example:**
-```js
-navigator.serviceWorker.register('/static/sw.js').then(function() {
-    window.open('/static/aaa', '_self');
-});
-```
-
-**File /static/sw.js:**
-<!-- eslint-disable-next-line no-restricted-globals -->
-```js
-self.addEventListener('fetch', function(event) {
-    const unsandboxed = '<body><script>document.body.innerHTML=document.cookie;</script>';
-    event.respondWith(new Response(unsandboxed, { headers: { 'Content-Type': 'text/html' } }));
-});
-```
-
-### Goal
-
-To prevent unsandboxed JavaScript code from leaking data, we want to disallow access to any of the `ServiceWorkerContainer.prototype` properties or methods. We do this because even though we already prevent access to `navigator.serviceWorker`, there are other ways in which user code could get access to the `ServiceWorkerContainer` singleton, so this distortion prevents access to any of its operations.
-
-### Distorted behavior
-
-This distortion will throw a `TypeError` whenever any of the `ServiceWorkerContainer.prototype` properties or methods is accessed. 
 
 
 <a name="shadowrootdocshost-gettermd"></a>

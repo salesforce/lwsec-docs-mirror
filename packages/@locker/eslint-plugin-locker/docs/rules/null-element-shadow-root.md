@@ -7,16 +7,8 @@ in Lightning Locker is `null`.
 
 Example of **incorrect** code:
 
-<!-- eslint-disable-next-line no-undef, no-unused-expressions -->
+<!-- eslint-disable no-undef, no-unused-expressions -->
 ```js
+element.shadowRoot;
 element.shadowRoot.activeElement;
-```
-
-Example of **correct** code:
-
-<!-- eslint-disable-next-line no-undef -->
-```js
-if (element.shadowRoot === null) {
-    // ...
-}
 ```

@@ -2,7 +2,7 @@
 
 The [async-await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 syntax is  not supported in Lightning Locker. To prevent code from breaking use
-the `@locker/rollup-plugin` when support is added.
+the `@locker/rollup-plugin`.
 
 ## Rule Details
 
