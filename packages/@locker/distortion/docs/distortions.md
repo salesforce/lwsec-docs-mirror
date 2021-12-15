@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented Locker vNext Distortions.
 
-Version: 0.12.14<br>
-Generated: Mar 23, 2021
+Version: 0.13.1<br>
+Generated: Mar 31, 2021
 
 ## Table of Contents
 
