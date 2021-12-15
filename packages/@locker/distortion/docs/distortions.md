@@ -3,15 +3,15 @@
 
 
 - [Locker vNext Distortions](#locker-vnext-distortions)
-  - [set: Attr.prototype.value](#set-attrprototypevalue)
+  - [value: CustomElementRegistry.prototype.define](#value-customelementregistryprototypedefine)
     - [Goal](#goal)
     - [Design](#design)
     - [Distorted behavior](#distorted-behavior)
-  - [value: CustomElementRegistry.prototype.define](#value-customelementregistryprototypedefine)
+  - [value: CustomElementRegistry.prototype.get](#value-customelementregistryprototypeget)
     - [Goal](#goal-1)
     - [Design](#design-1)
     - [Distorted behavior](#distorted-behavior-1)
-  - [value: CustomElementRegistry.prototype.get](#value-customelementregistryprototypeget)
+  - [set: Attr.prototype.value](#set-attrprototypevalue)
     - [Goal](#goal-2)
     - [Design](#design-2)
     - [Distorted behavior](#distorted-behavior-2)
@@ -49,19 +49,6 @@
   - [get: Element.prototype.shadowRoot [Main]](#get-elementprototypeshadowroot-main)
     - [Summary](#summary-6)
     - [Distorted Behavior](#distorted-behavior-6)
-  - [nonce: HTMLElement.prototype](#nonce-htmlelementprototype)
-  - [WindowEventHandlers: HTMLElement.prototype](#windoweventhandlers-htmlelementprototype)
-  - [set: Element.prototype.innerText [Main]](#set-elementprototypeinnertext-main)
-    - [Summary](#summary-7)
-    - [Distorted Behavior](#distorted-behavior-7)
-  - [set: HTML<NAME>Element.prototype.name [Main]](#set-htmlnameelementprototypename-main)
-    - [Summary](#summary-8)
-    - [Distorted Behavior](#distorted-behavior-8)
-    - [Knowledge](#knowledge-2)
-    - [Removed Implementation](#removed-implementation-2)
-  - [set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]](#set-elementprototypeoutertext-chrome-edge-opera-safari)
-    - [Summary](#summary-9)
-    - [Distorted Behavior](#distorted-behavior-9)
   - [get: HTMLIframeElement.prototype.contentWindow](#get-htmliframeelementprototypecontentwindow)
     - [Goal](#goal-5)
     - [Design](#design-5)
@@ -83,35 +70,48 @@
     - [Design](#design-9)
     - [Distorted behavior](#distorted-behavior-9)
   - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
-    - [Summary](#summary-10)
-    - [Distorted Behavior](#distorted-behavior-10)
+    - [Summary](#summary-7)
+    - [Distorted Behavior](#distorted-behavior-7)
+  - [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
+    - [Summary](#summary-8)
+    - [Distorted Behavior](#distorted-behavior-8)
   - [get: Navigator.prototype.serviceWorker](#get-navigatorprototypeserviceworker)
     - [Problem statement](#problem-statement)
     - [Goal](#goal-10)
     - [Design](#design-10)
     - [Distorted behavior](#distorted-behavior-10)
-  - [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
+  - [nonce: HTMLElement.prototype](#nonce-htmlelementprototype)
+  - [WindowEventHandlers: HTMLElement.prototype](#windoweventhandlers-htmlelementprototype)
+  - [set: Element.prototype.innerText [Main]](#set-elementprototypeinnertext-main)
+    - [Summary](#summary-9)
+    - [Distorted Behavior](#distorted-behavior-9)
+  - [set: HTML<NAME>Element.prototype.name [Main]](#set-htmlnameelementprototypename-main)
+    - [Summary](#summary-10)
+    - [Distorted Behavior](#distorted-behavior-10)
+    - [Knowledge](#knowledge-2)
+    - [Removed Implementation](#removed-implementation-2)
+  - [set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]](#set-elementprototypeoutertext-chrome-edge-opera-safari)
     - [Summary](#summary-11)
     - [Distorted Behavior](#distorted-behavior-11)
-  - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
-    - [Problem Statement](#problem-statement)
-    - [Goal](#goal-11)
-    - [Distorted behavior](#distorted-behavior-11)
-  - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
-    - [Summary](#summary-12)
-    - [Design](#design-11)
-    - [Dependencies](#dependencies)
   - [get: ShadowRoot.prototype.host](#get-shadowrootprototypehost)
+    - [Goal](#goal-11)
+    - [Design](#design-11)
+    - [Distorted behavior](#distorted-behavior-11)
+  - [get: ShadowRoot.prototype.mode](#get-shadowrootprototypemode)
     - [Goal](#goal-12)
     - [Design](#design-12)
     - [Distorted behavior](#distorted-behavior-12)
-  - [get: ShadowRoot.prototype.mode](#get-shadowrootprototypemode)
-    - [Goal](#goal-13)
+  - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
+    - [Summary](#summary-12)
     - [Design](#design-13)
-    - [Distorted behavior](#distorted-behavior-13)
+    - [Dependencies](#dependencies)
   - [SharedWorker Global Constructor](#sharedworker-global-constructor)
     - [Summary](#summary-13)
     - [Distorted Behavior](#distorted-behavior-12)
+  - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
+    - [Problem Statement](#problem-statement)
+    - [Goal](#goal-13)
+    - [Distorted behavior](#distorted-behavior-13)
   - [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
     - [Summary](#summary-14)
     - [Distorted Behavior](#distorted-behavior-13)
@@ -137,6 +137,10 @@
     - [Goal](#goal-14)
     - [Design](#design-14)
     - [Distorted behavior](#distorted-behavior-14)
+  - [value: XMLHttpRequest.prototype.open](#value-xmlhttprequestprototypeopen)
+    - [Goal](#goal-15)
+    - [Design](#design-15)
+    - [Distorted behavior](#distorted-behavior-15)
   - [value: Window.prototype.fetch [Main]](#value-windowprototypefetch-main)
     - [Summary](#summary-21)
     - [Distorted Behavior](#distorted-behavior-20)
@@ -152,10 +156,6 @@
   - [Worker Global Constructor](#worker-global-constructor)
     - [Summary](#summary-25)
     - [Distorted Behavior](#distorted-behavior-24)
-  - [value: XMLHttpRequest.prototype.open](#value-xmlhttprequestprototypeopen)
-    - [Goal](#goal-15)
-    - [Design](#design-15)
-    - [Distorted behavior](#distorted-behavior-15)
   - [get: Document.prototype.cookie](#get-documentprototypecookie)
     - [Goal](#goal-16)
     - [Design](#design-16)
@@ -180,6 +180,40 @@
 # Locker vNext Distortions
 
 This is the list of the currently implemented Locker vNext Distortions.
+
+
+<a name="customelementregistrydocsdefine-valuemd"></a>
+
+## value: CustomElementRegistry.prototype.define
+
+### Goal
+
+ - To prevent sandboxed code to define new custom elements in the global registry unless they are obeying their own namespace.
+
+### Design
+
+- Patch value on `CustomElementRegistry.prototype.define` descriptor to prevent defining a new custom element with the wrong prefix. This prevent them from claiming a custom element name that might affect other sandboxes or the app itself.
+
+### Distorted behavior
+
+- Each time define method is called with the wrong prefix, it throws a `RangeError`.
+
+
+<a name="customelementregistrydocsget-valuemd"></a>
+
+## value: CustomElementRegistry.prototype.get
+
+### Goal
+
+ - To prevent sandboxed code to access custom elements constructors from the global registry unless they are obeying their own namespace.
+
+### Design
+
+- Patch value on `CustomElementRegistry.prototype.get` descriptor to prevent accessing a custom element with the wrong prefix. This prevent them from accessing a constructor that they should not have access to.
+
+### Distorted behavior
+
+- Each time define method is called with the wrong prefix, it throws a `RangeError`.
 
 
 <a name="attrdocsvalue-settermd"></a>
@@ -215,40 +249,6 @@ document.head.appendChild(el); // append to head
 
 - when there is a registered distortion the behavior is strictly dependent of the distortion's behavior
 - native like behavior when no distortions are registered.
-
-<a name="customelementregistrydocsdefine-valuemd"></a>
-
-## value: CustomElementRegistry.prototype.define
-
-### Goal
-
- - To prevent sandboxed code to define new custom elements in the global registry unless they are obeying their own namespace.
-
-### Design
-
-- Patch value on `CustomElementRegistry.prototype.define` descriptor to prevent defining a new custom element with the wrong prefix. This prevent them from claiming a custom element name that might affect other sandboxes or the app itself.
-
-### Distorted behavior
-
-- Each time define method is called with the wrong prefix, it throws a `RangeError`.
-
-
-<a name="customelementregistrydocsget-valuemd"></a>
-
-## value: CustomElementRegistry.prototype.get
-
-### Goal
-
- - To prevent sandboxed code to access custom elements constructors from the global registry unless they are obeying their own namespace.
-
-### Design
-
-- Patch value on `CustomElementRegistry.prototype.get` descriptor to prevent accessing a custom element with the wrong prefix. This prevent them from accessing a constructor that they should not have access to.
-
-### Distorted behavior
-
-- Each time define method is called with the wrong prefix, it throws a `RangeError`.
-
 
 <a name="elementdocsattachshadow-valuemd"></a>
 
@@ -537,115 +537,6 @@ Although in the sandbox elements cannot be created with this mode (see attachSha
 
 This distortion will return `null` when trying to access the `shadowRoot` property on a light-dom element.
 
-<a name="htmlelementdocsindexmd"></a>
-
-## nonce: HTMLElement.prototype
-
-This distortion blocks access to `HTMLElement.prototype.nonce` in Chrome, Edge.
-
-In Locker, we do not allow the use of inline scripts. If a malicious user has access to the nonce value, the user may use it to bypass the Content Security Policy used to determine whether a given script will be allowed to proceed. Therefore, allowing them to run inline scripts.
-
-## WindowEventHandlers: HTMLElement.prototype
-
-This distortion blocks access to `HTMLElement.prototype.onrejectionhandled` and `HTMLElement.prototype.onunhandledrejection` in Safari.
-
-This event "onrejectionhandled" is sent to the script's global scope whenever a Promise is rejected but after the promise rejection has been handled. In tandem, the event "onunhandledrejection" is sent whenever a Promise is rejected but there is no handler for the rejection. While most events are DOM related, this Promise related event handler receives an event object containing information about the rejected promise. The type, promise, and reason properties are still available in both event handlers. A malicious user could look into the promise info, which is why this needs to be blocked.
-
-
-<a name="htmlelementdocsinnertext-settermd"></a>
-
-## set: Element.prototype.innerText [Main]
-
-### Summary
-
-This property allows users to replace DOM inside the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
-
-### Distorted Behavior
-
-This distortion sanitizes and prevents text from replacing the DOM wihtin shared elements: HEAD and BODY.
-
-
-<a name="htmlelementdocsname-settermd"></a>
-
-## set: HTML<NAME>Element.prototype.name [Main]
-
-### Summary
-
-DOM clobbering is a technique in which you inject HTML into a page to manipulate the DOM and ultimately change the behavior of JavaScript on the page. A malicious user can inject an element with an ID value that is the same as a document property. When that document property is called, users will get the injected element instead. 
-
-The sandbox is not affected by `id` or `name` changes to its elements. DOM clobbering won't affect document properties within each sandbox. However, by adding elements to the shared document, a malicious user can change key properties such `document.cookie` on the shared document. We should prevent DOM clobbering attacks so our shared document is free of injected elements that change the behavior of JavaScript on the page.
-
-### Distorted Behavior
-
-This distortion blocks the setting of `name` attribute to a property that exists in the document.
-
-### Knowledge
-
-After consultation, we know that DOM clobbering can take place in system mode but not inside sandboxes. Even though it can pollute the system window and document, we don't see a threat to this. This distortion behavior is documented for the future if a malicious user can DOM clobbering to do something malicious.
-
-### Removed Implementation
-
-```ts
-const templateElement = createElement('template')!;
-const documentElement = templateElement.content.ownerDocument!;
-const formElement = createElement('form')!;
-
-export function isValidAttributeValue(value: string): boolean {
-    if (value in documentElement || value in formElement) {
-        return false;
-    }
-    return true;
-}
-```
-
-```ts
-import {
-    FunctionCall,
-    ReflectGetPrototypeOf,
-    ReflectGetOwnPropertyDescriptor,
-    toString,
-    TypeErrorCreate,
-} from '@locker/shared';
-
-import { isValidAttributeValue } from '@locker/shared-dom';
-
-import { Distortion } from '../types';
-
-export function getOriginalNameSetter(element: Function) {
-    return ReflectGetOwnPropertyDescriptor(element!.prototype, 'name')!.set;
-}
-
-export const patchedNameSetter: Distortion = function set(this: Function, value: string) {
-    value = toString(value);
-
-    const { constructor } = ReflectGetPrototypeOf(this)!;
-
-    if (!isValidAttributeValue(value)) {
-        throw TypeErrorCreate(
-            `${constructor.name} does not allow setting 'name' attribute to ${value}!`
-        );
-    }
-
-    FunctionCall(getOriginalNameSetter(constructor), this, value);
-};
-```
-
-
-<a name="htmlelementdocsoutertext-settermd"></a>
-
-## set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]
-
-### Summary
-
-This property allows users to replace the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the HEAD and BODY with his text. Therefore, corrupting the DOM.
-
-### Distorted Behavior
-
-This distortion sanitizes and prevents text from replacing the shared elements: HEAD and BODY.
-
-Note that `outerText` [is not a standard property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText#Browser_compatibility), so the descriptor could be undefined, like in the case of Firefox. In this case, this distortion does nothing.
-
-
 <a name="htmliframeelementdocscontentwindow-gettermd"></a>
 
 ## get: HTMLIframeElement.prototype.contentWindow
@@ -792,6 +683,21 @@ This property allows users to replace DOM inside the element with his text. In L
 This distortion sanitizes and prevents text from replacing the DOM within shared elements: HEAD and BODY.
 
 
+<a name="rangedocscreatecontextualfragment-valuemd"></a>
+
+## value: Range.prototype.createContextualFragment [Main]
+
+### Summary
+
+The Range.createContextualFragment() method returns a DocumentFragment by invoking the HTML fragment parsing algorithm or the XML fragment parsing algorithm with the start of the range as the context node. This range of HTML elements can be added to the DOM tree.
+
+In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert specified text as HTML into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM. We need to sanitize any elements added to this shared DOM.
+
+### Distorted Behavior
+
+This distortion sanitizes HTML string that is used to create the DocumentFragment.
+
+
 <a name="navigatordocsserviceworker-gettermd"></a>
 
 ## get: Navigator.prototype.serviceWorker
@@ -829,52 +735,149 @@ Patch getter on `Navigator.prototype.serviceWorker` descriptor to return `undefi
 Each time code accesses `navigator.serviceWorker` property, this distortion will return `undefined`.
 
 
-<a name="rangedocscreatecontextualfragment-valuemd"></a>
+<a name="htmlelementdocsindexmd"></a>
 
-## value: Range.prototype.createContextualFragment [Main]
+## nonce: HTMLElement.prototype
+
+This distortion blocks access to `HTMLElement.prototype.nonce` in Chrome, Edge.
+
+In Locker, we do not allow the use of inline scripts. If a malicious user has access to the nonce value, the user may use it to bypass the Content Security Policy used to determine whether a given script will be allowed to proceed. Therefore, allowing them to run inline scripts.
+
+## WindowEventHandlers: HTMLElement.prototype
+
+This distortion blocks access to `HTMLElement.prototype.onrejectionhandled` and `HTMLElement.prototype.onunhandledrejection` in Safari.
+
+This event "onrejectionhandled" is sent to the script's global scope whenever a Promise is rejected but after the promise rejection has been handled. In tandem, the event "onunhandledrejection" is sent whenever a Promise is rejected but there is no handler for the rejection. While most events are DOM related, this Promise related event handler receives an event object containing information about the rejected promise. The type, promise, and reason properties are still available in both event handlers. A malicious user could look into the promise info, which is why this needs to be blocked.
+
+
+<a name="htmlelementdocsinnertext-settermd"></a>
+
+## set: Element.prototype.innerText [Main]
 
 ### Summary
 
-The Range.createContextualFragment() method returns a DocumentFragment by invoking the HTML fragment parsing algorithm or the XML fragment parsing algorithm with the start of the range as the context node. This range of HTML elements can be added to the DOM tree.
-
-In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert specified text as HTML into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM. We need to sanitize any elements added to this shared DOM.
+This property allows users to replace DOM inside the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
 
 ### Distorted Behavior
 
-This distortion sanitizes HTML string that is used to create the DocumentFragment.
+This distortion sanitizes and prevents text from replacing the DOM wihtin shared elements: HEAD and BODY.
 
 
-<a name="serviceworkercontainerdocsprototypemd"></a>
+<a name="htmlelementdocsname-settermd"></a>
 
-## ServiceWorkerContainer.prototype
+## set: HTML<NAME>Element.prototype.name [Main]
 
-### Problem Statement
+### Summary
 
-With `ServiceWorker`, it is possible to alter the response of a request to return JavaScript code that would be unsandboxed when evaluated by the browser.
+DOM clobbering is a technique in which you inject HTML into a page to manipulate the DOM and ultimately change the behavior of JavaScript on the page. A malicious user can inject an element with an ID value that is the same as a document property. When that document property is called, users will get the injected element instead. 
 
-**Example:**
-```js
-navigator.serviceWorker.register('/static/sw.js').then(function() {
-    window.open('/static/aaa', '_self');
-});
+The sandbox is not affected by `id` or `name` changes to its elements. DOM clobbering won't affect document properties within each sandbox. However, by adding elements to the shared document, a malicious user can change key properties such `document.cookie` on the shared document. We should prevent DOM clobbering attacks so our shared document is free of injected elements that change the behavior of JavaScript on the page.
+
+### Distorted Behavior
+
+This distortion blocks the setting of `name` attribute to a property that exists in the document.
+
+### Knowledge
+
+After consultation, we know that DOM clobbering can take place in system mode but not inside sandboxes. Even though it can pollute the system window and document, we don't see a threat to this. This distortion behavior is documented for the future if a malicious user can DOM clobbering to do something malicious.
+
+### Removed Implementation
+
+```ts
+const templateElement = createElement('template')!;
+const documentElement = templateElement.content.ownerDocument!;
+const formElement = createElement('form')!;
+
+export function isValidAttributeValue(value: string): boolean {
+    if (value in documentElement || value in formElement) {
+        return false;
+    }
+    return true;
+}
 ```
 
-**File /static/sw.js:**
-<!-- eslint-disable-next-line no-restricted-globals -->
-```js
-self.addEventListener('fetch', function(event) {
-    const unsandboxed = '<body><script>document.body.innerHTML=document.cookie;</script>';
-    event.respondWith(new Response(unsandboxed, { headers: { 'Content-Type': 'text/html' } }));
-});
+```ts
+import {
+    FunctionCall,
+    ReflectGetPrototypeOf,
+    ReflectGetOwnPropertyDescriptor,
+    toString,
+    TypeErrorCreate,
+} from '@locker/shared';
+
+import { isValidAttributeValue } from '@locker/shared-dom';
+
+import { Distortion } from '../types';
+
+export function getOriginalNameSetter(element: Function) {
+    return ReflectGetOwnPropertyDescriptor(element!.prototype, 'name')!.set;
+}
+
+export const patchedNameSetter: Distortion = function set(this: Function, value: string) {
+    value = toString(value);
+
+    const { constructor } = ReflectGetPrototypeOf(this)!;
+
+    if (!isValidAttributeValue(value)) {
+        throw TypeErrorCreate(
+            `${constructor.name} does not allow setting 'name' attribute to ${value}!`
+        );
+    }
+
+    FunctionCall(getOriginalNameSetter(constructor), this, value);
+};
 ```
+
+
+<a name="htmlelementdocsoutertext-settermd"></a>
+
+## set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]
+
+### Summary
+
+This property allows users to replace the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the HEAD and BODY with his text. Therefore, corrupting the DOM.
+
+### Distorted Behavior
+
+This distortion sanitizes and prevents text from replacing the shared elements: HEAD and BODY.
+
+Note that `outerText` [is not a standard property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText#Browser_compatibility), so the descriptor could be undefined, like in the case of Firefox. In this case, this distortion does nothing.
+
+
+<a name="shadowrootdocshost-gettermd"></a>
+
+## get: ShadowRoot.prototype.host
 
 ### Goal
 
-To prevent unsandboxed JavaScript code from leaking data, we want to disallow access to any of the `ServiceWorkerContainer.prototype` properties or methods. We do this because even though we already prevent access to `navigator.serviceWorker`, there are other ways in which user code could get access to the `ServiceWorkerContainer` singleton, so this distortion prevents access to any of its operations.
+ - To prevent scraping the light DOM through this property.
+
+### Design
+
+- Patch getter on `ShadowRoot.prototype.host` descriptor to return `null`.
 
 ### Distorted behavior
 
-This distortion will throw a `TypeError` whenever any of the `ServiceWorkerContainer.prototype` properties or methods is accessed. 
+- Each time code accesses `host` property on any element with an attached shadow
+  DOM this distortion will return `null`.
+
+
+<a name="shadowrootdocsmode-gettermd"></a>
+
+## get: ShadowRoot.prototype.mode
+
+### Goal
+
+ - To force a reported mode of 'closed'.
+
+### Design
+
+- Patch getter on `ShadowRoot.prototype.mode` descriptor to return `'closed'`.
+
+### Distorted behavior
+
+- Each time code accesses `mode` property on any element with an attached shadow
+  DOM this distortion will return `'closed'`.
 
 
 <a name="svguseelementdocshref-attributemd"></a>
@@ -940,42 +943,6 @@ Other scenarios that can be used to bypass this distortion are covered by the un
 - html-sanitizer package
 
 
-<a name="shadowrootdocshost-gettermd"></a>
-
-## get: ShadowRoot.prototype.host
-
-### Goal
-
- - To prevent scraping the light DOM through this property.
-
-### Design
-
-- Patch getter on `ShadowRoot.prototype.host` descriptor to return `null`.
-
-### Distorted behavior
-
-- Each time code accesses `host` property on any element with an attached shadow
-  DOM this distortion will return `null`.
-
-
-<a name="shadowrootdocsmode-gettermd"></a>
-
-## get: ShadowRoot.prototype.mode
-
-### Goal
-
- - To force a reported mode of 'closed'.
-
-### Design
-
-- Patch getter on `ShadowRoot.prototype.mode` descriptor to return `'closed'`.
-
-### Distorted behavior
-
-- Each time code accesses `mode` property on any element with an attached shadow
-  DOM this distortion will return `'closed'`.
-
-
 <a name="sharedworkerdocsconstructor-valuemd"></a>
 
 ## SharedWorker Global Constructor
@@ -987,6 +954,39 @@ The `SharedWorker()` constructor creates a SharedWorker object that executes the
 ### Distorted Behavior
 
 Locker will throw a `RangeError` when calling the constructor. Locker will block access to `SharedWorker.prototype`.
+
+<a name="serviceworkercontainerdocsprototypemd"></a>
+
+## ServiceWorkerContainer.prototype
+
+### Problem Statement
+
+With `ServiceWorker`, it is possible to alter the response of a request to return JavaScript code that would be unsandboxed when evaluated by the browser.
+
+**Example:**
+```js
+navigator.serviceWorker.register('/static/sw.js').then(function() {
+    window.open('/static/aaa', '_self');
+});
+```
+
+**File /static/sw.js:**
+<!-- eslint-disable-next-line no-restricted-globals -->
+```js
+self.addEventListener('fetch', function(event) {
+    const unsandboxed = '<body><script>document.body.innerHTML=document.cookie;</script>';
+    event.respondWith(new Response(unsandboxed, { headers: { 'Content-Type': 'text/html' } }));
+});
+```
+
+### Goal
+
+To prevent unsandboxed JavaScript code from leaking data, we want to disallow access to any of the `ServiceWorkerContainer.prototype` properties or methods. We do this because even though we already prevent access to `navigator.serviceWorker`, there are other ways in which user code could get access to the `ServiceWorkerContainer` singleton, so this distortion prevents access to any of its operations.
+
+### Distorted behavior
+
+This distortion will throw a `TypeError` whenever any of the `ServiceWorkerContainer.prototype` properties or methods is accessed. 
+
 
 <a name="storagedocsclear-valuemd"></a>
 
@@ -1162,6 +1162,23 @@ There are ways to read the content of a Blob/File object but they are asynchrono
 - On HTML like MIME types we enforce charset=utf-8 to prevent exploits where browser auto interprets charset and special characters that can lead to XSS.
 
 
+<a name="xmlhttprequestdocsopen-valuemd"></a>
+
+## value: XMLHttpRequest.prototype.open
+
+### Goal
+
+To prevent users from making requests to disallowed endpoints.
+
+### Design
+
+Patch the `XMLHttpRequest.prototype.open` property and intercept calls to it to block disallowed URLs.
+
+### Distorted behavior
+
+The `XMLHttpRequest.prototype.open` distortion examines the `hostname` and the `pathname` of the URL, if it matches one of the disallowed config entries, it throws an error.
+
+
 <a name="windowdocsfetch-valuemd"></a>
 
 ## value: Window.prototype.fetch [Main]
@@ -1223,23 +1240,6 @@ The `Worker()` constructor creates a Worker object that executes the script at t
 ### Distorted Behavior
 
 Locker will throw a `RangeError` when calling the constructor. Locker will block access to `Worker.prototype`.
-
-
-<a name="xmlhttprequestdocsopen-valuemd"></a>
-
-## value: XMLHttpRequest.prototype.open
-
-### Goal
-
-To prevent users from making requests to disallowed endpoints.
-
-### Design
-
-Patch the `XMLHttpRequest.prototype.open` property and intercept calls to it to block disallowed URLs.
-
-### Distorted behavior
-
-The `XMLHttpRequest.prototype.open` distortion examines the `hostname` and the `pathname` of the URL, if it matches one of the disallowed config entries, it throws an error.
 
 
 <a name="documentdocscookie-gettermd"></a>

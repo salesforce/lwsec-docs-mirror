@@ -12,7 +12,7 @@ The following `window.top` references are prohibited or fixable to `window`:
 -   `self.top`
 -   `window.top`
 
-:bulb: The `@locker/rollup-plugin` may also be used to transform `window.top`
+:bulb: The [`@locker/rollup-plugin`] may also be used to transform `window.top`
 references to `window`.
 
 ## Rule Details
@@ -31,3 +31,5 @@ if (window.top === null) {
     // ...
 }
 ```
+
+[`@locker/rollup-plugin`]: https://www.npmjs.com/package/@locker/rollup-plugin
