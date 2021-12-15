@@ -33,7 +33,7 @@ The value of `contentDocument` may be `null` so we enforce that it is.
 ### Distorted behavior
 
 - Always return `null` for `contentDocument`
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLIFrameElement/docs/contentDocument-getter.md -->
 ## get: HTMLIFrameElement.prototype.contentDocument
@@ -54,7 +54,7 @@ The value of `contentDocument` may be `null` so we enforce that it is.
 ### Distorted behavior
 
 - Always return `null` for `contentDocument`
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLObjectElement/docs/contentDocument-getter.md -->
 ## get: HTMLObjectElement.prototype.contentDocument
@@ -75,4 +75,4 @@ The value of `contentDocument` may be `null` so we enforce that it is.
 ### Distorted behavior
 
 - Always return `null` for `contentDocument`
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->

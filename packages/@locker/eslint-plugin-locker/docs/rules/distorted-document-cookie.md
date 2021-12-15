@@ -18,7 +18,7 @@ Along access to the global window object, protecting access to cookies is absolu
 ### Distorted behavior
 
 - The getter will return only sandbox cookies. The behavior will seem native-like.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Document/docs/cookie-setter.md -->
 ## set: Document.prototype.cookie
@@ -36,4 +36,4 @@ Patching the setter of `Document.prototype.cookie` is required in order for the 
 ### Distorted behavior
 
 - The behavior will seem native like.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->

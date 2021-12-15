@@ -18,4 +18,4 @@ all `<frame>` and `<iframe>` elements in the document, in insertion order. Suppo
 access via index or name property value. `window.frames` does not allow access to
 `window`, ie. `window.frames !== window`, and does not provide proxy access to
 `window` properties.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
