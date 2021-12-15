@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented Locker vNext Distortions.
 
-Version: 0.12.10<br>
-Generated: Feb 12, 2021
+Version: 0.12.12<br>
+Generated: Feb 24, 2021
 
 ## Table of Contents
 
@@ -112,15 +112,20 @@ Generated: Feb 12, 2021
   - [Goal](#goal-13)
   - [Design](#design-13)
   - [Distorted behavior](#distorted-behavior-13)
-- [value: NamedNodeMap.prototype.setNamedItem](#value-namednodemapprototypesetnameditem)
+- [get: MessageEvent.prototype.source](#get-messageeventprototypesource)
   - [Goal](#goal-14)
   - [Design](#design-14)
+  - [Design](#design-15)
   - [Distorted behavior](#distorted-behavior-14)
+- [value: NamedNodeMap.prototype.setNamedItem](#value-namednodemapprototypesetnameditem)
+  - [Goal](#goal-15)
+  - [Design](#design-16)
+  - [Distorted behavior](#distorted-behavior-15)
 - [get: Navigator.prototype.serviceWorker](#get-navigatorprototypeserviceworker)
   - [Problem statement](#problem-statement)
-  - [Goal](#goal-15)
-  - [Design](#design-15)
-  - [Distorted behavior](#distorted-behavior-15)
+  - [Goal](#goal-16)
+  - [Design](#design-17)
+  - [Distorted behavior](#distorted-behavior-16)
 - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
   - [Summary](#summary-12)
   - [Distorted Behavior](#distorted-behavior-12)
@@ -129,20 +134,20 @@ Generated: Feb 12, 2021
   - [Distorted Behavior](#distorted-behavior-13)
 - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
   - [Summary](#summary-14)
-  - [Design](#design-16)
+  - [Design](#design-18)
   - [Dependencies](#dependencies)
 - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
   - [Problem Statement](#problem-statement)
-  - [Goal](#goal-16)
-  - [Distorted behavior](#distorted-behavior-16)
-- [get: ShadowRoot.prototype.host](#get-shadowrootprototypehost)
   - [Goal](#goal-17)
-  - [Design](#design-17)
   - [Distorted behavior](#distorted-behavior-17)
-- [get: ShadowRoot.prototype.mode](#get-shadowrootprototypemode)
+- [get: ShadowRoot.prototype.host](#get-shadowrootprototypehost)
   - [Goal](#goal-18)
-  - [Design](#design-18)
+  - [Design](#design-19)
   - [Distorted behavior](#distorted-behavior-18)
+- [get: ShadowRoot.prototype.mode](#get-shadowrootprototypemode)
+  - [Goal](#goal-19)
+  - [Design](#design-20)
+  - [Distorted behavior](#distorted-behavior-19)
 - [SharedWorker Global Constructor](#sharedworker-global-constructor)
   - [Summary](#summary-15)
   - [Distorted Behavior](#distorted-behavior-14)
@@ -168,13 +173,13 @@ Generated: Feb 12, 2021
   - [Summary](#summary-22)
   - [Distorted Behavior](#distorted-behavior-21)
 - [value: URL.createObjectURL](#value-urlcreateobjecturl)
-  - [Goal](#goal-19)
-  - [Design](#design-19)
-  - [Distorted behavior](#distorted-behavior-19)
-- [Window.fetch](#windowfetch)
   - [Goal](#goal-20)
-  - [Design](#design-20)
+  - [Design](#design-21)
   - [Distorted behavior](#distorted-behavior-20)
+- [Window.fetch](#windowfetch)
+  - [Goal](#goal-21)
+  - [Design](#design-22)
+  - [Distorted behavior](#distorted-behavior-21)
   - [Disallowed endpoints](#disallowed-endpoints)
 - [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
   - [Summary](#summary-23)
@@ -189,9 +194,9 @@ Generated: Feb 12, 2021
   - [Summary](#summary-26)
   - [Distorted Behavior](#distorted-behavior-25)
 - [XMLHttpRequest.open](#xmlhttprequestopen)
-  - [Goal](#goal-21)
-  - [Design](#design-21)
-  - [Distorted behavior](#distorted-behavior-21)
+  - [Goal](#goal-22)
+  - [Design](#design-23)
+  - [Distorted behavior](#distorted-behavior-22)
   - [Disallowed endpoints](#disallowed-endpoints-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -876,6 +881,36 @@ We need to satisfy a few requirements:
 
 - Store original value on `data-distorted-src`, store distorted value on `src`. 
 - The behavior will seem native like to code running in the sandbox.
+<hr>
+<a name="messageeventdocssource-gettermd"></a>
+
+## get: MessageEvent.prototype.source
+
+The source read-only property of the MessageEvent is a property that represents
+the message emitter. This issue was discovered during a pentest. A malicious user
+can open a new browser tab that contains a postMessage to the current browser. 
+After that, the current browser can access the raw window without distortions.
+
+### Goal
+
+- Do not expose the raw `window` in the sandbox.
+
+### Design
+
+Create an artificial `window` object if source property is a window.
+Allow certain properties for curated list.
+
+### Design
+
+Create an artificial `window` object with a curated list of properties.
+  - close
+  - closed
+  - focus
+  - postMessage
+
+### Distorted behavior
+- Return an artificial `window` object for source.
+- Cache the artificial `window` object for subsequent accesses.
 <hr>
 <a name="namednodemapdocssetnameditem-valuemd"></a>
 
