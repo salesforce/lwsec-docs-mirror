@@ -1,6 +1,7 @@
-# Prevent access to certain HTML{Embed|Object}Element properties (distorted-html-embed-object-element-blocked-properties)
+# Distorted HTML{Embed|Object}Element Blocked Properties (distorted-html-embed-object-element-blocked-properties)
 
-The following `HTML{Embed|Object}Element` properties are prohibited when Lightning Web Security is enabled:
+For security the following `HTML{Embed|Object}Element` properties are prohibited
+in Lightning Locker:
 -   getSVGDocument
 
 ## Rule Details

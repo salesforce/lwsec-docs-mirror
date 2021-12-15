@@ -1,6 +1,6 @@
-# Prevent access to certain HTMLIFrameElement properties (distorted-html-iframe-element-blocked-properties)
+# Distorted HTMLIFrameElement Blocked Properties (distorted-html-iframe-element-blocked-properties)
 
-For security the following `HTMLIFrameElement` properties are prohibited when Lightning Web Security is enabled:
+For security the following `HTMLIFrameElement` properties are prohibited in Lightning Locker:
 -   allowPaymentRequest
 -   csp
 -   featurePolicy
@@ -13,5 +13,5 @@ For security the following `HTMLIFrameElement` properties are prohibited when Li
 Example of **incorrect** code:
 
 ```js
-document.getElementsByTagName('iframe')[0].allowPaymentRequest;
+iframe.allowPaymentRequest;
 ```
