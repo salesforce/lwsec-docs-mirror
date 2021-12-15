@@ -1,11 +1,13 @@
-# Prevent access to document.all (undefined-document-all)
+# Undefined document.all (undefined-document-all)
 
-The `document.all` getter returns `undefined` when Lightning Web Security is enabled.
+The value of `document.all` in Lightning Locker is `undefined`. This isn’t
+likely to break code but is something to be aware of.
 
 ## Rule Details
 
 Example of **incorrect** code:
 
+<!-- eslint-disable-next-line no-unused-expressions -->
 ```js
 document.all[0];
 ```

@@ -1,26 +1,26 @@
 # Disallow Blocked Document Properties (blocked-document-properties)
 
-For security the following `Document` properties are prohibited in Lightning Locker:
--   exitFullscreen
--   fullscreen
--   fullscreenElement
--   fullscreenEnabled
--   mozCancelFullScreen
--   mozFullScreen
--   mozFullScreenElement
--   mozFullScreenEnabled
--   onfullscreenchange
--   onfullscreenerror
--   onmozfullscreenchange
--   onmozfullscreenerror
--   onrejectionhandled
--   onsecuritypolicyviolation
--   onunhandledrejection
--   releaseCapture
--   releaseEvents
--   webkitFullScreenKeyboardInputAllowed
--   write
--   writeln
+For security the following Document properties are prohibited in Lightning Locker:
+    * exitFullscreen
+    * fullscreen
+    * fullscreenElement
+    * fullscreenEnabled
+    * mozCancelFullScreen
+    * mozFullScreen
+    * mozFullScreenElement
+    * mozFullScreenEnabled
+    * onfullscreenchange
+    * onfullscreenerror
+    * onmozfullscreenchange
+    * onmozfullscreenerror
+    * onrejectionhandled
+    * onsecuritypolicyviolation
+    * onunhandledrejection
+    * releaseCapture
+    * releaseEvents
+    * webkitFullScreenKeyboardInputAllowed
+    * write
+    * writeln
 
 ## Rule Details
 
