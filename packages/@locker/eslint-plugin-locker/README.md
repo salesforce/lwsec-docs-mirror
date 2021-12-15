@@ -51,7 +51,6 @@ sharable configuration package.
 | [@locker/locker/no-dynamic-import] | disallow dynamic `import` | [`@locker/rollup-plugin`] |
 | [@locker/locker/no-import-platform-resource-loader] | disallow `import` or `export` from `'lightning/platformResourceLoader'`|   |
 | [@locker/locker/null-document-location] | `document.location` is `'null'` | [`@locker/rollup-plugin`] |
-| [@locker/locker/null-shadow-root-host] | `shadowRoot.host` is `'null'` |   |
 | [@locker/locker/null-window-top] | `window.top` is `'null' ` | [`--fix`] or [`@locker/rollup-plugin`] |
 
 [`@locker/rollup-plugin`]:
@@ -78,8 +77,6 @@ https://github.com/salesforce/locker/tree/master/packages/%40locker/eslint-plugi
 https://github.com/salesforce/locker/tree/master/packages/%40locker/eslint-plugin-locker/docs/rules/no-import-platform-resource-loader.md
 [@locker/locker/null-document-location]:
 https://github.com/salesforce/locker/tree/master/packages/%40locker/eslint-plugin-locker/docs/rules/null-document-location.md
-[@locker/locker/null-shadow-root-host]:
-https://github.com/salesforce/locker/tree/master/packages/%40locker/eslint-plugin-locker/docs/rules/null-shadow-root-host.md
 [@locker/locker/null-window-top]:
 https://github.com/salesforce/locker/tree/master/packages/%40locker/eslint-plugin-locker/docs/rules/null-window-top.md
 [ESLint]:
