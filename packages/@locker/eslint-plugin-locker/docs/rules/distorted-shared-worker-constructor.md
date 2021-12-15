@@ -24,4 +24,4 @@ The `SharedWorker()` constructor creates a SharedWorker object that executes the
 ### Distorted Behavior
 
 Locker will throw a `RangeError` when calling the constructor. Locker will block access to `SharedWorker.prototype`.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

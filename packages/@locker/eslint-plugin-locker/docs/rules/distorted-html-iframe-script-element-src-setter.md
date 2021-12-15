@@ -18,7 +18,7 @@ Only allow `src` values with validated schemes to be set.
 ### Distorted behavior
 - Log a console warning for HTMLIFrameElement.src values that don't sanitize
   to http:// or https:// schemes
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLScriptElement/docs/src-setter.md -->
 ## set: HTMLScriptElement.prototype.src
@@ -50,4 +50,4 @@ We need to satisfy a few requirements:
 
 - Store original value on `data-distorted-src`, store distorted value on `src`. 
 - The behavior will seem native like to code running in the sandbox.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

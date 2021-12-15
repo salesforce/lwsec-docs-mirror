@@ -17,4 +17,4 @@ For security the `ShadowRoot#mode` getter is distorted in Lightning Locker.
 
 - Each time code accesses `mode` property on any element with an attached shadow
   DOM this distortion will return `'closed'`.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

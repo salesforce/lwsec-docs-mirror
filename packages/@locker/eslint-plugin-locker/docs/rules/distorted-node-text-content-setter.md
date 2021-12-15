@@ -12,4 +12,4 @@ This property allows users to replace DOM inside the element with his text. In L
 ### Distorted Behavior
 
 This distortion sanitizes and prevents text from replacing the DOM within shared elements: HEAD and BODY.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

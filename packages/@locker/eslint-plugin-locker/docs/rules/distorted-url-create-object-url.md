@@ -49,5 +49,4 @@ There are ways to read the content of a Blob/File object but they are asynchrono
 - All commonly used and non-malicious MIME types will not be affected.
 - All Blob/Files using html like MIME types which do not represent a threat will be allowed.
 - On HTML like MIME types we enforce charset=utf-8 to prevent exploits where browser auto interprets charset and special characters that can lead to XSS.
-- Empty MIME types on File and Blob objects will automatically be normalized to 'text/plain' since browsers treat this differently.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

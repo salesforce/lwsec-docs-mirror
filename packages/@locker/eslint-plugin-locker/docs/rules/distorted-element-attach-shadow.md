@@ -15,4 +15,4 @@ the scripting environment allowing other namespaces access.
 
 This distortion throws for any `mode` that is not `'closed'`, guarding against
 additional modes added at later time, to prevent exposing the shadow DOM.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->
