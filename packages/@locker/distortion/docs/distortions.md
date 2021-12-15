@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented Locker vNext Distortions.
 
-Version: 0.13.1<br>
-Generated: Mar 31, 2021
+Version: 0.13.2<br>
+Generated: Apr 7, 2021
 
 ## Table of Contents
 
@@ -61,49 +61,36 @@ Generated: Mar 31, 2021
   - [Goal](#goal-10)
   - [Design](#design-10)
   - [Distorted behavior](#distorted-behavior-6)
-- [set: Element.prototype.id [Main]](#set-elementprototypeid-main)
-  - [Summary](#summary-2)
-  - [Distorted Behavior](#distorted-behavior-6)
-  - [Knowledge](#knowledge)
-  - [Removed Implementation](#removed-implementation)
 - [Fullscreen API: Element.prototype](#fullscreen-api-elementprototype)
 - [set: Element.prototype.innerHTML [Main]](#set-elementprototypeinnerhtml-main)
+  - [Summary](#summary-2)
+  - [Distorted Behavior](#distorted-behavior-6)
+- [set: Element.prototype.insertAdjacentHTML [Main]](#set-elementprototypeinsertadjacenthtml-main)
   - [Summary](#summary-3)
   - [Distorted Behavior](#distorted-behavior-7)
-- [set: Element.prototype.insertAdjacentHTML [Main]](#set-elementprototypeinsertadjacenthtml-main)
+- [set: Element.prototype.outerHTML [Main]](#set-elementprototypeouterhtml-main)
   - [Summary](#summary-4)
   - [Distorted Behavior](#distorted-behavior-8)
-- [set: Element.prototype.insertAdjacentText [Main]](#set-elementprototypeinsertadjacenttext-main)
-  - [Summary](#summary-5)
-  - [Distorted Behavior](#distorted-behavior-9)
-  - [Knowledge](#knowledge-1)
-  - [Removed Implementation](#removed-implementation-1)
-- [set: Element.prototype.outerHTML [Main]](#set-elementprototypeouterhtml-main)
-  - [Summary](#summary-6)
-  - [Distorted Behavior](#distorted-behavior-10)
 - [value: Element.prototype.setAttribute](#value-elementprototypesetattribute)
   - [Goal](#goal-11)
   - [Design](#design-11)
   - [Distorted behavior](#distorted-behavior-7)
 - [get: Element.prototype.shadowRoot [Main]](#get-elementprototypeshadowroot-main)
-  - [Summary](#summary-7)
-  - [Distorted Behavior](#distorted-behavior-11)
+  - [Summary](#summary-5)
+  - [Distorted Behavior](#distorted-behavior-9)
 - [nonce: HTMLElement.prototype](#nonce-htmlelementprototype)
 - [WindowEventHandlers: HTMLElement.prototype](#windoweventhandlers-htmlelementprototype)
-- [set: Element.prototype.innerText [Main]](#set-elementprototypeinnertext-main)
+- [set: HTML<NAME>Element.prototype.name [Main]](#set-htmlnameelementprototypename-main)
+  - [Summary](#summary-6)
+  - [Distorted Behavior](#distorted-behavior-10)
+  - [Knowledge](#knowledge)
+  - [Removed Implementation](#removed-implementation)
+- [set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]](#set-elementprototypeoutertext-chrome-edge-opera-safari)
+  - [Summary](#summary-7)
+  - [Distorted Behavior](#distorted-behavior-11)
+- [get: HTMLElement.prototype.style [Chrome, Edge, Opera, Safari]](#get-htmlelementprototypestyle-chrome-edge-opera-safari)
   - [Summary](#summary-8)
   - [Distorted Behavior](#distorted-behavior-12)
-- [set: HTML<NAME>Element.prototype.name [Main]](#set-htmlnameelementprototypename-main)
-  - [Summary](#summary-9)
-  - [Distorted Behavior](#distorted-behavior-13)
-  - [Knowledge](#knowledge-2)
-  - [Removed Implementation](#removed-implementation-2)
-- [set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]](#set-elementprototypeoutertext-chrome-edge-opera-safari)
-  - [Summary](#summary-10)
-  - [Distorted Behavior](#distorted-behavior-14)
-- [get: HTMLElement.prototype.style [Chrome, Edge, Opera, Safari]](#get-htmlelementprototypestyle-chrome-edge-opera-safari)
-  - [Summary](#summary-11)
-  - [Distorted Behavior](#distorted-behavior-15)
 - [get: HTMLFrameElement.prototype.contentWindow](#get-htmlframeelementprototypecontentwindow)
   - [Goal](#goal-12)
   - [Design](#design-12)
@@ -143,18 +130,18 @@ Generated: Mar 31, 2021
   - [Design](#design-21)
   - [Distorted behavior](#distorted-behavior-16)
 - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
-  - [Summary](#summary-12)
-  - [Distorted Behavior](#distorted-behavior-16)
+  - [Summary](#summary-9)
+  - [Distorted Behavior](#distorted-behavior-13)
 - [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
-  - [Summary](#summary-13)
-  - [Distorted Behavior](#distorted-behavior-17)
+  - [Summary](#summary-10)
+  - [Distorted Behavior](#distorted-behavior-14)
 - [href attribute on SVGScriptElement](#href-attribute-on-svgscriptelement)
-  - [Summary](#summary-14)
+  - [Summary](#summary-11)
   - [Goal](#goal-21)
-  - [Distorted Behavior](#distorted-behavior-18)
-  - [Distorted Behavior](#distorted-behavior-19)
+  - [Distorted Behavior](#distorted-behavior-15)
+  - [Distorted Behavior](#distorted-behavior-16)
 - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
-  - [Summary](#summary-15)
+  - [Summary](#summary-12)
   - [Design](#design-22)
   - [Dependencies](#dependencies)
 - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
@@ -170,29 +157,29 @@ Generated: Mar 31, 2021
   - [Design](#design-24)
   - [Distorted behavior](#distorted-behavior-19)
 - [SharedWorker Global Constructor](#sharedworker-global-constructor)
+  - [Summary](#summary-13)
+  - [Distorted Behavior](#distorted-behavior-17)
+- [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
+  - [Summary](#summary-14)
+  - [Distorted Behavior](#distorted-behavior-18)
+- [Storage API: Storage.prototype](#storage-api-storageprototype)
+  - [Summary](#summary-15)
+  - [Distorted Behavior](#distorted-behavior-19)
+- [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
   - [Summary](#summary-16)
   - [Distorted Behavior](#distorted-behavior-20)
-- [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
+- [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
   - [Summary](#summary-17)
   - [Distorted Behavior](#distorted-behavior-21)
-- [Storage API: Storage.prototype](#storage-api-storageprototype)
+- [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
   - [Summary](#summary-18)
   - [Distorted Behavior](#distorted-behavior-22)
-- [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
+- [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
   - [Summary](#summary-19)
   - [Distorted Behavior](#distorted-behavior-23)
-- [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
+- [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
   - [Summary](#summary-20)
   - [Distorted Behavior](#distorted-behavior-24)
-- [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
-  - [Summary](#summary-21)
-  - [Distorted Behavior](#distorted-behavior-25)
-- [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
-  - [Summary](#summary-22)
-  - [Distorted Behavior](#distorted-behavior-26)
-- [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
-  - [Summary](#summary-23)
-  - [Distorted Behavior](#distorted-behavior-27)
 - [value: URL.createObjectURL](#value-urlcreateobjecturl)
   - [Goal](#goal-25)
   - [Design](#design-25)
@@ -203,23 +190,23 @@ Generated: Mar 31, 2021
   - [Distorted behavior](#distorted-behavior-21)
   - [Disallowed endpoints](#disallowed-endpoints)
 - [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
+  - [Summary](#summary-21)
+  - [Distorted Behavior](#distorted-behavior-25)
+- [get: window.opener [Main]](#get-windowopener-main)
+  - [Summary](#summary-22)
+  - [Distorted Behavior](#distorted-behavior-26)
+- [get: window.parent [Main]](#get-windowparent-main)
+  - [Summary](#summary-23)
+  - [Distorted Behavior](#distorted-behavior-27)
+- [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
   - [Summary](#summary-24)
   - [Distorted Behavior](#distorted-behavior-28)
-- [get: window.opener [Main]](#get-windowopener-main)
+- [value: Window.prototype.setTimeout [Main]](#value-windowprototypesettimeout-main)
   - [Summary](#summary-25)
   - [Distorted Behavior](#distorted-behavior-29)
-- [get: window.parent [Main]](#get-windowparent-main)
+- [Worker Global Constructor](#worker-global-constructor)
   - [Summary](#summary-26)
   - [Distorted Behavior](#distorted-behavior-30)
-- [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
-  - [Summary](#summary-27)
-  - [Distorted Behavior](#distorted-behavior-31)
-- [value: Window.prototype.setTimeout [Main]](#value-windowprototypesettimeout-main)
-  - [Summary](#summary-28)
-  - [Distorted Behavior](#distorted-behavior-32)
-- [Worker Global Constructor](#worker-global-constructor)
-  - [Summary](#summary-29)
-  - [Distorted Behavior](#distorted-behavior-33)
 - [XMLHttpRequest.open](#xmlhttprequestopen)
   - [Goal](#goal-27)
   - [Design](#design-27)
@@ -471,61 +458,6 @@ The attributes collection is of type NamedNodeMap and can be used to set and rem
 
 -   no distorted behavior
 <hr>
-<a name="elementdocsid-settermd"></a>
-
-## set: Element.prototype.id [Main]
-
-### Summary
-
-DOM clobbering is a technique in which you inject HTML into a page to manipulate the DOM and ultimately change the behavior of JavaScript on the page. A malicious user can inject an element with an ID value that is the same as a document property. When that document property is called, users will get the injected element instead.
-
-The sandbox is not effected by "id" or "name" changes to it's elements. DOM clobbering won't effect document properties within each sandbox. However, by adding elements to the shared document, a malicious user can change key properties such "document.cookie" on the shared document. We should prevent DOM clobbering attacks so our shared document is free of injected elements that change the behavior of JavaScript on the page.
-
-### Distorted Behavior
-
-This distortion blocks the setting of 'id' attribute to a property that exists in the document.
-
-### Knowledge
-
-After consultation, we know that DOM clobbering can take place in system mode but not inside sandboxes. Even though it can pollute the system window and document, we don't see a threat to this. This distortion behavior is documented for the future if a malicious user can DOM clobbering to do something malicious.
-
-### Removed Implementation
-
-```ts
-const templateElement = createElement('template')!;
-const documentElement = templateElement.content.ownerDocument!;
-const formElement = createElement('form')!;
-
-export function isValidAttributeValue(value: string): boolean {
-    if (value in documentElement || value in formElement) {
-        return false;
-    }
-    return true;
-}
-```
-
-```ts
-import {
-    ObjectLookupOwnSetter,
-    ReflectApply,
-    ReflectGetOwnPropertyDescriptor,
-    TypeErrorCtor,
-    toString,
-} from '@locker/shared';
-import { isValidAttributeValue } from '@locker/shared-dom';
-import { Distortion } from '../types';
-
-export const originalIdSetter = ObjectLookupOwnSetter(Element.prototype, 'id');
-
-export const patchedIdSetter: Distortion = function set(this: Element, value: string) {
-    value = toString(value);
-    if (!isValidAttributeValue(value)) {
-        throw new TypeErrorCtor(`Element does not allow setting 'id' attribute to ${value}!`);
-    }
-    ReflectApply(originalIdSetter, this, [value]);
-};
-```
-<hr>
 <a name="elementdocsindexmd"></a>
 
 ## Fullscreen API: Element.prototype
@@ -563,63 +495,6 @@ In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existi
 ### Distorted Behavior
 
 This distortion sanitizes HTML being added.
-<hr>
-<a name="elementdocsinsertadjacenttext-valuemd"></a>
-
-## set: Element.prototype.insertAdjacentText [Main]
-
-### Summary
-
-In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert text into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM.
-
-### Distorted Behavior
-
-This distortion prevents text from being added outside of the shared elements: HEAD and BODY. When position is not of 'beforebegin', 'afterbegin', 'beforeend' or 'afterend' of an element, we throw.
-
-### Knowledge
-
-After consultation, we have validated that new head and body attributes can't be added. Will not be needed.
-
-### Removed Implementation
-
-```ts
-import {
-    ObjectLookupOwnGetter,
-    ReflectApply,
-    ReflectGetOwnPropertyDescriptor,
-    StringToLowerCase,
-    TypeErrorCtor,
-    emptyArray,
-    toString,
-} from '@locker/shared';
-import { isSharedElement } from '@locker/shared-dom';
-import { Distortion } from '../types';
-
-export const {
-    insertAdjacentText: originalInsertAdjacentTextValue
-} = Element.prototype;
-
-const originalTagNameGetter = ObjectLookupOwnGetter(Element.prototype, 'tagName');
-
-export const patchedInsertAdjacentTextValue: Distortion = function value(
-    this: Element,
-    position: string,
-    value: string
-) {
-    position = StringToLowerCase(toString(position));
-    const tagName = ReflectApply(originalTagNameGetter, this, emptyArray);
-    if (
-        isSharedElement(this) &&
-        (position === 'beforebegin' || position === 'afterend')
-    ) {
-        throw new TypeErrorCtor(
-            `Element.insertAdjacentText cannot be set outside of ${tagName} elements!`
-        );
-    }
-    value = toString(value);
-    ReflectApply(originalInsertAdjacentTextValue, this, [position, value]);
-};
-```
 <hr>
 <a name="elementdocsouterhtml-settermd"></a>
 
@@ -717,18 +592,6 @@ In Locker, we do not allow the use of inline scripts. If a malicious user has ac
 This distortion blocks access to `HTMLElement.prototype.onrejectionhandled` and `HTMLElement.prototype.onunhandledrejection` in Safari.
 
 This event "onrejectionhandled" is sent to the script's global scope whenever a Promise is rejected but after the promise rejection has been handled. In tandem, the event "onunhandledrejection" is sent whenever a Promise is rejected but there is no handler for the rejection. While most events are DOM related, this Promise related event handler receives an event object containing information about the rejected promise. The type, promise, and reason properties are still available in both event handlers. A malicious user could look into the promise info, which is why this needs to be blocked.
-<hr>
-<a name="htmlelementdocsinnertext-settermd"></a>
-
-## set: Element.prototype.innerText [Main]
-
-### Summary
-
-This property allows users to replace DOM inside the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
-
-### Distorted Behavior
-
-This distortion sanitizes and prevents text from replacing the DOM wihtin shared elements: HEAD and BODY.
 <hr>
 <a name="htmlelementdocsname-settermd"></a>
 
