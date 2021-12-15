@@ -76,4 +76,4 @@ native method with sanitized arguments
 - sanitization of arguments to prevent shapeshifting attacks
 - Native like behavior unless a registered distortion needs to be executed at
 which point the behavior is dependent on the execution of that distortion.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

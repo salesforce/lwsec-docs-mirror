@@ -1,6 +1,6 @@
 # Disallow Blocked Document Properties (blocked-document-properties)
 
-For security the following Document properties are prohibited in Lightning Locker:
+For security the following `Document` properties are prohibited in Lightning Locker:
 -   exitFullscreen
 -   fullscreen
 -   fullscreenElement

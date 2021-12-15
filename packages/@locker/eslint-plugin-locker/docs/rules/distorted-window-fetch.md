@@ -25,4 +25,4 @@ Locker disallows endpoints:
 - Containing `"/webruntime"` in the URL.
 
 At the moment this is hard coded, but in the future this will be a configuration option.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

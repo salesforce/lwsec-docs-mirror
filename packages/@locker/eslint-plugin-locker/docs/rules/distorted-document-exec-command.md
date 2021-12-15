@@ -14,4 +14,4 @@ In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existi
 ### Distorted Behavior
 
 This distortion sanitizes HTML string being inserted.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

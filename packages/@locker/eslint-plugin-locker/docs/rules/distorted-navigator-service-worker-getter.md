@@ -1,18 +1,6 @@
-# Prevent access to Navigator.serviceWorker and ServiceWorkerContainer properties and methods(distorted-navigator-service-worker-getter)
+# Distorted Navigator#serviceWorker Getter (distorted-navigator-service-worker-getter)
 
-`Navigator.serviceWorker` returns `undefined` and accessing `ServiceWorkerContainer` properties and methods throws a `TypeError` when Lightning Web Security is enabled.
-
-See [Related Distortions](#related-distortions) below for more details.
-
-## Rule Details
-
-Example of **incorrect** code:
-
-```js
-navigator.serviceWorker.controller;
-```
-
-## Related Distortions
+For security the `Navigator#serviceWorker` getter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Navigator/docs/serviceWorker-getter.md -->
 ## get: Navigator.prototype.serviceWorker
@@ -47,7 +35,7 @@ Patch getter on `Navigator.prototype.serviceWorker` descriptor to return `undefi
 ### Distorted behavior
 
 Each time code accesses `navigator.serviceWorker` property, this distortion will return `undefined`.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->
 
 <!-- START generated embed: @locker/distortion/src/ServiceWorkerContainer/docs/prototype-value.md -->
 ## value: ServiceWorkerContainer.prototype
@@ -78,4 +66,4 @@ To prevent unsandboxed JavaScript code from leaking data, we want to disallow ac
 ### Distorted behavior
 
 This distortion will throw a `TypeError` whenever any of the `ServiceWorkerContainer.prototype` properties or methods is accessed.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

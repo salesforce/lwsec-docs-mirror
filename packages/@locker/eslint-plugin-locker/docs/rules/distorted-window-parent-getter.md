@@ -12,4 +12,4 @@ The Window interface's `parent` property returns a reference to the parent of th
 ### Distorted Behavior
 
 Locker will return a patched `Window` object that contains specific safe methods we allow.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

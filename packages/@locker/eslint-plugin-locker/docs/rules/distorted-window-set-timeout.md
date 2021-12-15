@@ -12,4 +12,4 @@ The `setTimeout` method, repeatedly calls a function or executes a code snippet,
 ### Distorted Behavior
 
 If the first argument provided to `setTimeout` is a string value, this distortion evaluates it in the sandbox.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

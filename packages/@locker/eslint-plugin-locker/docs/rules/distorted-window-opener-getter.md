@@ -14,4 +14,4 @@ In other words, if window A opens window B, B.opener returns A.
 ### Distorted Behavior
 
 Locker will return an artificial `Window` object that contains specific safe methods we allow.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

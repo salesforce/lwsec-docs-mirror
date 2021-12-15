@@ -34,4 +34,4 @@ The registry is a WeakMap since elements can be removed from the page throughout
 
 - if no distortion is found for an Attr instance then proceed with native invocation of setNamedItem
 - if a distortion exists then the distorted behavior is relative to what that distortion does
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

@@ -12,4 +12,4 @@ This property allows users to replace the element with nodes parsed from the giv
 ### Distorted Behavior
 
 This distortion sanitizes and prevents HTML from replacing the shared elements: HEAD and BODY.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

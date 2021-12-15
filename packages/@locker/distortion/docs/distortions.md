@@ -1,9 +1,9 @@
 # Locker vNext Distortions
 
-This is the list of the currently implemented Locker vNext Distortions.
+This is the list of the currently implemented Locker vNext distortions.
 
-Version: 0.13.5<br>
-Generated: May 18, 2021
+Version: 0.13.6<br>
+Generated: Jun 22, 2021
 
 ## Table of Contents
 
@@ -80,22 +80,17 @@ Generated: May 18, 2021
   - [Distorted Behavior](#distorted-behavior-9)
 - [nonce: HTMLElement.prototype](#nonce-htmlelementprototype)
 - [WindowEventHandlers: HTMLElement.prototype](#windoweventhandlers-htmlelementprototype)
-- [set: HTML<NAME>Element.prototype.name [Main]](#set-htmlnameelementprototypename-main)
+- [set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]](#set-elementprototypeoutertext-chrome-edge-opera-safari)
   - [Summary](#summary-6)
   - [Distorted Behavior](#distorted-behavior-10)
-  - [Knowledge](#knowledge)
-  - [Removed Implementation](#removed-implementation)
-- [set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]](#set-elementprototypeoutertext-chrome-edge-opera-safari)
+- [get: HTMLElement.prototype.style [Chrome, Edge, Opera, Safari]](#get-htmlelementprototypestyle-chrome-edge-opera-safari)
   - [Summary](#summary-7)
   - [Distorted Behavior](#distorted-behavior-11)
-- [get: HTMLElement.prototype.style [Chrome, Edge, Opera, Safari]](#get-htmlelementprototypestyle-chrome-edge-opera-safari)
-  - [Summary](#summary-8)
-  - [Distorted Behavior](#distorted-behavior-12)
 - [get: HTMLFrameElement.prototype.contentWindow](#get-htmlframeelementprototypecontentwindow)
   - [Goal](#goal-12)
   - [Design](#design-12)
   - [Distorted behavior](#distorted-behavior-8)
-- [get: HTMLIframeElement.prototype.contentWindow](#get-htmliframeelementprototypecontentwindow)
+- [get: HTMLIFrameElement.prototype.contentWindow](#get-htmliframeelementprototypecontentwindow)
   - [Goal](#goal-13)
   - [Design](#design-13)
   - [Distorted behavior](#distorted-behavior-9)
@@ -130,21 +125,21 @@ Generated: May 18, 2021
   - [Design](#design-21)
   - [Distorted behavior](#distorted-behavior-16)
 - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
+  - [Summary](#summary-8)
+  - [Distorted Behavior](#distorted-behavior-12)
+- [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
   - [Summary](#summary-9)
   - [Distorted Behavior](#distorted-behavior-13)
-- [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
-  - [Summary](#summary-10)
-  - [Distorted Behavior](#distorted-behavior-14)
 - [href attribute on SVGScriptElement](#href-attribute-on-svgscriptelement)
-  - [Summary](#summary-11)
+  - [Summary](#summary-10)
   - [Goal](#goal-21)
+  - [Distorted Behavior](#distorted-behavior-14)
   - [Distorted Behavior](#distorted-behavior-15)
-  - [Distorted Behavior](#distorted-behavior-16)
 - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
-  - [Summary](#summary-12)
+  - [Summary](#summary-11)
   - [Design](#design-22)
   - [Dependencies](#dependencies)
-- [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
+- [value: ServiceWorkerContainer.prototype](#value-serviceworkercontainerprototype)
   - [Problem Statement](#problem-statement)
   - [Goal](#goal-22)
   - [Distorted behavior](#distorted-behavior-17)
@@ -153,29 +148,29 @@ Generated: May 18, 2021
   - [Design](#design-23)
   - [Distorted behavior](#distorted-behavior-18)
 - [SharedWorker Global Constructor](#sharedworker-global-constructor)
+  - [Summary](#summary-12)
+  - [Distorted Behavior](#distorted-behavior-16)
+- [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
   - [Summary](#summary-13)
   - [Distorted Behavior](#distorted-behavior-17)
-- [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
+- [Storage API: Storage.prototype](#storage-api-storageprototype)
   - [Summary](#summary-14)
   - [Distorted Behavior](#distorted-behavior-18)
-- [Storage API: Storage.prototype](#storage-api-storageprototype)
+- [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
   - [Summary](#summary-15)
   - [Distorted Behavior](#distorted-behavior-19)
-- [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
+- [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
   - [Summary](#summary-16)
   - [Distorted Behavior](#distorted-behavior-20)
-- [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
+- [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
   - [Summary](#summary-17)
   - [Distorted Behavior](#distorted-behavior-21)
-- [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
+- [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
   - [Summary](#summary-18)
   - [Distorted Behavior](#distorted-behavior-22)
-- [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
+- [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
   - [Summary](#summary-19)
   - [Distorted Behavior](#distorted-behavior-23)
-- [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
-  - [Summary](#summary-20)
-  - [Distorted Behavior](#distorted-behavior-24)
 - [value: URL.createObjectURL](#value-urlcreateobjecturl)
   - [Goal](#goal-24)
   - [Design](#design-24)
@@ -185,24 +180,30 @@ Generated: May 18, 2021
   - [Design](#design-25)
   - [Distorted behavior](#distorted-behavior-20)
   - [Disallowed endpoints](#disallowed-endpoints)
-- [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
+- [get: window.frames [Main]](#get-windowframes-main)
+  - [Summary](#summary-20)
+  - [Distorted Behavior](#distorted-behavior-24)
+- [get: window.length [Main]](#get-windowlength-main)
   - [Summary](#summary-21)
   - [Distorted Behavior](#distorted-behavior-25)
-- [get: window.opener [Main]](#get-windowopener-main)
+- [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
   - [Summary](#summary-22)
   - [Distorted Behavior](#distorted-behavior-26)
-- [get: window.parent [Main]](#get-windowparent-main)
+- [get: window.opener [Main]](#get-windowopener-main)
   - [Summary](#summary-23)
   - [Distorted Behavior](#distorted-behavior-27)
-- [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
+- [get: window.parent [Main]](#get-windowparent-main)
   - [Summary](#summary-24)
   - [Distorted Behavior](#distorted-behavior-28)
-- [value: Window.prototype.setTimeout [Main]](#value-windowprototypesettimeout-main)
+- [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
   - [Summary](#summary-25)
   - [Distorted Behavior](#distorted-behavior-29)
-- [Worker Global Constructor](#worker-global-constructor)
+- [value: window.setTimeout [Main]](#value-windowsettimeout-main)
   - [Summary](#summary-26)
   - [Distorted Behavior](#distorted-behavior-30)
+- [Worker Global Constructor](#worker-global-constructor)
+  - [Summary](#summary-27)
+  - [Distorted Behavior](#distorted-behavior-31)
 - [XMLHttpRequest.open](#xmlhttprequestopen)
   - [Goal](#goal-26)
   - [Design](#design-26)
@@ -216,15 +217,18 @@ Generated: May 18, 2021
 
 ## set: Attr.prototype.value
 
-This distortion acts as a router to subdistortions. It uses a shared registry to identify whether there are any distortions registered for a particular attribute name and invokes them.
+This distortion acts as a router to subdistortions. It uses a shared registry to
+identify whether there are any distortions registered for a particular attribute
+name and invokes them.
 
 
-This only applies to connected attribute nodes, disconnected nodes are covered by setAttributeNode and setAttributeNodeNS distortions.
+This only applies to connected attribute nodes, disconnected nodes are covered
+by `setAttributeNode` and `setAttributeNodeNS` distortions.
 
 ### Goal
 
 - to prevent the following type of attack
-```
+```js
 const attr = createAttribute('rel');
 const el = createElement('link');
 el.setAttributeNode(attr); // bypass setAttributeNode distortion
@@ -235,15 +239,19 @@ document.head.appendChild(el); // append to head
 
 ### Design
 
-- use an internal registry to allow anyone to register distortions for specific attribute name and Element constructor
-- the register method places markers on the prototype of elements, the markers represent index numbers in the registry
+- use an internal registry to allow anyone to register distortions for specific
+attribute name and Element constructor
+- the register method places markers on the prototype of elements, the markers
+represent index numbers in the registry
 - if the setter is called check if the element is connected
-    - if the element is connected then look for a distortion in the registry and invoke it
+    - if the element is connected then look for a distortion in the registry and
+    invoke it
 - attr node is not connected, proceed without a distortion
 
 ### Distorted behavior
 
-- when there is a registered distortion the behavior is strictly dependent of the distortion's behavior
+- when there is a registered distortion the behavior is strictly dependent of the
+distortion's behavior
 - native like behavior when no distortions are registered.
 <hr>
 <a name="cookiestoredocsdelete-valuemd"></a>
@@ -454,7 +462,7 @@ The attributes collection is of type NamedNodeMap and can be used to set and rem
 
 -   no distorted behavior
 <hr>
-<a name="elementdocsindexmd"></a>
+<a name="elementdocsblocked-propertiesmd"></a>
 
 ## Fullscreen API: Element.prototype
 
@@ -508,9 +516,14 @@ This distortion sanitizes and prevents HTML from replacing the shared elements: 
 
 ## value: Element.prototype.setAttribute
 
-The setAttribute\* distortions use internal registries to access already defined distortions for property names. The only distorted behavior implemented here is a defensive mechanism against shapeshifting objects. Shapeshifting objects do not affect native DOM apis because values are automatically coerced, however, shapeshifting attacks target Locker code in an attempt to bypass distortions. The following example will attempt to explain this type of attack.
+The `setAttribute*` distortions use internal registries to access already defined
+distortions for property names. The only distorted behavior implemented here is a
+defensive mechanism against shapeshifting objects. Shapeshifting objects do not
+affect native DOM apis because values are automatically coerced, however,
+shapeshifting attacks target Locker code in an attempt to bypass distortions.
+The following example will attempt to explain this type of attack.
 
-```
+```js
 const attrValue = {
     toString() {
         if (this.x) {
@@ -519,16 +532,18 @@ const attrValue = {
 
         this.x = true;
         return 'foo';
-    }
-}
+    },
+};
 
 const element = document.createElement('link');
 element.setAttribute('rel', attrValue);
 ```
 
-Because we have distorted setAttribute and the value is read at least twice (1 time by locker 1 time by the native api), part of our code can be tricked to think that the value is 'foo' and it's safe to pass through. At the 2nd read of attrValue its value will be 'import'. Pseudo code explanation below:
-
-```
+Because we have distorted setAttribute and the value is read at least twice
+(1 time by locker 1 time by the native api), part of our code can be tricked to
+think that the value is `'foo'` and it's safe to pass through. At the 2nd read
+of attrValue its value will be `'import'`. Pseudo code explanation below:
+```text
 code in sandbox calls setAttribute with shapeshifting object
     locker reads first returned value and caches it in a local variable
         value 'foo' is cached and further checks rely on it
@@ -542,26 +557,35 @@ code in sandbox calls setAttribute with shapeshifting object
 In the case of setAttributeNode we perform the following operations:
 
 - validate the passed attribute argument is indeed an instance of Attr
-	- no actual validation happens the getter utilities will automatically detect this is not an instance of Attr
+	- no actual validation happens the getter utilities will automatically detect
+    this is not an instance of Attr
 
 
 - the value property of the attribute is coerced to a string
 
 ### Goal
 
-- To prevent shapeshifting arguments from being passed to lower level distortions associated with setAttribute* APIs
-- To allow execution of sub-distortions interested in handling specific attributes and/or values
+- To prevent shapeshifting arguments from being passed to lower level distortions
+associated with setAttribute* APIs
+- To allow execution of sub-distortions interested in handling specific attributes
+and/or values
 
 ### Design
 
-- expose 4 register methods, one for each type of distortions (setAttribute, setAttributeNS, setAttributeNode, setAttributeNodeNS). The 4 registries optimize for performance and O(1) lookups because this family of APIs are highly used.
-- any call to setAttribute\* methods will first sanitize the arguments to prevent shapeshifting attacks followed by a lookup for a registered distortion
-- if a distortion is found, invoke it and transfer control otherwise invoke the native method with sanitized arguments
+- expose 4 register methods, one for each type of distortions
+(setAttribute, setAttributeNS, setAttributeNode, setAttributeNodeNS). The 4
+registries optimize for performance and O(1) lookups because this family of APIs
+are highly used.
+- any call to `setAttribute*` methods will first sanitize the arguments to prevent
+shapeshifting attacks followed by a lookup for a registered distortion
+- if a distortion is found, invoke it and transfer control otherwise invoke the
+native method with sanitized arguments
 
 ### Distorted behavior
 
 - sanitization of arguments to prevent shapeshifting attacks
-- Native like behavior unless a registered distortion needs to be executed at which point the behavior is dependent on the execution of that distortion.
+- Native like behavior unless a registered distortion needs to be executed at
+which point the behavior is dependent on the execution of that distortion.
 <hr>
 <a name="elementdocsshadowroot-gettermd"></a>
 
@@ -575,7 +599,7 @@ Although in the sandbox elements cannot be created with this mode (see attachSha
 ### Distorted Behavior
 
 This distortion will return `null` when trying to access the `shadowRoot` property on a light-dom element.<hr>
-<a name="htmlelementdocsindexmd"></a>
+<a name="htmlelementdocsblocked-propertiesmd"></a>
 
 ## nonce: HTMLElement.prototype
 
@@ -588,66 +612,6 @@ In Locker, we do not allow the use of inline scripts. If a malicious user has ac
 This distortion blocks access to `HTMLElement.prototype.onrejectionhandled` and `HTMLElement.prototype.onunhandledrejection` in Safari.
 
 This event "onrejectionhandled" is sent to the script's global scope whenever a Promise is rejected but after the promise rejection has been handled. In tandem, the event "onunhandledrejection" is sent whenever a Promise is rejected but there is no handler for the rejection. While most events are DOM related, this Promise related event handler receives an event object containing information about the rejected promise. The type, promise, and reason properties are still available in both event handlers. A malicious user could look into the promise info, which is why this needs to be blocked.
-<hr>
-<a name="htmlelementdocsname-settermd"></a>
-
-## set: HTML<NAME>Element.prototype.name [Main]
-
-### Summary
-
-DOM clobbering is a technique in which you inject HTML into a page to manipulate the DOM and ultimately change the behavior of JavaScript on the page. A malicious user can inject an element with an ID value that is the same as a document property. When that document property is called, users will get the injected element instead.
-
-The sandbox is not affected by `id` or `name` changes to its elements. DOM clobbering won't affect document properties within each sandbox. However, by adding elements to the shared document, a malicious user can change key properties such `document.cookie` on the shared document. We should prevent DOM clobbering attacks so our shared document is free of injected elements that change the behavior of JavaScript on the page.
-
-### Distorted Behavior
-
-This distortion blocks the setting of `name` attribute to a property that exists in the document.
-
-### Knowledge
-
-After consultation, we know that DOM clobbering can take place in system mode but not inside sandboxes. Even though it can pollute the system window and document, we don't see a threat to this. This distortion behavior is documented for the future if a malicious user can DOM clobbering to do something malicious.
-
-### Removed Implementation
-
-```ts
-const templateElement = createElement('template')!;
-const documentElement = templateElement.content.ownerDocument!;
-const formElement = createElement('form')!;
-
-export function isValidAttributeValue(value: string): boolean {
-    if (value in documentElement || value in formElement) {
-        return false;
-    }
-    return true;
-}
-```
-
-```ts
-import {
-    FunctionCall,
-    ReflectGetPrototypeOf,
-    ReflectGetOwnPropertyDescriptor,
-    toString,
-    TypeErrorCtor,
-} from '@locker/shared';
-import { isValidAttributeValue } from '@locker/shared-dom';
-import { Distortion } from '../types';
-
-export function getOriginalNameSetter(element: Function) {
-    return ObjectLookupOwnSetter(element!.prototype, 'name');
-}
-
-export const patchedNameSetter: Distortion = function set(this: Function, value: string) {
-    value = toString(value);
-    const { constructor } = ReflectGetPrototypeOf(this)!;
-    if (!isValidAttributeValue(value)) {
-        throw new TypeErrorCtor(
-            `${constructor.name} does not allow setting 'name' attribute to ${value}!`
-        );
-    }
-    ReflectApply(getOriginalNameSetter(constructor), this, [value]);
-};
-```
 <hr>
 <a name="htmlelementdocsoutertext-settermd"></a>
 
@@ -669,14 +633,14 @@ Note that `outerText` [is not a standard property](https://developer.mozilla.org
 
 ### Summary
 
-The `style` property on any HTMLElement object allows manipulating CSS styles via Javascript via assignments (element.style.color = 'red'). Any property set on this object will reflect in the DOM via the `style` attribute on an element, making this object "magical" because of this behavior.
+The `style` property on any HTMLElement object allows manipulating CSS styles via JavaScript via assignments (e.g. `element.style.color = 'red'`). Any property set on this object will reflect in the DOM via the `style` attribute on an element, making this object "magical" because of this behavior.
 
 ### Distorted Behavior
 
 This distortion alters the getter of the style property for any HTMLElement. The `style` object is being marked as live such that
-any properties changed from within the sandbox are reflected on the DOM. 
+any properties changed from within the sandbox are reflected on the DOM.
 
-Furthermore, this distortion does not cover a possible but highly improbable scenario: code passing the style object from system mode to the sandbox via function arguments. The distortion will not apply since the getter has been invoked in system mode. The resulting effect is that sandboxed code will not see changes to `style` being reflected in the DOM. If this scenario does happen then the distortion should be upgraded to a patch on the raw HTMLElement.prototype in native window. 
+Furthermore, this distortion does not cover a possible but highly improbable scenario: code passing the style object from system mode to the sandbox via function arguments. The distortion will not apply since the getter has been invoked in system mode. The resulting effect is that sandboxed code will not see changes to `style` being reflected in the DOM. If this scenario does happen then the distortion should be upgraded to a patch on the raw `HTMLElement.prototype` in native window.
 <hr>
 <a name="htmlframeelementdocscontentwindow-gettermd"></a>
 
@@ -707,7 +671,7 @@ Create an artificial `contentWindow` object with a curated list of properties
 <hr>
 <a name="htmliframeelementdocscontentwindow-gettermd"></a>
 
-## get: HTMLIframeElement.prototype.contentWindow
+## get: HTMLIFrameElement.prototype.contentWindow
 
 To reduce the surface area of possible exploit we produce an artificial
 `contentWindow` object. At a later time we may explore nesting sandboxes,
@@ -863,14 +827,14 @@ Create an artificial `window` object with a curated list of properties.
 
 It is possible to set an attribute on an element using the methods available on NamedNodeMap. For example:
 
-```
+```js
 const el = document.createElement('link');
 const attr = document.createAttribute('rel');
 attr.value = 'import';
 el.attributes.setNamedItem(attr);
 ```
 
-This would bypass our distortions for named properties and setAttribute\*. For this reason we need to distort `NamedNodeMap.prototype.setNamedItem`. 
+This would bypass our distortions for named properties and setAttribute\*. For this reason we need to distort `NamedNodeMap.prototype.setNamedItem`.
 
 ### Goal
 
@@ -889,7 +853,8 @@ The registry is a WeakMap since elements can be removed from the page throughout
 ### Distorted behavior
 
 - if no distortion is found for an Attr instance then proceed with native invocation of setNamedItem
-- if a distortion exists then the distorted behavior is relative to what that distortion does<hr>
+- if a distortion exists then the distorted behavior is relative to what that distortion does
+<hr>
 <a name="navigatordocsserviceworker-gettermd"></a>
 
 ## get: Navigator.prototype.serviceWorker
@@ -991,65 +956,80 @@ We need to satisfy a few requirements:
 
 ### Summary
 
-This distortion will sanitize the value passed for attribute `href` or `xlink:href` on an SVGUseElement. The attribute is not on the prototype and can only be set using the following APIs:
+This distortion will sanitize the value passed for attribute `href` or `xlink:href`
+on an SVGUseElement. The attribute is not on the prototype and can only be set
+using the following APIs:
 
 - setAttributeNS
 - setAttributeNodeNS
 
 #### Distorted behavior for setAttributeNS
-```
+```js
 const el = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 
 el.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '/myresource.svg#circle');
-console.log(el.getAttributeNS('http://www.w3.org/1999/xlink', 'href')) // httpmycurrenthostmyresourcesvg_circle
+console.log(el.getAttributeNS('http://www.w3.org/1999/xlink', 'href')); // httpmycurrenthostmyresourcesvg_circle
 
 // OR for xlink:href
 el.setAttributeNS('hhttp://www.w3.org/1999/xlink', 'xlink:href', '/myresource.svg#circle');
-console.log(el.getAttributeNS('http://www.w3.org/1999/xlink', 'href')) // httpmycurrenthostmyresourcesvg_circle
-console.log(el.getAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href')) // null
+console.log(el.getAttributeNS('http://www.w3.org/1999/xlink', 'href')); // httpmycurrenthostmyresourcesvg_circle
+console.log(el.getAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href')); // null
 ```
 
 #### Distorted behavior for setAttributeNodeNS
-```
+```js
 const el = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 
-const attr = document.createAttributeNS('http://www.w3.org/1999/xlink', 'href');
+let attr = document.createAttributeNS('http://www.w3.org/1999/xlink', 'href');
 attr.value = '/myresource.svg#circle';
 el.setAttributeNodeNS(attr);
-console.log(el.getAttributeNS('http://www.w3.org/1999/xlink', 'href')) // httpmycurrenthostmyresourcesvg_circle
+console.log(el.getAttributeNS('http://www.w3.org/1999/xlink', 'href')); // httpmycurrenthostmyresourcesvg_circle
 
 // OR for xlink:href
-const attr = document.createAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href');
+attr = document.createAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href');
 attr.value = '/myresource.svg#circle';
 el.setAttributeNodeNS(attr);
-console.log(el.getAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href')) // httpmycurrenthostmyresourcesvg_circle
+console.log(el.getAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href')); // httpmycurrenthostmyresourcesvg_circle
 ```
 
-Other scenarios that can be used to bypass this distortion are covered by the underlying architecture of Element distortions. These scenarios are:
+Other scenarios that can be used to bypass this distortion are covered by the
+underlying architecture of Element distortions. These scenarios are:
 
-- creating an attribute with an empty value, using setAttributeNode/NS to attach the attribute and update the value post setAttributeNode/NS operation
+- creating an attribute with an empty value, using setAttributeNode/NS to attach
+the attribute and update the value post setAttributeNode/NS operation
 - using attributes.setItem API to attach an attribute
 
-**setAttribute will not trigger this distortion.** 
+**setAttribute will not trigger this distortion.**
 **setAttributeNode WILL trigger the distortion if the attribute was created in the XLINK SVG namespace.**
 
 ### Design
 
-- passthrough if the url is a document fragment url (#svg)
-- if the URL is an external resource (/resource.svg#circle) then transform this url to a document fragment url composed of current hostname, resource name, extension followed by an underscore and the id in the referenced resource (#HOSTNAMEresourcesvg_circle).
+- passthrough if the URL is a document fragment URL (#svg)
+- if the URL is an external resource (/resource.svg#circle) then transform this
+URL to a document fragment URL composed of current hostname, resource name, extension
+followed by an underscore and the id in the referenced resource (#HOSTNAMEresourcesvg_circle).
     - URL transformation is synchronous
-    - internally this will map to a hidden div in the page. The div will be empty at first
-    - the resource is being fetched asynchronously via XHR and sanitized using our SVG sanitizer profile
-    - the sanitized content will be placed in the hidden div. The content will be rendered where the use tag is defined because of how document fragment references work in HTML. Dynamic content changes will be picked up by the elements who point to the specific document location with each change. Thus, when the DIV gets populated with the sanitized SVG, the use tag will see the new content.
-    - the sanitizer works recursively, any resources loaded through the initial referenced SVG file (myresource.svg) will go through the same process. Thus it is not possible to trick the system by loading a simple SVG with a <use> tag which points to a malicious resource. 
+    - internally this will map to a hidden div in the page. The div will be empty
+    at first
+    - the resource is being fetched asynchronously via XHR and sanitized using our
+    SVG sanitizer profile
+    - the sanitized content will be placed in the hidden div. The content will be
+    rendered where the use tag is defined because of how document fragment references
+    work in HTML. Dynamic content changes will be picked up by the elements who
+    point to the specific document location with each change. Thus, when the DIV
+    gets populated with the sanitized SVG, the use tag will see the new content.
+    - the sanitizer works recursively, any resources loaded through the initial
+    referenced SVG file (myresource.svg) will go through the same process. Thus
+    it is not possible to trick the system by loading a simple SVG with a <use>
+    tag which points to a malicious resource.
 
 ### Dependencies
 - DOMPUrify
 - html-sanitizer package
 <hr>
-<a name="serviceworkercontainerdocsprototypemd"></a>
+<a name="serviceworkercontainerdocsprototype-valuemd"></a>
 
-## ServiceWorkerContainer.prototype
+## value: ServiceWorkerContainer.prototype
 
 ### Problem Statement
 
@@ -1076,7 +1056,7 @@ To prevent unsandboxed JavaScript code from leaking data, we want to disallow ac
 
 ### Distorted behavior
 
-This distortion will throw a `TypeError` whenever any of the `ServiceWorkerContainer.prototype` properties or methods is accessed. 
+This distortion will throw a `TypeError` whenever any of the `ServiceWorkerContainer.prototype` properties or methods is accessed.
 <hr>
 <a name="shadowrootdocsmode-gettermd"></a>
 
@@ -1119,7 +1099,7 @@ Since each sandbox uses it's own synthetic storage, we cannot allow a malicious 
 ### Distorted Behavior
 
 This distortion deletes all data items from its synthetic storage.<hr>
-<a name="storagedocsconstructormd"></a>
+<a name="storagedocsconstructor-valuemd"></a>
 
 ## Storage API: Storage.prototype
 
@@ -1297,6 +1277,30 @@ Locker disallows endpoints:
 
 At the moment this is hard coded, but in the future this will be a configuration option.
 <hr>
+<a name="windowdocsframes-gettermd"></a>
+
+## get: window.frames [Main]
+
+### Summary
+
+The Window interface's `frames` property returns an object that is the window itself, which is an array-like object, listing the direct sub-frames of the current window.
+
+### Distorted Behavior
+
+The Window interface's `frames` property returns a fake `frameList` that includes all `<frame>` and `<iframe>` elements in the document, in document order. Supports access via index or name property value. `window.frames` does not allow access to `window`, ie. `window.frames !== window`, and does not provide proxy access to `window` properties.
+<hr>
+<a name="windowdocslength-gettermd"></a>
+
+## get: window.length [Main]
+
+### Summary
+
+The Window interface's `length` property returns the number of frames (either `<frame>` or `<iframe>` elements) attached to the `window`'s `document`.
+
+### Distorted Behavior
+
+The Window interface's `length` property always returns `0`. Application code must use the `window.frames.length` value and `window.frames` object to iterate over the list of frames (either `<frame>` or `<iframe>` elements) attached to the `document`.
+<hr>
 <a name="windowdocsopen-valuemd"></a>
 
 ## value: Window.prototype.open [Main]
@@ -1347,7 +1351,7 @@ The `setInterval` method, repeatedly calls a function or executes a code snippet
 If the first argument provided to `setInterval` is a string value, this distortion evaluates it in the sandbox.<hr>
 <a name="windowdocssettimeout-valuemd"></a>
 
-## value: Window.prototype.setTimeout [Main]
+## value: window.setTimeout [Main]
 
 ### Summary
 
@@ -1393,4 +1397,3 @@ Locker disallows endpoints:
 - Containing `"/webruntime"` in the URL.
 
 At the moment this is hard coded, but in the future this will be a configuration option.
-
