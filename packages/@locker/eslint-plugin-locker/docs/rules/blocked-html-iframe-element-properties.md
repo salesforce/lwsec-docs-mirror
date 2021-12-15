@@ -1,6 +1,6 @@
-# Disallow Blocked HTMLIframeElement Properties (blocked-html-iframe-element-properties)
+# Disallow Blocked HTMLIFrameElement Properties (blocked-html-iframe-element-properties)
 
-For security the following HTMLIframeElement properties are prohibited in Lightning Locker:
+For security the following `HTMLIFrameElement` properties are prohibited in Lightning Locker:
 -   allowPaymentRequest
 -   contentDocument
 -   csp

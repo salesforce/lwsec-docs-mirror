@@ -12,4 +12,4 @@ The `setInterval` method, repeatedly calls a function or executes a code snippet
 ### Distorted Behavior
 
 If the first argument provided to `setInterval` is a string value, this distortion evaluates it in the sandbox.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

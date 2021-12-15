@@ -3,15 +3,20 @@
 For security the following `CustomElementRegistry` properties are distorted in Lightning Locker:
 
 <!-- START generated embed: @locker/distortion/src/CustomElementRegistry/docs/define-value.md -->
-## CustomElementRegistry.prototype.define
+## value: CustomElementRegistry.prototype.define
 
-### Summary
-The ['define()'](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the CustomElementRegistry interface defines a new custom element. Lightning Web Security does not allow Custom Elements.
+### Goal
 
-### Distorted Behavior
+ - To prevent sandboxed code to define new custom elements in the global registry unless they are obeying their own namespace.
 
-This distortion prevents accessing `define()` from CustomElementRegistry. An error is thrown when accessing this method.
-<!-- END generated embed, please keep comment -->
+### Design
+
+- Patch value on `CustomElementRegistry.prototype.define` descriptor to prevent defining a new custom element with the wrong prefix. This prevent them from claiming a custom element name that might affect other sandboxes or the app itself.
+
+### Distorted behavior
+
+- Each time define method is called with the wrong prefix, it throws a `RangeError`.
+<!-- END generated embed please keep comment here to allow auto update -->
 
 <!-- START generated embed: @locker/distortion/src/CustomElementRegistry/docs/get-value.md -->
 ## value: CustomElementRegistry.prototype.get
@@ -27,4 +32,4 @@ This distortion prevents accessing `define()` from CustomElementRegistry. An err
 ### Distorted behavior
 
 - Each time define method is called with the wrong prefix, it throws a `RangeError`.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

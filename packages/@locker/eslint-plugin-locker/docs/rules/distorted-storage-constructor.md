@@ -40,7 +40,7 @@ The proxy wrap has traps that allow for our Storage to have features that are th
 * Delete Property: `delete localStorage.foo; // { 'x': 'y' }`
 * Iteration: `Object.keys(localStorage); // ['x']`
 * Has: `'x' in sessionStorage; localStorage.hasOwnProperty('x'); // true, true`
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/clear-value.md -->
 ## value: Storage.prototype.clear [Main]
@@ -54,7 +54,7 @@ Since each sandbox uses it's own synthetic storage, we cannot allow a malicious 
 ### Distorted Behavior
 
 This distortion deletes all data items from its synthetic storage.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/getItem-value.md -->
 ## value: Storage.prototype.getItem [Main]
@@ -68,7 +68,7 @@ In order for one sandbox not to retrieve the storage of another sandbox, we must
 ### Distorted Behavior
 
 This distortion retrieves data items from its synthetic storage.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/key-value.md -->
 ## value: Storage.prototype.key [Main]
@@ -82,7 +82,7 @@ The key() method of the Storage interface, when passed a number n, returns the n
 ### Distorted Behavior
 
 This distortion retrieves a key value at a specific index from its synthetic storage.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/length-getter.md -->
 ## get: Storage.prototype.length [Main]
@@ -96,7 +96,7 @@ In order for one sandbox not to retrieve the storage of another sandbox, we must
 ### Distorted Behavior
 
 This distortion retrieves the number of data items in its synthetic storage.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/removeItem-value.md -->
 ## value: Storage.prototype.removeItem [Main]
@@ -110,7 +110,7 @@ Since each sandbox uses it's own synthetic storage, we cannot allow a malicious 
 ### Distorted Behavior
 
 This distortion deletes a data item from its synthetic storage.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/setItem-value.md -->
 ## value: Storage.prototype.setItem [Main]
@@ -124,4 +124,4 @@ In order for one sandbox not to modify the storage of another sandbox, we must c
 ### Distorted Behavior
 
 This distortion adds or modifies data items in its synthetic storage.
-<!-- END generated embed, please keep comment -->
+<!-- END generated embed please keep comment here to allow auto update -->

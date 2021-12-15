@@ -1,18 +1,20 @@
-# Disallow export from lightning/platformResourceLoader (no-export-platform-resource-loader)
+# Disallow Export from 'lightning/platformResourceLoader' (no-export-platform-resource-loader)
 
-Lightning Web Security does not support exporting directly from the `lightning/platformResourceLoader` module.
+Lightning Locker prohibits {im|ex}port from the `'lightning/platformResourceLoader'` module.
 
 ## Rule Details
 
 Example of **incorrect** code:
 
 ```js
-export { loadScript } from 'lightning/platformResourceLoader';
+import { loadScript } from 'lightning/platformResourceLoader';
+loadScript(this, './some.js');
 ```
 
 Example of **correct** code:
 
 ```js
-import { loadScript } from 'lightning/platformResourceLoader';
-export { loadScript };
+const newScript = document.createElement('script');
+document.head.appendChild(newScript);
+newScript.src = './some.js';
 ```
