@@ -1,20 +1,19 @@
 # Disallow Export from 'lightning/platformResourceLoader' (no-export-platform-resource-loader)
 
-Lightning Locker prohibits {im|ex}port from the `'lightning/platformResourceLoader'` module.
+Lightning Locker does not support exporting directly from the
+`'lightning/platformResourceLoader'` module.
 
 ## Rule Details
 
 Example of **incorrect** code:
 
 ```js
-import { loadScript } from 'lightning/platformResourceLoader';
-loadScript(this, './some.js');
+export { loadScript } from 'lightning/platformResourceLoader';
 ```
 
 Example of **correct** code:
 
 ```js
-const newScript = document.createElement('script');
-document.head.appendChild(newScript);
-newScript.src = './some.js';
+import { loadScript } from 'lightning/platformResourceLoader';
+export { loadScript };
 ```
