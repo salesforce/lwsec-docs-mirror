@@ -49,6 +49,14 @@
   - [get: Element.prototype.shadowRoot [Main]](#get-elementprototypeshadowroot-main)
     - [Summary](#summary-6)
     - [Distorted Behavior](#distorted-behavior-6)
+  - [get: HTMLIframeElement.prototype.contentWindow](#get-htmliframeelementprototypecontentwindow)
+    - [Goal](#goal-5)
+    - [Design](#design-5)
+    - [Distorted behavior](#distorted-behavior-5)
+  - [set: HTMLIFrameElement.prototype.src](#set-htmliframeelementprototypesrc)
+    - [Goal](#goal-6)
+    - [Design](#design-6)
+    - [Distorted behavior](#distorted-behavior-6)
   - [nonce: HTMLElement.prototype](#nonce-htmlelementprototype)
   - [WindowEventHandlers: HTMLElement.prototype](#windoweventhandlers-htmlelementprototype)
   - [set: Element.prototype.innerText [Main]](#set-elementprototypeinnertext-main)
@@ -62,34 +70,26 @@
   - [set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]](#set-elementprototypeoutertext-chrome-edge-opera-safari)
     - [Summary](#summary-9)
     - [Distorted Behavior](#distorted-behavior-9)
-  - [get: HTMLIframeElement.prototype.contentWindow](#get-htmliframeelementprototypecontentwindow)
-    - [Goal](#goal-5)
-    - [Design](#design-5)
-    - [Distorted behavior](#distorted-behavior-5)
-  - [set: HTMLIFrameElement.prototype.src](#set-htmliframeelementprototypesrc)
-    - [Goal](#goal-6)
-    - [Design](#design-6)
-    - [Distorted behavior](#distorted-behavior-6)
-  - [get: HTMLScriptElement.prototype.src](#get-htmlscriptelementprototypesrc)
+  - [value: NamedNodeMap.prototype.setNamedItem](#value-namednodemapprototypesetnameditem)
     - [Goal](#goal-7)
     - [Design](#design-7)
     - [Distorted behavior](#distorted-behavior-7)
-  - [set: HTMLScriptElement.prototype.src](#set-htmlscriptelementprototypesrc)
+  - [get: HTMLScriptElement.prototype.src](#get-htmlscriptelementprototypesrc)
     - [Goal](#goal-8)
     - [Design](#design-8)
     - [Distorted behavior](#distorted-behavior-8)
-  - [value: NamedNodeMap.prototype.setNamedItem](#value-namednodemapprototypesetnameditem)
+  - [set: HTMLScriptElement.prototype.src](#set-htmlscriptelementprototypesrc)
     - [Goal](#goal-9)
     - [Design](#design-9)
     - [Distorted behavior](#distorted-behavior-9)
-  - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
-    - [Summary](#summary-10)
-    - [Distorted Behavior](#distorted-behavior-10)
   - [get: Navigator.prototype.serviceWorker](#get-navigatorprototypeserviceworker)
     - [Problem statement](#problem-statement)
     - [Goal](#goal-10)
     - [Design](#design-10)
     - [Distorted behavior](#distorted-behavior-10)
+  - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
+    - [Summary](#summary-10)
+    - [Distorted Behavior](#distorted-behavior-10)
   - [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
     - [Summary](#summary-11)
     - [Distorted Behavior](#distorted-behavior-11)
@@ -537,6 +537,53 @@ Although in the sandbox elements cannot be created with this mode (see attachSha
 
 This distortion will return `null` when trying to access the `shadowRoot` property on a light-dom element.
 
+<a name="htmliframeelementdocscontentwindow-gettermd"></a>
+
+## get: HTMLIframeElement.prototype.contentWindow
+
+To reduce the surface area of possible exploit we produce an artificial
+`contentWindow` object. At a later time we may explore nesting sandboxes,
+but in the interest of simplicity and moving things along we have decided to
+keep things simple.
+
+### Goal
+- Do not expose the real raw `contentWindow`
+- Restrict access to a small curated list of properties
+
+### Design
+
+Create an artificial `contentWindow` object with a curated list of properties
+  - close
+  - closed
+  - focus
+  - opener
+  - parent
+  - postMessage
+
+### Distorted behavior
+- Return an artificial `contentWindow` object per iframe
+- Cache the artificial `contentWindow` object for subsequent accesses
+
+
+<a name="htmliframeelementdocssrc-settermd"></a>
+
+## set: HTMLIFrameElement.prototype.src
+
+Restrict supported src values to those that sanitize to http:// and https://
+schemes.
+
+### Goal
+- Prevent URL schemes like javascript://
+
+### Design
+
+Only allow `src` values with validated schemes to be set.
+
+### Distorted behavior
+- Log a console warning for HTMLIFrameElement.src values that don't sanitize
+  to http:// or https:// schemes
+
+
 <a name="htmlelementdocsindexmd"></a>
 
 ## nonce: HTMLElement.prototype
@@ -646,52 +693,39 @@ This distortion sanitizes and prevents text from replacing the shared elements: 
 Note that `outerText` [is not a standard property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText#Browser_compatibility), so the descriptor could be undefined, like in the case of Firefox. In this case, this distortion does nothing.
 
 
-<a name="htmliframeelementdocscontentwindow-gettermd"></a>
+<a name="namednodemapdocssetnameditem-valuemd"></a>
 
-## get: HTMLIframeElement.prototype.contentWindow
+## value: NamedNodeMap.prototype.setNamedItem
 
-To reduce the surface area of possible exploit we produce an artificial
-`contentWindow` object. At a later time we may explore nesting sandboxes,
-but in the interest of simplicity and moving things along we have decided to
-keep things simple.
+It is possible to set an attribute on an element using the methods available on NamedNodeMap. For example:
 
-### Goal
-- Do not expose the real raw `contentWindow`
-- Restrict access to a small curated list of properties
+```
+const el = document.createElement('link');
+const attr = document.createAttribute('rel');
+attr.value = 'import';
+el.attributes.setNamedItem(attr);
+```
 
-### Design
-
-Create an artificial `contentWindow` object with a curated list of properties
-  - close
-  - closed
-  - focus
-  - opener
-  - parent
-  - postMessage
-
-### Distorted behavior
-- Return an artificial `contentWindow` object per iframe
-- Cache the artificial `contentWindow` object for subsequent accesses
-
-
-<a name="htmliframeelementdocssrc-settermd"></a>
-
-## set: HTMLIFrameElement.prototype.src
-
-Restrict supported src values to those that sanitize to http:// and https://
-schemes.
+This would bypass our distortions for named properties and setAttribute\*. For this reason we need to distort `NamedNodeMap.prototype.setNamedItem`. 
 
 ### Goal
-- Prevent URL schemes like javascript://
+
+- invoke registered DOM property distortions in situations like `el.attributes.setNamedItem(...)`
 
 ### Design
+Inside of a NamedNodeMap distortion `this` does not point to an element but to the `attributes` instance. We have no way of understanding which `attributes` instance is for what element. That is why the shared lib of this module provides a `pairElement` utility used in Element.prototype.attributes distortion to pair an element with a NamedNodeMap instance upon accessing the getter of Element.prototype.attributes. Since all operations are synchronous we are guaranteed that the registration happens first followed by invocation later.
+Example:
 
-Only allow `src` values with validated schemes to be set.
+el.attributes.setNamedItem(....)
+  |           |
+registration  invocation
+
+The registry is a WeakMap since elements can be removed from the page throughout the lifecycle of an application. The distortions are being retrieved from the `setAttributeNode` registry since both methods accept an instance of `Attr`.
 
 ### Distorted behavior
-- Log a console warning for HTMLIFrameElement.src values that don't sanitize
-  to http:// or https:// schemes
 
+- if no distortion is found for an Attr instance then proceed with native invocation of setNamedItem
+- if a distortion exists then the distorted behavior is relative to what that distortion does
 
 <a name="htmlscriptelementdocssrc-gettermd"></a>
 
@@ -745,53 +779,6 @@ We need to satisfy a few requirements:
 - The behavior will seem native like to code running in the sandbox.
 
 
-<a name="namednodemapdocssetnameditem-valuemd"></a>
-
-## value: NamedNodeMap.prototype.setNamedItem
-
-It is possible to set an attribute on an element using the methods available on NamedNodeMap. For example:
-
-```
-const el = document.createElement('link');
-const attr = document.createAttribute('rel');
-attr.value = 'import';
-el.attributes.setNamedItem(attr);
-```
-
-This would bypass our distortions for named properties and setAttribute\*. For this reason we need to distort `NamedNodeMap.prototype.setNamedItem`. 
-
-### Goal
-
-- invoke registered DOM property distortions in situations like `el.attributes.setNamedItem(...)`
-
-### Design
-Inside of a NamedNodeMap distortion `this` does not point to an element but to the `attributes` instance. We have no way of understanding which `attributes` instance is for what element. That is why the shared lib of this module provides a `pairElement` utility used in Element.prototype.attributes distortion to pair an element with a NamedNodeMap instance upon accessing the getter of Element.prototype.attributes. Since all operations are synchronous we are guaranteed that the registration happens first followed by invocation later.
-Example:
-
-el.attributes.setNamedItem(....)
-  |           |
-registration  invocation
-
-The registry is a WeakMap since elements can be removed from the page throughout the lifecycle of an application. The distortions are being retrieved from the `setAttributeNode` registry since both methods accept an instance of `Attr`.
-
-### Distorted behavior
-
-- if no distortion is found for an Attr instance then proceed with native invocation of setNamedItem
-- if a distortion exists then the distorted behavior is relative to what that distortion does
-
-<a name="nodedocstextcontent-settermd"></a>
-
-## set: Node.prototype.textContent [Main]
-
-### Summary
-
-This property allows users to replace DOM inside the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
-
-### Distorted Behavior
-
-This distortion sanitizes and prevents text from replacing the DOM within shared elements: HEAD and BODY.
-
-
 <a name="navigatordocsserviceworker-gettermd"></a>
 
 ## get: Navigator.prototype.serviceWorker
@@ -827,6 +814,19 @@ Patch getter on `Navigator.prototype.serviceWorker` descriptor to return `undefi
 ### Distorted behavior
 
 Each time code accesses `navigator.serviceWorker` property, this distortion will return `undefined`.
+
+
+<a name="nodedocstextcontent-settermd"></a>
+
+## set: Node.prototype.textContent [Main]
+
+### Summary
+
+This property allows users to replace DOM inside the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
+
+### Distorted Behavior
+
+This distortion sanitizes and prevents text from replacing the DOM within shared elements: HEAD and BODY.
 
 
 <a name="rangedocscreatecontextualfragment-valuemd"></a>
