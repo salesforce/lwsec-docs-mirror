@@ -7,7 +7,6 @@ likely to break code but is something to be aware of.
 
 Example of **incorrect** code:
 
-<!-- eslint-disable-next-line no-unused-expressions -->
 ```js
 document.all[0];
 ```

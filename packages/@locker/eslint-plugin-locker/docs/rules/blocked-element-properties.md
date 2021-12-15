@@ -12,7 +12,6 @@ For security the following Element properties are prohibited in Lightning Locker
 
 Example of **incorrect** code:
 
-<!-- eslint-disable-next-line no-undef, no-unused-expressions -->
 ```js
 video.onfullscreenchange;
 ```

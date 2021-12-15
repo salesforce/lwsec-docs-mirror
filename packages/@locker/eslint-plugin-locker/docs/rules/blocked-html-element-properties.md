@@ -9,7 +9,6 @@ For security the following HTMLElement properties are prohibited in Lightning Lo
 
 Example of **incorrect** code:
 
-<!-- eslint-disable-next-line no-undef, no-unused-expressions -->
 ```js
 script.nonce;
 ```
