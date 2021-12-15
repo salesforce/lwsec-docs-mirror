@@ -89,19 +89,19 @@
     - [Goal](#goal-10)
     - [Design](#design-10)
     - [Distorted behavior](#distorted-behavior-10)
-  - [get: Navigator.prototype.serviceWorker](#get-navigatorprototypeserviceworker)
-    - [Problem statement](#problem-statement)
+  - [get: HTMLScriptElement.prototype.src](#get-htmlscriptelementprototypesrc)
     - [Goal](#goal-11)
     - [Design](#design-11)
     - [Distorted behavior](#distorted-behavior-11)
-  - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
-    - [Summary](#summary-11)
-    - [Distorted Behavior](#distorted-behavior-11)
-  - [get: HTMLScriptElement.prototype.src](#get-htmlscriptelementprototypesrc)
+  - [set: HTMLScriptElement.prototype.src](#set-htmlscriptelementprototypesrc)
     - [Goal](#goal-12)
     - [Design](#design-12)
     - [Distorted behavior](#distorted-behavior-12)
-  - [set: HTMLScriptElement.prototype.src](#set-htmlscriptelementprototypesrc)
+  - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
+    - [Summary](#summary-11)
+    - [Distorted Behavior](#distorted-behavior-11)
+  - [get: Navigator.prototype.serviceWorker](#get-navigatorprototypeserviceworker)
+    - [Problem statement](#problem-statement)
     - [Goal](#goal-13)
     - [Design](#design-13)
     - [Distorted behavior](#distorted-behavior-13)
@@ -152,25 +152,28 @@
     - [Goal](#goal-17)
     - [Design](#design-17)
     - [Distorted behavior](#distorted-behavior-17)
-  - [value: Window.prototype.fetch [Main]](#value-windowprototypefetch-main)
-    - [Summary](#summary-22)
-    - [Distorted Behavior](#distorted-behavior-21)
-  - [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
-    - [Summary](#summary-23)
-    - [Distorted Behavior](#distorted-behavior-22)
-  - [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
-    - [Summary](#summary-24)
-    - [Distorted Behavior](#distorted-behavior-23)
-  - [value: Window.prototype.setTimeout [Main]](#value-windowprototypesettimeout-main)
-    - [Summary](#summary-25)
-    - [Distorted Behavior](#distorted-behavior-24)
-  - [Worker Global Constructor](#worker-global-constructor)
-    - [Summary](#summary-26)
-    - [Distorted Behavior](#distorted-behavior-25)
-  - [value: XMLHttpRequest.prototype.open](#value-xmlhttprequestprototypeopen)
+  - [Window.fetch](#windowfetch)
     - [Goal](#goal-18)
     - [Design](#design-18)
     - [Distorted behavior](#distorted-behavior-18)
+    - [Disallowed endpoints](#disallowed-endpoints)
+  - [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
+    - [Summary](#summary-22)
+    - [Distorted Behavior](#distorted-behavior-21)
+  - [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
+    - [Summary](#summary-23)
+    - [Distorted Behavior](#distorted-behavior-22)
+  - [value: Window.prototype.setTimeout [Main]](#value-windowprototypesettimeout-main)
+    - [Summary](#summary-24)
+    - [Distorted Behavior](#distorted-behavior-23)
+  - [Worker Global Constructor](#worker-global-constructor)
+    - [Summary](#summary-25)
+    - [Distorted Behavior](#distorted-behavior-24)
+  - [XMLHttpRequest.open](#xmlhttprequestopen)
+    - [Goal](#goal-19)
+    - [Design](#design-19)
+    - [Distorted behavior](#distorted-behavior-19)
+    - [Disallowed endpoints](#disallowed-endpoints-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -799,56 +802,6 @@ The registry is a WeakMap since elements can be removed from the page throughout
 - if no distortion is found for an Attr instance then proceed with native invocation of setNamedItem
 - if a distortion exists then the distorted behavior is relative to what that distortion does
 
-<a name="navigatordocsserviceworker-gettermd"></a>
-
-## get: Navigator.prototype.serviceWorker
-
-### Problem statement
-
-With `ServiceWorker`, it is possible to alter the response of a request to return JavaScript code that would be unsandboxed when evaluated by the browser.
-
-**Example:**
-```js
-navigator.serviceWorker.register('/static/sw.js').then(function() {
-    window.open('/static/aaa', '_self');
-});
-```
-
-**File /static/sw.js:**
-<!-- eslint-disable-next-line no-restricted-globals -->
-```js
-self.addEventListener('fetch', function(event) {
-    const unsandboxed = '<body><script>document.body.innerHTML=document.cookie;</script>';
-    event.respondWith(new Response(unsandboxed, { headers: { 'Content-Type': 'text/html' } }));
-});
-```
-
-### Goal
-
-To prevent unsandboxed JavaScript code from leaking data, we want to disallow access to the `navigator.serviceWorker` property.
-
-### Design
-
-Patch getter on `Navigator.prototype.serviceWorker` descriptor to return `undefined`.
-
-### Distorted behavior
-
-Each time code accesses `navigator.serviceWorker` property, this distortion will return `undefined`.
-
-
-<a name="nodedocstextcontent-settermd"></a>
-
-## set: Node.prototype.textContent [Main]
-
-### Summary
-
-This property allows users to replace DOM inside the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
-
-### Distorted Behavior
-
-This distortion sanitizes and prevents text from replacing the DOM within shared elements: HEAD and BODY.
-
-
 <a name="htmlscriptelementdocssrc-gettermd"></a>
 
 ## get: HTMLScriptElement.prototype.src
@@ -899,6 +852,56 @@ We need to satisfy a few requirements:
 
 - Store original value on `data-distorted-src`, store distorted value on `src`. 
 - The behavior will seem native like to code running in the sandbox.
+
+
+<a name="nodedocstextcontent-settermd"></a>
+
+## set: Node.prototype.textContent [Main]
+
+### Summary
+
+This property allows users to replace DOM inside the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
+
+### Distorted Behavior
+
+This distortion sanitizes and prevents text from replacing the DOM within shared elements: HEAD and BODY.
+
+
+<a name="navigatordocsserviceworker-gettermd"></a>
+
+## get: Navigator.prototype.serviceWorker
+
+### Problem statement
+
+With `ServiceWorker`, it is possible to alter the response of a request to return JavaScript code that would be unsandboxed when evaluated by the browser.
+
+**Example:**
+```js
+navigator.serviceWorker.register('/static/sw.js').then(function() {
+    window.open('/static/aaa', '_self');
+});
+```
+
+**File /static/sw.js:**
+<!-- eslint-disable-next-line no-restricted-globals -->
+```js
+self.addEventListener('fetch', function(event) {
+    const unsandboxed = '<body><script>document.body.innerHTML=document.cookie;</script>';
+    event.respondWith(new Response(unsandboxed, { headers: { 'Content-Type': 'text/html' } }));
+});
+```
+
+### Goal
+
+To prevent unsandboxed JavaScript code from leaking data, we want to disallow access to the `navigator.serviceWorker` property.
+
+### Design
+
+Patch getter on `Navigator.prototype.serviceWorker` descriptor to return `undefined`.
+
+### Distorted behavior
+
+Each time code accesses `navigator.serviceWorker` property, this distortion will return `undefined`.
 
 
 <a name="rangedocscreatecontextualfragment-valuemd"></a>
@@ -1236,15 +1239,28 @@ There are ways to read the content of a Blob/File object but they are asynchrono
 
 <a name="windowdocsfetch-valuemd"></a>
 
-## value: Window.prototype.fetch [Main]
+## Window.fetch
 
-### Summary
+### Goal
 
-The `fetch` method allows users to make requests similar to XMLHttpRequest(XHR) with the main difference being fetch uses a promise. This allows users to make requests endpoints blocked by Locker vNext
+To prevent users from making requests to disallowed endpoints.
 
-### Distorted Behavior
+### Design
 
-The `window.fetch` distortion will examine the hostname` and the `pathname` of the URL parameter for both string and Request and will reject the promise if the url matches disallowed endpoints. 
+Patch the `Window.fetch` property and intercept calls to it to block disallowed URLs.
+
+### Distorted behavior
+
+The `Window.fetch` distortion examines the `hostname` and the `pathname` of the URL, and if it matches one of the disallowed entries, it rejects the promise.
+
+### Disallowed endpoints
+
+Locker disallows endpoints:
+
+- Containing `"/aura"` in the URL.
+
+At the moment this is hard coded, but in the future this will be a configuration option.
+
 
 <a name="windowdocsopen-valuemd"></a>
 
@@ -1299,7 +1315,7 @@ Locker will throw a `RangeError` when calling the constructor. Locker will block
 
 <a name="xmlhttprequestdocsopen-valuemd"></a>
 
-## value: XMLHttpRequest.prototype.open
+## XMLHttpRequest.open
 
 ### Goal
 
@@ -1307,8 +1323,16 @@ To prevent users from making requests to disallowed endpoints.
 
 ### Design
 
-Patch the `XMLHttpRequest.prototype.open` property and intercept calls to it to block disallowed URLs.
+Patch the `XMLHttpRequest.open` property and intercept calls to it to block disallowed URLs.
 
 ### Distorted behavior
 
-The `XMLHttpRequest.prototype.open` distortion examines the `hostname` and the `pathname` of the URL, if it matches one of the disallowed config entries, it throws an error.
+The `XMLHttpRequest.open` distortion examines the `hostname` and the `pathname` of the URL, and if it matches one of the disallowed entries, it throws an error.
+
+### Disallowed endpoints
+
+Locker disallows endpoints:
+
+- Containing `"/aura"` in the URL.
+
+At the moment this is hard coded, but in the future this will be a configuration option.
