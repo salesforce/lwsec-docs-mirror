@@ -1,7 +1,6 @@
-# Undefined document.all (undefined-document-all)
+# Prevent access to document.all (undefined-document-all)
 
-The value of `document.all` in Lightning Locker is `undefined`. This isn’t
-likely to break code but is something to be aware of.
+The `document.all` getter returns `undefined` when Lightning Web Security is enabled.
 
 ## Rule Details
 

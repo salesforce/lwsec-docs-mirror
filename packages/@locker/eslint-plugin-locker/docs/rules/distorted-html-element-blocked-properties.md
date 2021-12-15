@@ -1,6 +1,6 @@
-# Disallow Blocked HTMLElement Properties (blocked-html-element-properties)
+# Prevent access to certain HTMLElement properties (distorted-html-element-blocked-properties)
 
-For security the following `HTMLElement` properties are prohibited in Lightning Locker:
+The following `HTMLElement` properties are prohibited when Lightning Web Security is enabled:
 -   nonce
 -   onrejectionhandled
 -   onunhandledrejection

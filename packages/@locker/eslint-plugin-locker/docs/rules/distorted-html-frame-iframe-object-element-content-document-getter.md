@@ -1,7 +1,18 @@
-# Distorted HTML{Frame|IFrame|Object}Element#contentDocument Getter (distorted-html-frame-iframe-object-element-content-document-getter)
+# Prevent access to HTML{Frame|IFrame|Object}Element.contentDocument (distorted-html-frame-iframe-object-element-content-document-getter)
 
-For security the `HTML{Frame|IFrame|Object}Element#contentDocument` getter is
-distorted in Lightning Locker.
+The `HTML{Frame|IFrame|Object}Element.contentDocument` getter returns `null` when Lightning Web Security is enabled.
+
+See [Related Distortions](#related-distortions) below for more details.
+
+## Rule Details
+
+Example of **incorrect** code:
+
+```js
+document.getElementsByTagName('iframe')[0].contentDocument;
+```
+
+## Related Distortions
 
 <!-- START generated embed: @locker/distortion/src/HTMLFrameElement/docs/contentDocument-getter.md -->
 ## get: HTMLFrameElement.prototype.contentDocument
