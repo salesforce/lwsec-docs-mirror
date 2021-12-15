@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented Locker vNext distortions.
 
-Version: 0.13.6<br>
-Generated: Jun 22, 2021
+Version: 0.13.7<br>
+Generated: Jun 30, 2021
 
 ## Table of Contents
 
@@ -86,44 +86,56 @@ Generated: Jun 22, 2021
 - [get: HTMLElement.prototype.style [Chrome, Edge, Opera, Safari]](#get-htmlelementprototypestyle-chrome-edge-opera-safari)
   - [Summary](#summary-7)
   - [Distorted Behavior](#distorted-behavior-11)
-- [get: HTMLFrameElement.prototype.contentWindow](#get-htmlframeelementprototypecontentwindow)
+- [get: HTMLFrameElement.prototype.contentDocument](#get-htmlframeelementprototypecontentdocument)
   - [Goal](#goal-12)
   - [Design](#design-12)
   - [Distorted behavior](#distorted-behavior-8)
-- [get: HTMLIFrameElement.prototype.contentWindow](#get-htmliframeelementprototypecontentwindow)
+- [get: HTMLFrameElement.prototype.contentWindow](#get-htmlframeelementprototypecontentwindow)
   - [Goal](#goal-13)
   - [Design](#design-13)
   - [Distorted behavior](#distorted-behavior-9)
-- [set: HTMLIFrameElement.prototype.src](#set-htmliframeelementprototypesrc)
+- [get: HTMLIFrameElement.prototype.contentDocument](#get-htmliframeelementprototypecontentdocument)
   - [Goal](#goal-14)
   - [Design](#design-14)
   - [Distorted behavior](#distorted-behavior-10)
-- [get: HTMLObjectElement.prototype.contentWindow](#get-htmlobjectelementprototypecontentwindow)
+- [get: HTMLIFrameElement.prototype.contentWindow](#get-htmliframeelementprototypecontentwindow)
   - [Goal](#goal-15)
   - [Design](#design-15)
   - [Distorted behavior](#distorted-behavior-11)
-- [get: HTMLScriptElement.prototype.src](#get-htmlscriptelementprototypesrc)
+- [set: HTMLIFrameElement.prototype.src](#set-htmliframeelementprototypesrc)
   - [Goal](#goal-16)
   - [Design](#design-16)
   - [Distorted behavior](#distorted-behavior-12)
-- [set: HTMLScriptElement.prototype.src](#set-htmlscriptelementprototypesrc)
+- [get: HTMLObjectElement.prototype.contentDocument](#get-htmlobjectelementprototypecontentdocument)
   - [Goal](#goal-17)
   - [Design](#design-17)
   - [Distorted behavior](#distorted-behavior-13)
-- [get: MessageEvent.prototype.source](#get-messageeventprototypesource)
+- [get: HTMLObjectElement.prototype.contentWindow](#get-htmlobjectelementprototypecontentwindow)
   - [Goal](#goal-18)
   - [Design](#design-18)
-  - [Design](#design-19)
   - [Distorted behavior](#distorted-behavior-14)
-- [value: NamedNodeMap.prototype.setNamedItem](#value-namednodemapprototypesetnameditem)
+- [get: HTMLScriptElement.prototype.src](#get-htmlscriptelementprototypesrc)
   - [Goal](#goal-19)
-  - [Design](#design-20)
+  - [Design](#design-19)
   - [Distorted behavior](#distorted-behavior-15)
+- [set: HTMLScriptElement.prototype.src](#set-htmlscriptelementprototypesrc)
+  - [Goal](#goal-20)
+  - [Design](#design-20)
+  - [Distorted behavior](#distorted-behavior-16)
+- [get: MessageEvent.prototype.source](#get-messageeventprototypesource)
+  - [Goal](#goal-21)
+  - [Design](#design-21)
+  - [Design](#design-22)
+  - [Distorted behavior](#distorted-behavior-17)
+- [value: NamedNodeMap.prototype.setNamedItem](#value-namednodemapprototypesetnameditem)
+  - [Goal](#goal-22)
+  - [Design](#design-23)
+  - [Distorted behavior](#distorted-behavior-18)
 - [get: Navigator.prototype.serviceWorker](#get-navigatorprototypeserviceworker)
   - [Problem statement](#problem-statement)
-  - [Goal](#goal-20)
-  - [Design](#design-21)
-  - [Distorted behavior](#distorted-behavior-16)
+  - [Goal](#goal-23)
+  - [Design](#design-24)
+  - [Distorted behavior](#distorted-behavior-19)
 - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
   - [Summary](#summary-8)
   - [Distorted Behavior](#distorted-behavior-12)
@@ -132,21 +144,21 @@ Generated: Jun 22, 2021
   - [Distorted Behavior](#distorted-behavior-13)
 - [href attribute on SVGScriptElement](#href-attribute-on-svgscriptelement)
   - [Summary](#summary-10)
-  - [Goal](#goal-21)
+  - [Goal](#goal-24)
   - [Distorted Behavior](#distorted-behavior-14)
   - [Distorted Behavior](#distorted-behavior-15)
 - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
   - [Summary](#summary-11)
-  - [Design](#design-22)
+  - [Design](#design-25)
   - [Dependencies](#dependencies)
 - [value: ServiceWorkerContainer.prototype](#value-serviceworkercontainerprototype)
   - [Problem Statement](#problem-statement)
-  - [Goal](#goal-22)
-  - [Distorted behavior](#distorted-behavior-17)
+  - [Goal](#goal-25)
+  - [Distorted behavior](#distorted-behavior-20)
 - [get: ShadowRoot.prototype.mode](#get-shadowrootprototypemode)
-  - [Goal](#goal-23)
-  - [Design](#design-23)
-  - [Distorted behavior](#distorted-behavior-18)
+  - [Goal](#goal-26)
+  - [Design](#design-26)
+  - [Distorted behavior](#distorted-behavior-21)
 - [SharedWorker Global Constructor](#sharedworker-global-constructor)
   - [Summary](#summary-12)
   - [Distorted Behavior](#distorted-behavior-16)
@@ -172,13 +184,13 @@ Generated: Jun 22, 2021
   - [Summary](#summary-19)
   - [Distorted Behavior](#distorted-behavior-23)
 - [value: URL.createObjectURL](#value-urlcreateobjecturl)
-  - [Goal](#goal-24)
-  - [Design](#design-24)
-  - [Distorted behavior](#distorted-behavior-19)
+  - [Goal](#goal-27)
+  - [Design](#design-27)
+  - [Distorted behavior](#distorted-behavior-22)
 - [Window.fetch](#windowfetch)
-  - [Goal](#goal-25)
-  - [Design](#design-25)
-  - [Distorted behavior](#distorted-behavior-20)
+  - [Goal](#goal-28)
+  - [Design](#design-28)
+  - [Distorted behavior](#distorted-behavior-23)
   - [Disallowed endpoints](#disallowed-endpoints)
 - [get: window.frames [Main]](#get-windowframes-main)
   - [Summary](#summary-20)
@@ -205,9 +217,9 @@ Generated: Jun 22, 2021
   - [Summary](#summary-27)
   - [Distorted Behavior](#distorted-behavior-31)
 - [XMLHttpRequest.open](#xmlhttprequestopen)
-  - [Goal](#goal-26)
-  - [Design](#design-26)
-  - [Distorted behavior](#distorted-behavior-21)
+  - [Goal](#goal-29)
+  - [Design](#design-29)
+  - [Distorted behavior](#distorted-behavior-24)
   - [Disallowed endpoints](#disallowed-endpoints-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -400,7 +412,13 @@ Patching the setter of `Document.prototype.cookie` is required in order for the 
 
 ## set: Document.prototype.domain
 
-According to [W3C](https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-2250147) this property should be read-only. Firefox does not allow setting it and throws a SecurityError but Chrome, Safari and Edge (Webkit) allow it. The property cannot be set to a random value, it has to be a suffix of the initial domain. So if the initial value is `my.domain.com` the domain value that can be set is `domain.com` because that is the suffix. The distortion shouldn't allow a sandbox to change the domain of the root document.
+According to [W3C](https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-2250147)
+this property should be read-only. Firefox does not allow setting it and throws
+a SecurityError but Chrome, Safari and Edge (Webkit) allow it. The property cannot
+be set to a random value, it has to be a suffix of the initial domain. So if the
+initial value is `my.domain.com` the domain value that can be set is `domain.com`
+because that is the suffix. The distortion shouldn't allow a sandbox to change the
+domain of the root document.
 
 ### Goal
 
@@ -408,11 +426,13 @@ According to [W3C](https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-2250147) 
 
 ### Design
 
-- Patch the setter of Document.prototype.domain to throw an error regardless of the value that's being used.
+- Patch the setter of Document.prototype.domain to throw an error regardless of
+the value that's being used.
 
 ### Distorted behavior
 
-- On Firefox we will throw an Error instead of SecurityError. On Chrome, Safari and Edge (Webkit) we will throw an Error instead of allowing the setter to execute.
+- On Firefox we will throw an Error instead of SecurityError. On Chrome, Safari
+and Edge (Webkit) we will throw an Error instead of allowing the setter to execute.
 <hr>
 <a name="documentdocsexeccommand-valuemd"></a>
 
@@ -642,6 +662,27 @@ any properties changed from within the sandbox are reflected on the DOM.
 
 Furthermore, this distortion does not cover a possible but highly improbable scenario: code passing the style object from system mode to the sandbox via function arguments. The distortion will not apply since the getter has been invoked in system mode. The resulting effect is that sandboxed code will not see changes to `style` being reflected in the DOM. If this scenario does happen then the distortion should be upgraded to a patch on the raw `HTMLElement.prototype` in native window.
 <hr>
+<a name="htmlframeelementdocscontentdocument-gettermd"></a>
+
+## get: HTMLFrameElement.prototype.contentDocument
+
+To reduce the surface area of possible exploit we return `null` for the
+`contentDocument` property of frames. At a later time we may explore multi
+document support, but in the interest of simplicity and moving things along
+we have decided to keep things simple.
+
+### Goal
+
+- Do not expose the real raw `contentDocument`
+
+### Design
+
+The value of `contentDocument` may be `null` so we enforce that it is.
+
+### Distorted behavior
+
+- Always return `null` for `contentDocument`
+<hr>
 <a name="htmlframeelementdocscontentwindow-gettermd"></a>
 
 ## get: HTMLFrameElement.prototype.contentWindow
@@ -668,6 +709,27 @@ Create an artificial `contentWindow` object with a curated list of properties
 ### Distorted behavior
 - Return an artificial `contentWindow` object per frame
 - Cache the artificial `contentWindow` object for subsequent accesses
+<hr>
+<a name="htmliframeelementdocscontentdocument-gettermd"></a>
+
+## get: HTMLIFrameElement.prototype.contentDocument
+
+To reduce the surface area of possible exploit we return `null` for the
+`contentDocument` property of iframes. At a later time we may explore multi
+document support, but in the interest of simplicity and moving things along
+we have decided to keep things simple.
+
+### Goal
+
+- Do not expose the real raw `contentDocument`
+
+### Design
+
+The value of `contentDocument` may be `null` so we enforce that it is.
+
+### Distorted behavior
+
+- Always return `null` for `contentDocument`
 <hr>
 <a name="htmliframeelementdocscontentwindow-gettermd"></a>
 
@@ -713,6 +775,27 @@ Only allow `src` values with validated schemes to be set.
 ### Distorted behavior
 - Log a console warning for HTMLIFrameElement.src values that don't sanitize
   to http:// or https:// schemes
+<hr>
+<a name="htmlobjectelementdocscontentdocument-gettermd"></a>
+
+## get: HTMLObjectElement.prototype.contentDocument
+
+To reduce the surface area of possible exploit we return `null` for the
+`contentDocument` property of object elements. At a later time we may explore
+multi document support, but in the interest of simplicity and moving things along
+we have decided to keep things simple.
+
+### Goal
+
+- Do not expose the real raw `contentDocument`
+
+### Design
+
+The value of `contentDocument` may be `null` so we enforce that it is.
+
+### Distorted behavior
+
+- Always return `null` for `contentDocument`
 <hr>
 <a name="htmlobjectelementdocscontentwindow-gettermd"></a>
 
@@ -1283,11 +1366,17 @@ At the moment this is hard coded, but in the future this will be a configuration
 
 ### Summary
 
-The Window interface's `frames` property returns an object that is the window itself, which is an array-like object, listing the direct sub-frames of the current window.
+The Window interface's `frames` property returns an object that is the window
+itself, which is an array-like object, listing the direct sub-frames of the
+current window.
 
 ### Distorted Behavior
 
-The Window interface's `frames` property returns a fake `frameList` that includes all `<frame>` and `<iframe>` elements in the document, in document order. Supports access via index or name property value. `window.frames` does not allow access to `window`, ie. `window.frames !== window`, and does not provide proxy access to `window` properties.
+The Window interface's `frames` property returns a fake `frameList` that includes
+all `<frame>` and `<iframe>` elements in the document, in insertion order. Supports
+access via index or name property value. `window.frames` does not allow access to
+`window`, ie. `window.frames !== window`, and does not provide proxy access to
+`window` properties.
 <hr>
 <a name="windowdocslength-gettermd"></a>
 
