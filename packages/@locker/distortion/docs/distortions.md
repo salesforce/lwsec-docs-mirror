@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented Locker vNext Distortions.
 
-Version: 0.12.13<br>
-Generated: Mar 17, 2021
+Version: 0.12.14<br>
+Generated: Mar 23, 2021
 
 ## Table of Contents
 
@@ -148,69 +148,80 @@ Generated: Mar 17, 2021
 - [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
   - [Summary](#summary-13)
   - [Distorted Behavior](#distorted-behavior-17)
-- [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
+- [href attribute on SVGScriptElement](#href-attribute-on-svgscriptelement)
   - [Summary](#summary-14)
+  - [Goal](#goal-21)
+  - [Distorted Behavior](#distorted-behavior-18)
+  - [Distorted Behavior](#distorted-behavior-19)
+- [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
+  - [Summary](#summary-15)
   - [Design](#design-22)
   - [Dependencies](#dependencies)
 - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
   - [Problem Statement](#problem-statement)
-  - [Goal](#goal-21)
+  - [Goal](#goal-22)
   - [Distorted behavior](#distorted-behavior-17)
 - [get: ShadowRoot.prototype.host](#get-shadowrootprototypehost)
-  - [Goal](#goal-22)
+  - [Goal](#goal-23)
   - [Design](#design-23)
   - [Distorted behavior](#distorted-behavior-18)
 - [get: ShadowRoot.prototype.mode](#get-shadowrootprototypemode)
-  - [Goal](#goal-23)
+  - [Goal](#goal-24)
   - [Design](#design-24)
   - [Distorted behavior](#distorted-behavior-19)
 - [SharedWorker Global Constructor](#sharedworker-global-constructor)
-  - [Summary](#summary-15)
-  - [Distorted Behavior](#distorted-behavior-18)
-- [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
   - [Summary](#summary-16)
-  - [Distorted Behavior](#distorted-behavior-19)
-- [Storage API: Storage.prototype](#storage-api-storageprototype)
-  - [Summary](#summary-17)
   - [Distorted Behavior](#distorted-behavior-20)
-- [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
-  - [Summary](#summary-18)
+- [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
+  - [Summary](#summary-17)
   - [Distorted Behavior](#distorted-behavior-21)
-- [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
-  - [Summary](#summary-19)
+- [Storage API: Storage.prototype](#storage-api-storageprototype)
+  - [Summary](#summary-18)
   - [Distorted Behavior](#distorted-behavior-22)
-- [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
-  - [Summary](#summary-20)
+- [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
+  - [Summary](#summary-19)
   - [Distorted Behavior](#distorted-behavior-23)
-- [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
-  - [Summary](#summary-21)
+- [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
+  - [Summary](#summary-20)
   - [Distorted Behavior](#distorted-behavior-24)
-- [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
-  - [Summary](#summary-22)
+- [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
+  - [Summary](#summary-21)
   - [Distorted Behavior](#distorted-behavior-25)
+- [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
+  - [Summary](#summary-22)
+  - [Distorted Behavior](#distorted-behavior-26)
+- [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
+  - [Summary](#summary-23)
+  - [Distorted Behavior](#distorted-behavior-27)
 - [value: URL.createObjectURL](#value-urlcreateobjecturl)
-  - [Goal](#goal-24)
+  - [Goal](#goal-25)
   - [Design](#design-25)
   - [Distorted behavior](#distorted-behavior-20)
 - [Window.fetch](#windowfetch)
-  - [Goal](#goal-25)
+  - [Goal](#goal-26)
   - [Design](#design-26)
   - [Distorted behavior](#distorted-behavior-21)
   - [Disallowed endpoints](#disallowed-endpoints)
 - [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
-  - [Summary](#summary-23)
-  - [Distorted Behavior](#distorted-behavior-26)
-- [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
   - [Summary](#summary-24)
-  - [Distorted Behavior](#distorted-behavior-27)
-- [value: Window.prototype.setTimeout [Main]](#value-windowprototypesettimeout-main)
-  - [Summary](#summary-25)
   - [Distorted Behavior](#distorted-behavior-28)
-- [Worker Global Constructor](#worker-global-constructor)
-  - [Summary](#summary-26)
+- [get: window.opener [Main]](#get-windowopener-main)
+  - [Summary](#summary-25)
   - [Distorted Behavior](#distorted-behavior-29)
+- [get: window.parent [Main]](#get-windowparent-main)
+  - [Summary](#summary-26)
+  - [Distorted Behavior](#distorted-behavior-30)
+- [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
+  - [Summary](#summary-27)
+  - [Distorted Behavior](#distorted-behavior-31)
+- [value: Window.prototype.setTimeout [Main]](#value-windowprototypesettimeout-main)
+  - [Summary](#summary-28)
+  - [Distorted Behavior](#distorted-behavior-32)
+- [Worker Global Constructor](#worker-global-constructor)
+  - [Summary](#summary-29)
+  - [Distorted Behavior](#distorted-behavior-33)
 - [XMLHttpRequest.open](#xmlhttprequestopen)
-  - [Goal](#goal-26)
+  - [Goal](#goal-27)
   - [Design](#design-27)
   - [Distorted behavior](#distorted-behavior-22)
   - [Disallowed endpoints](#disallowed-endpoints-1)
@@ -1081,6 +1092,40 @@ In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existi
 
 This distortion sanitizes HTML string that is used to create the DocumentFragment.
 <hr>
+<a name="svgscriptelementdocshref-attributemd"></a>
+
+## href attribute on SVGScriptElement
+
+### Summary
+
+This distortion is necessary to run the contents of `href` file in the sandbox environment. The setter attribute for `href` is `undefined` in the `SVGScriptElement.prototype`. Access to the raw `window` could be attained by running scripts using the SVG `<script/>` tag.
+
+### Goal
+
+- Evaluate SVGScriptElement tags in the sandbox.
+- Maintain native like behavior, some browsers may load the code when the `href` attribute is being populated, some may load the code only when the element is placed in the DOM. This needs to be respected.
+
+### Distorted Behavior
+
+We need to satisfy a few requirements:
+
+1. Prevent browser from fetching and evaluating the javascript file.
+
+   To prevent the native behavior of the script tag we can populate a different attribute with the given value instead of the 'href' attribute. The original url will be stored on the attribute `data-distorted-href`. This will not trigger a fetch request, thus no triggering of the JIT will happen either but we will be able to retrieve the original value later on. 
+
+2. Fetch and evaluate the file using other mechanisms that achieve the same end result.
+
+   We fetch the file using an XHR request. This has some limitations, more specific, all cross-site origin requests may pose problems but our requirement is to satisfy loading script tags from the same domain so for the time being this behavior is sufficient. Once we have the source code we can evaluate it internally where needed.
+
+3. Maintain native like behavior for errors and when the evaluation actually happens.
+
+   Maintaining native like behavior is browser specific and we're mostly concerned about the success scenario and the 404 scenario. As mentioned already, the moment when the JIT is triggered is dependent on the browser implementation and this needs to be respected. As a workaround, to achieve native like behavior, once the XHR completes and we have the source code, we create a very simple Javascript snippet which is wrapped in a Blob object. We create a URL around this Blob object and use it on the `href` attribute to trigger the native behavior. The browser will read the content stored at the `blob:` URL and trigger the JIT which in turn will kick off the evaluation process in the sandbox. 
+
+### Distorted Behavior
+
+- Store original value on `data-distorted-href`, store distorted value on `href`. 
+- The behavior will seem native like to code running in the sandbox.
+<hr>
 <a name="svguseelementdocshref-attributemd"></a>
 
 ## href attribute and xlink:href attribute on SVGUseElement
@@ -1421,6 +1466,31 @@ The `open` method, loads the specified resource into a new or existing browsing 
 
 Locker will return an artificial `Window` object that contains specific safe methods we allow.
 <hr>
+<a name="windowdocsopener-gettermd"></a>
+
+## get: window.opener [Main]
+
+### Summary
+
+The Window interface's `opener` property returns a reference to the window that opened the window, either with open(), or by navigating a link with a target attribute.
+
+In other words, if window A opens window B, B.opener returns A.
+
+### Distorted Behavior
+
+Locker will return an artificial `Window` object that contains specific safe methods we allow.
+<hr>
+<a name="windowdocsparent-gettermd"></a>
+
+## get: window.parent [Main]
+
+### Summary
+
+The Window interface's `parent` property returns a reference to the parent of the current window or subframe. If a window does not have a parent, its parent property is a reference to itself. If window A embeds window B, B.parent returns A.
+
+### Distorted Behavior
+
+Locker will return a patched `Window` object that contains specific safe methods we allow.<hr>
 <a name="windowdocssetinterval-valuemd"></a>
 
 ## value: Window.prototype.setInterval [Main]
