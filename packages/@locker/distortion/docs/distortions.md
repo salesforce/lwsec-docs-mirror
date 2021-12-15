@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented Locker vNext distortions.
 
-Version: 0.14.0<br>
-Generated: Aug 11, 2021
+Version: 0.14.1<br>
+Generated: Aug 18, 2021
 
 ## Table of Contents
 
@@ -78,14 +78,17 @@ Generated: Aug 11, 2021
 - [get: Element.prototype.shadowRoot [Main]](#get-elementprototypeshadowroot-main)
   - [Summary](#summary-5)
   - [Distorted Behavior](#distorted-behavior-9)
+- [Event.prototype.composedPath [Main]](#eventprototypecomposedpath-main)
+  - [Summary](#summary-6)
+  - [Distorted Behavior](#distorted-behavior-10)
 - [nonce: HTMLElement.prototype](#nonce-htmlelementprototype)
 - [WindowEventHandlers: HTMLElement.prototype](#windoweventhandlers-htmlelementprototype)
 - [set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]](#set-elementprototypeoutertext-chrome-edge-opera-safari)
-  - [Summary](#summary-6)
-  - [Distorted Behavior](#distorted-behavior-10)
-- [get: HTMLElement.prototype.style [Chrome, Edge, Opera, Safari]](#get-htmlelementprototypestyle-chrome-edge-opera-safari)
   - [Summary](#summary-7)
   - [Distorted Behavior](#distorted-behavior-11)
+- [get: HTMLElement.prototype.style [Chrome, Edge, Opera, Safari]](#get-htmlelementprototypestyle-chrome-edge-opera-safari)
+  - [Summary](#summary-8)
+  - [Distorted Behavior](#distorted-behavior-12)
 - [get: HTMLFrameElement.prototype.contentDocument](#get-htmlframeelementprototypecontentdocument)
   - [Goal](#goal-12)
   - [Design](#design-12)
@@ -137,18 +140,18 @@ Generated: Aug 11, 2021
   - [Design](#design-24)
   - [Distorted behavior](#distorted-behavior-19)
 - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
-  - [Summary](#summary-8)
-  - [Distorted Behavior](#distorted-behavior-12)
-- [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
   - [Summary](#summary-9)
   - [Distorted Behavior](#distorted-behavior-13)
-- [href attribute on SVGScriptElement](#href-attribute-on-svgscriptelement)
+- [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
   - [Summary](#summary-10)
-  - [Goal](#goal-24)
   - [Distorted Behavior](#distorted-behavior-14)
-  - [Distorted Behavior](#distorted-behavior-15)
-- [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
+- [href attribute on SVGScriptElement](#href-attribute-on-svgscriptelement)
   - [Summary](#summary-11)
+  - [Goal](#goal-24)
+  - [Distorted Behavior](#distorted-behavior-15)
+  - [Distorted Behavior](#distorted-behavior-16)
+- [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
+  - [Summary](#summary-12)
   - [Design](#design-25)
   - [Dependencies](#dependencies)
 - [value: ServiceWorkerContainer.prototype](#value-serviceworkercontainerprototype)
@@ -160,29 +163,29 @@ Generated: Aug 11, 2021
   - [Design](#design-26)
   - [Distorted behavior](#distorted-behavior-21)
 - [SharedWorker Global Constructor](#sharedworker-global-constructor)
-  - [Summary](#summary-12)
-  - [Distorted Behavior](#distorted-behavior-16)
-- [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
   - [Summary](#summary-13)
   - [Distorted Behavior](#distorted-behavior-17)
-- [Storage API: Storage.prototype](#storage-api-storageprototype)
+- [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
   - [Summary](#summary-14)
   - [Distorted Behavior](#distorted-behavior-18)
-- [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
+- [Storage API: Storage.prototype](#storage-api-storageprototype)
   - [Summary](#summary-15)
   - [Distorted Behavior](#distorted-behavior-19)
-- [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
+- [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
   - [Summary](#summary-16)
   - [Distorted Behavior](#distorted-behavior-20)
-- [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
+- [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
   - [Summary](#summary-17)
   - [Distorted Behavior](#distorted-behavior-21)
-- [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
+- [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
   - [Summary](#summary-18)
   - [Distorted Behavior](#distorted-behavior-22)
-- [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
+- [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
   - [Summary](#summary-19)
   - [Distorted Behavior](#distorted-behavior-23)
+- [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
+  - [Summary](#summary-20)
+  - [Distorted Behavior](#distorted-behavior-24)
 - [value: URL.createObjectURL](#value-urlcreateobjecturl)
   - [Goal](#goal-27)
   - [Design](#design-27)
@@ -193,29 +196,29 @@ Generated: Aug 11, 2021
   - [Distorted behavior](#distorted-behavior-23)
   - [Disallowed endpoints](#disallowed-endpoints)
 - [get: window.frames [Main]](#get-windowframes-main)
-  - [Summary](#summary-20)
-  - [Distorted Behavior](#distorted-behavior-24)
-- [get: window.length [Main]](#get-windowlength-main)
   - [Summary](#summary-21)
   - [Distorted Behavior](#distorted-behavior-25)
-- [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
+- [get: window.length [Main]](#get-windowlength-main)
   - [Summary](#summary-22)
   - [Distorted Behavior](#distorted-behavior-26)
-- [get: window.opener [Main]](#get-windowopener-main)
+- [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
   - [Summary](#summary-23)
   - [Distorted Behavior](#distorted-behavior-27)
-- [get: window.parent [Main]](#get-windowparent-main)
+- [get: window.opener [Main]](#get-windowopener-main)
   - [Summary](#summary-24)
   - [Distorted Behavior](#distorted-behavior-28)
-- [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
+- [get: window.parent [Main]](#get-windowparent-main)
   - [Summary](#summary-25)
   - [Distorted Behavior](#distorted-behavior-29)
-- [value: window.setTimeout [Main]](#value-windowsettimeout-main)
+- [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
   - [Summary](#summary-26)
   - [Distorted Behavior](#distorted-behavior-30)
-- [Worker Global Constructor](#worker-global-constructor)
+- [value: window.setTimeout [Main]](#value-windowsettimeout-main)
   - [Summary](#summary-27)
   - [Distorted Behavior](#distorted-behavior-31)
+- [Worker Global Constructor](#worker-global-constructor)
+  - [Summary](#summary-28)
+  - [Distorted Behavior](#distorted-behavior-32)
 - [XMLHttpRequest.open](#xmlhttprequestopen)
   - [Goal](#goal-29)
   - [Design](#design-29)
@@ -619,6 +622,23 @@ Although in the sandbox elements cannot be created with this mode (see attachSha
 ### Distorted Behavior
 
 This distortion will return `null` when trying to access the `shadowRoot` property on a light-dom element.<hr>
+<a name="eventdocscomposedpath-valuemd"></a>
+
+## Event.prototype.composedPath [Main]
+
+### Summary
+
+This method returns the event's path which is an array of objects on which listeners will be
+invoked. This does not include nodes in shadow trees if the shadow root was created with its
+`ShadowRoot.mode` closed.
+
+
+### Distorted Behavior
+
+This method returns the event’s path which is an array of the objects on which listeners will
+be invoked, up to the closed custom element itself, but not including the shadow root, or nodes
+inside the shadow root.
+<hr>
 <a name="htmlelementdocsblocked-propertiesmd"></a>
 
 ## nonce: HTMLElement.prototype
