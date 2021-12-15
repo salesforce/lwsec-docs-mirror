@@ -3,13 +3,15 @@
 For security `Element#insertAdjacentHTML` is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/insertAdjacentHTML-value.md -->
-## set: Element.prototype.insertAdjacentHTML [Main]
+## Element.prototype.insertAdjacentHTML
 
 ### Summary
 
-In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert specified text as HTML into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM.
+> The [`Element.insertAdjacentHTML()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElinsertAdjacentHTMLement) method inserts a `DOMString` object before or after the beggining of the `Element`, or before or after the end of the `Element`. 
+
+Since Lightning Web Security runs in the main window, where the `<html>`, `<head>` and `<body>` elements are shared, malicious code could be added to those elements by using the insertAdjacentHTML method, corrupting the DOM of the current rendered page.  
 
 ### Distorted Behavior
 
-This distortion sanitizes HTML being added.
-<!-- END generated embed please keep comment here to allow auto update -->
+This distortion sanitizes and prevents malicious code added to the shared elements: `<html>`, `<head>` and `<body>`.
+<!-- END generated embed, please keep comment -->

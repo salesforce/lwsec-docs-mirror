@@ -25,4 +25,4 @@ Although in the sandbox elements cannot be created with this mode (see attachSha
 ### Distorted Behavior
 
 This distortion will return `null` when trying to access the `shadowRoot` property on a light-dom element.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->

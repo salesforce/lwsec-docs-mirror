@@ -47,7 +47,7 @@ Patch getter on `Navigator.prototype.serviceWorker` descriptor to return `undefi
 ### Distorted behavior
 
 Each time code accesses `navigator.serviceWorker` property, this distortion will return `undefined`.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/ServiceWorkerContainer/docs/prototype-value.md -->
 ## value: ServiceWorkerContainer.prototype
@@ -78,4 +78,4 @@ To prevent unsandboxed JavaScript code from leaking data, we want to disallow ac
 ### Distorted behavior
 
 This distortion will throw a `TypeError` whenever any of the `ServiceWorkerContainer.prototype` properties or methods is accessed.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->

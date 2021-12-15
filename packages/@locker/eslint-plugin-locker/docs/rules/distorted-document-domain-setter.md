@@ -38,4 +38,4 @@ the value that's being used.
 
 - On Firefox we will throw an Error instead of SecurityError. On Chrome, Safari
 and Edge (Webkit) we will throw an Error instead of allowing the setter to execute.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
