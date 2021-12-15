@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented Locker vNext Distortions.
 
-Version: 0.12.12<br>
-Generated: Feb 24, 2021
+Version: 0.12.13<br>
+Generated: Mar 17, 2021
 
 ## Table of Contents
 
@@ -15,187 +15,203 @@ Generated: Feb 24, 2021
   - [Goal](#goal)
   - [Design](#design)
   - [Distorted behavior](#distorted-behavior)
-- [value: CustomElementRegistry.prototype.define](#value-customelementregistryprototypedefine)
+- [get: CookieStore.prototype.delete](#get-cookiestoreprototypedelete)
   - [Goal](#goal-1)
   - [Design](#design-1)
-  - [Distorted behavior](#distorted-behavior-1)
-- [value: CustomElementRegistry.prototype.get](#value-customelementregistryprototypeget)
+  - [Distorted Behavior](#distorted-behavior)
+- [get: CookieStore.prototype.get](#get-cookiestoreprototypeget)
   - [Goal](#goal-2)
   - [Design](#design-2)
-  - [Distorted behavior](#distorted-behavior-2)
-- [get: Document.prototype.cookie](#get-documentprototypecookie)
+  - [Distorted Behavior](#distorted-behavior-1)
+- [get: CookieStore.prototype.getAll](#get-cookiestoreprototypegetall)
   - [Goal](#goal-3)
   - [Design](#design-3)
-  - [Distorted behavior](#distorted-behavior-3)
-- [set: Document.prototype.cookie](#set-documentprototypecookie)
+  - [Distorted Behavior](#distorted-behavior-2)
+- [set: CookieStore.prototype.set](#set-cookiestoreprototypeset)
   - [Goal](#goal-4)
   - [Design](#design-4)
-  - [Distorted behavior](#distorted-behavior-4)
-- [set: Document.prototype.domain](#set-documentprototypedomain)
+  - [Distorted Behavior](#distorted-behavior-3)
+- [value: CustomElementRegistry.prototype.define](#value-customelementregistryprototypedefine)
   - [Goal](#goal-5)
   - [Design](#design-5)
+  - [Distorted behavior](#distorted-behavior-1)
+- [value: CustomElementRegistry.prototype.get](#value-customelementregistryprototypeget)
+  - [Goal](#goal-6)
+  - [Design](#design-6)
+  - [Distorted behavior](#distorted-behavior-2)
+- [get: Document.prototype.cookie](#get-documentprototypecookie)
+  - [Goal](#goal-7)
+  - [Design](#design-7)
+  - [Distorted behavior](#distorted-behavior-3)
+- [set: Document.prototype.cookie](#set-documentprototypecookie)
+  - [Goal](#goal-8)
+  - [Design](#design-8)
+  - [Distorted behavior](#distorted-behavior-4)
+- [set: Document.prototype.domain](#set-documentprototypedomain)
+  - [Goal](#goal-9)
+  - [Design](#design-9)
   - [Distorted behavior](#distorted-behavior-5)
 - [value: Document.prototype.execCommand [Main]](#value-documentprototypeexeccommand-main)
   - [Summary](#summary)
-  - [Distorted Behavior](#distorted-behavior)
+  - [Distorted Behavior](#distorted-behavior-4)
 - [set: Element.prototype.attachShadow [Main]](#set-elementprototypeattachshadow-main)
   - [Summary](#summary-1)
-  - [Distorted Behavior](#distorted-behavior-1)
+  - [Distorted Behavior](#distorted-behavior-5)
 - [get: Element.attributes](#get-elementattributes)
-  - [Goal](#goal-6)
-  - [Design](#design-6)
+  - [Goal](#goal-10)
+  - [Design](#design-10)
   - [Distorted behavior](#distorted-behavior-6)
 - [set: Element.prototype.id [Main]](#set-elementprototypeid-main)
   - [Summary](#summary-2)
-  - [Distorted Behavior](#distorted-behavior-2)
+  - [Distorted Behavior](#distorted-behavior-6)
   - [Knowledge](#knowledge)
   - [Removed Implementation](#removed-implementation)
 - [Fullscreen API: Element.prototype](#fullscreen-api-elementprototype)
 - [set: Element.prototype.innerHTML [Main]](#set-elementprototypeinnerhtml-main)
   - [Summary](#summary-3)
-  - [Distorted Behavior](#distorted-behavior-3)
+  - [Distorted Behavior](#distorted-behavior-7)
 - [set: Element.prototype.insertAdjacentHTML [Main]](#set-elementprototypeinsertadjacenthtml-main)
   - [Summary](#summary-4)
-  - [Distorted Behavior](#distorted-behavior-4)
+  - [Distorted Behavior](#distorted-behavior-8)
 - [set: Element.prototype.insertAdjacentText [Main]](#set-elementprototypeinsertadjacenttext-main)
   - [Summary](#summary-5)
-  - [Distorted Behavior](#distorted-behavior-5)
+  - [Distorted Behavior](#distorted-behavior-9)
   - [Knowledge](#knowledge-1)
   - [Removed Implementation](#removed-implementation-1)
 - [set: Element.prototype.outerHTML [Main]](#set-elementprototypeouterhtml-main)
   - [Summary](#summary-6)
-  - [Distorted Behavior](#distorted-behavior-6)
+  - [Distorted Behavior](#distorted-behavior-10)
 - [value: Element.prototype.setAttribute](#value-elementprototypesetattribute)
-  - [Goal](#goal-7)
-  - [Design](#design-7)
+  - [Goal](#goal-11)
+  - [Design](#design-11)
   - [Distorted behavior](#distorted-behavior-7)
 - [get: Element.prototype.shadowRoot [Main]](#get-elementprototypeshadowroot-main)
   - [Summary](#summary-7)
-  - [Distorted Behavior](#distorted-behavior-7)
+  - [Distorted Behavior](#distorted-behavior-11)
 - [nonce: HTMLElement.prototype](#nonce-htmlelementprototype)
 - [WindowEventHandlers: HTMLElement.prototype](#windoweventhandlers-htmlelementprototype)
 - [set: Element.prototype.innerText [Main]](#set-elementprototypeinnertext-main)
   - [Summary](#summary-8)
-  - [Distorted Behavior](#distorted-behavior-8)
+  - [Distorted Behavior](#distorted-behavior-12)
 - [set: HTML<NAME>Element.prototype.name [Main]](#set-htmlnameelementprototypename-main)
   - [Summary](#summary-9)
-  - [Distorted Behavior](#distorted-behavior-9)
+  - [Distorted Behavior](#distorted-behavior-13)
   - [Knowledge](#knowledge-2)
   - [Removed Implementation](#removed-implementation-2)
 - [set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]](#set-elementprototypeoutertext-chrome-edge-opera-safari)
   - [Summary](#summary-10)
-  - [Distorted Behavior](#distorted-behavior-10)
+  - [Distorted Behavior](#distorted-behavior-14)
 - [get: HTMLElement.prototype.style [Chrome, Edge, Opera, Safari]](#get-htmlelementprototypestyle-chrome-edge-opera-safari)
   - [Summary](#summary-11)
-  - [Distorted Behavior](#distorted-behavior-11)
+  - [Distorted Behavior](#distorted-behavior-15)
 - [get: HTMLFrameElement.prototype.contentWindow](#get-htmlframeelementprototypecontentwindow)
-  - [Goal](#goal-8)
-  - [Design](#design-8)
-  - [Distorted behavior](#distorted-behavior-8)
-- [get: HTMLIframeElement.prototype.contentWindow](#get-htmliframeelementprototypecontentwindow)
-  - [Goal](#goal-9)
-  - [Design](#design-9)
-  - [Distorted behavior](#distorted-behavior-9)
-- [set: HTMLIFrameElement.prototype.src](#set-htmliframeelementprototypesrc)
-  - [Goal](#goal-10)
-  - [Design](#design-10)
-  - [Distorted behavior](#distorted-behavior-10)
-- [get: HTMLObjectElement.prototype.contentWindow](#get-htmlobjectelementprototypecontentwindow)
-  - [Goal](#goal-11)
-  - [Design](#design-11)
-  - [Distorted behavior](#distorted-behavior-11)
-- [get: HTMLScriptElement.prototype.src](#get-htmlscriptelementprototypesrc)
   - [Goal](#goal-12)
   - [Design](#design-12)
-  - [Distorted behavior](#distorted-behavior-12)
-- [set: HTMLScriptElement.prototype.src](#set-htmlscriptelementprototypesrc)
+  - [Distorted behavior](#distorted-behavior-8)
+- [get: HTMLIframeElement.prototype.contentWindow](#get-htmliframeelementprototypecontentwindow)
   - [Goal](#goal-13)
   - [Design](#design-13)
-  - [Distorted behavior](#distorted-behavior-13)
-- [get: MessageEvent.prototype.source](#get-messageeventprototypesource)
+  - [Distorted behavior](#distorted-behavior-9)
+- [set: HTMLIFrameElement.prototype.src](#set-htmliframeelementprototypesrc)
   - [Goal](#goal-14)
   - [Design](#design-14)
+  - [Distorted behavior](#distorted-behavior-10)
+- [get: HTMLObjectElement.prototype.contentWindow](#get-htmlobjectelementprototypecontentwindow)
+  - [Goal](#goal-15)
   - [Design](#design-15)
+  - [Distorted behavior](#distorted-behavior-11)
+- [get: HTMLScriptElement.prototype.src](#get-htmlscriptelementprototypesrc)
+  - [Goal](#goal-16)
+  - [Design](#design-16)
+  - [Distorted behavior](#distorted-behavior-12)
+- [set: HTMLScriptElement.prototype.src](#set-htmlscriptelementprototypesrc)
+  - [Goal](#goal-17)
+  - [Design](#design-17)
+  - [Distorted behavior](#distorted-behavior-13)
+- [get: MessageEvent.prototype.source](#get-messageeventprototypesource)
+  - [Goal](#goal-18)
+  - [Design](#design-18)
+  - [Design](#design-19)
   - [Distorted behavior](#distorted-behavior-14)
 - [value: NamedNodeMap.prototype.setNamedItem](#value-namednodemapprototypesetnameditem)
-  - [Goal](#goal-15)
-  - [Design](#design-16)
+  - [Goal](#goal-19)
+  - [Design](#design-20)
   - [Distorted behavior](#distorted-behavior-15)
 - [get: Navigator.prototype.serviceWorker](#get-navigatorprototypeserviceworker)
   - [Problem statement](#problem-statement)
-  - [Goal](#goal-16)
-  - [Design](#design-17)
+  - [Goal](#goal-20)
+  - [Design](#design-21)
   - [Distorted behavior](#distorted-behavior-16)
 - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
   - [Summary](#summary-12)
-  - [Distorted Behavior](#distorted-behavior-12)
+  - [Distorted Behavior](#distorted-behavior-16)
 - [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
   - [Summary](#summary-13)
-  - [Distorted Behavior](#distorted-behavior-13)
+  - [Distorted Behavior](#distorted-behavior-17)
 - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
   - [Summary](#summary-14)
-  - [Design](#design-18)
+  - [Design](#design-22)
   - [Dependencies](#dependencies)
 - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
   - [Problem Statement](#problem-statement)
-  - [Goal](#goal-17)
+  - [Goal](#goal-21)
   - [Distorted behavior](#distorted-behavior-17)
 - [get: ShadowRoot.prototype.host](#get-shadowrootprototypehost)
-  - [Goal](#goal-18)
-  - [Design](#design-19)
+  - [Goal](#goal-22)
+  - [Design](#design-23)
   - [Distorted behavior](#distorted-behavior-18)
 - [get: ShadowRoot.prototype.mode](#get-shadowrootprototypemode)
-  - [Goal](#goal-19)
-  - [Design](#design-20)
+  - [Goal](#goal-23)
+  - [Design](#design-24)
   - [Distorted behavior](#distorted-behavior-19)
 - [SharedWorker Global Constructor](#sharedworker-global-constructor)
   - [Summary](#summary-15)
-  - [Distorted Behavior](#distorted-behavior-14)
+  - [Distorted Behavior](#distorted-behavior-18)
 - [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
   - [Summary](#summary-16)
-  - [Distorted Behavior](#distorted-behavior-15)
+  - [Distorted Behavior](#distorted-behavior-19)
 - [Storage API: Storage.prototype](#storage-api-storageprototype)
   - [Summary](#summary-17)
-  - [Distorted Behavior](#distorted-behavior-16)
+  - [Distorted Behavior](#distorted-behavior-20)
 - [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
   - [Summary](#summary-18)
-  - [Distorted Behavior](#distorted-behavior-17)
+  - [Distorted Behavior](#distorted-behavior-21)
 - [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
   - [Summary](#summary-19)
-  - [Distorted Behavior](#distorted-behavior-18)
+  - [Distorted Behavior](#distorted-behavior-22)
 - [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
   - [Summary](#summary-20)
-  - [Distorted Behavior](#distorted-behavior-19)
+  - [Distorted Behavior](#distorted-behavior-23)
 - [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
   - [Summary](#summary-21)
-  - [Distorted Behavior](#distorted-behavior-20)
+  - [Distorted Behavior](#distorted-behavior-24)
 - [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
   - [Summary](#summary-22)
-  - [Distorted Behavior](#distorted-behavior-21)
+  - [Distorted Behavior](#distorted-behavior-25)
 - [value: URL.createObjectURL](#value-urlcreateobjecturl)
-  - [Goal](#goal-20)
-  - [Design](#design-21)
+  - [Goal](#goal-24)
+  - [Design](#design-25)
   - [Distorted behavior](#distorted-behavior-20)
 - [Window.fetch](#windowfetch)
-  - [Goal](#goal-21)
-  - [Design](#design-22)
+  - [Goal](#goal-25)
+  - [Design](#design-26)
   - [Distorted behavior](#distorted-behavior-21)
   - [Disallowed endpoints](#disallowed-endpoints)
 - [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
   - [Summary](#summary-23)
-  - [Distorted Behavior](#distorted-behavior-22)
+  - [Distorted Behavior](#distorted-behavior-26)
 - [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
   - [Summary](#summary-24)
-  - [Distorted Behavior](#distorted-behavior-23)
+  - [Distorted Behavior](#distorted-behavior-27)
 - [value: Window.prototype.setTimeout [Main]](#value-windowprototypesettimeout-main)
   - [Summary](#summary-25)
-  - [Distorted Behavior](#distorted-behavior-24)
+  - [Distorted Behavior](#distorted-behavior-28)
 - [Worker Global Constructor](#worker-global-constructor)
   - [Summary](#summary-26)
-  - [Distorted Behavior](#distorted-behavior-25)
+  - [Distorted Behavior](#distorted-behavior-29)
 - [XMLHttpRequest.open](#xmlhttprequestopen)
-  - [Goal](#goal-22)
-  - [Design](#design-23)
+  - [Goal](#goal-26)
+  - [Design](#design-27)
   - [Distorted behavior](#distorted-behavior-22)
   - [Disallowed endpoints](#disallowed-endpoints-1)
 
@@ -235,6 +251,80 @@ document.head.appendChild(el); // append to head
 
 - when there is a registered distortion the behavior is strictly dependent of the distortion's behavior
 - native like behavior when no distortions are registered.
+<hr>
+<a name="cookiestoredocsdelete-valuemd"></a>
+
+## get: CookieStore.prototype.delete
+
+Protecting cookies outside of the sandbox is crucial. If a malicious piece of code could delete cookies on a page, it could remove login cookies and make the app unrunnable. It is absolutely necessary to protect cookies outside of the sandbox from `CookieStore.prototype.delete` and limit what is allowed to be deleted from within the sandbox, nothing from outside or other sandboxes.
+
+### Goal
+
+- To prevent deleting cookies outside of the sandbox.
+
+### Design
+
+- The current strategy for isolating cookies between sandboxes is to use a prefix for each key that is specific to each sandbox. The filtering of cookies will be done based on this prefix.
+
+### Distorted Behavior
+
+- The delete value will delete only sandbox cookies. The behavior will seem native-like.
+
+<hr>
+<a name="cookiestoredocsget-valuemd"></a>
+
+## get: CookieStore.prototype.get
+
+Protecting access to cookies is absolutely crucial. If a malicious piece of code would get access to all the cookies on a page it could start issuing XHR requests impersonating the currently logged in user. This can have catastrophic effects in a multi-tenant environment like Salesforce. It is absolutely necessary to protect the value of `CookieStore.prototype.get` and limit the view only to what is being retrieved from within the sandbox, nothing from outside or other sandboxes.
+
+### Goal
+
+- To prevent access to cookies not belonging to the sandbox.
+
+### Design
+
+- The current strategy for isolating cookies between sandboxes is to use a prefix for each key that is specific to each sandbox. The filtering of cookies will be done based on this prefix.
+
+### Distorted Behavior
+
+- The get value will return only sandbox cookies. The behavior will seem native-like.
+
+<hr>
+<a name="cookiestoredocsgetall-valuemd"></a>
+
+## get: CookieStore.prototype.getAll
+
+Protecting access to cookies is absolutely crucial. If a malicious piece of code would get access to all the cookies on a page it could start issuing XHR requests impersonating the currently logged in user. This can have catastrophic effects in a multi-tenant environment like Salesforce. It is absolutely necessary to protect the value of `CookieStore.prototype.getAll` and limit the view only to what is being retrieved from within the sandbox, nothing from outside or other sandboxes.
+
+### Goal
+
+- To prevent access to cookies not belonging to the sandbox.
+
+### Design
+
+- The current strategy for isolating cookies between sandboxes is to use a prefix for each key that is specific to each sandbox. The filtering of cookies will be done based on this prefix.
+
+### Distorted Behavior
+
+- The getAll value will return only sandbox cookies. The behavior will seem native-like.
+<hr>
+<a name="cookiestoredocsset-valuemd"></a>
+
+## set: CookieStore.prototype.set
+
+Patching the value of `CookieStore.prototype.set` is required in order for the get value to manage to retrieve sandbox cookies. Additionally, we need to make sure that malicious code does not override critical system cookies that are necessary for a system like Salesforce to function properly. If we would not patch the value then any sandbox would be able to send malicious payloads to the backend using cookies.
+
+### Goal
+
+- To prevent setting cookies outside of the sandbox.
+
+### Design
+
+- The current strategy for isolating cookies between sandboxes is to use a prefix for each key that is specific to each sandbox. The filtering of cookies will be done based on this prefix.
+
+### Distorted Behavior
+
+- The set value will prefix keys for sandbox cookies. The behavior will seem native-like.
 <hr>
 <a name="customelementregistrydocsdefine-valuemd"></a>
 
@@ -376,7 +466,7 @@ The attributes collection is of type NamedNodeMap and can be used to set and rem
 
 ### Summary
 
-DOM clobbering is a technique in which you inject HTML into a page to manipulate the DOM and ultimately change the behavior of JavaScript on the page. A malicious user can inject an element with an ID value that is the same as a document property. When that document property is called, users will get the injected element instead. 
+DOM clobbering is a technique in which you inject HTML into a page to manipulate the DOM and ultimately change the behavior of JavaScript on the page. A malicious user can inject an element with an ID value that is the same as a document property. When that document property is called, users will get the injected element instead.
 
 The sandbox is not effected by "id" or "name" changes to it's elements. DOM clobbering won't effect document properties within each sandbox. However, by adding elements to the shared document, a malicious user can change key properties such "document.cookie" on the shared document. We should prevent DOM clobbering attacks so our shared document is free of injected elements that change the behavior of JavaScript on the page.
 
@@ -405,26 +495,23 @@ export function isValidAttributeValue(value: string): boolean {
 
 ```ts
 import {
-    FunctionCall,
+    ObjectLookupOwnSetter,
+    ReflectApply,
     ReflectGetOwnPropertyDescriptor,
+    TypeErrorCtor,
     toString,
-    TypeErrorCreate,
 } from '@locker/shared';
-
 import { isValidAttributeValue } from '@locker/shared-dom';
-
 import { Distortion } from '../types';
 
-export const { set: originalIdSetter } = ReflectGetOwnPropertyDescriptor(Element.prototype, 'id')!;
+export const originalIdSetter = ObjectLookupOwnSetter(Element.prototype, 'id');
 
 export const patchedIdSetter: Distortion = function set(this: Element, value: string) {
     value = toString(value);
-
     if (!isValidAttributeValue(value)) {
-        throw TypeErrorCreate(`Element does not allow setting 'id' attribute to ${value}!`);
+        throw new TypeErrorCtor(`Element does not allow setting 'id' attribute to ${value}!`);
     }
-
-    FunctionCall(originalIdSetter, this, value);
+    ReflectApply(originalIdSetter, this, [value]);
 };
 ```
 <hr>
@@ -486,26 +573,22 @@ After consultation, we have validated that new head and body attributes can't be
 
 ```ts
 import {
-    FunctionCall,
+    ObjectLookupOwnGetter,
+    ReflectApply,
     ReflectGetOwnPropertyDescriptor,
     StringToLowerCase,
+    TypeErrorCtor,
+    emptyArray,
     toString,
-    TypeErrorCreate,
 } from '@locker/shared';
-
 import { isSharedElement } from '@locker/shared-dom';
-
 import { Distortion } from '../types';
 
-export const { value: originalInsertAdjacentTextValue } = ReflectGetOwnPropertyDescriptor(
-    Element.prototype,
-    'insertAdjacentText'
-)!;
+export const {
+    insertAdjacentText: originalInsertAdjacentTextValue
+} = Element.prototype;
 
-const { get: originalTagNameGetter } = ReflectGetOwnPropertyDescriptor(
-    Element.prototype,
-    'tagName'
-)!;
+const originalTagNameGetter = ObjectLookupOwnGetter(Element.prototype, 'tagName');
 
 export const patchedInsertAdjacentTextValue: Distortion = function value(
     this: Element,
@@ -513,20 +596,17 @@ export const patchedInsertAdjacentTextValue: Distortion = function value(
     value: string
 ) {
     position = StringToLowerCase(toString(position));
-
-    const tagName = FunctionCall(originalTagNameGetter, this);
-
+    const tagName = ReflectApply(originalTagNameGetter, this, emptyArray);
     if (
         isSharedElement(this) &&
         (position === 'beforebegin' || position === 'afterend')
     ) {
-        throw TypeErrorCreate(
+        throw new TypeErrorCtor(
             `Element.insertAdjacentText cannot be set outside of ${tagName} elements!`
         );
     }
-
     value = toString(value);
-    FunctionCall(originalInsertAdjacentTextValue, this, position, value);
+    ReflectApply(originalInsertAdjacentTextValue, this, [position, value]);
 };
 ```
 <hr>
@@ -645,7 +725,7 @@ This distortion sanitizes and prevents text from replacing the DOM wihtin shared
 
 ### Summary
 
-DOM clobbering is a technique in which you inject HTML into a page to manipulate the DOM and ultimately change the behavior of JavaScript on the page. A malicious user can inject an element with an ID value that is the same as a document property. When that document property is called, users will get the injected element instead. 
+DOM clobbering is a technique in which you inject HTML into a page to manipulate the DOM and ultimately change the behavior of JavaScript on the page. A malicious user can inject an element with an ID value that is the same as a document property. When that document property is called, users will get the injected element instead.
 
 The sandbox is not affected by `id` or `name` changes to its elements. DOM clobbering won't affect document properties within each sandbox. However, by adding elements to the shared document, a malicious user can change key properties such `document.cookie` on the shared document. We should prevent DOM clobbering attacks so our shared document is free of injected elements that change the behavior of JavaScript on the page.
 
@@ -678,29 +758,24 @@ import {
     ReflectGetPrototypeOf,
     ReflectGetOwnPropertyDescriptor,
     toString,
-    TypeErrorCreate,
+    TypeErrorCtor,
 } from '@locker/shared';
-
 import { isValidAttributeValue } from '@locker/shared-dom';
-
 import { Distortion } from '../types';
 
 export function getOriginalNameSetter(element: Function) {
-    return ReflectGetOwnPropertyDescriptor(element!.prototype, 'name')!.set;
+    return ObjectLookupOwnSetter(element!.prototype, 'name');
 }
 
 export const patchedNameSetter: Distortion = function set(this: Function, value: string) {
     value = toString(value);
-
     const { constructor } = ReflectGetPrototypeOf(this)!;
-
     if (!isValidAttributeValue(value)) {
-        throw TypeErrorCreate(
+        throw new TypeErrorCtor(
             `${constructor.name} does not allow setting 'name' attribute to ${value}!`
         );
     }
-
-    FunctionCall(getOriginalNameSetter(constructor), this, value);
+    ReflectApply(getOriginalNameSetter(constructor), this, [value]);
 };
 ```
 <hr>
