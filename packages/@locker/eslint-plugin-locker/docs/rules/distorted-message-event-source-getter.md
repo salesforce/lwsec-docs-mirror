@@ -30,4 +30,4 @@ Create an artificial `window` object with a curated list of properties.
 ### Distorted behavior
 - Return an artificial `window` object for source.
 - Cache the artificial `window` object for subsequent accesses.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->

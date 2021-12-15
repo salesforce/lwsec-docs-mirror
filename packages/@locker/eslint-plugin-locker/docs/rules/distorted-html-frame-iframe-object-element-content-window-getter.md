@@ -28,7 +28,7 @@ Create an artificial `contentWindow` object with a curated list of properties
 ### Distorted behavior
 - Return an artificial `contentWindow` object per frame
 - Cache the artificial `contentWindow` object for subsequent accesses
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLIFrameElement/docs/contentWindow-getter.md -->
 ## get: HTMLIFrameElement.prototype.contentWindow
@@ -55,7 +55,7 @@ Create an artificial `contentWindow` object with a curated list of properties
 ### Distorted behavior
 - Return an artificial `contentWindow` object per iframe
 - Cache the artificial `contentWindow` object for subsequent accesses
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLObjectElement/docs/contentWindow-getter.md -->
 ## get: HTMLObjectElement.prototype.contentWindow
@@ -82,4 +82,4 @@ Create an artificial `contentWindow` object with a curated list of properties
 ### Distorted behavior
 - Return an artificial `contentWindow` object per object element
 - Cache the artificial `contentWindow` object for subsequent accesses
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->

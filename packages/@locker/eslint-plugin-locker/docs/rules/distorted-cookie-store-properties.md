@@ -18,7 +18,7 @@ Protecting cookies outside of the sandbox is crucial. If a malicious piece of co
 ### Distorted Behavior
 
 - The delete value will delete only sandbox cookies. The behavior will seem native-like.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/CookieStore/docs/get-value.md -->
 ## get: CookieStore.prototype.get
@@ -36,7 +36,7 @@ Protecting access to cookies is absolutely crucial. If a malicious piece of code
 ### Distorted Behavior
 
 - The get value will return only sandbox cookies. The behavior will seem native-like.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/CookieStore/docs/getAll-value.md -->
 ## get: CookieStore.prototype.getAll
@@ -54,7 +54,7 @@ Protecting access to cookies is absolutely crucial. If a malicious piece of code
 ### Distorted Behavior
 
 - The getAll value will return only sandbox cookies. The behavior will seem native-like.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/CookieStore/docs/set-value.md -->
 ## set: CookieStore.prototype.set
@@ -72,4 +72,4 @@ Patching the value of `CookieStore.prototype.set` is required in order for the g
 ### Distorted Behavior
 
 - The set value will prefix keys for sandbox cookies. The behavior will seem native-like.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->

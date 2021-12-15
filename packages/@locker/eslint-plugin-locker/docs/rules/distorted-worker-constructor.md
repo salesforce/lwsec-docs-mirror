@@ -24,4 +24,4 @@ The `Worker()` constructor creates a Worker object that executes the script at t
 ### Distorted Behavior
 
 Locker will throw a `RangeError` when calling the constructor. Locker will block access to `Worker.prototype`.
-<!-- END generated embed please keep comment here to allow auto update -->
+<!-- END generated embed, please keep comment -->
