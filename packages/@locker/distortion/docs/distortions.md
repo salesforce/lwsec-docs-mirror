@@ -3,174 +3,174 @@
 
 
 - [Locker vNext Distortions](#locker-vnext-distortions)
-  - [value: CustomElementRegistry.prototype.define](#value-customelementregistryprototypedefine)
+  - [set: Attr.prototype.value](#set-attrprototypevalue)
     - [Goal](#goal)
     - [Design](#design)
     - [Distorted behavior](#distorted-behavior)
-  - [value: CustomElementRegistry.prototype.get](#value-customelementregistryprototypeget)
+  - [value: CustomElementRegistry.prototype.define](#value-customelementregistryprototypedefine)
     - [Goal](#goal-1)
     - [Design](#design-1)
     - [Distorted behavior](#distorted-behavior-1)
-  - [set: Attr.prototype.value](#set-attrprototypevalue)
+  - [value: CustomElementRegistry.prototype.get](#value-customelementregistryprototypeget)
     - [Goal](#goal-2)
     - [Design](#design-2)
     - [Distorted behavior](#distorted-behavior-2)
-  - [set: Element.prototype.attachShadow [Main]](#set-elementprototypeattachshadow-main)
-    - [Summary](#summary)
-    - [Distorted Behavior](#distorted-behavior)
-  - [get: Element.attributes](#get-elementattributes)
+  - [get: Document.prototype.cookie](#get-documentprototypecookie)
     - [Goal](#goal-3)
     - [Design](#design-3)
     - [Distorted behavior](#distorted-behavior-3)
-  - [set: Element.prototype.id [Main]](#set-elementprototypeid-main)
+  - [set: Document.prototype.cookie](#set-documentprototypecookie)
+    - [Goal](#goal-4)
+    - [Design](#design-4)
+    - [Distorted behavior](#distorted-behavior-4)
+  - [set: Document.prototype.domain](#set-documentprototypedomain)
+    - [Goal](#goal-5)
+    - [Design](#design-5)
+    - [Distorted behavior](#distorted-behavior-5)
+  - [value: Document.prototype.execCommand [Main]](#value-documentprototypeexeccommand-main)
+    - [Summary](#summary)
+    - [Distorted Behavior](#distorted-behavior)
+  - [set: Element.prototype.attachShadow [Main]](#set-elementprototypeattachshadow-main)
     - [Summary](#summary-1)
     - [Distorted Behavior](#distorted-behavior-1)
+  - [get: Element.attributes](#get-elementattributes)
+    - [Goal](#goal-6)
+    - [Design](#design-6)
+    - [Distorted behavior](#distorted-behavior-6)
+  - [set: Element.prototype.id [Main]](#set-elementprototypeid-main)
+    - [Summary](#summary-2)
+    - [Distorted Behavior](#distorted-behavior-2)
     - [Knowledge](#knowledge)
     - [Removed Implementation](#removed-implementation)
   - [Fullscreen API: Element.prototype](#fullscreen-api-elementprototype)
   - [set: Element.prototype.innerHTML [Main]](#set-elementprototypeinnerhtml-main)
-    - [Summary](#summary-2)
-    - [Distorted Behavior](#distorted-behavior-2)
-  - [set: Element.prototype.insertAdjacentHTML [Main]](#set-elementprototypeinsertadjacenthtml-main)
     - [Summary](#summary-3)
     - [Distorted Behavior](#distorted-behavior-3)
-  - [set: Element.prototype.insertAdjacentText [Main]](#set-elementprototypeinsertadjacenttext-main)
+  - [set: Element.prototype.insertAdjacentHTML [Main]](#set-elementprototypeinsertadjacenthtml-main)
     - [Summary](#summary-4)
     - [Distorted Behavior](#distorted-behavior-4)
+  - [set: Element.prototype.insertAdjacentText [Main]](#set-elementprototypeinsertadjacenttext-main)
+    - [Summary](#summary-5)
+    - [Distorted Behavior](#distorted-behavior-5)
     - [Knowledge](#knowledge-1)
     - [Removed Implementation](#removed-implementation-1)
   - [set: Element.prototype.outerHTML [Main]](#set-elementprototypeouterhtml-main)
-    - [Summary](#summary-5)
-    - [Distorted Behavior](#distorted-behavior-5)
-  - [value: Element.prototype.setAttribute](#value-elementprototypesetattribute)
-    - [Goal](#goal-4)
-    - [Design](#design-4)
-    - [Distorted behavior](#distorted-behavior-4)
-  - [get: Element.prototype.shadowRoot [Main]](#get-elementprototypeshadowroot-main)
     - [Summary](#summary-6)
     - [Distorted Behavior](#distorted-behavior-6)
-  - [get: HTMLIframeElement.prototype.contentWindow](#get-htmliframeelementprototypecontentwindow)
-    - [Goal](#goal-5)
-    - [Design](#design-5)
-    - [Distorted behavior](#distorted-behavior-5)
-  - [set: HTMLIFrameElement.prototype.src](#set-htmliframeelementprototypesrc)
-    - [Goal](#goal-6)
-    - [Design](#design-6)
-    - [Distorted behavior](#distorted-behavior-6)
-  - [get: HTMLScriptElement.prototype.src](#get-htmlscriptelementprototypesrc)
+  - [value: Element.prototype.setAttribute](#value-elementprototypesetattribute)
     - [Goal](#goal-7)
     - [Design](#design-7)
     - [Distorted behavior](#distorted-behavior-7)
-  - [set: HTMLScriptElement.prototype.src](#set-htmlscriptelementprototypesrc)
-    - [Goal](#goal-8)
-    - [Design](#design-8)
-    - [Distorted behavior](#distorted-behavior-8)
-  - [value: NamedNodeMap.prototype.setNamedItem](#value-namednodemapprototypesetnameditem)
-    - [Goal](#goal-9)
-    - [Design](#design-9)
-    - [Distorted behavior](#distorted-behavior-9)
-  - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
+  - [get: Element.prototype.shadowRoot [Main]](#get-elementprototypeshadowroot-main)
     - [Summary](#summary-7)
     - [Distorted Behavior](#distorted-behavior-7)
-  - [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
-    - [Summary](#summary-8)
-    - [Distorted Behavior](#distorted-behavior-8)
-  - [get: Navigator.prototype.serviceWorker](#get-navigatorprototypeserviceworker)
-    - [Problem statement](#problem-statement)
-    - [Goal](#goal-10)
-    - [Design](#design-10)
-    - [Distorted behavior](#distorted-behavior-10)
   - [nonce: HTMLElement.prototype](#nonce-htmlelementprototype)
   - [WindowEventHandlers: HTMLElement.prototype](#windoweventhandlers-htmlelementprototype)
   - [set: Element.prototype.innerText [Main]](#set-elementprototypeinnertext-main)
+    - [Summary](#summary-8)
+    - [Distorted Behavior](#distorted-behavior-8)
+  - [set: HTML<NAME>Element.prototype.name [Main]](#set-htmlnameelementprototypename-main)
     - [Summary](#summary-9)
     - [Distorted Behavior](#distorted-behavior-9)
-  - [set: HTML<NAME>Element.prototype.name [Main]](#set-htmlnameelementprototypename-main)
-    - [Summary](#summary-10)
-    - [Distorted Behavior](#distorted-behavior-10)
     - [Knowledge](#knowledge-2)
     - [Removed Implementation](#removed-implementation-2)
   - [set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]](#set-elementprototypeoutertext-chrome-edge-opera-safari)
-    - [Summary](#summary-11)
-    - [Distorted Behavior](#distorted-behavior-11)
-  - [get: ShadowRoot.prototype.host](#get-shadowrootprototypehost)
+    - [Summary](#summary-10)
+    - [Distorted Behavior](#distorted-behavior-10)
+  - [get: HTMLIframeElement.prototype.contentWindow](#get-htmliframeelementprototypecontentwindow)
+    - [Goal](#goal-8)
+    - [Design](#design-8)
+    - [Distorted behavior](#distorted-behavior-8)
+  - [set: HTMLIFrameElement.prototype.src](#set-htmliframeelementprototypesrc)
+    - [Goal](#goal-9)
+    - [Design](#design-9)
+    - [Distorted behavior](#distorted-behavior-9)
+  - [value: NamedNodeMap.prototype.setNamedItem](#value-namednodemapprototypesetnameditem)
+    - [Goal](#goal-10)
+    - [Design](#design-10)
+    - [Distorted behavior](#distorted-behavior-10)
+  - [get: Navigator.prototype.serviceWorker](#get-navigatorprototypeserviceworker)
+    - [Problem statement](#problem-statement)
     - [Goal](#goal-11)
     - [Design](#design-11)
     - [Distorted behavior](#distorted-behavior-11)
-  - [get: ShadowRoot.prototype.mode](#get-shadowrootprototypemode)
+  - [set: Node.prototype.textContent [Main]](#set-nodeprototypetextcontent-main)
+    - [Summary](#summary-11)
+    - [Distorted Behavior](#distorted-behavior-11)
+  - [get: HTMLScriptElement.prototype.src](#get-htmlscriptelementprototypesrc)
     - [Goal](#goal-12)
     - [Design](#design-12)
     - [Distorted behavior](#distorted-behavior-12)
-  - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
-    - [Summary](#summary-12)
+  - [set: HTMLScriptElement.prototype.src](#set-htmlscriptelementprototypesrc)
+    - [Goal](#goal-13)
     - [Design](#design-13)
-    - [Dependencies](#dependencies)
-  - [SharedWorker Global Constructor](#sharedworker-global-constructor)
-    - [Summary](#summary-13)
+    - [Distorted behavior](#distorted-behavior-13)
+  - [value: Range.prototype.createContextualFragment [Main]](#value-rangeprototypecreatecontextualfragment-main)
+    - [Summary](#summary-12)
     - [Distorted Behavior](#distorted-behavior-12)
+  - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
+    - [Summary](#summary-13)
+    - [Design](#design-14)
+    - [Dependencies](#dependencies)
   - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
     - [Problem Statement](#problem-statement)
-    - [Goal](#goal-13)
-    - [Distorted behavior](#distorted-behavior-13)
-  - [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
-    - [Summary](#summary-14)
-    - [Distorted Behavior](#distorted-behavior-13)
-  - [Storage API: Storage.prototype](#storage-api-storageprototype)
-    - [Summary](#summary-15)
-    - [Distorted Behavior](#distorted-behavior-14)
-  - [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
-    - [Summary](#summary-16)
-    - [Distorted Behavior](#distorted-behavior-15)
-  - [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
-    - [Summary](#summary-17)
-    - [Distorted Behavior](#distorted-behavior-16)
-  - [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
-    - [Summary](#summary-18)
-    - [Distorted Behavior](#distorted-behavior-17)
-  - [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
-    - [Summary](#summary-19)
-    - [Distorted Behavior](#distorted-behavior-18)
-  - [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
-    - [Summary](#summary-20)
-    - [Distorted Behavior](#distorted-behavior-19)
-  - [value: URL.createObjectURL](#value-urlcreateobjecturl)
     - [Goal](#goal-14)
-    - [Design](#design-14)
     - [Distorted behavior](#distorted-behavior-14)
-  - [value: XMLHttpRequest.prototype.open](#value-xmlhttprequestprototypeopen)
+  - [get: ShadowRoot.prototype.host](#get-shadowrootprototypehost)
     - [Goal](#goal-15)
     - [Design](#design-15)
     - [Distorted behavior](#distorted-behavior-15)
-  - [value: Window.prototype.fetch [Main]](#value-windowprototypefetch-main)
-    - [Summary](#summary-21)
-    - [Distorted Behavior](#distorted-behavior-20)
-  - [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
-    - [Summary](#summary-22)
-    - [Distorted Behavior](#distorted-behavior-21)
-  - [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
-    - [Summary](#summary-23)
-    - [Distorted Behavior](#distorted-behavior-22)
-  - [value: Window.prototype.setTimeout [Main]](#value-windowprototypesettimeout-main)
-    - [Summary](#summary-24)
-    - [Distorted Behavior](#distorted-behavior-23)
-  - [Worker Global Constructor](#worker-global-constructor)
-    - [Summary](#summary-25)
-    - [Distorted Behavior](#distorted-behavior-24)
-  - [get: Document.prototype.cookie](#get-documentprototypecookie)
+  - [get: ShadowRoot.prototype.mode](#get-shadowrootprototypemode)
     - [Goal](#goal-16)
     - [Design](#design-16)
     - [Distorted behavior](#distorted-behavior-16)
-  - [set: Document.prototype.cookie](#set-documentprototypecookie)
+  - [SharedWorker Global Constructor](#sharedworker-global-constructor)
+    - [Summary](#summary-14)
+    - [Distorted Behavior](#distorted-behavior-13)
+  - [value: Storage.prototype.clear [Main]](#value-storageprototypeclear-main)
+    - [Summary](#summary-15)
+    - [Distorted Behavior](#distorted-behavior-14)
+  - [Storage API: Storage.prototype](#storage-api-storageprototype)
+    - [Summary](#summary-16)
+    - [Distorted Behavior](#distorted-behavior-15)
+  - [value: Storage.prototype.getItem [Main]](#value-storageprototypegetitem-main)
+    - [Summary](#summary-17)
+    - [Distorted Behavior](#distorted-behavior-16)
+  - [value: Storage.prototype.key [Main]](#value-storageprototypekey-main)
+    - [Summary](#summary-18)
+    - [Distorted Behavior](#distorted-behavior-17)
+  - [get: Storage.prototype.length [Main]](#get-storageprototypelength-main)
+    - [Summary](#summary-19)
+    - [Distorted Behavior](#distorted-behavior-18)
+  - [value: Storage.prototype.removeItem [Main]](#value-storageprototyperemoveitem-main)
+    - [Summary](#summary-20)
+    - [Distorted Behavior](#distorted-behavior-19)
+  - [value: Storage.prototype.setItem [Main]](#value-storageprototypesetitem-main)
+    - [Summary](#summary-21)
+    - [Distorted Behavior](#distorted-behavior-20)
+  - [value: URL.createObjectURL](#value-urlcreateobjecturl)
     - [Goal](#goal-17)
     - [Design](#design-17)
     - [Distorted behavior](#distorted-behavior-17)
-  - [set: Document.prototype.domain](#set-documentprototypedomain)
+  - [value: Window.prototype.fetch [Main]](#value-windowprototypefetch-main)
+    - [Summary](#summary-22)
+    - [Distorted Behavior](#distorted-behavior-21)
+  - [value: Window.prototype.open [Main]](#value-windowprototypeopen-main)
+    - [Summary](#summary-23)
+    - [Distorted Behavior](#distorted-behavior-22)
+  - [value: Window.prototype.setInterval [Main]](#value-windowprototypesetinterval-main)
+    - [Summary](#summary-24)
+    - [Distorted Behavior](#distorted-behavior-23)
+  - [value: Window.prototype.setTimeout [Main]](#value-windowprototypesettimeout-main)
+    - [Summary](#summary-25)
+    - [Distorted Behavior](#distorted-behavior-24)
+  - [Worker Global Constructor](#worker-global-constructor)
+    - [Summary](#summary-26)
+    - [Distorted Behavior](#distorted-behavior-25)
+  - [value: XMLHttpRequest.prototype.open](#value-xmlhttprequestprototypeopen)
     - [Goal](#goal-18)
     - [Design](#design-18)
     - [Distorted behavior](#distorted-behavior-18)
-  - [value: Document.prototype.execCommand [Main]](#value-documentprototypeexeccommand-main)
-    - [Summary](#summary-26)
-    - [Distorted Behavior](#distorted-behavior-25)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -180,40 +180,6 @@
 # Locker vNext Distortions
 
 This is the list of the currently implemented Locker vNext Distortions.
-
-
-<a name="customelementregistrydocsdefine-valuemd"></a>
-
-## value: CustomElementRegistry.prototype.define
-
-### Goal
-
- - To prevent sandboxed code to define new custom elements in the global registry unless they are obeying their own namespace.
-
-### Design
-
-- Patch value on `CustomElementRegistry.prototype.define` descriptor to prevent defining a new custom element with the wrong prefix. This prevent them from claiming a custom element name that might affect other sandboxes or the app itself.
-
-### Distorted behavior
-
-- Each time define method is called with the wrong prefix, it throws a `RangeError`.
-
-
-<a name="customelementregistrydocsget-valuemd"></a>
-
-## value: CustomElementRegistry.prototype.get
-
-### Goal
-
- - To prevent sandboxed code to access custom elements constructors from the global registry unless they are obeying their own namespace.
-
-### Design
-
-- Patch value on `CustomElementRegistry.prototype.get` descriptor to prevent accessing a custom element with the wrong prefix. This prevent them from accessing a constructor that they should not have access to.
-
-### Distorted behavior
-
-- Each time define method is called with the wrong prefix, it throws a `RangeError`.
 
 
 <a name="attrdocsvalue-settermd"></a>
@@ -249,6 +215,112 @@ document.head.appendChild(el); // append to head
 
 - when there is a registered distortion the behavior is strictly dependent of the distortion's behavior
 - native like behavior when no distortions are registered.
+
+<a name="customelementregistrydocsdefine-valuemd"></a>
+
+## value: CustomElementRegistry.prototype.define
+
+### Goal
+
+ - To prevent sandboxed code to define new custom elements in the global registry unless they are obeying their own namespace.
+
+### Design
+
+- Patch value on `CustomElementRegistry.prototype.define` descriptor to prevent defining a new custom element with the wrong prefix. This prevent them from claiming a custom element name that might affect other sandboxes or the app itself.
+
+### Distorted behavior
+
+- Each time define method is called with the wrong prefix, it throws a `RangeError`.
+
+
+<a name="customelementregistrydocsget-valuemd"></a>
+
+## value: CustomElementRegistry.prototype.get
+
+### Goal
+
+ - To prevent sandboxed code to access custom elements constructors from the global registry unless they are obeying their own namespace.
+
+### Design
+
+- Patch value on `CustomElementRegistry.prototype.get` descriptor to prevent accessing a custom element with the wrong prefix. This prevent them from accessing a constructor that they should not have access to.
+
+### Distorted behavior
+
+- Each time define method is called with the wrong prefix, it throws a `RangeError`.
+
+
+<a name="documentdocscookie-gettermd"></a>
+
+## get: Document.prototype.cookie
+
+Along access to the global window object, protecting access to cookies is absolutely crucial. If a malicious piece of code would get access to all the cookies on a page it could start issuing XHR requests impersonating the currently logged in user. This can have catastrophic effects in a multi tenant environment like Salesforce. It is absolutely necessary to protect the getter of `Document.prototype.cookie` and limit the view only to what is being set from within the sandbox, nothing from outside or other sandboxes.
+
+### Goal
+
+- To prevent access to cookies not belonging to the sandbox
+
+### Design
+
+- Patch the getter of Document.prototype.cookie to filter out any cookies set from outside the sandbox. This includes system cookies and other sandbox cookies. The current strategy for isolating cookies between sandboxes is to use a prefix for each key that is specific to each sandbox. The filtering of cookies will be done based on this prefix.
+
+### Distorted behavior
+
+- The getter will return only sandbox cookies. The behavior will seem native-like.
+
+
+<a name="documentdocscookie-settermd"></a>
+
+## set: Document.prototype.cookie
+
+Patching the setter of `Document.prototype.cookie` is required in order for the getter to manage to retrieve sandbox cookies. Additionally, we need to make sure that malicious code does not override critical system cookies that are necessary for a system like Salesforce to function properly. If we would not patch the setter then any sandbox would be able to send malicious payloads to the backend using cookies.
+
+### Goal
+
+- To prevent setting cookies that affect global behavior.
+
+### Design
+
+- Patch the setter of Document.prototype.cookie to prefix any cookie keys set from within the sandbox. The prefix is computed based on the namespace of the sandbox. 
+
+### Distorted behavior
+
+- The behavior will seem native like.
+
+
+<a name="documentdocsdomain-settermd"></a>
+
+## set: Document.prototype.domain
+
+According to [W3C](https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-2250147) this property should be read-only. Firefox does not allow setting it and throws a SecurityError but Chrome, Safari and Edge (Webkit) allow it. The property cannot be set to a random value, it has to be a suffix of the initial domain. So if the initial value is `my.domain.com` the domain value that can be set is `domain.com` because that is the suffix. The distortion shouldn't allow a sandbox to change the domain of the root document.
+
+### Goal
+
+- Prevent domain from being changed from within the sandbox on root document.
+
+### Design
+
+- Patch the setter of Document.prototype.domain to throw an error regardless of the value that's being used.
+
+### Distorted behavior
+
+- On Firefox we will throw an Error instead of SecurityError. On Chrome, Safari and Edge (Webkit) we will throw an Error instead of allowing the setter to execute.
+
+
+<a name="documentdocsexeccommand-valuemd"></a>
+
+## value: Document.prototype.execCommand [Main]
+
+### Summary
+
+When an HTML document has been switched to designMode, its document object exposes an execCommand method to run commands that manipulate the current editable region, such as form inputs or contentEditable elements. One command, "insertHTML" inserts new elements on the currently active editable element. 
+
+In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert specified text as HTML into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM. We need to sanitize any elements added to this shared DOM.
+
+### Distorted Behavior
+
+This distortion sanitizes HTML string being inserted.
+
 
 <a name="elementdocsattachshadow-valuemd"></a>
 
@@ -537,204 +609,6 @@ Although in the sandbox elements cannot be created with this mode (see attachSha
 
 This distortion will return `null` when trying to access the `shadowRoot` property on a light-dom element.
 
-<a name="htmliframeelementdocscontentwindow-gettermd"></a>
-
-## get: HTMLIframeElement.prototype.contentWindow
-
-To reduce the surface area of possible exploit we produce an artificial
-`contentWindow` object. At a later time we may explore nesting sandboxes,
-but in the interest of simplicity and moving things along we have decided to
-keep things simple.
-
-### Goal
-- Do not expose the real raw `contentWindow`
-- Restrict access to a small curated list of properties
-
-### Design
-
-Create an artificial `contentWindow` object with a curated list of properties
-  - close
-  - closed
-  - focus
-  - opener
-  - parent
-  - postMessage
-
-### Distorted behavior
-- Return an artificial `contentWindow` object per iframe
-- Cache the artificial `contentWindow` object for subsequent accesses
-
-
-<a name="htmliframeelementdocssrc-settermd"></a>
-
-## set: HTMLIFrameElement.prototype.src
-
-Restrict supported src values to those that sanitize to http:// and https://
-schemes.
-
-### Goal
-- Prevent URL schemes like javascript://
-
-### Design
-
-Only allow `src` values with validated schemes to be set.
-
-### Distorted behavior
-- Log a console warning for HTMLIFrameElement.src values that don't sanitize
-  to http:// or https:// schemes
-
-
-<a name="htmlscriptelementdocssrc-gettermd"></a>
-
-## get: HTMLScriptElement.prototype.src
-
-The setter distortion for the script element works by setting the original url to a different attribute named `data-distorted-src`, while the src attribute points to a distorted value we never reveal in the sandbox. When accessing the getter in the sandbox we need to get the original value thus the getter needs to look for the value on `data-distorted-src`. There are scenarios when a script tag may already be present in the DOM, inserted by the system through some other mechanisms. In this scenario we'll need to fallback to the original `src` attribute.
-
-### Goal
-
-- To mimic native behavior on retrieving `src` attribute value.
-
-### Design
-
-- Patch the getter of `HTMLScriptElement.prototype.src` to retrieve the value from `data-distorted-src` instead of `src` attribute. In case there was no distorted value set and there was already a value set on the `src` attribute, retrieve the value from the `src` attribute.
-
-### Distorted behavior
-
-- The getter will return the value of `data-distorted-src` when code in the sandbox tries to access `src` attribute on a script element.
-
-
-<a name="htmlscriptelementdocssrc-settermd"></a>
-
-## set: HTMLScriptElement.prototype.src
-
-To ensure that loaded Javascript code through a script tag runs in the sandbox, we need to evaluate the source text in the same sandbox. This poses a few challenges due to how the script tag works. We have to grab the source text and evaluate it ourselves rather than letting the browser evaluate it. Thus we need to prevent the native behavior of the script tag from triggering. 
-
-### Goal
-
-- Evaluate script tags in the sandbox.
-- Maintain native like behavior, some browsers may load the code when the `src` attribute is being populated, some may load the code only when the element is placed in the DOM. This needs to be respected.
-
-### Design
-
-We need to satisfy a few requirements:
-
-1. Prevent browser from fetching and evaluating the javascript file.
-
-   To prevent the native behavior of the script tag we can populate a different attribute with the given value instead of the 'src' attribute. The original url will be stored on the attribute `data-distorted-src`. This will not trigger a fetch request, thus no triggering of the JIT will happen either but we will be able to retrieve the original value later on. 
-
-2. Fetch and evaluate the file using other mechanisms that achieve the same end result.
-
-   We fetch the file using an XHR request. This has some limitations, more specific, all cross-site origin requests may pose problems but our requirement is to satisfy loading script tags from the same domain so for the time being this behavior is sufficient. Once we have the source code we can evaluate it internally where needed.
-
-3. Maintain native like behavior for errors and when the evaluation actually happens.
-
-   Maintaining native like behavior is browser specific and we're mostly concerned about the success scenario and the 404 scenario. As mentioned already, the moment when the JIT is triggered is dependent on the browser implementation and this needs to be respected. As a workaround, to achieve native like behavior, once the XHR completes and we have the source code, we create a very simple Javascript snippet which is wrapped in a Blob object. We create a URL around this Blob object and use it on the `src` attribute to trigger the native behavior. The browser will read the content stored at the `blob:` URL and trigger the JIT which in turn will kick off the evaluation process in the sandbox. 
-
-### Distorted behavior
-
-- Store original value on `data-distorted-src`, store distorted value on `src`. 
-- The behavior will seem native like to code running in the sandbox.
-
-
-<a name="namednodemapdocssetnameditem-valuemd"></a>
-
-## value: NamedNodeMap.prototype.setNamedItem
-
-It is possible to set an attribute on an element using the methods available on NamedNodeMap. For example:
-
-```
-const el = document.createElement('link');
-const attr = document.createAttribute('rel');
-attr.value = 'import';
-el.attributes.setNamedItem(attr);
-```
-
-This would bypass our distortions for named properties and setAttribute\*. For this reason we need to distort `NamedNodeMap.prototype.setNamedItem`. 
-
-### Goal
-
-- invoke registered DOM property distortions in situations like `el.attributes.setNamedItem(...)`
-
-### Design
-Inside of a NamedNodeMap distortion `this` does not point to an element but to the `attributes` instance. We have no way of understanding which `attributes` instance is for what element. That is why the shared lib of this module provides a `pairElement` utility used in Element.prototype.attributes distortion to pair an element with a NamedNodeMap instance upon accessing the getter of Element.prototype.attributes. Since all operations are synchronous we are guaranteed that the registration happens first followed by invocation later.
-Example:
-
-el.attributes.setNamedItem(....)
-  |           |
-registration  invocation
-
-The registry is a WeakMap since elements can be removed from the page throughout the lifecycle of an application. The distortions are being retrieved from the `setAttributeNode` registry since both methods accept an instance of `Attr`.
-
-### Distorted behavior
-
-- if no distortion is found for an Attr instance then proceed with native invocation of setNamedItem
-- if a distortion exists then the distorted behavior is relative to what that distortion does
-
-<a name="nodedocstextcontent-settermd"></a>
-
-## set: Node.prototype.textContent [Main]
-
-### Summary
-
-This property allows users to replace DOM inside the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
-
-### Distorted Behavior
-
-This distortion sanitizes and prevents text from replacing the DOM within shared elements: HEAD and BODY.
-
-
-<a name="rangedocscreatecontextualfragment-valuemd"></a>
-
-## value: Range.prototype.createContextualFragment [Main]
-
-### Summary
-
-The Range.createContextualFragment() method returns a DocumentFragment by invoking the HTML fragment parsing algorithm or the XML fragment parsing algorithm with the start of the range as the context node. This range of HTML elements can be added to the DOM tree.
-
-In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert specified text as HTML into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM. We need to sanitize any elements added to this shared DOM.
-
-### Distorted Behavior
-
-This distortion sanitizes HTML string that is used to create the DocumentFragment.
-
-
-<a name="navigatordocsserviceworker-gettermd"></a>
-
-## get: Navigator.prototype.serviceWorker
-
-### Problem statement
-
-With `ServiceWorker`, it is possible to alter the response of a request to return JavaScript code that would be unsandboxed when evaluated by the browser.
-
-**Example:**
-```js
-navigator.serviceWorker.register('/static/sw.js').then(function() {
-    window.open('/static/aaa', '_self');
-});
-```
-
-**File /static/sw.js:**
-<!-- eslint-disable-next-line no-restricted-globals -->
-```js
-self.addEventListener('fetch', function(event) {
-    const unsandboxed = '<body><script>document.body.innerHTML=document.cookie;</script>';
-    event.respondWith(new Response(unsandboxed, { headers: { 'Content-Type': 'text/html' } }));
-});
-```
-
-### Goal
-
-To prevent unsandboxed JavaScript code from leaking data, we want to disallow access to the `navigator.serviceWorker` property.
-
-### Design
-
-Patch getter on `Navigator.prototype.serviceWorker` descriptor to return `undefined`.
-
-### Distorted behavior
-
-Each time code accesses `navigator.serviceWorker` property, this distortion will return `undefined`.
-
-
 <a name="htmlelementdocsindexmd"></a>
 
 ## nonce: HTMLElement.prototype
@@ -844,40 +718,202 @@ This distortion sanitizes and prevents text from replacing the shared elements: 
 Note that `outerText` [is not a standard property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText#Browser_compatibility), so the descriptor could be undefined, like in the case of Firefox. In this case, this distortion does nothing.
 
 
-<a name="shadowrootdocshost-gettermd"></a>
+<a name="htmliframeelementdocscontentwindow-gettermd"></a>
 
-## get: ShadowRoot.prototype.host
+## get: HTMLIframeElement.prototype.contentWindow
+
+To reduce the surface area of possible exploit we produce an artificial
+`contentWindow` object. At a later time we may explore nesting sandboxes,
+but in the interest of simplicity and moving things along we have decided to
+keep things simple.
 
 ### Goal
-
- - To prevent scraping the light DOM through this property.
+- Do not expose the real raw `contentWindow`
+- Restrict access to a small curated list of properties
 
 ### Design
 
-- Patch getter on `ShadowRoot.prototype.host` descriptor to return `null`.
+Create an artificial `contentWindow` object with a curated list of properties
+  - close
+  - closed
+  - focus
+  - opener
+  - parent
+  - postMessage
 
 ### Distorted behavior
+- Return an artificial `contentWindow` object per iframe
+- Cache the artificial `contentWindow` object for subsequent accesses
 
-- Each time code accesses `host` property on any element with an attached shadow
-  DOM this distortion will return `null`.
 
+<a name="htmliframeelementdocssrc-settermd"></a>
 
-<a name="shadowrootdocsmode-gettermd"></a>
+## set: HTMLIFrameElement.prototype.src
 
-## get: ShadowRoot.prototype.mode
+Restrict supported src values to those that sanitize to http:// and https://
+schemes.
 
 ### Goal
-
- - To force a reported mode of 'closed'.
+- Prevent URL schemes like javascript://
 
 ### Design
 
-- Patch getter on `ShadowRoot.prototype.mode` descriptor to return `'closed'`.
+Only allow `src` values with validated schemes to be set.
+
+### Distorted behavior
+- Log a console warning for HTMLIFrameElement.src values that don't sanitize
+  to http:// or https:// schemes
+
+
+<a name="namednodemapdocssetnameditem-valuemd"></a>
+
+## value: NamedNodeMap.prototype.setNamedItem
+
+It is possible to set an attribute on an element using the methods available on NamedNodeMap. For example:
+
+```
+const el = document.createElement('link');
+const attr = document.createAttribute('rel');
+attr.value = 'import';
+el.attributes.setNamedItem(attr);
+```
+
+This would bypass our distortions for named properties and setAttribute\*. For this reason we need to distort `NamedNodeMap.prototype.setNamedItem`. 
+
+### Goal
+
+- invoke registered DOM property distortions in situations like `el.attributes.setNamedItem(...)`
+
+### Design
+Inside of a NamedNodeMap distortion `this` does not point to an element but to the `attributes` instance. We have no way of understanding which `attributes` instance is for what element. That is why the shared lib of this module provides a `pairElement` utility used in Element.prototype.attributes distortion to pair an element with a NamedNodeMap instance upon accessing the getter of Element.prototype.attributes. Since all operations are synchronous we are guaranteed that the registration happens first followed by invocation later.
+Example:
+
+el.attributes.setNamedItem(....)
+  |           |
+registration  invocation
+
+The registry is a WeakMap since elements can be removed from the page throughout the lifecycle of an application. The distortions are being retrieved from the `setAttributeNode` registry since both methods accept an instance of `Attr`.
 
 ### Distorted behavior
 
-- Each time code accesses `mode` property on any element with an attached shadow
-  DOM this distortion will return `'closed'`.
+- if no distortion is found for an Attr instance then proceed with native invocation of setNamedItem
+- if a distortion exists then the distorted behavior is relative to what that distortion does
+
+<a name="navigatordocsserviceworker-gettermd"></a>
+
+## get: Navigator.prototype.serviceWorker
+
+### Problem statement
+
+With `ServiceWorker`, it is possible to alter the response of a request to return JavaScript code that would be unsandboxed when evaluated by the browser.
+
+**Example:**
+```js
+navigator.serviceWorker.register('/static/sw.js').then(function() {
+    window.open('/static/aaa', '_self');
+});
+```
+
+**File /static/sw.js:**
+<!-- eslint-disable-next-line no-restricted-globals -->
+```js
+self.addEventListener('fetch', function(event) {
+    const unsandboxed = '<body><script>document.body.innerHTML=document.cookie;</script>';
+    event.respondWith(new Response(unsandboxed, { headers: { 'Content-Type': 'text/html' } }));
+});
+```
+
+### Goal
+
+To prevent unsandboxed JavaScript code from leaking data, we want to disallow access to the `navigator.serviceWorker` property.
+
+### Design
+
+Patch getter on `Navigator.prototype.serviceWorker` descriptor to return `undefined`.
+
+### Distorted behavior
+
+Each time code accesses `navigator.serviceWorker` property, this distortion will return `undefined`.
+
+
+<a name="nodedocstextcontent-settermd"></a>
+
+## set: Node.prototype.textContent [Main]
+
+### Summary
+
+This property allows users to replace DOM inside the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
+
+### Distorted Behavior
+
+This distortion sanitizes and prevents text from replacing the DOM within shared elements: HEAD and BODY.
+
+
+<a name="htmlscriptelementdocssrc-gettermd"></a>
+
+## get: HTMLScriptElement.prototype.src
+
+The setter distortion for the script element works by setting the original url to a different attribute named `data-distorted-src`, while the src attribute points to a distorted value we never reveal in the sandbox. When accessing the getter in the sandbox we need to get the original value thus the getter needs to look for the value on `data-distorted-src`. There are scenarios when a script tag may already be present in the DOM, inserted by the system through some other mechanisms. In this scenario we'll need to fallback to the original `src` attribute.
+
+### Goal
+
+- To mimic native behavior on retrieving `src` attribute value.
+
+### Design
+
+- Patch the getter of `HTMLScriptElement.prototype.src` to retrieve the value from `data-distorted-src` instead of `src` attribute. In case there was no distorted value set and there was already a value set on the `src` attribute, retrieve the value from the `src` attribute.
+
+### Distorted behavior
+
+- The getter will return the value of `data-distorted-src` when code in the sandbox tries to access `src` attribute on a script element.
+
+
+<a name="htmlscriptelementdocssrc-settermd"></a>
+
+## set: HTMLScriptElement.prototype.src
+
+To ensure that loaded Javascript code through a script tag runs in the sandbox, we need to evaluate the source text in the same sandbox. This poses a few challenges due to how the script tag works. We have to grab the source text and evaluate it ourselves rather than letting the browser evaluate it. Thus we need to prevent the native behavior of the script tag from triggering. 
+
+### Goal
+
+- Evaluate script tags in the sandbox.
+- Maintain native like behavior, some browsers may load the code when the `src` attribute is being populated, some may load the code only when the element is placed in the DOM. This needs to be respected.
+
+### Design
+
+We need to satisfy a few requirements:
+
+1. Prevent browser from fetching and evaluating the javascript file.
+
+   To prevent the native behavior of the script tag we can populate a different attribute with the given value instead of the 'src' attribute. The original url will be stored on the attribute `data-distorted-src`. This will not trigger a fetch request, thus no triggering of the JIT will happen either but we will be able to retrieve the original value later on. 
+
+2. Fetch and evaluate the file using other mechanisms that achieve the same end result.
+
+   We fetch the file using an XHR request. This has some limitations, more specific, all cross-site origin requests may pose problems but our requirement is to satisfy loading script tags from the same domain so for the time being this behavior is sufficient. Once we have the source code we can evaluate it internally where needed.
+
+3. Maintain native like behavior for errors and when the evaluation actually happens.
+
+   Maintaining native like behavior is browser specific and we're mostly concerned about the success scenario and the 404 scenario. As mentioned already, the moment when the JIT is triggered is dependent on the browser implementation and this needs to be respected. As a workaround, to achieve native like behavior, once the XHR completes and we have the source code, we create a very simple Javascript snippet which is wrapped in a Blob object. We create a URL around this Blob object and use it on the `src` attribute to trigger the native behavior. The browser will read the content stored at the `blob:` URL and trigger the JIT which in turn will kick off the evaluation process in the sandbox. 
+
+### Distorted behavior
+
+- Store original value on `data-distorted-src`, store distorted value on `src`. 
+- The behavior will seem native like to code running in the sandbox.
+
+
+<a name="rangedocscreatecontextualfragment-valuemd"></a>
+
+## value: Range.prototype.createContextualFragment [Main]
+
+### Summary
+
+The Range.createContextualFragment() method returns a DocumentFragment by invoking the HTML fragment parsing algorithm or the XML fragment parsing algorithm with the start of the range as the context node. This range of HTML elements can be added to the DOM tree.
+
+In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert specified text as HTML into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM. We need to sanitize any elements added to this shared DOM.
+
+### Distorted Behavior
+
+This distortion sanitizes HTML string that is used to create the DocumentFragment.
 
 
 <a name="svguseelementdocshref-attributemd"></a>
@@ -943,18 +979,6 @@ Other scenarios that can be used to bypass this distortion are covered by the un
 - html-sanitizer package
 
 
-<a name="sharedworkerdocsconstructor-valuemd"></a>
-
-## SharedWorker Global Constructor
-
-### Summary
-
-The `SharedWorker()` constructor creates a SharedWorker object that executes the script at the specified URL. This script must obey the same-origin policy. Malicious users can execute script at a specified URL to bypass Locker evaluation rules. 
-
-### Distorted Behavior
-
-Locker will throw a `RangeError` when calling the constructor. Locker will block access to `SharedWorker.prototype`.
-
 <a name="serviceworkercontainerdocsprototypemd"></a>
 
 ## ServiceWorkerContainer.prototype
@@ -987,6 +1011,54 @@ To prevent unsandboxed JavaScript code from leaking data, we want to disallow ac
 
 This distortion will throw a `TypeError` whenever any of the `ServiceWorkerContainer.prototype` properties or methods is accessed. 
 
+
+<a name="shadowrootdocshost-gettermd"></a>
+
+## get: ShadowRoot.prototype.host
+
+### Goal
+
+ - To prevent scraping the light DOM through this property.
+
+### Design
+
+- Patch getter on `ShadowRoot.prototype.host` descriptor to return `null`.
+
+### Distorted behavior
+
+- Each time code accesses `host` property on any element with an attached shadow
+  DOM this distortion will return `null`.
+
+
+<a name="shadowrootdocsmode-gettermd"></a>
+
+## get: ShadowRoot.prototype.mode
+
+### Goal
+
+ - To force a reported mode of 'closed'.
+
+### Design
+
+- Patch getter on `ShadowRoot.prototype.mode` descriptor to return `'closed'`.
+
+### Distorted behavior
+
+- Each time code accesses `mode` property on any element with an attached shadow
+  DOM this distortion will return `'closed'`.
+
+
+<a name="sharedworkerdocsconstructor-valuemd"></a>
+
+## SharedWorker Global Constructor
+
+### Summary
+
+The `SharedWorker()` constructor creates a SharedWorker object that executes the script at the specified URL. This script must obey the same-origin policy. Malicious users can execute script at a specified URL to bypass Locker evaluation rules. 
+
+### Distorted Behavior
+
+Locker will throw a `RangeError` when calling the constructor. Locker will block access to `SharedWorker.prototype`.
 
 <a name="storagedocsclear-valuemd"></a>
 
@@ -1162,23 +1234,6 @@ There are ways to read the content of a Blob/File object but they are asynchrono
 - On HTML like MIME types we enforce charset=utf-8 to prevent exploits where browser auto interprets charset and special characters that can lead to XSS.
 
 
-<a name="xmlhttprequestdocsopen-valuemd"></a>
-
-## value: XMLHttpRequest.prototype.open
-
-### Goal
-
-To prevent users from making requests to disallowed endpoints.
-
-### Design
-
-Patch the `XMLHttpRequest.prototype.open` property and intercept calls to it to block disallowed URLs.
-
-### Distorted behavior
-
-The `XMLHttpRequest.prototype.open` distortion examines the `hostname` and the `pathname` of the URL, if it matches one of the disallowed config entries, it throws an error.
-
-
 <a name="windowdocsfetch-valuemd"></a>
 
 ## value: Window.prototype.fetch [Main]
@@ -1242,73 +1297,18 @@ The `Worker()` constructor creates a Worker object that executes the script at t
 Locker will throw a `RangeError` when calling the constructor. Locker will block access to `Worker.prototype`.
 
 
-<a name="documentdocscookie-gettermd"></a>
+<a name="xmlhttprequestdocsopen-valuemd"></a>
 
-## get: Document.prototype.cookie
-
-Along access to the global window object, protecting access to cookies is absolutely crucial. If a malicious piece of code would get access to all the cookies on a page it could start issuing XHR requests impersonating the currently logged in user. This can have catastrophic effects in a multi tenant environment like Salesforce. It is absolutely necessary to protect the getter of `Document.prototype.cookie` and limit the view only to what is being set from within the sandbox, nothing from outside or other sandboxes.
+## value: XMLHttpRequest.prototype.open
 
 ### Goal
 
-- To prevent access to cookies not belonging to the sandbox
+To prevent users from making requests to disallowed endpoints.
 
 ### Design
 
-- Patch the getter of Document.prototype.cookie to filter out any cookies set from outside the sandbox. This includes system cookies and other sandbox cookies. The current strategy for isolating cookies between sandboxes is to use a prefix for each key that is specific to each sandbox. The filtering of cookies will be done based on this prefix.
+Patch the `XMLHttpRequest.prototype.open` property and intercept calls to it to block disallowed URLs.
 
 ### Distorted behavior
 
-- The getter will return only sandbox cookies. The behavior will seem native-like.
-
-
-<a name="documentdocscookie-settermd"></a>
-
-## set: Document.prototype.cookie
-
-Patching the setter of `Document.prototype.cookie` is required in order for the getter to manage to retrieve sandbox cookies. Additionally, we need to make sure that malicious code does not override critical system cookies that are necessary for a system like Salesforce to function properly. If we would not patch the setter then any sandbox would be able to send malicious payloads to the backend using cookies.
-
-### Goal
-
-- To prevent setting cookies that affect global behavior.
-
-### Design
-
-- Patch the setter of Document.prototype.cookie to prefix any cookie keys set from within the sandbox. The prefix is computed based on the namespace of the sandbox. 
-
-### Distorted behavior
-
-- The behavior will seem native like.
-
-
-<a name="documentdocsdomain-settermd"></a>
-
-## set: Document.prototype.domain
-
-According to [W3C](https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-2250147) this property should be read-only. Firefox does not allow setting it and throws a SecurityError but Chrome, Safari and Edge (Webkit) allow it. The property cannot be set to a random value, it has to be a suffix of the initial domain. So if the initial value is `my.domain.com` the domain value that can be set is `domain.com` because that is the suffix. The distortion shouldn't allow a sandbox to change the domain of the root document.
-
-### Goal
-
-- Prevent domain from being changed from within the sandbox on root document.
-
-### Design
-
-- Patch the setter of Document.prototype.domain to throw an error regardless of the value that's being used.
-
-### Distorted behavior
-
-- On Firefox we will throw an Error instead of SecurityError. On Chrome, Safari and Edge (Webkit) we will throw an Error instead of allowing the setter to execute.
-
-
-<a name="documentdocsexeccommand-valuemd"></a>
-
-## value: Document.prototype.execCommand [Main]
-
-### Summary
-
-When an HTML document has been switched to designMode, its document object exposes an execCommand method to run commands that manipulate the current editable region, such as form inputs or contentEditable elements. One command, "insertHTML" inserts new elements on the currently active editable element. 
-
-In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert specified text as HTML into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM. We need to sanitize any elements added to this shared DOM.
-
-### Distorted Behavior
-
-This distortion sanitizes HTML string being inserted.
+The `XMLHttpRequest.prototype.open` distortion examines the `hostname` and the `pathname` of the URL, if it matches one of the disallowed config entries, it throws an error.
