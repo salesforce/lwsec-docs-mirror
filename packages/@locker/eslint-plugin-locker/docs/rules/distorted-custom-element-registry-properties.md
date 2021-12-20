@@ -6,25 +6,19 @@ For security the following `CustomElementRegistry` properties are distorted in L
 ## CustomElementRegistry.prototype.define
 
 ### Summary
-The ['define()'](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the CustomElementRegistry interface defines a new custom element. Lightning Web Security does not allow Custom Elements.
+The ['define'](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the `CustomElementRegistry` interface defines a new custom element. Lightning Web Security does not allow Custom Elements.
 
 ### Distorted Behavior
 
-This distortion prevents accessing `define()` from CustomElementRegistry. An error is thrown when accessing this method.
+This distortion prevents invoking `define` method from CustomElementRegistry. An error is thrown when invoking this method.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/CustomElementRegistry/docs/get-value.md -->
 ## value: CustomElementRegistry.prototype.get
 
-### Goal
-
- - To prevent sandboxed code to access custom elements constructors from the global registry unless they are obeying their own namespace.
-
-### Design
-
-- Patch value on `CustomElementRegistry.prototype.get` descriptor to prevent accessing a custom element with the wrong prefix. This prevent them from accessing a constructor that they should not have access to.
+### Summary
+The [`get`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/get) method of `CustomElementRegistry` interface returns the constructor for a previously-defined custom element. Lightning Web Security prevents sandboxed code to access custom elements constructors from the global registry unless they are obeying their own namespace.
 
 ### Distorted behavior
-
-- Each time define method is called with the wrong prefix, it throws a `RangeError`.
+When called with the wrong prefix, the `get` method returns `undefined`.
 <!-- END generated embed, please keep comment -->
