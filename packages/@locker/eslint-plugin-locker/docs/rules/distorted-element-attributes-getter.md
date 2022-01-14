@@ -3,9 +3,9 @@
 For security the `Element#attributes` getter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/attributes-getter.md -->
-## Element.attributes getter
+## Element.prototype.attributes getter
 
-The [`Element.attributes`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) property returns a live collection of all attribute nodes registered to the specified node. It is a `NamedNodeMap`, not an `Array`, so it has no `Array` methods and the `Attr` nodes' indexes may differ among browsers. 
+The [`Element.prototype.attributes`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) property returns a live collection of all attribute nodes registered to the specified node. It is a `NamedNodeMap`, not an `Array`, so it has no `Array` methods and the `Attr` nodes' indexes may differ among browsers. 
 
 The `attributes` collection can be used to set and remove attributes on an element. 
 

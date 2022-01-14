@@ -2,7 +2,7 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.15.3<br>
+Version: 0.15.4<br>
 Generated: Jan 12, 2022
 
 ## Table of Contents
@@ -48,7 +48,7 @@ Generated: Jan 12, 2022
   - [Distorted Behavior](#distorted-behavior-16)
 - [Element.prototype.attachShadow setter](#elementprototypeattachshadow-setter)
   - [Distorted Behavior](#distorted-behavior-17)
-- [Element.attributes getter](#elementattributes-getter)
+- [Element.prototype.attributes getter](#elementprototypeattributes-getter)
   - [Distorted Behavior](#distorted-behavior-18)
 - [Element.prototype.before](#elementprototypebefore)
   - [Distorted Behavior](#distorted-behavior-19)
@@ -65,7 +65,6 @@ Generated: Jan 12, 2022
 - [Element.prototype.prepend](#elementprototypeprepend)
   - [Distorted Behavior](#distorted-behavior-25)
 - [Element.prototype.remove](#elementprototyperemove)
-  - [Summary](#summary-1)
   - [Distorted Behavior](#distorted-behavior-26)
 - [Element.prototype.replaceChildren](#elementprototypereplacechildren)
   - [Distorted Behavior](#distorted-behavior-27)
@@ -80,13 +79,13 @@ Generated: Jan 12, 2022
 - [HTMLElement.prototype.nonce](#htmlelementprototypenonce)
 - [WindowEventHandlers: HTMLElement.prototype](#windoweventhandlers-htmlelementprototype)
 - [HTMLElement.prototype.innerText setter [Chrome, Edge, Opera, Safari]](#htmlelementprototypeinnertext-setter-chrome-edge-opera-safari)
-  - [Summary](#summary-2)
+  - [Summary](#summary-1)
   - [Distorted Behavior](#distorted-behavior-32)
 - [Element.prototype.outerText  setter [Chrome, Edge, Opera, Safari]](#elementprototypeoutertext--setter-chrome-edge-opera-safari)
-  - [Summary](#summary-3)
+  - [Summary](#summary-2)
   - [Distorted Behavior](#distorted-behavior-33)
 - [HTMLElement.prototype.style getter [Chrome, Edge, Opera, Safari]](#htmlelementprototypestyle-getter-chrome-edge-opera-safari)
-  - [Summary](#summary-4)
+  - [Summary](#summary-3)
   - [Distorted Behavior](#distorted-behavior-34)
 - [HTMLFrameElement.prototype.contentDocument getter](#htmlframeelementprototypecontentdocument-getter)
   - [Goal](#goal)
@@ -139,21 +138,21 @@ Generated: Jan 12, 2022
   - [Design](#design-12)
   - [Distorted Behavior](#distorted-behavior-46)
 - [Node.prototype.appendChild](#nodeprototypeappendchild)
-  - [Summary](#summary-5)
+  - [Summary](#summary-4)
   - [Distorted Behavior](#distorted-behavior-47)
 - [Node.prototype.textContent setter](#nodeprototypetextcontent-setter)
-  - [Summary](#summary-6)
+  - [Summary](#summary-5)
   - [Distorted Behavior](#distorted-behavior-48)
 - [Range.prototype.createContextualFragment](#rangeprototypecreatecontextualfragment)
-  - [Summary](#summary-7)
+  - [Summary](#summary-6)
   - [Distorted Behavior](#distorted-behavior-49)
 - [href attribute on SVGScriptElement](#href-attribute-on-svgscriptelement)
-  - [Summary](#summary-8)
+  - [Summary](#summary-7)
   - [Goal](#goal-12)
   - [Distorted Behavior](#distorted-behavior-50)
   - [Distorted Behavior](#distorted-behavior-51)
 - [href attribute and xlink:href attribute on SVGUseElement](#href-attribute-and-xlinkhref-attribute-on-svguseelement)
-  - [Summary](#summary-9)
+  - [Summary](#summary-8)
   - [Design](#design-13)
   - [Dependencies](#dependencies)
 - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
@@ -161,35 +160,35 @@ Generated: Jan 12, 2022
   - [Goal](#goal-13)
   - [Distorted Behavior](#distorted-behavior-52)
 - [ShadowRoot.prototype.innerHTML setter](#shadowrootprototypeinnerhtml-setter)
-  - [Summary](#summary-10)
+  - [Summary](#summary-9)
   - [Distorted Behavior](#distorted-behavior-53)
 - [ShadowRoot.prototype.mode getter](#shadowrootprototypemode-getter)
   - [Goal](#goal-14)
   - [Design](#design-14)
   - [Distorted Behavior](#distorted-behavior-54)
 - [SharedWorker Global Constructor](#sharedworker-global-constructor)
-  - [Summary](#summary-11)
+  - [Summary](#summary-10)
   - [Distorted Behavior](#distorted-behavior-55)
 - [Storage.prototype.clear](#storageprototypeclear)
-  - [Summary](#summary-12)
+  - [Summary](#summary-11)
   - [Distorted Behavior](#distorted-behavior-56)
 - [Storage API: Storage.prototype](#storage-api-storageprototype)
-  - [Summary](#summary-13)
+  - [Summary](#summary-12)
   - [Distorted Behavior](#distorted-behavior-57)
 - [Storage.prototype.getItem](#storageprototypegetitem)
-  - [Summary](#summary-14)
+  - [Summary](#summary-13)
   - [Distorted Behavior](#distorted-behavior-58)
 - [Storage.prototype.key](#storageprototypekey)
-  - [Summary](#summary-15)
+  - [Summary](#summary-14)
   - [Distorted Behavior](#distorted-behavior-59)
 - [Storage.prototype.length getter](#storageprototypelength-getter)
-  - [Summary](#summary-16)
+  - [Summary](#summary-15)
   - [Distorted Behavior](#distorted-behavior-60)
 - [Storage.prototype.removeItem](#storageprototyperemoveitem)
-  - [Summary](#summary-17)
+  - [Summary](#summary-16)
   - [Distorted Behavior](#distorted-behavior-61)
 - [Storage.prototype.setItem](#storageprototypesetitem)
-  - [Summary](#summary-18)
+  - [Summary](#summary-17)
   - [Distorted Behavior](#distorted-behavior-62)
 - [URL.createObjectURL](#urlcreateobjecturl)
   - [Goal](#goal-15)
@@ -201,28 +200,28 @@ Generated: Jan 12, 2022
   - [Distorted Behavior](#distorted-behavior-64)
   - [Disallowed endpoints](#disallowed-endpoints)
 - [window.frames getter](#windowframes-getter)
-  - [Summary](#summary-19)
+  - [Summary](#summary-18)
   - [Distorted Behavior](#distorted-behavior-65)
 - [window.length getter](#windowlength-getter)
-  - [Summary](#summary-20)
+  - [Summary](#summary-19)
   - [Distorted Behavior](#distorted-behavior-66)
 - [Window.prototype.open](#windowprototypeopen)
-  - [Summary](#summary-21)
+  - [Summary](#summary-20)
   - [Distorted Behavior](#distorted-behavior-67)
 - [window.opener getter](#windowopener-getter)
-  - [Summary](#summary-22)
+  - [Summary](#summary-21)
   - [Distorted Behavior](#distorted-behavior-68)
 - [window.parent getter](#windowparent-getter)
-  - [Summary](#summary-23)
+  - [Summary](#summary-22)
   - [Distorted Behavior](#distorted-behavior-69)
 - [Window.prototype.setInterval](#windowprototypesetinterval)
-  - [Summary](#summary-24)
+  - [Summary](#summary-23)
   - [Distorted Behavior](#distorted-behavior-70)
 - [window.setTimeout](#windowsettimeout)
-  - [Summary](#summary-25)
+  - [Summary](#summary-24)
   - [Distorted Behavior](#distorted-behavior-71)
 - [Worker Global Constructor](#worker-global-constructor)
-  - [Summary](#summary-26)
+  - [Summary](#summary-25)
   - [Distorted Behavior](#distorted-behavior-72)
 - [XMLHttpRequest.open](#xmlhttprequestopen)
   - [Goal](#goal-17)
@@ -230,10 +229,10 @@ Generated: Jan 12, 2022
   - [Distorted Behavior](#distorted-behavior-73)
   - [Disallowed endpoints](#disallowed-endpoints-1)
 - [XMLHttpRequest.prototype.response getter](#xmlhttprequestprototyperesponse-getter)
-  - [Summary](#summary-27)
+  - [Summary](#summary-26)
   - [Distorted Behavior](#distorted-behavior-74)
 - [XMLHttpRequest.prototype.responseXML getter](#xmlhttprequestprototyperesponsexml-getter)
-  - [Summary](#summary-28)
+  - [Summary](#summary-27)
   - [Distorted Behavior](#distorted-behavior-75)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -452,20 +451,20 @@ When `document.open()` is invoked with three arguments, the distortion returns a
 
 ## Element.prototype.after
 
-The [`Element.after()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/after) method inserts a set of `Node` objects or `DOMString` objects after the `Element`. `DOMString` objects are inserted as equivalent `Text` nodes. 
+The [`Element.prototype.after()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/after) method inserts a set of `Node` objects or `DOMString` objects after the `Element`. `DOMString` objects are inserted as equivalent `Text` nodes. 
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>` and `<body>` elements are shared. Malicious code can add nodes or text after those shared elements, corrupting the DOM of the current rendered page.
 
 ### Distorted Behavior
 
-This distortion allows only a `<script>` or `<link>` element to be added after `<html>`, `<head>` and `<body>` elements. It throws an exception if any other element is specified. <hr>
+This distortion allows only a `<script>` or `<link>` element to be added after `<html>`, `<head>`, and `<body>` elements. It throws an exception if any other element is specified. <hr>
 <a name="elementdocsappend-valuemd"></a>
 
 ## Element.prototype.append
 
 ### Summary
 
-The [`Element.append()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/append) method inserts a set of `Node` objects or `DOMString` objects after the last child of the `Element`. `DOMString` objects are inserted as equivalent `Text` nodes.
+The [`Element.prototype.append()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/append) method inserts a set of `Node` objects or `DOMString` objects after the last child of the `Element`. `DOMString` objects are inserted as equivalent `Text` nodes.
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can append nodes or text directly to those shared elements, corrupting the DOM of the current rendered page.
 
@@ -477,7 +476,7 @@ This distortion allows only a `<script>` or `<link>` element to be added after `
 
 ## Element.prototype.attachShadow setter
 
-The [`Element.attachShadow()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow) method attaches a shadow DOM tree to the specified element and returns a reference to its `ShadowRoot`.
+The [`Element.prototype.attachShadow()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow) method attaches a shadow DOM tree to the specified element and returns a reference to its `ShadowRoot`.
 
 When the `attachShadow()` method provides an options object with `mode` set to `open`, the shadow DOM is exposed to the scripting environment. Other namespaces then have access to the shadow DOM.
 
@@ -487,9 +486,9 @@ This distortion throws an exception when the `mode` value is not `closed`, which
 <hr>
 <a name="elementdocsattributes-gettermd"></a>
 
-## Element.attributes getter
+## Element.prototype.attributes getter
 
-The [`Element.attributes`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) property returns a live collection of all attribute nodes registered to the specified node. It is a `NamedNodeMap`, not an `Array`, so it has no `Array` methods and the `Attr` nodes' indexes may differ among browsers. 
+The [`Element.prototype.attributes`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) property returns a live collection of all attribute nodes registered to the specified node. It is a `NamedNodeMap`, not an `Array`, so it has no `Array` methods and the `Attr` nodes' indexes may differ among browsers. 
 
 The `attributes` collection can be used to set and remove attributes on an element. 
 
@@ -503,9 +502,9 @@ No distorted behavior.
 
 ## Element.prototype.before
 
-The [`Element.before()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/before) method inserts a set of `Node` objects or `DOMString` objects before the `Element` in the child list of the parent of the `Element`. `DOMString` objects are inserted as equivalent `Text` nodes. 
+The [`Element.prototype.before()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/before) method inserts a set of `Node` objects or `DOMString` objects before the `Element` in the child list of the parent of the `Element`. `DOMString` objects are inserted as equivalent `Text` nodes. 
 
-Since Lightning Web Security runs in the main window, where the `<html>`, `<head>` and `<body>` elements are shared, malicious code could add nodes or text before those shared elements, corrupting the DOM of the current rendered page.
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can add nodes or text before those shared elements, corrupting the DOM of the current rendered page.
 
 ### Distorted Behavior
 
@@ -535,9 +534,9 @@ blocking these properties from `Element.prototype` on specified browsers:
 
 ## Element.prototype.innerHTML setter
 
-The [`Element.innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML) property gets or sets the HTML or XML markup contained within the element. 
+The [`Element.prototype.innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML) property gets or sets the HTML or XML markup contained within the element. 
 
-You can set `Element.innerHTML` to replace DOM inside the element with nodes parsed from the given specified text as HTML. 
+You can set `Element.prototype.innerHTML` to replace DOM inside the element with nodes parsed from the given specified text as HTML. 
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace the DOM of the `<head>` and `<body>` elements, corrupting the DOM.
 
@@ -549,7 +548,7 @@ This distortion sanitizes and prevents HTML from replacing the DOM within shared
 
 ## Element.prototype.insertAdjacentElement
 
-The [`Element.insertAdjacentElement()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement) method inserts a given element node at a given position relative to the element it is invoked upon.
+The [`Element.prototype.insertAdjacentElement()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement) method inserts a given element node at a given position relative to the element it is invoked upon.
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can be added to those elements by using the `insertAdjacentElement()` method, corrupting the DOM of the current rendered page. 
 
@@ -560,7 +559,7 @@ This distortion sanitizes HTML to prevent malicious code from being added to the
 
 ## Element.prototype.insertAdjacentHTML
 
-The [`Element.insertAdjacentHTML()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML) method parses the specified text as HTML or XML and inserts the resulting nodes into the DOM tree at a specified position. 
+The [`Element.prototype.insertAdjacentHTML()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML) method parses the specified text as HTML or XML and inserts the resulting nodes into the DOM tree at a specified position. 
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can be added to those elements by using the `insertAdjacentHTML()` method, corrupting the DOM of the current rendered page. 
 
@@ -571,7 +570,7 @@ This distortion sanitizes the text string to prevent malicious code from being a
 
 ## Element.prototype.outerHTML setter
 
-The [`Element.outerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/outerHTML)  property gets or sets the serialized HTML fragment describing the element including its descendants. It can also be set to replace the element with nodes parsed from the given string.
+The [`Element.prototype.outerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/outerHTML)  property gets or sets the serialized HTML fragment describing the element including its descendants. It can also be set to replace the element with nodes parsed from the given string.
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace the `<head>` and `<body>` elements, corrupting the DOM.
 
@@ -583,7 +582,7 @@ This distortion sanitizes and prevents HTML from replacing the shared `<head>` a
 
 ## Element.prototype.prepend
 
-The [`Element.prepend()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend) method inserts a set of `Node` objects or `DOMString` objects after the last child of the `Element`. `DOMString` objects are inserted as equivalent `Text` nodes.
+The [`Element.prototype.prepend()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend) method inserts a set of `Node` objects or `DOMString` objects after the last child of the `Element`. `DOMString` objects are inserted as equivalent `Text` nodes.
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can prepend nodes or text directly to shared `<head>` and `<body>` elements, corrupting the DOM of the current rendered page.
 
@@ -595,9 +594,7 @@ This distortion allows only a `<script>` or `<link>` element to be prepended to 
 
 ## Element.prototype.remove
 
-### Summary
-
-The [`Element.remove()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method removes the element from the tree it belongs to. 
+The [`Element.prototype.remove()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method removes the element from the tree it belongs to. 
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can remove any of the shared elements, corrupting the DOM of the current rendered page. 
 
@@ -609,7 +606,7 @@ This distortion prevents removing shared elements `<html>`, `<head>`, and `<body
 
 ## Element.prototype.replaceChildren
 
-The [`Element.replaceChildren()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren) method replaces the existing children of a `Node` with a specified new set of children. These can be `DOMString` or `Node` objects. 
+The [`Element.prototype.replaceChildren()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren) method replaces the existing children of a `Node` with a specified new set of children. These can be `DOMString` or `Node` objects. 
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace those elements, or the children of those elements, corrupting the DOM of the current rendered page. 
 
@@ -621,7 +618,7 @@ This distortion prevents replacing all child elements of shared elements `<html>
 
 ## Element.prototype.replaceWith
 
-The [`Element.replaceWith()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceWith) method replaces this `Element` in the children list of its parent with a set of `Node` or `DOMString` objects. `DOMString` objects are inserted as equivalent `Text` nodes. 
+The [`Element.prototype.replaceWith()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceWith) method replaces this `Element` in the children list of its parent with a set of `Node` or `DOMString` objects. `DOMString` objects are inserted as equivalent `Text` nodes. 
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace those elements, corrupting the DOM of the current rendered page. 
 
@@ -635,10 +632,10 @@ This distortion prevents replacing shared elements `<html>`, `<head>`, and `<bod
 
 Distortions for these methods use internal registries to invoke other distortions for specific property names.
 
- - [`setAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute) sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.
- - [`setAttributeNS()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNS) adds a new attribute or changes the value of an attribute with the given namespace and name.
- - [`setAttributeNode()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNode) adds a new `Attr` node to the specified element.
- - [`setAttributeNodeNS()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNodeNS) adds a new namespaced attribute node to an element.
+ - [`Element.prototype.setAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute) sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.
+ - [`Element.prototype.setAttributeNS()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNS) adds a new attribute or changes the value of an attribute with the given namespace and name.
+ - [`Element.prototype.setAttributeNode()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNode) adds a new `Attr` node to the specified element.
+ - [`Element.prototype.setAttributeNodeNS()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNodeNS) adds a new namespaced attribute node to an element.
  
 
 The `setAttribute*` distortions themselves defend against shape-shifting objects. Shape-shifting objects don't affect native DOM APIs because values are automatically coerced. However, shape-shifting attacks can attempt to bypass Lightning Web Security distortions.

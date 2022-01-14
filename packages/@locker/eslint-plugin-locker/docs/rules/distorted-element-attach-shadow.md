@@ -5,7 +5,7 @@ For security `Element#attachShadow` is distorted in Lightning Locker.
 <!-- START generated embed: @locker/distortion/src/Element/docs/attachShadow-value.md -->
 ## Element.prototype.attachShadow setter
 
-The [`Element.attachShadow()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow) method attaches a shadow DOM tree to the specified element and returns a reference to its `ShadowRoot`.
+The [`Element.prototype.attachShadow()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow) method attaches a shadow DOM tree to the specified element and returns a reference to its `ShadowRoot`.
 
 When the `attachShadow()` method provides an options object with `mode` set to `open`, the shadow DOM is exposed to the scripting environment. Other namespaces then have access to the shadow DOM.
 
