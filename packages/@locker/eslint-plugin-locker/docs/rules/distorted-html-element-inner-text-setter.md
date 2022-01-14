@@ -3,7 +3,7 @@
 For security the `HTMLElement#innerText` setter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/HTMLElement/docs/innerText-setter.md -->
-## set: HTMLElement.prototype.innerText [Chrome, Edge, Opera, Safari]
+## HTMLElement.prototype.innerText setter [Chrome, Edge, Opera, Safari]
 
 ### Summary
 

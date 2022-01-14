@@ -3,16 +3,13 @@
 For security `Element#attachShadow` is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/attachShadow-value.md -->
-## set: Element.prototype.attachShadow [Main]
+## Element.prototype.attachShadow setter
 
-### Summary
+The [`Element.attachShadow()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow) method attaches a shadow DOM tree to the specified element and returns a reference to its `ShadowRoot`.
 
-This method attaches a shadow DOM tree to the specified element. By providing
-an options object with a `mode` of `'open'` the shadow DOM will be exposed to
-the scripting environment allowing other namespaces access.
+When the `attachShadow()` method provides an options object with `mode` set to `open`, the shadow DOM is exposed to the scripting environment. Other namespaces then have access to the shadow DOM.
 
 ### Distorted Behavior
 
-This distortion throws for any `mode` that is not `'closed'`, guarding against
-additional modes added at later time, to prevent exposing the shadow DOM.
+This distortion throws an exception when the `mode` value is not `closed`, which prevents exposing the shadow DOM and also guards against additional modes potentially added later.
 <!-- END generated embed, please keep comment -->

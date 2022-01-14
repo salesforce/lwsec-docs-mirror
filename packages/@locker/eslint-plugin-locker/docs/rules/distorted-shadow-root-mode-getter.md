@@ -3,7 +3,7 @@
 For security the `ShadowRoot#mode` getter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/ShadowRoot/docs/mode-getter.md -->
-## get: ShadowRoot.prototype.mode
+## ShadowRoot.prototype.mode getter
 
 ### Goal
 
@@ -13,7 +13,7 @@ For security the `ShadowRoot#mode` getter is distorted in Lightning Locker.
 
 - Patch getter on `ShadowRoot.prototype.mode` descriptor to return `'closed'`.
 
-### Distorted behavior
+### Distorted Behavior
 
 - Each time code accesses `mode` property on any element with an attached shadow
   DOM this distortion will return `'closed'`.

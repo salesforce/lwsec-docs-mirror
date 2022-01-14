@@ -3,7 +3,7 @@
 For security the `HTML{IFrame|Script}Element#src` setter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/HTMLIFrameElement/docs/src-setter.md -->
-## set: HTMLIFrameElement.prototype.src
+## HTMLIFrameElement.prototype.src setter
 
 Restrict supported src values to those that sanitize to http:// and https://
 schemes.
@@ -15,13 +15,13 @@ schemes.
 
 Only allow `src` values with validated schemes to be set.
 
-### Distorted behavior
+### Distorted Behavior
 - Log a console warning for HTMLIFrameElement.src values that don't sanitize
   to http:// or https:// schemes
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLScriptElement/docs/src-setter.md -->
-## set: HTMLScriptElement.prototype.src
+## HTMLScriptElement.prototype.src setter
 
 To ensure that loaded Javascript code through a script tag runs in the sandbox, we need to evaluate the source text in the same sandbox. This poses a few challenges due to how the script tag works. We have to grab the source text and evaluate it ourselves rather than letting the browser evaluate it. Thus we need to prevent the native behavior of the script tag from triggering. 
 
@@ -46,7 +46,7 @@ We need to satisfy a few requirements:
 
    Maintaining native like behavior is browser specific and we're mostly concerned about the success scenario and the 404 scenario. As mentioned already, the moment when the JIT is triggered is dependent on the browser implementation and this needs to be respected. As a workaround, to achieve native like behavior, once the XHR completes and we have the source code, we create a very simple Javascript snippet which is wrapped in a Blob object. We create a URL around this Blob object and use it on the `src` attribute to trigger the native behavior. The browser will read the content stored at the `blob:` URL and trigger the JIT which in turn will kick off the evaluation process in the sandbox. 
 
-### Distorted behavior
+### Distorted Behavior
 
 - Store original value on `data-distorted-src`, store distorted value on `src`. 
 - The behavior will seem native like to code running in the sandbox.

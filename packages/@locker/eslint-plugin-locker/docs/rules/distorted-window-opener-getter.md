@@ -3,7 +3,7 @@
 For security the `window.opener` getter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/opener-getter.md -->
-## get: window.opener [Main]
+## window.opener getter
 
 ### Summary
 
@@ -13,5 +13,5 @@ In other words, if window A opens window B, B.opener returns A.
 
 ### Distorted Behavior
 
-Locker will return an artificial `Window` object that contains specific safe methods we allow.
+Lightning Web Security will return an artificial `Window` object that contains specific safe methods we allow.
 <!-- END generated embed, please keep comment -->

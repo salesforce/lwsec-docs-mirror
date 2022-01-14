@@ -15,7 +15,7 @@ document.getElementsByTagName('iframe')[0].contentDocument;
 ## Related Distortions
 
 <!-- START generated embed: @locker/distortion/src/HTMLFrameElement/docs/contentDocument-getter.md -->
-## get: HTMLFrameElement.prototype.contentDocument
+## HTMLFrameElement.prototype.contentDocument getter
 
 To reduce the surface area of possible exploit we return `null` for the
 `contentDocument` property of frames. At a later time we may explore multi
@@ -30,13 +30,13 @@ we have decided to keep things simple.
 
 The value of `contentDocument` may be `null` so we enforce that it is.
 
-### Distorted behavior
+### Distorted Behavior
 
 - Always return `null` for `contentDocument`
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLIFrameElement/docs/contentDocument-getter.md -->
-## get: HTMLIFrameElement.prototype.contentDocument
+## HTMLIFrameElement.prototype.contentDocument getter
 
 To reduce the surface area of possible exploit we return `null` for the
 `contentDocument` property of iframes. At a later time we may explore multi
@@ -51,13 +51,13 @@ we have decided to keep things simple.
 
 The value of `contentDocument` may be `null` so we enforce that it is.
 
-### Distorted behavior
+### Distorted Behavior
 
 - Always return `null` for `contentDocument`
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLObjectElement/docs/contentDocument-getter.md -->
-## get: HTMLObjectElement.prototype.contentDocument
+## HTMLObjectElement.prototype.contentDocument getter
 
 To reduce the surface area of possible exploit we return `null` for the
 `contentDocument` property of object elements. At a later time we may explore
@@ -72,7 +72,7 @@ we have decided to keep things simple.
 
 The value of `contentDocument` may be `null` so we enforce that it is.
 
-### Distorted behavior
+### Distorted Behavior
 
 - Always return `null` for `contentDocument`
 <!-- END generated embed, please keep comment -->

@@ -3,7 +3,7 @@
 For security `URL.createObjectURL` is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/URL/docs/createObjectURL-value.md -->
-## value: URL.createObjectURL
+## URL.createObjectURL
 
 Multiple security vulnerabilities have been reported around URL.createObjectURL. In all situations, the malicious code was creating either a File or a Blob object using a MIME type that would trigger the JIT and attempting to load malicious javascript code. These MIME types include `text/html`, `image/svg+xml`, `text/html` and `text/javascript`. While the first 3 may have valid use cases in a modern application, the latter does not since one can always load a javascript file using the `<script>` tag. 
 
@@ -42,9 +42,9 @@ There are ways to read the content of a Blob/File object but they are asynchrono
 - For MIME types with `text/html`, `text/xml`, `image/svg+xml` we enforce `charset=utf-8`, i.e. the mime type of the blob becomes `text/html;charset=utf-8`
 - To avoid the async-sync issue with this particular API we use a deprecated behavior of `XMLHttpRequest` that allows us to make synchronous XHR requests to a URL. We create an in memory `blob:` URL with the initial content, fetch it synchronously and then scan it using `DOMPurify`. If any content has been removed by `DOMPurify` we mark the content as dangerous. Although marked as deprecated, this API will surely be kept in future browser versions as there is no alternative yet to fetching remote content synchronously. Removing this feature will surely break other web applications thus the risk is quite minimal.
 
-### Distorted behavior
+### Distorted Behavior
 
-- For any HTML like MIME types used with Blob/File objects that try to load malicious content, the API will throw the error `Locker: Cannot "createObjectURL" using a unsecure [object Blob]!`
+- For any HTML like MIME types used with Blob/File objects that try to load malicious content, the API will throw the error `Lightning Web Security: Cannot "createObjectURL" using a unsecure [object Blob]!`
 - For any non-recognized MIME types the API will throw the error `Unsupported MIME type.`
 - All commonly used and non-malicious MIME types will not be affected.
 - All Blob/Files using html like MIME types which do not represent a threat will be allowed.

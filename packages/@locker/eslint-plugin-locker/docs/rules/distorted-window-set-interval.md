@@ -3,7 +3,7 @@
 For security the `window.setInterval` constructor is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/setInterval-value.md -->
-## value: Window.prototype.setInterval [Main]
+## Window.prototype.setInterval
 
 ### Summary
 
