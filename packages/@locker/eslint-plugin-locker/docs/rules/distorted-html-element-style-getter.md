@@ -3,7 +3,7 @@
 For security the `HTMLElement#style` getter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/HTMLElement/docs/style-getter.md -->
-## HTMLElement.prototype.style getter [Chrome, Edge, Opera, Safari]
+## get: HTMLElement.prototype.style [Chrome, Edge, Opera, Safari]
 
 ### Summary
 

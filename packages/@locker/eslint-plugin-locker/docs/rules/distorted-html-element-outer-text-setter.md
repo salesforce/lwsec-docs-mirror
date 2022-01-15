@@ -3,11 +3,11 @@
 For security the `HTMLElement#outerText` setter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/HTMLElement/docs/outerText-setter.md -->
-## Element.prototype.outerText  setter [Chrome, Edge, Opera, Safari]
+## set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]
 
 ### Summary
 
-This property allows users to replace the element with his text. In Lightning Web Security, we share the HEAD and BODY. This will allow a malicious user to replace the HEAD and BODY with his text. Therefore, corrupting the DOM.
+This property allows users to replace the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the HEAD and BODY with his text. Therefore, corrupting the DOM.
 
 ### Distorted Behavior
 

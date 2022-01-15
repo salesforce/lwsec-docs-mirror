@@ -43,7 +43,7 @@ The proxy wrap has traps that allow for our Storage to have features that are th
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/clear-value.md -->
-## Storage.prototype.clear
+## value: Storage.prototype.clear [Main]
 
 ### Summary
 
@@ -57,7 +57,7 @@ This distortion deletes all data items from its synthetic storage.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/getItem-value.md -->
-## Storage.prototype.getItem
+## value: Storage.prototype.getItem [Main]
 
 ### Summary
 
@@ -71,7 +71,7 @@ This distortion retrieves data items from its synthetic storage.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/key-value.md -->
-## Storage.prototype.key
+## value: Storage.prototype.key [Main]
 
 ### Summary
 
@@ -85,7 +85,7 @@ This distortion retrieves a key value at a specific index from its synthetic sto
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/length-getter.md -->
-## Storage.prototype.length getter
+## get: Storage.prototype.length [Main]
 
 ### Summary
 
@@ -99,7 +99,7 @@ This distortion retrieves the number of data items in its synthetic storage.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/removeItem-value.md -->
-## Storage.prototype.removeItem
+## value: Storage.prototype.removeItem [Main]
 
 ### Summary
 
@@ -113,7 +113,7 @@ This distortion deletes a data item from its synthetic storage.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/setItem-value.md -->
-## Storage.prototype.setItem
+## value: Storage.prototype.setItem [Main]
 
 ### Summary
 

@@ -3,13 +3,13 @@
 For security `Range#createContextualFragment` is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Range/docs/createContextualFragment-value.md -->
-## Range.prototype.createContextualFragment
+## value: Range.prototype.createContextualFragment [Main]
 
 ### Summary
 
 The Range.createContextualFragment() method returns a DocumentFragment by invoking the HTML fragment parsing algorithm or the XML fragment parsing algorithm with the start of the range as the context node. This range of HTML elements can be added to the DOM tree.
 
-In Lightning Web Security, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert specified text as HTML into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM. We need to sanitize any elements added to this shared DOM.
+In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert specified text as HTML into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM. We need to sanitize any elements added to this shared DOM.
 
 ### Distorted Behavior
 

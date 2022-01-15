@@ -4,7 +4,7 @@ For security the `HTML{Frame|IFrame|Object}Element#contentWindow` getter is
 distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/HTMLFrameElement/docs/contentWindow-getter.md -->
-## HTMLFrameElement.prototype.contentWindow getter
+## get: HTMLFrameElement.prototype.contentWindow
 
 To reduce the surface area of possible exploit we produce an artificial
 `contentWindow` object. At a later time we may explore nesting sandboxes,
@@ -25,13 +25,13 @@ Create an artificial `contentWindow` object with a curated list of properties
   - parent
   - postMessage
 
-### Distorted Behavior
+### Distorted behavior
 - Return an artificial `contentWindow` object per frame
 - Cache the artificial `contentWindow` object for subsequent accesses
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLIFrameElement/docs/contentWindow-getter.md -->
-## HTMLIFrameElement.prototype.contentWindow getter
+## get: HTMLIFrameElement.prototype.contentWindow
 
 To reduce the surface area of possible exploit we produce an artificial
 `contentWindow` object. At a later time we may explore nesting sandboxes,
@@ -52,13 +52,13 @@ Create an artificial `contentWindow` object with a curated list of properties
   - parent
   - postMessage
 
-### Distorted Behavior
+### Distorted behavior
 - Return an artificial `contentWindow` object per iframe
 - Cache the artificial `contentWindow` object for subsequent accesses
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLObjectElement/docs/contentWindow-getter.md -->
-## HTMLObjectElement.prototype.contentWindow getter
+## get: HTMLObjectElement.prototype.contentWindow
 
 To reduce the surface area of possible exploit we produce an artificial
 `contentWindow` object. At a later time we may explore nesting sandboxes,
@@ -79,7 +79,7 @@ Create an artificial `contentWindow` object with a curated list of properties
   - parent
   - postMessage
 
-### Distorted Behavior
+### Distorted behavior
 - Return an artificial `contentWindow` object per object element
 - Cache the artificial `contentWindow` object for subsequent accesses
 <!-- END generated embed, please keep comment -->

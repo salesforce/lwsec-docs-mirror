@@ -3,7 +3,7 @@
 For security `NamedNodeMap#setNamedItem` is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/NamedNodeMap/docs/setNamedItem-value.md -->
-## NamedNodeMap.prototype.setNamedItem
+## value: NamedNodeMap.prototype.setNamedItem
 
 It is possible to set an attribute on an element using the methods available on NamedNodeMap. For example:
 
@@ -30,7 +30,7 @@ registration  invocation
 
 The registry is a WeakMap since elements can be removed from the page throughout the lifecycle of an application. The distortions are being retrieved from the `setAttributeNode` registry since both methods accept an instance of `Attr`.
 
-### Distorted Behavior
+### Distorted behavior
 
 - if no distortion is found for an Attr instance then proceed with native invocation of setNamedItem
 - if a distortion exists then the distorted behavior is relative to what that distortion does

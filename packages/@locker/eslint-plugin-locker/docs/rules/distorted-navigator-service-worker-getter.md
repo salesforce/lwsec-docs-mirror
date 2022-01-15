@@ -15,7 +15,7 @@ navigator.serviceWorker.controller;
 ## Related Distortions
 
 <!-- START generated embed: @locker/distortion/src/Navigator/docs/serviceWorker-getter.md -->
-## Navigator.prototype.serviceWorker getter
+## get: Navigator.prototype.serviceWorker
 
 ### Problem statement
 
@@ -44,13 +44,13 @@ To prevent unsandboxed JavaScript code from leaking data, we want to disallow ac
 
 Patch getter on `Navigator.prototype.serviceWorker` descriptor to return `undefined`.
 
-### Distorted Behavior
+### Distorted behavior
 
 Each time code accesses `navigator.serviceWorker` property, this distortion will return `undefined`.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/ServiceWorkerContainer/docs/prototype-value.md -->
-## ServiceWorkerContainer.prototype
+## value: ServiceWorkerContainer.prototype
 
 ### Problem Statement
 
@@ -75,7 +75,7 @@ self.addEventListener('fetch', (event) => {
 
 To prevent unsandboxed JavaScript code from leaking data, we want to disallow access to any of the `ServiceWorkerContainer.prototype` properties or methods. We do this because even though we already prevent access to `navigator.serviceWorker`, there are other ways in which user code could get access to the `ServiceWorkerContainer` singleton, so this distortion prevents access to any of its operations.
 
-### Distorted Behavior
+### Distorted behavior
 
 This distortion will throw a `TypeError` whenever any of the `ServiceWorkerContainer.prototype` properties or methods is accessed.
 <!-- END generated embed, please keep comment -->

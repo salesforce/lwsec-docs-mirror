@@ -3,14 +3,15 @@
 For security `document.execCommand` is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Document/docs/execCommand-value.md -->
-## Document.prototype.execCommand
+## value: Document.prototype.execCommand [Main]
 
-When an HTML document has been switched to `designMode`, its `document` object exposes an [`execCommand()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand) method to run commands that manipulate the current editable region, such as form inputs or `contentEditable` elements. 
+### Summary
 
-The `insertHTML` command inserts new elements on the currently active editable element. 
+When an HTML document has been switched to designMode, its document object exposes an execCommand method to run commands that manipulate the current editable region, such as form inputs or contentEditable elements. One command, "insertHTML" inserts new elements on the currently active editable element. 
 
-Lightning Web Security runs in the main window, where the `<html>`, `<head>` and `<body>` elements are shared. If malicious code can insert any specified text as HTML into the DOM tree, even outside of the shared `<head>` and `<body>` elements, it can pollute the DOM. For this reason, any elements added to this shared DOM are sanitized to strip out malicious code.
+In Locker, we share the HEAD and BODY. Even though it doesn't corrupt the existing elements inside or outside the element, if a malicious user can insert specified text as HTML into the DOM tree outside of the shared elements, it gives them the ability to pollute the DOM. We need to sanitize any elements added to this shared DOM.
+
 ### Distorted Behavior
 
-This distortion sanitizes the inserted HTML string.
+This distortion sanitizes HTML string being inserted.
 <!-- END generated embed, please keep comment -->

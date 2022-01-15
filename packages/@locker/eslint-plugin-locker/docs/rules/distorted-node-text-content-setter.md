@@ -3,11 +3,11 @@
 For security the `Node#textContent` setter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Node/docs/textContent-setter.md -->
-## Node.prototype.textContent setter
+## set: Node.prototype.textContent [Main]
 
 ### Summary
 
-This property allows users to replace DOM inside the element with his text. In Lightning Web Security, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
+This property allows users to replace DOM inside the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his text. Therefore, corrupting the DOM.
 
 ### Distorted Behavior
 

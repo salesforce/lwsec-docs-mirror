@@ -3,7 +3,7 @@
 For security the `window.frames` getter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/frames-getter.md -->
-## window.frames getter
+## get: window.frames [Main]
 
 ### Summary
 

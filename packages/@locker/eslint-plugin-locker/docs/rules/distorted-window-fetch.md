@@ -13,13 +13,13 @@ To prevent users from making requests to disallowed endpoints.
 
 Patch the `Window.fetch` property and intercept calls to it to block disallowed URLs.
 
-### Distorted Behavior
+### Distorted behavior
 
 The `Window.fetch` distortion examines the `hostname` and the `pathname` of the URL, and if it matches one of the disallowed entries, it rejects the promise.
 
 ### Disallowed endpoints
 
-Lightning Web Security disallows endpoints:
+Locker disallows endpoints:
 
 - Containing `"/aura"` in the URL.
 - Containing `"/webruntime"` in the URL.

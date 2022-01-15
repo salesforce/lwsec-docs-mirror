@@ -13,13 +13,13 @@ To prevent users from making requests to disallowed endpoints.
 
 Patch the `XMLHttpRequest.open` property and intercept calls to it to block disallowed URLs.
 
-### Distorted Behavior
+### Distorted behavior
 
 The `XMLHttpRequest.open` distortion examines the `hostname` and the `pathname` of the URL, and if it matches one of the disallowed entries, it throws an error.
 
 ### Disallowed endpoints
 
-Lightning Web Security disallows endpoints:
+Locker disallows endpoints:
 
 - Containing `"/aura"` in the URL.
 - Containing `"/webruntime"` in the URL.
@@ -28,7 +28,7 @@ At the moment this is hard coded, but in the future this will be a configuration
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/open-value.md -->
-## Window.prototype.open
+## value: Window.prototype.open [Main]
 
 ### Summary
 
@@ -36,5 +36,5 @@ The `open` method, loads the specified resource into a new or existing browsing 
 
 ### Distorted Behavior
 
-Lightning Web Security will return an artificial `Window` object that contains specific safe methods we allow.
+Locker will return an artificial `Window` object that contains specific safe methods we allow.
 <!-- END generated embed, please keep comment -->

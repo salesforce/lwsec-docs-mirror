@@ -3,7 +3,7 @@
 For security the `MessageEvent#source` getter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/MessageEvent/docs/source-getter.md -->
-## MessageEvent.prototype.source getter
+## get: MessageEvent.prototype.source
 
 The source read-only property of the MessageEvent is a property that represents
 the message emitter. This issue was discovered during a pentest. A malicious user
@@ -27,7 +27,7 @@ Create an artificial `window` object with a curated list of properties.
   - focus
   - postMessage
 
-### Distorted Behavior
+### Distorted behavior
 - Return an artificial `window` object for source.
 - Cache the artificial `window` object for subsequent accesses.
 <!-- END generated embed, please keep comment -->
