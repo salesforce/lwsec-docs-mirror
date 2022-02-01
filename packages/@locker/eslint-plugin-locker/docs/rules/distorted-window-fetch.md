@@ -5,24 +5,11 @@ For security the `window.fetch` constructor is distorted in Lightning Locker.
 <!-- START generated embed: @locker/distortion/src/Window/docs/fetch-value.md -->
 ## Window.fetch
 
-### Goal
+The global [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch) method starts the process of fetching a resource from the network, returning a promise that is fulfilled when the response is available.
 
-To prevent users from making requests to disallowed endpoints.
+Lightning Web Security disallows access to URL endpoints containing `"/aura"` and `"/webruntime"` because they are part of the Lightning Component framework.
 
-### Design
+### Distorted Behavior
 
-Patch the `Window.fetch` property and intercept calls to it to block disallowed URLs.
-
-### Distorted behavior
-
-The `Window.fetch` distortion examines the `hostname` and the `pathname` of the URL, and if it matches one of the disallowed entries, it rejects the promise.
-
-### Disallowed endpoints
-
-Locker disallows endpoints:
-
-- Containing `"/aura"` in the URL.
-- Containing `"/webruntime"` in the URL.
-
-At the moment this is hard coded, but in the future this will be a configuration option.
+This distortion examines the `hostname` and the `pathname` of the URL. If there's a match to a disallowed endpoint, it rejects the promise.
 <!-- END generated embed, please keep comment -->

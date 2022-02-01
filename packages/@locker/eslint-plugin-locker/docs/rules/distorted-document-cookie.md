@@ -3,37 +3,27 @@
 For security the `document.cookie` getter and setter are distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Document/docs/cookie-getter.md -->
-## get: Document.prototype.cookie
+## Document.prototype.cookie getter
 
-Along access to the global window object, protecting access to cookies is absolutely crucial. If a malicious piece of code would get access to all the cookies on a page it could start issuing XHR requests impersonating the currently logged in user. This can have catastrophic effects in a multi tenant environment like Salesforce. It is absolutely necessary to protect the getter of `Document.prototype.cookie` and limit the view only to what is being set from within the sandbox, nothing from outside or other sandboxes.
+The [`Document.cookie`](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie) property lets you read and write cookies associated with the document. It serves as a getter and setter for the actual values of the cookies.
 
-### Goal
+Protecting access to cookies is crucial. If malicious code can access all cookies on a page, it can issue XHR requests impersonating the user who's logged in. This can have catastrophic effects in a multi-tenant environment like Salesforce. 
 
-- To prevent access to cookies not belonging to the sandbox
+This distortion protects the getter of `Document.prototype.cookie` and limits the view to what is being set from within the sandbox. Cookies inside the sandbox are protected from code outside or in other sandboxes.
 
-### Design
+### Distorted Behavior
 
-- Patch the getter of Document.prototype.cookie to filter out any cookies set from outside the sandbox. This includes system cookies and other sandbox cookies. The current strategy for isolating cookies between sandboxes is to use a prefix for each key that is specific to each sandbox. The filtering of cookies will be done based on this prefix.
-
-### Distorted behavior
-
-- The getter will return only sandbox cookies. The behavior will seem native-like.
+The getter returns only cookies that belong to the sandbox.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Document/docs/cookie-setter.md -->
-## set: Document.prototype.cookie
+## Document.prototype.cookie setter
 
-Patching the setter of `Document.prototype.cookie` is required in order for the getter to manage to retrieve sandbox cookies. Additionally, we need to make sure that malicious code does not override critical system cookies that are necessary for a system like Salesforce to function properly. If we would not patch the setter then any sandbox would be able to send malicious payloads to the backend using cookies.
+The [`Document.cookie`](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie) property lets you read and write cookies associated with the document. It serves as a getter and setter for the actual values of the cookies.
 
-### Goal
+The setter for `Document.prototype.cookie` is distorted so the getter can retrieve sandbox cookies. Additionally, the distortion prevents changes to critical system cookies that are necessary for Salesforce to function properly. If code in a sandbox is allowed to set system cookies, it can send malicious payloads to the backend using cookies.
 
-- To prevent setting cookies that affect global behavior.
+### Distorted Behavior
 
-### Design
-
-- Patch the setter of Document.prototype.cookie to prefix any cookie keys set from within the sandbox. The prefix is computed based on the namespace of the sandbox. 
-
-### Distorted behavior
-
-- The behavior will seem native like.
+The setter can modify only cookies that belong to the sandbox.
 <!-- END generated embed, please keep comment -->

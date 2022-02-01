@@ -5,24 +5,17 @@ For security the `Storage` constructor is distorted in Lightning Locker.
 <!-- START generated embed: @locker/distortion/src/Storage/docs/constructor-value.md -->
 ## Storage API: Storage.prototype
 
-### Summary
+The [`Storage`](https://developer.mozilla.org/en-US/docs/Web/API/Storage) interface provides access to a particular domain's session storage or local storage. It allows the addition, modification, or deletion of stored data items, which are shared.
 
-The Storage interface provides access to the a particular domain's session or local storage. It allows the addition, modification, or deletion of stored data items which is shared in system mode. The storage is accessible on the browser and holds its shape across multiple tabs from the same domain. Therefore, we would have to store each namespaces storage in a synthetic storage, where we do not allow malicious users to add, modify, or clear data items in global or from other namespaces.
+The storage is accessible in the browser and holds its shape across multiple tabs from the same domain.
 
-KEY: The key() method of the Storage interface, when passed a number n, returns the name of the nth key in a given Storage object. The order of keys is user-agent defined, so you should not rely on it. Therefore, it is okay to have the storage items out of order.
+Lightning Web Security creates synthetic storage for each namespace, where malicious code can't add, modify, or clear data items in global storage or in storage belonging to other namespaces.
+
+Note: The `key()` method of the `Storage` interface, when passed a number n, returns the name of the nth key in a given `Storage` object. The order of keys is defined by the user agent, so you can't rely on it. Therefore, it’s OK to have the storage items out of order.
 
 ### Distorted Behavior
 
-Distorted behaviors from `Storage.prototype`:
-
-* `length`
-* `setItem`
-* `getItem`
-* `key`
-* `removeItem`
-* `clear`
-
-This distortion prepends an LSKey[NS] to all storage values set in each namespace where NS is the namespace name. This distortion uses a SecureStorage class that implements all methods and properties from the raw Storage. This distoration also uses a proxy to mimic interactibility features that are on the raw Storage. Storage Example:
+This distortion prepends an `LSKey[NS]` to all storage values set in each namespace, where `NS` is the namespace name. This distortion uses a `SecureStorage` class that implements all methods and properties from the raw `Storage`. This distortion also uses a proxy to mimic interactive features that are on the raw `Storage`. Storage Example:
 
 [Global]
 `localStorage.setItem('x','y'); localStorage; // { 'x': 'y', 'LSKey[NS1]x': 'y', 'LSKey[NS2]x': 'y' }`
@@ -33,7 +26,7 @@ This distortion prepends an LSKey[NS] to all storage values set in each namespac
 [NS2]
 `localStorage.setItem('x','y'); localStorage; // { 'x': 'y' }`
 
-The proxy wrap has traps that allow for our Storage to have features that are the same as the raw Storage. Such features include getting, setting, iterating and basic object features.
+The proxy wrap has traps that allow for our Storage to have features that are the same as the raw Storage. Such features include getting, setting, iterating, and basic object features.
 
 * Set/Get: `localStorage.x = 'y'; localStorage; // { 'x': 'y' }`
 * Define Property: `Object.defineProperty(localStorage, 'foo', { value: 'bar' }); // { 'foo': 'bar', 'x': 'y' }`
@@ -43,85 +36,70 @@ The proxy wrap has traps that allow for our Storage to have features that are th
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/clear-value.md -->
-## value: Storage.prototype.clear [Main]
+## Storage.prototype.clear
 
-### Summary
+The [`Storage.prototype.clear()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear) method clears all keys and associated data stored in a given `Storage` object. 
 
-The Storage interface provides access to the a particular domain's session or local storage. It allows the addition, modification, or deletion of stored data items which is shared in system mode.
-
-Since each sandbox uses it's own synthetic storage, we cannot allow a malicious user to clear all the data items in system mode.
+Each sandbox uses its own synthetic storage. Lightning Web Security prevents `clear()` from clearing all the data items in another sandbox or outside sandboxes. 
 
 ### Distorted Behavior
 
-This distortion deletes all data items from its synthetic storage.
+This distortion deletes all data items from the sandboxed code's synthetic storage.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/getItem-value.md -->
-## value: Storage.prototype.getItem [Main]
+## Storage.prototype.getItem
 
-### Summary
+The [`Storage.prototype.getItem()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem) method, when passed a key name, returns that key's value, or `null` if the key does not exist, in the given `Storage` object.
 
-The Storage interface provides access to the a particular domain's session or local storage. It allows the addition, modification, or deletion of stored data items which is shared in system mode.
-
-In order for one sandbox not to retrieve the storage of another sandbox, we must create a synthetic storage for each sandbox.
+Lightning Web Security creates synthetic storage for each sandbox. The synthetic storage prevents code in one sandbox from retrieving data belonging to another namespace or outside sandboxes. 
 
 ### Distorted Behavior
 
-This distortion retrieves data items from its synthetic storage.
+This distortion ensures sandboxed code retrieves data items from its own synthetic storage.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/key-value.md -->
-## value: Storage.prototype.key [Main]
+## Storage.prototype.key
 
-### Summary
-
-The Storage interface provides access to the a particular domain's session or local storage. It allows the addition, modification, or deletion of stored data items which is shared in system mode.
-
-The key() method of the Storage interface, when passed a number n, returns the name of the nth key in a given Storage object. The order of keys is user-agent defined, so you should not rely on it. Therefore, it is okay to have the storage items out of order.
+The [`Storage.prototype.key()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/key) method, when passed a number n, returns the name of the nth key in a given `Storage` object. The order of keys is user-agent defined, so you can't rely on it. Therefore, it’s OK to have the storage items out of order.
 
 ### Distorted Behavior
 
-This distortion retrieves a key value at a specific index from its synthetic storage.
+This distortion retrieves a key value at a specific index from the sandboxed code's synthetic storage.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/length-getter.md -->
-## get: Storage.prototype.length [Main]
+## Storage.prototype.length getter
 
-### Summary
+The [`Storage.prototype.length`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/length) read-only property returns the number of data items stored in a given `Storage` object.
 
-The Storage interface provides access to the a particular domain's session or local storage. It allows the addition, modification, or deletion of stored data items which is shared in system mode.
-
-In order for one sandbox not to retrieve the storage of another sandbox, we must create a synthetic storage for each sandbox. When looking at length, we must retrieve the number of data items in the synthetic storage rather than the system mode storage.
+When the getter for `length` is used, Lightning Web Security retrieves the number of data items in the namespace's synthetic storage rather than the shared storage.
 
 ### Distorted Behavior
 
-This distortion retrieves the number of data items in its synthetic storage.
+This distortion retrieves the number of data items in the sandboxed code's synthetic storage.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/removeItem-value.md -->
-## value: Storage.prototype.removeItem [Main]
+## Storage.prototype.removeItem
 
-### Summary
+The [`Storage.prototype.removeItem()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/removeItem) method, when passed a key name, removes that key from the given `Storage` object if it exists.
 
-The Storage interface provides access to the a particular domain's session or local storage. It allows the addition, modification, or deletion of stored data items which is shared in system mode.
-
-Since each sandbox uses it's own synthetic storage, we cannot allow a malicious user to clear a data item from another sandbox.
+Each sandbox uses its own synthetic storage. Lightning Web Security prevents `removeItem()` from removing data items from another sandbox or outside sandboxes.
 
 ### Distorted Behavior
 
-This distortion deletes a data item from its synthetic storage.
+This distortion deletes a data item from the sandboxed code's synthetic storage.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/setItem-value.md -->
-## value: Storage.prototype.setItem [Main]
+## Storage.prototype.setItem
 
-### Summary
+The [`Storage.prototype.setItem()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem) method, when passed a key name and value,  adds that key to the given `Storage` object, or update that key's value if it already exists.
 
-The Storage interface provides access to the a particular domain's session or local storage. It allows the addition, modification, or deletion of stored data items which is shared in system mode.
-
-In order for one sandbox not to modify the storage of another sandbox, we must create a synthetic storage for each sandbox.
-
+Each sandbox uses its own synthetic storage. Lightning Web Security prevents `setItem()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem) from adding or modifying data items in another sandbox or outside sandboxes. 
 ### Distorted Behavior
 
-This distortion adds or modifies data items in its synthetic storage.
+This distortion adds or modifies data items in the sandboxed code's synthetic storage.
 <!-- END generated embed, please keep comment -->

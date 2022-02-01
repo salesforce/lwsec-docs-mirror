@@ -3,13 +3,13 @@
 For security the `Element#outerHTML` setter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/outerHTML-setter.md -->
-## set: Element.prototype.outerHTML [Main]
+## Element.prototype.outerHTML setter
 
-### Summary
+The [`Element.prototype.outerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/outerHTML)  property gets or sets the serialized HTML fragment describing the element including its descendants. It can also be set to replace the element with nodes parsed from the given string.
 
-This property allows users to replace the element with nodes parsed from the given specified text as HTML. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the HEAD and BODY with his specified text as HTML. Therefore, corrupting the DOM.
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace the `<head>` and `<body>` elements, corrupting the DOM.
 
 ### Distorted Behavior
 
-This distortion sanitizes and prevents HTML from replacing the shared elements: HEAD and BODY.
+This distortion sanitizes and prevents HTML from replacing the shared `<head>` and `<body>` elements.
 <!-- END generated embed, please keep comment -->

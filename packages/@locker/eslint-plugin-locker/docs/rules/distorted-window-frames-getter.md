@@ -3,19 +3,28 @@
 For security the `window.frames` getter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/frames-getter.md -->
-## get: window.frames [Main]
+## window.frames getter
 
-### Summary
+The [`window.frames`](https://developer.mozilla.org/en-US/docs/Web/API/Window/frames) property returns an array-like object that lists all the `frame` and `iframe` elements in the current window. 
 
-The Window interface's `frames` property returns an object that is the window
-itself, which is an array-like object, listing the direct sub-frames of the
-current window.
+```js
+frameList = window.frames;
+frameList === window; // evaluates to true (normally)
+```
+
+Lightning Web Security restricts access by distorting the `frameList` object returned, so that malicious code can't access `window` properties.
 
 ### Distorted Behavior
 
-The Window interface's `frames` property returns a fake `frameList` that includes
-all `<frame>` and `<iframe>` elements in the document, in insertion order. Supports
-access via index or name property value. `window.frames` does not allow access to
-`window`, ie. `window.frames !== window`, and does not provide proxy access to
-`window` properties.
+This distortion returns an artificial `frameList` object that includes
+all `frame` and `iframe` elements in the document, in insertion order. 
+
+The `frameList` object supports access by index value or name property value, as the native one does. 
+
+However, the distorted `window.frames` doesn't allow access to `window` or provide proxy access to
+`window` properties. 
+
+```js
+framelist !== window; // evaluates to true with this distortion
+```
 <!-- END generated embed, please keep comment -->

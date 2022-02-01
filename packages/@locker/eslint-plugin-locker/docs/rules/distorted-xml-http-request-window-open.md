@@ -3,38 +3,31 @@
 For security `{XMLHttpRequest|Window}#open` is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/XMLHttpRequest/docs/open-value.md -->
-## XMLHttpRequest.open
+## XMLHttpRequest.prototype.open
 
-### Goal
+The [`XMLHttpRequest.prototype.open()`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open) method initializes a newly-created request, or re-initializes an existing one.
 
-To prevent users from making requests to disallowed endpoints.
-
-### Design
-
-Patch the `XMLHttpRequest.open` property and intercept calls to it to block disallowed URLs.
-
-### Distorted behavior
-
-The `XMLHttpRequest.open` distortion examines the `hostname` and the `pathname` of the URL, and if it matches one of the disallowed entries, it throws an error.
-
-### Disallowed endpoints
-
-Locker disallows endpoints:
-
-- Containing `"/aura"` in the URL.
-- Containing `"/webruntime"` in the URL.
-
-At the moment this is hard coded, but in the future this will be a configuration option.
-<!-- END generated embed, please keep comment -->
-
-<!-- START generated embed: @locker/distortion/src/Window/docs/open-value.md -->
-## value: Window.prototype.open [Main]
-
-### Summary
-
-The `open` method, loads the specified resource into a new or existing browsing context with the specified name. If the name doesn't exist, then a new browsing context is opened in a new tab or a new window, and the specified resource is loaded into it. This new context is not sandboxed properly and malicious users can access system mode.
+Lightning Web Security disallows access to URL endpoints containing `"/aura"` and `"/webruntime"` because they are part of the Lightning Component framework.
 
 ### Distorted Behavior
 
-Locker will return an artificial `Window` object that contains specific safe methods we allow.
+This distortion examines the `hostname` and the `pathname` of the URL. If there's a match to a disallowed endpoint, it throws an exception.
+<!-- END generated embed, please keep comment -->
+
+<!-- START generated embed: @locker/distortion/src/Window/docs/open-value.md -->
+## window.open
+
+The [`window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open) method loads the specified resource into a new or existing browsing context with the specified name. If the name doesn't exist, then a new browsing context is opened in a new tab or a new window, and the specified resource is loaded into it. 
+
+This new browsing context isn’t sandboxed properly and malicious code can access system mode, so Lightning Web Security distorts the `window` object returned.
+
+### Distorted Behavior
+
+This distortion returns an artificial `window` object that allows only safe methods.
+
+- `close`
+- `focus`
+- `postMessage`
+
+[//]: # (This will change after multi-window support)
 <!-- END generated embed, please keep comment -->
