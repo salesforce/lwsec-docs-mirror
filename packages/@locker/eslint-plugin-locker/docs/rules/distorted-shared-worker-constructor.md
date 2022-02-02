@@ -17,11 +17,11 @@ const worker = new SharedWorker('worker.js');
 <!-- START generated embed: @locker/distortion/src/SharedWorker/docs/constructor-value.md -->
 ## SharedWorker Global Constructor
 
-The [`SharedWorker()`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker/SharedWorker) constructor creates a `SharedWorker` object that executes the script at the specified URL. This script must obey the same-origin policy, a security mechanism that restricts how a document or script loaded by one origin can interact with a resource from another origin.
+### Summary
 
-Malicious code can use `SharedWorker()` to execute script at a specified URL to bypass Lightning Web Security distortions. 
+The `SharedWorker()` constructor creates a SharedWorker object that executes the script at the specified URL. This script must obey the same-origin policy. Malicious users can execute script at a specified URL to bypass Locker evaluation rules. 
 
 ### Distorted Behavior
 
-This distortion throws an exception when calling the constructor, and blocks access to `SharedWorker.prototype`.
+Locker will throw a `RangeError` when calling the constructor. Locker will block access to `SharedWorker.prototype`.
 <!-- END generated embed, please keep comment -->

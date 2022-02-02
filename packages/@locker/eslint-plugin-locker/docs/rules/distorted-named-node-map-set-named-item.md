@@ -3,13 +3,10 @@
 For security `NamedNodeMap#setNamedItem` is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/NamedNodeMap/docs/setNamedItem-value.md -->
-## NamedNodeMap.prototype.setNamedItem
+## value: NamedNodeMap.prototype.setNamedItem
 
-The [`NamedNodeMap`](https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap) interface represents a collection of `Attr` objects. Objects inside a `NamedNodeMap` are not in any particular order, unlike `NodeList`, although they may be accessed by an index as in an array. A `NamedNodeMap` object is live and will thus be auto-updated if changes are made to its contents internally or elsewhere.
+It is possible to set an attribute on an element using the methods available on NamedNodeMap. For example:
 
-`NamedNodeMap.prototype.setNamedItem()` is a method that replaces or adds the `Attr` identified in the map by the given name. You can use it to set an attribute on an element, so Lightning Web Security must distort `NamedNodeMap.prototype.setNamedItem`. 
-
-This code would bypass LWS distortions for named properties and `setAttribute\*` and set the `rel` attribute on a link if `setNamedItem` is not distorted.
 ```js
 const el = document.createElement('link');
 const attr = document.createAttribute('rel');
@@ -17,9 +14,24 @@ attr.value = 'import';
 el.attributes.setNamedItem(attr);
 ```
 
-The `NamedNodeMap.prototype.setNamedItem` distortion works with the distortion for `Element.attributes getter` to pair elements with `NamedModeMap` instances when the getter is invoked for an attribute. Then the `NamedNodeMap.prototype.setNamedItem` distortion invokes other distortions for specific attributes. 
+This would bypass our distortions for named properties and setAttribute\*. For this reason we need to distort `NamedNodeMap.prototype.setNamedItem`.
 
-### Distorted Behavior
+### Goal
 
-If there is a distortion registered for an attribute, the behavior depends on the specific distortion. If there's no distortion registered for an attribute, the native invocation of `setNamedItem` is allowed.
+- invoke registered DOM property distortions in situations like `el.attributes.setNamedItem(...)`
+
+### Design
+Inside of a NamedNodeMap distortion `this` does not point to an element but to the `attributes` instance. We have no way of understanding which `attributes` instance is for what element. That is why the shared lib of this module provides a `pairElement` utility used in Element.prototype.attributes distortion to pair an element with a NamedNodeMap instance upon accessing the getter of Element.prototype.attributes. Since all operations are synchronous we are guaranteed that the registration happens first followed by invocation later.
+Example:
+
+el.attributes.setNamedItem(....)
+  |           |
+registration  invocation
+
+The registry is a WeakMap since elements can be removed from the page throughout the lifecycle of an application. The distortions are being retrieved from the `setAttributeNode` registry since both methods accept an instance of `Attr`.
+
+### Distorted behavior
+
+- if no distortion is found for an Attr instance then proceed with native invocation of setNamedItem
+- if a distortion exists then the distorted behavior is relative to what that distortion does
 <!-- END generated embed, please keep comment -->

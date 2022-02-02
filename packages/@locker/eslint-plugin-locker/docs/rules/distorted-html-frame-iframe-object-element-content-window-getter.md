@@ -4,54 +4,82 @@ For security the `HTML{Frame|IFrame|Object}Element#contentWindow` getter is
 distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/HTMLFrameElement/docs/contentWindow-getter.md -->
-## HTMLFrameElement.prototype.contentWindow getter
+## get: HTMLFrameElement.prototype.contentWindow
 
-The `HTMLFrameElement.prototype.contentWindow` property returns the `Window` object of the specified frame. You can use this `Window` object to access the frame's document and its internal DOM. This attribute is read-only, but its properties can be manipulated like the global `Window` object. The `HTMLFrameElement` interface is deprecated in HTML5.
+To reduce the surface area of possible exploit we produce an artificial
+`contentWindow` object. At a later time we may explore nesting sandboxes,
+but in the interest of simplicity and moving things along we have decided to
+keep things simple.
 
-To reduce the possibility of exploit, Lightning Web Security creates an artificial `contentWindow` object that allows access to a reduced set of properties.
-  - `close`
-  - `closed`
-  - `focus`
-  - `opener`
-  - `parent`
-  - `postMessage`
-### Distorted Behavior
+### Goal
+- Do not expose the real raw `contentWindow`
+- Restrict access to a small curated list of properties
 
-This distortion returns an artificial `contentWindow` object per frame and caches the artificial `contentWindow` object for subsequent accesses.
+### Design
+
+Create an artificial `contentWindow` object with a curated list of properties
+  - close
+  - closed
+  - focus
+  - opener
+  - parent
+  - postMessage
+
+### Distorted behavior
+- Return an artificial `contentWindow` object per frame
+- Cache the artificial `contentWindow` object for subsequent accesses
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLIFrameElement/docs/contentWindow-getter.md -->
-## HTMLIFrameElement.prototype.contentWindow getter
+## get: HTMLIFrameElement.prototype.contentWindow
 
-The [`HTMLIFrameElement.prototype.contentWindow`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentWindow) property returns the `Window` object of an `HTMLIFrameElement`. You can use this `Window` object to access the iframe's document and its internal DOM. This attribute is read-only, but its properties can be manipulated like the global `Window` object.
+To reduce the surface area of possible exploit we produce an artificial
+`contentWindow` object. At a later time we may explore nesting sandboxes,
+but in the interest of simplicity and moving things along we have decided to
+keep things simple.
 
-To reduce the possibility of exploit, Lightning Web Security creates an artificial `contentWindow` object that allows access to a reduced set of properties.
-  - `close`
-  - `closed`
-  - `focus`
-  - `opener`
-  - `parent`
-  - `postMessage`
+### Goal
+- Do not expose the real raw `contentWindow`
+- Restrict access to a small curated list of properties
 
-### Distorted Behavior
+### Design
 
-This distortion returns an artificial `contentWindow` object per iframe and caches the artificial `contentWindow` object for subsequent accesses.
+Create an artificial `contentWindow` object with a curated list of properties
+  - close
+  - closed
+  - focus
+  - opener
+  - parent
+  - postMessage
+
+### Distorted behavior
+- Return an artificial `contentWindow` object per iframe
+- Cache the artificial `contentWindow` object for subsequent accesses
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLObjectElement/docs/contentWindow-getter.md -->
-## HTMLObjectElement.prototype.contentWindow getter
+## get: HTMLObjectElement.prototype.contentWindow
 
-The [`HTMLObjectElement.prototype.contentWindow`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentWindow) property returns a `WindowProxy` representing the window proxy of the object element's nested browsing context, if any; otherwise null.
+To reduce the surface area of possible exploit we produce an artificial
+`contentWindow` object. At a later time we may explore nesting sandboxes,
+but in the interest of simplicity and moving things along we have decided to
+keep things simple.
 
-To reduce the possibility of exploit, Lightning Web Security creates an artificial `contentWindow` object that allows access to a reduced set of properties.
-  - `close`
-  - `closed`
-  - `focus`
-  - `opener`
-  - `parent`
-  - `postMessage`
+### Goal
+- Do not expose the real raw `contentWindow`
+- Restrict access to a small curated list of properties
 
-### Distorted Behavior
+### Design
 
-This distortion returns an artificial `contentWindow` object per iframe and caches the artificial `contentWindow` object for subsequent accesses.
+Create an artificial `contentWindow` object with a curated list of properties
+  - close
+  - closed
+  - focus
+  - opener
+  - parent
+  - postMessage
+
+### Distorted behavior
+- Return an artificial `contentWindow` object per object element
+- Cache the artificial `contentWindow` object for subsequent accesses
 <!-- END generated embed, please keep comment -->

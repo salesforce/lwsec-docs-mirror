@@ -15,36 +15,64 @@ document.getElementsByTagName('iframe')[0].contentDocument;
 ## Related Distortions
 
 <!-- START generated embed: @locker/distortion/src/HTMLFrameElement/docs/contentDocument-getter.md -->
-## HTMLFrameElement.prototype.contentDocument getter
+## get: HTMLFrameElement.prototype.contentDocument
 
-The `HTMLFrameElement.prototype.contentDocument` property getter returns the `Document` object of the specified frame. 
-The `HTMLFrameElement` interface is deprecated in HTML5.
+To reduce the surface area of possible exploit we return `null` for the
+`contentDocument` property of frames. At a later time we may explore multi
+document support, but in the interest of simplicity and moving things along
+we have decided to keep things simple.
 
-To reduce the possibility of exploit, Lightning Web Security returns `null` for the `HTMLFrameElement.prototype.contentDocument` property.
-### Distorted Behavior
+### Goal
 
-This distortion returns `null` for `contentDocument`.
+- Do not expose the real raw `contentDocument`
+
+### Design
+
+The value of `contentDocument` may be `null` so we enforce that it is.
+
+### Distorted behavior
+
+- Always return `null` for `contentDocument`
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLIFrameElement/docs/contentDocument-getter.md -->
-## HTMLIFrameElement.prototype.contentDocument getter
+## get: HTMLIFrameElement.prototype.contentDocument
 
-The [`HTMLIFrameElement.contentDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentDocument) property getter returns a `Document` corresponding to the active document in the inline frame's nested browsing context if the iframe and the iframe's parent document are Same Origin. Otherwise, the property returns `null`. 
+To reduce the surface area of possible exploit we return `null` for the
+`contentDocument` property of iframes. At a later time we may explore multi
+document support, but in the interest of simplicity and moving things along
+we have decided to keep things simple.
 
-To reduce the possibility of exploit, Lightning Web Security returns `null` for the `contentDocument` property, even when an iframe and the iframe's parent document have the same origin.
+### Goal
 
-### Distorted Behavior
+- Do not expose the real raw `contentDocument`
 
-This distortion returns `null` for `contentDocument`.
+### Design
+
+The value of `contentDocument` may be `null` so we enforce that it is.
+
+### Distorted behavior
+
+- Always return `null` for `contentDocument`
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLObjectElement/docs/contentDocument-getter.md -->
-## HTMLObjectElement.prototype.contentDocument getter
+## get: HTMLObjectElement.prototype.contentDocument
 
-The [`HTMLObjectElement.prototype.contentDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentDocument) read-only property returns a `Document` representing the active document of the object element's nested browsing context, if any; otherwise null.
+To reduce the surface area of possible exploit we return `null` for the
+`contentDocument` property of object elements. At a later time we may explore
+multi document support, but in the interest of simplicity and moving things along
+we have decided to keep things simple.
 
-To reduce the possibility of exploit, Lightning Web Security returns `null` for the `contentDocument` property of object elements.
-### Distorted Behavior
+### Goal
 
-This distortion returns `null` for `contentDocument`.
+- Do not expose the real raw `contentDocument`
+
+### Design
+
+The value of `contentDocument` may be `null` so we enforce that it is.
+
+### Distorted behavior
+
+- Always return `null` for `contentDocument`
 <!-- END generated embed, please keep comment -->

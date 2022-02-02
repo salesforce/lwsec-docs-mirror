@@ -3,15 +3,20 @@
 For security the `Element#attributes` getter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/attributes-getter.md -->
-## Element.prototype.attributes getter
+## get: Element.attributes
 
-The [`Element.prototype.attributes`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) property returns a live collection of all attribute nodes registered to the specified node. It is a `NamedNodeMap`, not an `Array`, so it has no `Array` methods and the `Attr` nodes' indexes may differ among browsers. 
+The attributes collection is of type NamedNodeMap and can be used to set and remove attributes on an element. The distortion on this getter does not alter its functionality but only pairs an element with an NamedNodeMap instance such that the distortions on NamedNodeMap.prototype can retrieve the element.
 
-The `attributes` collection can be used to set and remove attributes on an element. 
+### Goal
 
-The distortion on this getter doesn't alter its functionality. It pairs an `Element` instance with a `NamedNodeMap` instance so that the  distortion on `NamedNodeMap.prototype.setNamedItem` can retrieve the element.
+-   pair an Element instance with a NamedNodeMap for distortions on NamedNodeMap.prototype
 
-### Distorted Behavior
+### Design
 
-No distorted behavior.
+-   use provided util `pairElement` to pair current element with NamedNodeMap instance when get accessor is invoked.
+-   this pairing is only for bookkeeping and O(1) lookups based on the identity of attributes collection
+
+### Distorted behavior
+
+-   no distorted behavior
 <!-- END generated embed, please keep comment -->

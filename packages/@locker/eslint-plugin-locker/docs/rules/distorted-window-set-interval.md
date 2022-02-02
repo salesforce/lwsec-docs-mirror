@@ -3,15 +3,13 @@
 For security the `window.setInterval` constructor is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/setInterval-value.md -->
-## window.setInterval
+## value: Window.prototype.setInterval [Main]
 
-The [`window.setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) method repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. 
+### Summary
 
-Code snippet execution is supported by accepting a string for the first argument. This string evaluation escapes the sandbox.
-
-Lightning Web Security must evaluate the string in the sandbox.
+The `setInterval` method, repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. But `setInterval` supports string evaluation by specifying a string for its first argument. This escapes the sandbox.
 
 ### Distorted Behavior
 
-If the first argument provided to `setInterval` is a string value, this distortion evaluates the string in the sandbox.
+If the first argument provided to `setInterval` is a string value, this distortion evaluates it in the sandbox.
 <!-- END generated embed, please keep comment -->

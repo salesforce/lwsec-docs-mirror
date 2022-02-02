@@ -5,22 +5,26 @@ For security the following `CustomElementRegistry` properties are distorted in L
 <!-- START generated embed: @locker/distortion/src/CustomElementRegistry/docs/define-value.md -->
 ## CustomElementRegistry.prototype.define
 
-The [`define`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the `CustomElementRegistry` interface defines a new custom element. 
+### Summary
+The ['define()'](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the CustomElementRegistry interface defines a new custom element. Lightning Web Security does not allow Custom Elements.
 
-Lightning Web Security doesn't allow defining custom elements because the registry is global to the page. You can't register custom elements in the sandbox. 
 ### Distorted Behavior
 
-This distortion prevents invoking `define` method from `CustomElementRegistry` and displays an error.
+This distortion prevents accessing `define()` from CustomElementRegistry. An error is thrown when accessing this method.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/CustomElementRegistry/docs/get-value.md -->
-## CustomElementRegistry.prototype.get
+## value: CustomElementRegistry.prototype.get
 
-The [`get`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/get) method of `CustomElementRegistry` interface returns the constructor for a previously-defined custom element. 
+### Goal
 
-Lightning Web Security allows sandboxed code to access existing custom element constructors from the global registry only if the custom element is prefixed with the same namespace. 
+ - To prevent sandboxed code to access custom elements constructors from the global registry unless they are obeying their own namespace.
 
-### Distorted Behavior
+### Design
 
-When called with the wrong prefix, the `get` method returns `undefined`.
+- Patch value on `CustomElementRegistry.prototype.get` descriptor to prevent accessing a custom element with the wrong prefix. This prevent them from accessing a constructor that they should not have access to.
+
+### Distorted behavior
+
+- Each time define method is called with the wrong prefix, it throws a `RangeError`.
 <!-- END generated embed, please keep comment -->

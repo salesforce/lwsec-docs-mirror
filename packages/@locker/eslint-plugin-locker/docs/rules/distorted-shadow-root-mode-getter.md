@@ -3,11 +3,18 @@
 For security the `ShadowRoot#mode` getter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/ShadowRoot/docs/mode-getter.md -->
-## ShadowRoot.prototype.mode getter
+## get: ShadowRoot.prototype.mode
 
-The [`ShadowRoot.prototype.mode`](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/mode) property determines whether the shadow root is accessible from JavaScript. When the value is `closed` the shadow root is not exposed to the scripting environment. The shadow root’s implementation internals are inaccessible and unchangeable from JavaScript.
+### Goal
 
-### Distorted Behavior
+ - To force a reported mode of 'closed'.
 
-This distortion returns `closed` when a getter accesses the `mode` property on any element with an attached shadow DOM.
+### Design
+
+- Patch getter on `ShadowRoot.prototype.mode` descriptor to return `'closed'`.
+
+### Distorted behavior
+
+- Each time code accesses `mode` property on any element with an attached shadow
+  DOM this distortion will return `'closed'`.
 <!-- END generated embed, please keep comment -->

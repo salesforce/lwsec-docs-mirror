@@ -3,21 +3,15 @@
 For security the `window.opener` getter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/opener-getter.md -->
-## window.opener getter
+## get: window.opener [Main]
 
-The [`window.opener`](https://developer.mozilla.org/en-US/docs/Web/API/Window/opener) property getter returns a reference to the window that opened the window, either with `open()`, or by navigating a link with a `target` attribute.
+### Summary
 
-In other words, if window `A` opens window `B`, `B.opener` returns `A`.
+The Window interface's `opener` property returns a reference to the window that opened the window, either with open(), or by navigating a link with a target attribute.
 
-Lightning Web Security doesn't allow access to the raw `window` object.
+In other words, if window A opens window B, B.opener returns A.
 
 ### Distorted Behavior
 
-This distortion returns an artificial `window` object that allows only safe methods.
-
-- `close`
-- `focus`
-- `postMessage`
-
-[//]: # (This will change after multi-window support)
+Locker will return an artificial `Window` object that contains specific safe methods we allow.
 <!-- END generated embed, please keep comment -->

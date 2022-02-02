@@ -3,15 +3,15 @@
 For security the `HTMLElement#outerText` setter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/HTMLElement/docs/outerText-setter.md -->
-## HTMLElement.prototype.outerText setter [Chrome, Edge, Opera, Safari]
+## set: Element.prototype.outerText [Chrome, Edge, Opera, Safari]
 
-[`HTMLElement.prototype.outerText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText) is a non-standard property. As a getter, it returns the same value as `HTMLElement.prototype.innerText`. As a setter, it removes the current node and replaces it with the given text.
+### Summary
 
-Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace the `<head>` and `<body>` elements, corrupting the DOM.
+This property allows users to replace the element with his text. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the HEAD and BODY with his text. Therefore, corrupting the DOM.
 
 ### Distorted Behavior
 
-This distortion sanitizes the given text and prevents it from replacing the shared elements `<head>` and `<body>`.
+This distortion sanitizes and prevents text from replacing the shared elements: HEAD and BODY.
 
-As a non-standard property, the `outerText` descriptor could be undefined. Firefox doesn't support the property, so the distortion does nothing in that browser.
+Note that `outerText` [is not a standard property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText#Browser_compatibility), so the descriptor could be undefined, like in the case of Firefox. In this case, this distortion does nothing.
 <!-- END generated embed, please keep comment -->

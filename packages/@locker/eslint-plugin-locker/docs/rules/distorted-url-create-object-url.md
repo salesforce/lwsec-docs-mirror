@@ -3,17 +3,13 @@
 For security `URL.createObjectURL` is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/URL/docs/createObjectURL-value.md -->
-## URL.createObjectURL
+## value: URL.createObjectURL
 
-The [`URL.createObjectURL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL) static method creates a `DOMString` containing a URL representing the object given in the parameter.
+Multiple security vulnerabilities have been reported around URL.createObjectURL. In all situations, the malicious code was creating either a File or a Blob object using a MIME type that would trigger the JIT and attempting to load malicious javascript code. These MIME types include `text/html`, `image/svg+xml`, `text/html` and `text/javascript`. While the first 3 may have valid use cases in a modern application, the latter does not since one can always load a javascript file using the `<script>` tag. 
 
-The method creates in memory a URL address location that HTML elements with `src` or `href` attributes can use to load stored content. The URL runs on the same domain as the code that loads it.
+`URL.createObjectURL` is used to create in memory URL address locations that certain tags can use on their `src` and `href` attributes to load stored content. These URLs run on the same domain as the code that is loading them. Cases where an attacker could load custom code and trigger the JIT include `iframe` and `script` tags, but other creative ways can always be found since these are not the only tags that load remote content. 
 
-Malicious code can use `URL.createObjectURL` to create an object of type File or Blob that uses a MIME type that can load malicious JavaScript code. 
-
-MIME types of concern include `text/html`, `image/svg+xml`, `text/xml` and `text/javascript`. The first three have valid use cases, but `text/javascript` doesn't since you can load a JavaScript file using the `<script>` tag instead. 
-
-Here's a simple example of malicious code:
+Simple example of malicious code:
 
 ```javascript
 const blob = new Blob([
@@ -26,19 +22,32 @@ iframe.src = url;
 document.body.appendChild(iframe);
 ```
 
-Without protection from Lightning Web Security, upon loading the content of the `iframe`, the browser runs the code in the `<script>` tag which bypasses the sandbox. If the code is running on the same domain, it gains access to all cookies and displays them in a popup window.
+Upon loading the content of the iframe the browser will see the script tag and run its code. At that point code will bypass the sandbox and, if it's running on the same domain, it will gain access to all cookies. Possibilities are endless here.
 
-To guard against exploits, Lightning Web Security fetches the content of the URL and scans `Blob` and `File` objects that have their MIME type set to `text/html`, `image/svg+xml` or `text/xml`. If malicious content is detected, the code doesn't execute.
+Trying to patch all tags and prevent `blob:` URLs is not feasible as the vulnerability does not lie in what type of URLs are supported but the content referenced by them. Reading the content of a `blob:` URL is also quite a challenge since the data is stored in memory in binary format. 
 
-### Distorted Behavior
+There are ways to read the content of a Blob/File object but they are asynchronous. One such API is the `FileReader` interface. While this may be feasible and elegant in async operations unfortunately `URL.createObjectURL` is a synchronous API therefore this distortion needs to deal with even tougher limitations.
 
-This distortion throws an exception when MIME types `text/html`, `text/xml`, `image/svg+xml` are used with `Blob` or `File` objects that try to load malicious content: `Lightning Web Security: Cannot "createObjectURL" using an unsecure [object Blob]!`
+### Goal
 
-If no malicious content is detected when these MIME types are used, the content is allowed to load but the distortion enforces `charset=utf-8` to prevent exploits where the browser auto-interprets charset and special characters that can lead to XSS.
+- To scan and detect malicious content in Blob/File objects that have their MIME type set to `text/html`, `image/svg+xml` or `text/html`.
+- To allow other MIME types which do not trigger the JIT to be used.
+- Performance should not be impacted on non-dangerous MIME types.
 
-For any unsupported MIME types, including `text/javascript`, the distortion throws an exception with the message `Lightning Web Security: Unsupported MIME type.` 
+### Design
 
-Empty MIME types on `File` and `Blob` objects are treated as `text/plain` since browsers treat this differently.
+- Patch the `URL.createObjectURL` API to scan Blob/File objects that use a potentially dangerous MIME type for dangerous code.
+- Use `DOMPurify` to detect whether content is dangerous in the original payload and deny the usage of the specific Blob/File object with `URL.createObjectURL`, if so
+- passthrough of any Blob/File/MediaSource objects that use safe MIME types
+- For MIME types with `text/html`, `text/xml`, `image/svg+xml` we enforce `charset=utf-8`, i.e. the mime type of the blob becomes `text/html;charset=utf-8`
+- To avoid the async-sync issue with this particular API we use a deprecated behavior of `XMLHttpRequest` that allows us to make synchronous XHR requests to a URL. We create an in memory `blob:` URL with the initial content, fetch it synchronously and then scan it using `DOMPurify`. If any content has been removed by `DOMPurify` we mark the content as dangerous. Although marked as deprecated, this API will surely be kept in future browser versions as there is no alternative yet to fetching remote content synchronously. Removing this feature will surely break other web applications thus the risk is quite minimal.
 
-All commonly used and non-malicious MIME types work as expected.
+### Distorted behavior
+
+- For any HTML like MIME types used with Blob/File objects that try to load malicious content, the API will throw the error `Locker: Cannot "createObjectURL" using a unsecure [object Blob]!`
+- For any non-recognized MIME types the API will throw the error `Unsupported MIME type.`
+- All commonly used and non-malicious MIME types will not be affected.
+- All Blob/Files using html like MIME types which do not represent a threat will be allowed.
+- On HTML like MIME types we enforce charset=utf-8 to prevent exploits where browser auto interprets charset and special characters that can lead to XSS.
+- Empty MIME types on File and Blob objects will automatically be normalized to 'text/plain' since browsers treat this differently.
 <!-- END generated embed, please keep comment -->

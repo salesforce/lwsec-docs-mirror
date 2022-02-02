@@ -17,11 +17,11 @@ const worker = new Worker('/worker.js');
 <!-- START generated embed: @locker/distortion/src/Worker/docs/constructor-value.md -->
 ## Worker Global Constructor
 
-The [`Worker()`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker) constructor creates a `Worker` object that executes the script at the specified URL. This script must obey the same-origin policy. 
+### Summary
 
-Malicious code can execute a script at a specified URL to bypass Lightning Web Security evaluation rules. 
+The `Worker()` constructor creates a Worker object that executes the script at the specified URL. This script must obey the same-origin policy. Malicious users can execute script at a specified URL to bypass Locker evaluation rules. 
 
 ### Distorted Behavior
 
-Lightning Web Security throws an exception `Lightning Web Security: Cannot create Worker with ${url}` when calling the constructor. Lightning Web Security blocks access to `Worker.prototype`.
+Locker will throw a `RangeError` when calling the constructor. Locker will block access to `Worker.prototype`.
 <!-- END generated embed, please keep comment -->
