@@ -3,13 +3,15 @@
 For security the `Element#innerHTML` setter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/innerHTML-setter.md -->
-## set: Element.prototype.innerHTML [Main]
+## Element.prototype.innerHTML setter
 
-### Summary
+The [`Element.prototype.innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML) property gets or sets the HTML or XML markup contained within the element. 
 
-This property allows users to replace DOM inside the element with nodes parsed from the given specified text as HTML. In Locker, we share the HEAD and BODY. This will allow a malicious user to replace the DOM of the HEAD and BODY with his specified text as HTML. Therefore, corrupting the DOM.
+You can set `Element.prototype.innerHTML` to replace DOM inside the element with nodes parsed from the given specified text as HTML. 
+
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace the DOM of the `<head>` and `<body>` elements, corrupting the DOM.
 
 ### Distorted Behavior
 
-This distortion sanitizes and prevents HTML from replacing the DOM within shared elements: HEAD and BODY.
+This distortion sanitizes and prevents HTML from replacing the DOM within shared `<head>` and `<body>` elements.
 <!-- END generated embed, please keep comment -->
