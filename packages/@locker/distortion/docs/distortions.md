@@ -2,7 +2,7 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.14.26<br>
+Version: 0.15.6<br>
 Generated: Feb 7, 2022
 
 ## Table of Contents
@@ -292,7 +292,7 @@ The `set()` method automatically adds the sandbox prefix to keys for sandbox coo
 
 ## CustomElementRegistry.prototype.define
 
-The [`define()`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the `CustomElementRegistry` interface defines a new custom element. 
+The [`define`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the `CustomElementRegistry` interface defines a new custom element. 
 
 Lightning Web Security doesn't allow defining custom elements because the registry is global to the page. You can't register custom elements in the sandbox. 
 ### Distorted Behavior
