@@ -5,7 +5,7 @@ For security the following `CustomElementRegistry` properties are distorted in L
 <!-- START generated embed: @locker/distortion/src/CustomElementRegistry/docs/define-value.md -->
 ## CustomElementRegistry.prototype.define
 
-The [`define`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the `CustomElementRegistry` interface defines a new custom element. 
+The [`define()`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the `CustomElementRegistry` interface defines a new custom element. 
 
 Lightning Web Security doesn't allow defining custom elements because the registry is global to the page. You can't register custom elements in the sandbox. 
 ### Distorted Behavior
