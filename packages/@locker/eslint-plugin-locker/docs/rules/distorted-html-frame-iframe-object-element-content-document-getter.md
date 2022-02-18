@@ -17,7 +17,7 @@ document.getElementsByTagName('iframe')[0].contentDocument;
 <!-- START generated embed: @locker/distortion/src/HTMLFrameElement/docs/contentDocument-getter.md -->
 ## HTMLFrameElement.prototype.contentDocument getter
 
-The `HTMLFrameElement.prototype.contentDocument` property getter returns the `Document` object of the specified frame. 
+The `HTMLFrameElement.prototype.contentDocument` property getter returns the `Document` object of the specified frame.
 The `HTMLFrameElement` interface is deprecated in HTML5.
 
 To reduce the possibility of exploit, Lightning Web Security returns `null` for the `HTMLFrameElement.prototype.contentDocument` property.
@@ -29,7 +29,7 @@ This distortion returns `null` for `contentDocument`.
 <!-- START generated embed: @locker/distortion/src/HTMLIFrameElement/docs/contentDocument-getter.md -->
 ## HTMLIFrameElement.prototype.contentDocument getter
 
-The [`HTMLIFrameElement.contentDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentDocument) property getter returns a `Document` corresponding to the active document in the inline frame's nested browsing context if the iframe and the iframe's parent document are Same Origin. Otherwise, the property returns `null`. 
+The [`HTMLIFrameElement.contentDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentDocument) property getter returns a `Document` corresponding to the active document in the inline frame's nested browsing context if the iframe and the iframe's parent document are Same Origin. Otherwise, the property returns `null`.
 
 To reduce the possibility of exploit, Lightning Web Security returns `null` for the `contentDocument` property, even when an iframe and the iframe's parent document have the same origin.
 

@@ -19,7 +19,7 @@ const worker = new SharedWorker('worker.js');
 
 The [`SharedWorker()`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker/SharedWorker) constructor creates a `SharedWorker` object that executes the script at the specified URL. This script must obey the same-origin policy, a security mechanism that restricts how a document or script loaded by one origin can interact with a resource from another origin.
 
-Malicious code can use `SharedWorker()` to execute script at a specified URL to bypass Lightning Web Security distortions. 
+Malicious code can use `SharedWorker()` to execute script at a specified URL to bypass Lightning Web Security distortions.
 
 ### Distorted Behavior
 

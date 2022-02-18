@@ -69,7 +69,7 @@ self.addEventListener('fetch', (event) => {
 });
 ```
 
-To prevent JavaScript code from leaking data outside the sandbox, Lightning Web Security disallows access to any of the `ServiceWorkerContainer.prototype` properties or methods. 
+To prevent JavaScript code from leaking data outside the sandbox, Lightning Web Security disallows access to any of the `ServiceWorkerContainer.prototype` properties or methods.
 
 Although LWS already prevents access to `navigator.serviceWorker`, malicious code can access the `ServiceWorkerContainer` object in other ways, so this distortion prevents access to any of its operations.
 

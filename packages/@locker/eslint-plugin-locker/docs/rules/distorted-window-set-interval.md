@@ -5,7 +5,7 @@ For security the `window.setInterval` constructor is distorted in Lightning Lock
 <!-- START generated embed: @locker/distortion/src/Window/docs/setInterval-value.md -->
 ## window.setInterval
 
-The [`window.setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) method repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. 
+The [`window.setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) method repeatedly calls a function or executes a code snippet, with a fixed time delay between each call.
 
 Code snippet execution is supported by accepting a string for the first argument. This string evaluation escapes the sandbox.
 
