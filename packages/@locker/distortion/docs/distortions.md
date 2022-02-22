@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.15.7<br>
-Generated: Feb 17, 2022
+Version: 0.15.8<br>
+Generated: Feb 22, 2022
 
 ## Table of Contents
 
@@ -124,68 +124,76 @@ Generated: Feb 17, 2022
   - [Distorted Behavior](#distorted-behavior-54)
 - [Range.prototype.createContextualFragment](#rangeprototypecreatecontextualfragment)
   - [Distorted Behavior](#distorted-behavior-55)
-- [SVGElement.prototype.dataset getter](#svgelementprototypedataset-getter)
+- [Range.prototype.deleteContents](#rangeprototypedeletecontents)
   - [Distorted Behavior](#distorted-behavior-56)
-- [SVGScriptElement.prototype.href](#svgscriptelementprototypehref)
+- [Range.prototype.extractContents](#rangeprototypeextractcontents)
   - [Distorted Behavior](#distorted-behavior-57)
-- [SVGUseElement.href](#svguseelementhref)
-- [Distorted Behavior](#distorted-behavior-58)
-- [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
+- [SVGElement.prototype.dataset getter](#svgelementprototypedataset-getter)
+  - [Distorted Behavior](#distorted-behavior-58)
+- [SVGScriptElement.prototype.href](#svgscriptelementprototypehref)
   - [Distorted Behavior](#distorted-behavior-59)
-- [ShadowRoot.prototype.innerHTML setter](#shadowrootprototypeinnerhtml-setter)
-  - [Distorted Behavior](#distorted-behavior-60)
-- [ShadowRoot.prototype.mode getter](#shadowrootprototypemode-getter)
+- [SVGUseElement.href](#svguseelementhref)
+- [Distorted Behavior](#distorted-behavior-60)
+- [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
   - [Distorted Behavior](#distorted-behavior-61)
-- [SharedWorker Global Constructor](#sharedworker-global-constructor)
+- [ShadowRoot.prototype.innerHTML setter](#shadowrootprototypeinnerhtml-setter)
   - [Distorted Behavior](#distorted-behavior-62)
-- [Storage.prototype.clear](#storageprototypeclear)
+- [ShadowRoot.prototype.mode getter](#shadowrootprototypemode-getter)
   - [Distorted Behavior](#distorted-behavior-63)
-- [Storage API: Storage.prototype](#storage-api-storageprototype)
+- [SharedWorker Global Constructor](#sharedworker-global-constructor)
   - [Distorted Behavior](#distorted-behavior-64)
-- [Storage.prototype.getItem](#storageprototypegetitem)
+- [Storage.prototype.clear](#storageprototypeclear)
   - [Distorted Behavior](#distorted-behavior-65)
-- [Storage.prototype.key](#storageprototypekey)
+- [Storage API: Storage.prototype](#storage-api-storageprototype)
   - [Distorted Behavior](#distorted-behavior-66)
-- [Storage.prototype.length getter](#storageprototypelength-getter)
+- [Storage.prototype.getItem](#storageprototypegetitem)
   - [Distorted Behavior](#distorted-behavior-67)
-- [Storage.prototype.removeItem](#storageprototyperemoveitem)
+- [Storage.prototype.key](#storageprototypekey)
   - [Distorted Behavior](#distorted-behavior-68)
-- [Storage.prototype.setItem](#storageprototypesetitem)
+- [Storage.prototype.length getter](#storageprototypelength-getter)
   - [Distorted Behavior](#distorted-behavior-69)
-- [URL.createObjectURL](#urlcreateobjecturl)
+- [Storage.prototype.removeItem](#storageprototyperemoveitem)
   - [Distorted Behavior](#distorted-behavior-70)
-- [Window.fetch](#windowfetch)
+- [Storage.prototype.setItem](#storageprototypesetitem)
   - [Distorted Behavior](#distorted-behavior-71)
-- [window.frames getter](#windowframes-getter)
+- [TrustedTypePolicyFactory.createPolicy](#trustedtypepolicyfactorycreatepolicy)
   - [Distorted Behavior](#distorted-behavior-72)
-- [window.length getter](#windowlength-getter)
+- [URL.createObjectURL](#urlcreateobjecturl)
   - [Distorted Behavior](#distorted-behavior-73)
-- [window.open](#windowopen)
+- [Window.fetch](#windowfetch)
   - [Distorted Behavior](#distorted-behavior-74)
-- [window.opener getter](#windowopener-getter)
+- [window.frames getter](#windowframes-getter)
   - [Distorted Behavior](#distorted-behavior-75)
-- [window.parent getter](#windowparent-getter)
+- [window.length getter](#windowlength-getter)
   - [Distorted Behavior](#distorted-behavior-76)
-- [window.setInterval](#windowsetinterval)
+- [WindowEventHandlers.onstorage](#windoweventhandlersonstorage)
   - [Distorted Behavior](#distorted-behavior-77)
-- [window.setTimeout](#windowsettimeout)
+- [window.open](#windowopen)
   - [Distorted Behavior](#distorted-behavior-78)
-- [Worker Global Constructor](#worker-global-constructor)
+- [window.opener getter](#windowopener-getter)
   - [Distorted Behavior](#distorted-behavior-79)
-- [XMLHttpRequest.prototype.open](#xmlhttprequestprototypeopen)
+- [window.parent getter](#windowparent-getter)
   - [Distorted Behavior](#distorted-behavior-80)
-- [XMLHttpRequest.prototype.response getter](#xmlhttprequestprototyperesponse-getter)
+- [window.setInterval](#windowsetinterval)
   - [Distorted Behavior](#distorted-behavior-81)
-- [XMLHttpRequest.prototype.responseXML getter](#xmlhttprequestprototyperesponsexml-getter)
+- [window.setTimeout](#windowsettimeout)
   - [Distorted Behavior](#distorted-behavior-82)
-- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
+- [Worker Global Constructor](#worker-global-constructor)
   - [Distorted Behavior](#distorted-behavior-83)
-- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument-1)
+- [XMLHttpRequest.prototype.open](#xmlhttprequestprototypeopen)
   - [Distorted Behavior](#distorted-behavior-84)
-- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
+- [XMLHttpRequest.prototype.response getter](#xmlhttprequestprototyperesponse-getter)
   - [Distorted Behavior](#distorted-behavior-85)
-- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment-1)
+- [XMLHttpRequest.prototype.responseXML getter](#xmlhttprequestprototyperesponsexml-getter)
   - [Distorted Behavior](#distorted-behavior-86)
+- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
+  - [Distorted Behavior](#distorted-behavior-87)
+- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument-1)
+  - [Distorted Behavior](#distorted-behavior-88)
+- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
+  - [Distorted Behavior](#distorted-behavior-89)
+- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment-1)
+  - [Distorted Behavior](#distorted-behavior-90)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -1040,6 +1048,33 @@ Lightning Web Security runs in the main window, where the `<html>`, `<head>`, an
 
 This distortion sanitizes an HTML string that is used to create the `DocumentFragment`.
 <hr>
+<a name="rangedocsdeletecontents-valuemd"></a>
+
+## Range.prototype.deleteContents
+
+The `Range` interface represents a fragment of a document that can contain nodes and parts of text nodes.
+
+The [`Range.prototype.deleteContents()`](https://developer.mozilla.org/en-US/docs/Web/API/Range/deleteContents) method removes the contents of the `Range` from the `Document`.
+
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. The `deleteContents()` method can let malicious code remove the shared elements. LWS prevents the deletion of any shared elements.
+
+### Distorted Behavior
+
+This distortion prevents `deleteContents()` from removing any shared elements.
+<hr>
+<a name="rangedocsextractcontents-valuemd"></a>
+
+## Range.prototype.extractContents
+
+The `Range` interface represents a fragment of a document that can contain nodes and parts of text nodes.
+
+The [`Range.prototype.extractContents()`](https://developer.mozilla.org/en-US/docs/Web/API/Range/extractContents) method moves contents of the `Range` from the document tree into a `DocumentFragment`.
+
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. The `extractContents()` method can let malicious code move the shared elements. LWS prevents moving any shared elements.
+
+### Distorted Behavior
+
+This distortion prevents `extractContents()` from moving any shared elements.<hr>
 <a name="svgelementdocsdataset-gettermd"></a>
 
 ## SVGElement.prototype.dataset getter
@@ -1288,6 +1323,24 @@ Each sandbox uses its own synthetic storage. Lightning Web Security prevents `se
 
 This distortion adds or modifies data items in the sandboxed code's synthetic storage.
 <hr>
+<a name="trustedtypepolicyfactorydocscreatepolicy-valuemd"></a>
+
+## TrustedTypePolicyFactory.createPolicy
+
+The [`TrustedTypePolicyFactory.prototype.createPolicy()`](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/createPolicy) method of the `TrustedTypePolicyFactory` interface creates a `TrustedTypePolicy` object that implements the rules passed as `policyOptions`. 
+
+In Chrome a policy with a name of `'default'` creates a special policy that will be used if a string, rather than a Trusted Type object, is passed to an injection sink. This can be used in a transitional phase while moving from an application that inserted strings into injection sinks.
+
+Malicious code can overwrite the default policy, and pass its own code into an injection sink.
+
+Lightning Web Security prevents setting the `policyName` to the `'default'` value.
+
+### Distorted Behavior
+
+This distortion prevents setting the `policyName` to the `'default'` value.
+
+On a site where Trusted Types are enforced via a Content Security Policy with the [require-trusted-types-for](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/require-trusted-types-for) directive set to `script`, injection even of trusted types won't work in Chrome.
+<hr>
 <a name="urldocscreateobjecturl-valuemd"></a>
 
 ## URL.createObjectURL
@@ -1379,6 +1432,18 @@ The [`window.length`](https://developer.mozilla.org/en-US/docs/Web/API/Window/le
 The `window.length` property always returns `0`.
 
 Instead of `window.length`, use the `window.frames.length` value and `window.frames` object to iterate over the list of frames (either `<frame>` or `<iframe>` elements) attached to the `document`.
+<hr>
+<a name="windowdocsonstorage-settermd"></a>
+
+## WindowEventHandlers.onstorage
+
+The [`onstorage`]https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onstorage) property of the `WindowEventHandlers` mixin is an event handler for processing storage events.
+
+The `storage` event fires when a storage area has been changed in the context of another document.
+
+### Distorted Behavior
+
+Currently, Lightning Web Security doesn't support the `window.onstorage` event, so setting the `onstorage` property is not allowed and returns an error.
 <hr>
 <a name="windowdocsopen-valuemd"></a>
 
