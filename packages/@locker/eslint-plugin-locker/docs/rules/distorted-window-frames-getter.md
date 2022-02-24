@@ -1,6 +1,6 @@
 # Distorted window.frames Getter (distorted-window-frames-getter)
 
-For security the `window.frames` getter is distorted in Lightning Locker.
+For security the `window.frames` getter is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/frames-getter.md -->
 ## window.frames getter

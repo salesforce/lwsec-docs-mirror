@@ -1,9 +1,9 @@
 # Distorted Element#attachShadow (distorted-element-attach-shadow)
 
-For security `Element#attachShadow` is distorted in Lightning Locker.
+For security `Element#attachShadow` is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/attachShadow-value.md -->
-## Element.prototype.attachShadow setter
+## Element.prototype.attachShadow
 
 The [`Element.prototype.attachShadow()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow) method attaches a shadow DOM tree to the specified element and returns a reference to its `ShadowRoot`.
 

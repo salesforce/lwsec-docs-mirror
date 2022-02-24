@@ -1,6 +1,6 @@
 # Distorted MessageEvent#source Getter (distorted-message-event-source-getter)
 
-For security the `MessageEvent#source` getter is distorted in Lightning Locker.
+For security the `MessageEvent#source` getter is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/MessageEvent/docs/source-getter.md -->
 ## MessageEvent.prototype.source getter

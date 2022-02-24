@@ -1,6 +1,6 @@
 # Distorted Element#innerHTML Setter (distorted-element-inner-html-setter)
 
-For security the `Element#innerHTML` setter is distorted in Lightning Locker.
+For security the `Element#innerHTML` setter is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/innerHTML-setter.md -->
 ## Element.prototype.innerHTML setter

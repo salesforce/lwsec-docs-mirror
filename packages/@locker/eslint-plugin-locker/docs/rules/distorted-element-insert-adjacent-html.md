@@ -1,6 +1,6 @@
 # Distorted Element#insertAdjacentHTML (distorted-element-insert-adjacent-html)
 
-For security `Element#insertAdjacentHTML` is distorted in Lightning Locker.
+For security `Element#insertAdjacentHTML` is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/insertAdjacentHTML-value.md -->
 ## Element.prototype.insertAdjacentHTML

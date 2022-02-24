@@ -1,6 +1,6 @@
 # Distorted {XMLHttpRequest|Window}#open (distorted-xml-http-request-window-open)
 
-For security `{XMLHttpRequest|Window}#open` is distorted in Lightning Locker.
+For security `{XMLHttpRequest|Window}#open` is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/XMLHttpRequest/docs/open-value.md -->
 ## XMLHttpRequest.prototype.open

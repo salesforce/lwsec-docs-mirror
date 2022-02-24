@@ -1,6 +1,6 @@
 # Distorted Element.prototype.toggleAttribute (distorted-element-toggle-attribute)
 
-For security `Element.prototype.toggleAttribute` is distorted in Lightning Locker.
+For security `Element.prototype.toggleAttribute` is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/setAttribute-family-apis.md -->
 ## Element.prototype.setAttribute*

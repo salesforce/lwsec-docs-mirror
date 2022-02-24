@@ -1,6 +1,6 @@
 # Distorted document.cookie (distorted-document-cookie)
 
-For security the `document.cookie` getter and setter are distorted in Lightning Locker.
+For security the `document.cookie` getter and setter are distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Document/docs/cookie-getter.md -->
 ## Document.prototype.cookie getter

@@ -1,6 +1,6 @@
 # Distorted document.execCommand (distorted-document-exec-command)
 
-For security `document.execCommand` is distorted in Lightning Locker.
+For security `document.execCommand` is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Document/docs/execCommand-value.md -->
 ## Document.prototype.execCommand

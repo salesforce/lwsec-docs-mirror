@@ -1,6 +1,6 @@
 # Distorted window.setTimeout (distorted-window-set-timeout)
 
-For security the `window.setTimeout` constructor is distorted in Lightning Locker.
+For security the `window.setTimeout` constructor is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/setTimeout-value.md -->
 ## window.setTimeout

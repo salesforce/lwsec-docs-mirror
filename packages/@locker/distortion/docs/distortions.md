@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.15.9<br>
-Generated: Feb 22, 2022
+Version: 0.15.10<br>
+Generated: Feb 24, 2022
 
 ## Table of Contents
 
@@ -13,17 +13,17 @@ Generated: Feb 22, 2022
 
 - [Attr.prototype.value setter](#attrprototypevalue-setter)
   - [Distorted Behavior](#distorted-behavior)
-- [CookieStore.addEventListener](#cookiestoreaddeventlistener)
+- [CookieStore.prototype.addEventListener](#cookiestoreprototypeaddeventlistener)
   - [Distorted Behavior](#distorted-behavior-1)
-- [CookieStore.prototype.delete getter](#cookiestoreprototypedelete-getter)
+- [CookieStore.prototype.delete](#cookiestoreprototypedelete)
   - [Distorted Behavior](#distorted-behavior-2)
-- [CookieStore.prototype.get getter](#cookiestoreprototypeget-getter)
+- [CookieStore.prototype.get](#cookiestoreprototypeget)
   - [Distorted Behavior](#distorted-behavior-3)
-- [CookieStore.prototype.getAll getter](#cookiestoreprototypegetall-getter)
+- [CookieStore.prototype.getAll](#cookiestoreprototypegetall)
   - [Distorted Behavior](#distorted-behavior-4)
-- [CookieStore.prototype.onchange](#cookiestoreprototypeonchange)
+- [CookieStore.prototype.onchange setter](#cookiestoreprototypeonchange-setter)
   - [Distorted Behavior](#distorted-behavior-5)
-- [CookieStore.prototype.set setter](#cookiestoreprototypeset-setter)
+- [CookieStore.prototype.set](#cookiestoreprototypeset)
   - [Distorted Behavior](#distorted-behavior-6)
 - [CustomElementRegistry.prototype.define](#customelementregistryprototypedefine)
   - [Distorted Behavior](#distorted-behavior-7)
@@ -39,14 +39,14 @@ Generated: Feb 22, 2022
   - [Distorted Behavior](#distorted-behavior-12)
 - [Document.prototype.execCommand](#documentprototypeexeccommand)
   - [Distorted Behavior](#distorted-behavior-13)
-- [Document.open](#documentopen)
+- [Document.prototype.open](#documentprototypeopen)
   - [Distorted Behavior](#distorted-behavior-14)
 - [Element.prototype.after](#elementprototypeafter)
   - [Distorted Behavior](#distorted-behavior-15)
 - [Element.prototype.append](#elementprototypeappend)
   - [Summary](#summary)
   - [Distorted Behavior](#distorted-behavior-16)
-- [Element.prototype.attachShadow setter](#elementprototypeattachshadow-setter)
+- [Element.prototype.attachShadow](#elementprototypeattachshadow)
   - [Distorted Behavior](#distorted-behavior-17)
 - [Element.prototype.attributes getter](#elementprototypeattributes-getter)
   - [Distorted Behavior](#distorted-behavior-18)
@@ -188,12 +188,8 @@ Generated: Feb 22, 2022
   - [Distorted Behavior](#distorted-behavior-86)
 - [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
   - [Distorted Behavior](#distorted-behavior-87)
-- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument-1)
-  - [Distorted Behavior](#distorted-behavior-88)
 - [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
-  - [Distorted Behavior](#distorted-behavior-89)
-- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment-1)
-  - [Distorted Behavior](#distorted-behavior-90)
+  - [Distorted Behavior](#distorted-behavior-88)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -225,9 +221,9 @@ The behavior varies according to the invoked distortion. If no distortions are r
 <hr>
 <a name="cookiestoredocsaddeventlistener-valuemd"></a>
 
-## CookieStore.addEventListener
+## CookieStore.prototype.addEventListener
 
-The [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) method of the `EventTarget` interface sets up a function that will be called whenever the specified event is delivered to the target.
+The [`CookieStore.prototype.addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) method of the `EventTarget` interface sets up a function that will be called whenever the specified event is delivered to the target.
 
 Common targets are `Element`, or its children, `Document`, and `Window`, but the target may be any object that supports events (such as `XMLHttpRequest`).
 
@@ -235,13 +231,13 @@ This distortion prevents code from accessing cookies outside of the sandbox.
 
 ### Distorted Behavior
 
-Currently, Lightning Web Security doesn't support the `CookieStore.onchange` event, so attaching an event listener to `CookieStore` is not allowed. Calls to `CookieStore.addEventListener()` return an error.
+Lightning Web Security does not support the `change` event of `CookieStore` objects. Calls to `CookieStore.prototype.addEventListener()` for the `change` event throw an exception.
 <hr>
 <a name="cookiestoredocsdelete-valuemd"></a>
 
-## CookieStore.prototype.delete getter
+## CookieStore.prototype.delete
 
-The [`delete()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/delete) method of the `CookieStore` interface deletes a cookie with the given name or options object.
+The [`CookieStore.prototype.delete()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/delete) method of the `CookieStore` interface deletes a cookie with the given name or options object.
 
 If malicious code deletes cookies on a page, it could remove login cookies and make the app unusable. This distortion protects cookies outside the sandbox from `CookieStore.prototype.delete` and limits what can be deleted within the sandbox. Cookies in the sandbox are protected from code outside or in other sandboxes.
 
@@ -252,9 +248,9 @@ The distortion only permits deletion of sandbox cookies.
 <hr>
 <a name="cookiestoredocsget-valuemd"></a>
 
-## CookieStore.prototype.get getter
+## CookieStore.prototype.get
 
-The [`get()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/get) method of the `CookieStore` interface returns a single cookie with the given name or options object.
+The [`CookieStore.prototype.get()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/get) method of the `CookieStore` interface returns a single cookie with the given name or options object.
 
 If malicious code can access any cookie on a page, it can issue XHR requests impersonating the user who's logged in. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce.
 
@@ -267,9 +263,9 @@ The `get()` method returns only sandbox cookies.
 <hr>
 <a name="cookiestoredocsgetall-valuemd"></a>
 
-## CookieStore.prototype.getAll getter
+## CookieStore.prototype.getAll
 
-The [`getAll()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/getAll) method of the `CookieStore` interface returns a list of cookies that match the name or options passed to it. Passing no parameters will return all cookies for the current context.
+The [`CookieStore.prototype.getAll()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/getAll) method of the `CookieStore` interface returns a list of cookies that match the name or options passed to it. Passing no parameters will return all cookies for the current context.
 
 If malicious code can access all cookies on a page, it can issue XHR requests impersonating the user who's logged in. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce.
 
@@ -281,9 +277,9 @@ The `getAll()` method returns only sandbox cookies.
 <hr>
 <a name="cookiestoredocsonchange-settermd"></a>
 
-## CookieStore.prototype.onchange
+## CookieStore.prototype.onchange setter
 
-The [`onchange`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/onchange) EventHandler of the `CookieStore` interface fires when a change is made to any cookie.
+The [`CookieStore.prototype.onchange()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/onchange) event handler of the `CookieStore` interface fires when a change is made to any cookie.
 
 This distortion prevents code from accessing cookies outside of the sandbox.
 
@@ -293,9 +289,9 @@ Currently, Lightning Web Security doesn't support the `CookieStore.onchange` eve
 <hr>
 <a name="cookiestoredocsset-valuemd"></a>
 
-## CookieStore.prototype.set setter
+## CookieStore.prototype.set
 
-The [`set()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/set) method of the `CookieStore` interface sets a cookie with the given name and value or options object.
+The [`CookieStore.prototype.set()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/set) method of the `CookieStore` interface sets a cookie with the given name and value or options object.
 
 Distortion of `CookieStore.prototype.set` is required so `CookieStore.prototype.get` can retrieve sandbox cookies that are similarly distorted with the sandbox prefix.
 
@@ -398,7 +394,7 @@ This distortion sanitizes the inserted HTML string.
 <hr>
 <a name="documentdocsopen-valuemd"></a>
 
-## Document.open
+## Document.prototype.open
 
 The [`document.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/open) method opens a document for writing.
 
@@ -436,7 +432,7 @@ Lightning Web Security runs in the main window, where the `<html>`, `<head>`, an
 This distortion allows only a `<script>` or `<link>` element to be added after `<html>`, `<head>`, and `<body>` elements. It throws an exception if any other element is specified.<hr>
 <a name="elementdocsattachshadow-valuemd"></a>
 
-## Element.prototype.attachShadow setter
+## Element.prototype.attachShadow
 
 The [`Element.prototype.attachShadow()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow) method attaches a shadow DOM tree to the specified element and returns a reference to its `ShadowRoot`.
 
@@ -937,7 +933,7 @@ This distortion returns an artificial `window` object and caches the artificial 
 
 The [`NamedNodeMap`](https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap) interface represents a collection of `Attr` objects. Objects inside a `NamedNodeMap` are not in any particular order, unlike `NodeList`, although they may be accessed by an index as in an array. A `NamedNodeMap` object is live and will thus be auto-updated if changes are made to its contents internally or elsewhere.
 
-`NamedNodeMap.prototype.setNamedItem()` is a method that replaces or adds the `Attr` identified in the map by the given name. You can use it to set an attribute on an element, so Lightning Web Security must distort `NamedNodeMap.prototype.setNamedItem`.
+The `NamedNodeMap.prototype.setNamedItem()` method replaces or adds the `Attr` identified in the map by the given name. You can use it to set an attribute on an element, so Lightning Web Security must distort `NamedNodeMap.prototype.setNamedItem`.
 
 This code would bypass LWS distortions for named properties and `setAttribute\*` and set the `rel` attribute on a link if `setNamedItem` is not distorted.
 ```js
@@ -959,7 +955,7 @@ If there is a distortion registered for an attribute, the behavior depends on th
 
 The [`NamedNodeMap`](https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap) interface represents a collection of `Attr` objects. Objects inside a `NamedNodeMap` are not in any particular order, unlike `NodeList`, although they may be accessed by an index as in an array. A `NamedNodeMap` object is live and will thus be auto-updated if changes are made to its contents internally or elsewhere.
 
-`NamedNodeMap.prototype.setNamedItemNS()` is a method that replaces or adds the `Attr` identified in the map by the given name. You can use it to set an attribute on an element, so Lightning Web Security must distort `NamedNodeMap.prototype.setNamedItemNS`.
+The `NamedNodeMap.prototype.setNamedItemNS()` method replaces or adds the `Attr` identified in the map by the given name. You can use it to set an attribute on an element, so Lightning Web Security must distort `NamedNodeMap.prototype.setNamedItemNS`.
 
 This code would bypass LWS distortions for named properties and `setAttribute\*` and set the `rel` attribute on a link if `setNamedItemNS` is not distorted.
 ```js
@@ -1591,35 +1587,7 @@ This function can be used to parse and transform XML documents with XSLT into va
 
 This method is blocked by LWS, and an exception is thrown if code attempts to call it.
 <hr>
-<a name="xsltprocessordocstransformtodocumentmd"></a>
-
-## XSLTProcessor.prototype.transformToDocument
-
-**Non-standard**: This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.
-
-`XSLTProcessor.prototype.transformToDocument(Node source, Document owner)` transforms the node source by applying the stylesheet imported using the `XSLTProcessor.prototype.importStylesheet()` function. The owner document of the resulting document fragment is the owner node.
-
-This function can be used to parse and transform XML documents with XSLT into valid HTML documents, which can be inserted into the current DOM. By using XSLT, it is possible to create arbitrary HTML tags and therefore gain access to the raw window object.
-
-### Distorted Behavior
-
-This method is blocked by LWS, and an exception is thrown if code attempts to call it.
-<hr>
 <a name="xsltprocessordocstransformtofragment-valuemd"></a>
-
-## XSLTProcessor.prototype.transformToFragment
-
-**Non-standard**: This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.
-
-`XSLTProcessor.prototype.transformToFragment(Node source, Document owner)` transforms the node source by applying the stylesheet imported using the `XSLTProcessor.prototype.importStylesheet()` function. The owner document of the resulting document fragment is the owner node.
-
-This function can be used to parse and transform XML documents with XSLT into valid HTML documents, which can be inserted into the current DOM. By using XSLT, it is possible to create arbitrary HTML tags and therefore gain access to the raw window object.
-
-### Distorted Behavior
-
-This method is blocked by LWS, and an exception is thrown if code attempts to call it.
-<hr>
-<a name="xsltprocessordocstransformtofragmentmd"></a>
 
 ## XSLTProcessor.prototype.transformToFragment
 

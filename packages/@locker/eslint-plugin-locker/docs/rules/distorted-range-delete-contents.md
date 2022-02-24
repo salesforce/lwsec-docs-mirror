@@ -1,6 +1,6 @@
 # Distorted Range.prototype.deleteContents (distorted-range-delete-contents)
 
-For security `Range.prototype.deleteContents` is distorted in Lightning Locker.
+For security `Range.prototype.deleteContents` is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Range/docs/deleteContents-value.md -->
 ## Range.prototype.deleteContents

@@ -1,6 +1,6 @@
 # Distorted Range#createContextualFragment (distorted-range-create-contextual-fragment)
 
-For security `Range#createContextualFragment` is distorted in Lightning Locker.
+For security `Range#createContextualFragment` is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Range/docs/createContextualFragment-value.md -->
 ## Range.prototype.createContextualFragment

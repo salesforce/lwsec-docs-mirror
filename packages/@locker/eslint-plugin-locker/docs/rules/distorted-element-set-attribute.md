@@ -1,7 +1,7 @@
 # Distorted Element#setAttribute APIs (distorted-element-set-attribute)
 
 For security the `Element#setAttribute` and `Element#setAttributeNS` are distorted
-in Lightning Locker.
+by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/setAttribute-family-apis.md -->
 ## Element.prototype.setAttribute*

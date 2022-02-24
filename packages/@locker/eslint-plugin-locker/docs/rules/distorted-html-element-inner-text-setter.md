@@ -1,6 +1,6 @@
 # Distorted HTMLElement#innerText Setter (distorted-html-element-inner-text-setter)
 
-For security the `HTMLElement#innerText` setter is distorted in Lightning Locker.
+For security the `HTMLElement#innerText` setter is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/HTMLElement/docs/innerText-setter.md -->
 ## HTMLElement.prototype.innerText setter

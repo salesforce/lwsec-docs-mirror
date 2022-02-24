@@ -1,6 +1,6 @@
 # Distorted window.parent Getter (distorted-window-parent-getter)
 
-For security the `window.parent` getter is distorted in Lightning Locker.
+For security the `window.parent` getter is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/parent-getter.md -->
 ## window.parent getter

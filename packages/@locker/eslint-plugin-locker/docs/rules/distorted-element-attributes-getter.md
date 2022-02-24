@@ -1,6 +1,6 @@
 # Distorted Element#attributes Getter (distorted-element-attributes-getter)
 
-For security the `Element#attributes` getter is distorted in Lightning Locker.
+For security the `Element#attributes` getter is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/attributes-getter.md -->
 ## Element.prototype.attributes getter

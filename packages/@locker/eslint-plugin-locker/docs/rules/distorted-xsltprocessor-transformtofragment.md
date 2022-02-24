@@ -1,6 +1,6 @@
 # Distorted XSLTProcessor.prototype.transformToFragment (distorted-xsltprocessor-transformtofragment)
 
-For security `XSLTProcessor.prototype.transformToFragment` is distorted in Lightning Locker.
+For security `XSLTProcessor.prototype.transformToFragment` is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/XSLTProcessor/docs/transformToFragment-value.md -->
 ## XSLTProcessor.prototype.transformToFragment

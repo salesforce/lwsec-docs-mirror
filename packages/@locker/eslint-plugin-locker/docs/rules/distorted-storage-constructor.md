@@ -1,6 +1,6 @@
 # Distorted Storage Constructor (distorted-storage-constructor)
 
-For security the `Storage` constructor is distorted in Lightning Locker.
+For security the `Storage` constructor is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/constructor-value.md -->
 ## Storage API: Storage.prototype

@@ -1,6 +1,6 @@
 # Distorted XSLTProcessor.prototype.transformToDocument (distorted-xsltprocessor-transformtodocument)
 
-For security `XSLTProcessor.prototype.transformToDocument` is distorted in Lightning Locker.
+For security `XSLTProcessor.prototype.transformToDocument` is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/XSLTProcessor/docs/transformToDocument-value.md -->
 ## XSLTProcessor.prototype.transformToDocument

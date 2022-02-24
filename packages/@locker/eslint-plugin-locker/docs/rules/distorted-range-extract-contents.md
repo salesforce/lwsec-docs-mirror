@@ -1,6 +1,6 @@
 # Distorted Range.prototype.extractContents (distorted-range-extract-contents)
 
-For security `Range.prototype.extractContents` is distorted in Lightning Locker.
+For security `Range.prototype.extractContents` is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Range/docs/extractContents-value.md -->
 ## Range.prototype.extractContents

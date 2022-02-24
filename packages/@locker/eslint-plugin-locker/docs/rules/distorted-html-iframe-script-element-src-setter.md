@@ -1,6 +1,6 @@
 # Distorted HTML{IFrame|Script}Element#src Setter (distorted-html-iframe-script-element-src-setter)
 
-For security the `HTML{IFrame|Script}Element#src` setter is distorted in Lightning Locker.
+For security the `HTML{IFrame|Script}Element#src` setter is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/HTMLIFrameElement/docs/src-setter.md -->
 ## HTMLIFrameElement.prototype.src setter

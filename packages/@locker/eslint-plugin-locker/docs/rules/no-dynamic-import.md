@@ -1,6 +1,6 @@
 # Disallow Dynamic Import (no-dynamic-import)
 
-Lightning Locker may prohibit [dynamic import][1]. To prevent code from breaking
+Lightning Web Security may prohibit [dynamic import][1]. To prevent code from breaking
 the [`@locker/rollup-plugin`] or [script injection][2] should be used instead.
 
 ## Rule Details

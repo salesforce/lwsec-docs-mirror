@@ -1,6 +1,6 @@
 # Distorted URL.createObjectURL (distorted-url-create-object-url)
 
-For security `URL.createObjectURL` is distorted in Lightning Locker.
+For security `URL.createObjectURL` is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/URL/docs/createObjectURL-value.md -->
 ## URL.createObjectURL

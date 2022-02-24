@@ -1,6 +1,6 @@
 # Distorted HTMLLinkElement#relList Setter (distorted-html-link-element-rel-list-setter)
 
-For security the `HTMLLinkElement#relList` setter is distorted in Lightning Locker.
+For security the `HTMLLinkElement#relList` setter is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/HTMLLinkElement/docs/relList-setter.md -->
 ## HTMLLinkElement.prototype.relList setter

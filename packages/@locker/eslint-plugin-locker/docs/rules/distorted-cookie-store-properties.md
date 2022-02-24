@@ -1,11 +1,11 @@
 # Distorted CookieStore Properties (distorted-cookie-store-properties)
 
-For security the following `CookieStore` properties are distorted in Lightning Locker:
+For security the following `CookieStore` properties are distorted by Lightning Web Security:
 
 <!-- START generated embed: @locker/distortion/src/CookieStore/docs/delete-value.md -->
-## CookieStore.prototype.delete getter
+## CookieStore.prototype.delete
 
-The [`delete()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/delete) method of the `CookieStore` interface deletes a cookie with the given name or options object.
+The [`CookieStore.prototype.delete()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/delete) method of the `CookieStore` interface deletes a cookie with the given name or options object.
 
 If malicious code deletes cookies on a page, it could remove login cookies and make the app unusable. This distortion protects cookies outside the sandbox from `CookieStore.prototype.delete` and limits what can be deleted within the sandbox. Cookies in the sandbox are protected from code outside or in other sandboxes.
 
@@ -15,9 +15,9 @@ The distortion only permits deletion of sandbox cookies.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/CookieStore/docs/get-value.md -->
-## CookieStore.prototype.get getter
+## CookieStore.prototype.get
 
-The [`get()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/get) method of the `CookieStore` interface returns a single cookie with the given name or options object.
+The [`CookieStore.prototype.get()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/get) method of the `CookieStore` interface returns a single cookie with the given name or options object.
 
 If malicious code can access any cookie on a page, it can issue XHR requests impersonating the user who's logged in. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce.
 
@@ -29,9 +29,9 @@ The `get()` method returns only sandbox cookies.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/CookieStore/docs/getAll-value.md -->
-## CookieStore.prototype.getAll getter
+## CookieStore.prototype.getAll
 
-The [`getAll()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/getAll) method of the `CookieStore` interface returns a list of cookies that match the name or options passed to it. Passing no parameters will return all cookies for the current context.
+The [`CookieStore.prototype.getAll()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/getAll) method of the `CookieStore` interface returns a list of cookies that match the name or options passed to it. Passing no parameters will return all cookies for the current context.
 
 If malicious code can access all cookies on a page, it can issue XHR requests impersonating the user who's logged in. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce.
 
@@ -43,9 +43,9 @@ The `getAll()` method returns only sandbox cookies.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/CookieStore/docs/set-value.md -->
-## CookieStore.prototype.set setter
+## CookieStore.prototype.set
 
-The [`set()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/set) method of the `CookieStore` interface sets a cookie with the given name and value or options object.
+The [`CookieStore.prototype.set()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/set) method of the `CookieStore` interface sets a cookie with the given name and value or options object.
 
 Distortion of `CookieStore.prototype.set` is required so `CookieStore.prototype.get` can retrieve sandbox cookies that are similarly distorted with the sandbox prefix.
 

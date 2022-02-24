@@ -1,6 +1,6 @@
 # Distorted CustomElementRegistry Properties (distorted-custom-element-registry-properties)
 
-For security the following `CustomElementRegistry` properties are distorted in Lightning Locker:
+For security the following `CustomElementRegistry` properties are distorted by Lightning Web Security:
 
 <!-- START generated embed: @locker/distortion/src/CustomElementRegistry/docs/define-value.md -->
 ## CustomElementRegistry.prototype.define

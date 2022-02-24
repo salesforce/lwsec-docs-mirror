@@ -1,6 +1,6 @@
 # Disallowed CustomElementRegistry Properties (disallowed-custom-element-registry-properties)
 
-For security the following `CustomElementRegistry` properties are disallowed in Lightning Locker:
+For security the following `CustomElementRegistry` properties are disallowed by Lightning Web Security:
 
 <!-- START generated embed: @locker/distortion/src/CustomElementRegistry/docs/define-value.md -->
 ## CustomElementRegistry.prototype.define

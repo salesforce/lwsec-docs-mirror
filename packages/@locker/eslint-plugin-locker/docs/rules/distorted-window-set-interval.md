@@ -1,6 +1,6 @@
 # Distorted window.setInterval (distorted-window-set-interval)
 
-For security the `window.setInterval` constructor is distorted in Lightning Locker.
+For security the `window.setInterval` constructor is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/setInterval-value.md -->
 ## window.setInterval
