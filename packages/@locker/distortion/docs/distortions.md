@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.15.10<br>
-Generated: Feb 24, 2022
+Version: 0.14.28<br>
+Generated: Feb 28, 2022
 
 ## Table of Contents
 
@@ -13,17 +13,17 @@ Generated: Feb 24, 2022
 
 - [Attr.prototype.value setter](#attrprototypevalue-setter)
   - [Distorted Behavior](#distorted-behavior)
-- [CookieStore.prototype.addEventListener](#cookiestoreprototypeaddeventlistener)
+- [CookieStore.addEventListener](#cookiestoreaddeventlistener)
   - [Distorted Behavior](#distorted-behavior-1)
-- [CookieStore.prototype.delete](#cookiestoreprototypedelete)
+- [CookieStore.prototype.delete getter](#cookiestoreprototypedelete-getter)
   - [Distorted Behavior](#distorted-behavior-2)
-- [CookieStore.prototype.get](#cookiestoreprototypeget)
+- [CookieStore.prototype.get getter](#cookiestoreprototypeget-getter)
   - [Distorted Behavior](#distorted-behavior-3)
-- [CookieStore.prototype.getAll](#cookiestoreprototypegetall)
+- [CookieStore.prototype.getAll getter](#cookiestoreprototypegetall-getter)
   - [Distorted Behavior](#distorted-behavior-4)
-- [CookieStore.prototype.onchange setter](#cookiestoreprototypeonchange-setter)
+- [CookieStore.prototype.onchange](#cookiestoreprototypeonchange)
   - [Distorted Behavior](#distorted-behavior-5)
-- [CookieStore.prototype.set](#cookiestoreprototypeset)
+- [CookieStore.prototype.set setter](#cookiestoreprototypeset-setter)
   - [Distorted Behavior](#distorted-behavior-6)
 - [CustomElementRegistry.prototype.define](#customelementregistryprototypedefine)
   - [Distorted Behavior](#distorted-behavior-7)
@@ -39,14 +39,14 @@ Generated: Feb 24, 2022
   - [Distorted Behavior](#distorted-behavior-12)
 - [Document.prototype.execCommand](#documentprototypeexeccommand)
   - [Distorted Behavior](#distorted-behavior-13)
-- [Document.prototype.open](#documentprototypeopen)
+- [Document.open](#documentopen)
   - [Distorted Behavior](#distorted-behavior-14)
 - [Element.prototype.after](#elementprototypeafter)
   - [Distorted Behavior](#distorted-behavior-15)
 - [Element.prototype.append](#elementprototypeappend)
   - [Summary](#summary)
   - [Distorted Behavior](#distorted-behavior-16)
-- [Element.prototype.attachShadow](#elementprototypeattachshadow)
+- [Element.prototype.attachShadow setter](#elementprototypeattachshadow-setter)
   - [Distorted Behavior](#distorted-behavior-17)
 - [Element.prototype.attributes getter](#elementprototypeattributes-getter)
   - [Distorted Behavior](#distorted-behavior-18)
@@ -82,11 +82,11 @@ Generated: Feb 24, 2022
   - [Distorted Behavior](#distorted-behavior-33)
 - [HTMLElement.prototype.dataset getter](#htmlelementprototypedataset-getter)
   - [Distorted Behavior](#distorted-behavior-34)
-- [HTMLElement.prototype.innerText setter](#htmlelementprototypeinnertext-setter)
+- [HTMLElement.prototype.innerText setter [Chrome, Edge, Opera, Safari]](#htmlelementprototypeinnertext-setter-chrome-edge-opera-safari)
   - [Distorted Behavior](#distorted-behavior-35)
-- [HTMLElement.prototype.outerText setter](#htmlelementprototypeoutertext-setter)
+- [HTMLElement.prototype.outerText setter [Chrome, Edge, Opera, Safari]](#htmlelementprototypeoutertext-setter-chrome-edge-opera-safari)
   - [Distorted Behavior](#distorted-behavior-36)
-- [HTMLElement.prototype.style getter](#htmlelementprototypestyle-getter)
+- [HTMLElement.prototype.style getter [Chrome, Edge, Opera, Safari]](#htmlelementprototypestyle-getter-chrome-edge-opera-safari)
   - [Distorted Behavior](#distorted-behavior-37)
 - [HTMLFrameElement.prototype.contentDocument getter](#htmlframeelementprototypecontentdocument-getter)
   - [Distorted Behavior](#distorted-behavior-38)
@@ -221,9 +221,9 @@ The behavior varies according to the invoked distortion. If no distortions are r
 <hr>
 <a name="cookiestoredocsaddeventlistener-valuemd"></a>
 
-## CookieStore.prototype.addEventListener
+## CookieStore.addEventListener
 
-The [`CookieStore.prototype.addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) method of the `EventTarget` interface sets up a function that will be called whenever the specified event is delivered to the target.
+The [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) method of the `EventTarget` interface sets up a function that will be called whenever the specified event is delivered to the target.
 
 Common targets are `Element`, or its children, `Document`, and `Window`, but the target may be any object that supports events (such as `XMLHttpRequest`).
 
@@ -231,13 +231,13 @@ This distortion prevents code from accessing cookies outside of the sandbox.
 
 ### Distorted Behavior
 
-Lightning Web Security does not support the `change` event of `CookieStore` objects. Calls to `CookieStore.prototype.addEventListener()` for the `change` event throw an exception.
+Currently, Lightning Web Security doesn't support the `CookieStore.onchange` event, so attaching an event listener to `CookieStore` is not allowed. Calls to `CookieStore.addEventListener()` return an error.
 <hr>
 <a name="cookiestoredocsdelete-valuemd"></a>
 
-## CookieStore.prototype.delete
+## CookieStore.prototype.delete getter
 
-The [`CookieStore.prototype.delete()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/delete) method of the `CookieStore` interface deletes a cookie with the given name or options object.
+The [`delete()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/delete) method of the `CookieStore` interface deletes a cookie with the given name or options object.
 
 If malicious code deletes cookies on a page, it could remove login cookies and make the app unusable. This distortion protects cookies outside the sandbox from `CookieStore.prototype.delete` and limits what can be deleted within the sandbox. Cookies in the sandbox are protected from code outside or in other sandboxes.
 
@@ -248,11 +248,11 @@ The distortion only permits deletion of sandbox cookies.
 <hr>
 <a name="cookiestoredocsget-valuemd"></a>
 
-## CookieStore.prototype.get
+## CookieStore.prototype.get getter
 
-The [`CookieStore.prototype.get()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/get) method of the `CookieStore` interface returns a single cookie with the given name or options object.
+The [`get()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/get) method of the `CookieStore` interface returns a single cookie with the given name or options object.
 
-If malicious code can access any cookie on a page, it can issue XHR requests impersonating the user who's logged in. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce.
+If malicious code can access any cookie on a page, it can issue XHR requests impersonating the user who's logged in. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce. 
 
 This distortion protects the value of `CookieStore.prototype.get` and limits the view to what is being retrieved from within the sandbox. Cookies in the sandbox are protected from code outside or in other sandboxes.
 
@@ -263,11 +263,11 @@ The `get()` method returns only sandbox cookies.
 <hr>
 <a name="cookiestoredocsgetall-valuemd"></a>
 
-## CookieStore.prototype.getAll
+## CookieStore.prototype.getAll getter
 
-The [`CookieStore.prototype.getAll()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/getAll) method of the `CookieStore` interface returns a list of cookies that match the name or options passed to it. Passing no parameters will return all cookies for the current context.
+The [`getAll()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/getAll) method of the `CookieStore` interface returns a list of cookies that match the name or options passed to it. Passing no parameters will return all cookies for the current context.
 
-If malicious code can access all cookies on a page, it can issue XHR requests impersonating the user who's logged in. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce.
+If malicious code can access all cookies on a page, it can issue XHR requests impersonating the user who's logged in. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce. 
 
 This distortion protects the value of `CookieStore.prototype.getAll` and limits the view to what is being retrieved from within the sandbox. Cookies in the sandbox are protected from code outside or in other sandboxes.
 
@@ -277,9 +277,9 @@ The `getAll()` method returns only sandbox cookies.
 <hr>
 <a name="cookiestoredocsonchange-settermd"></a>
 
-## CookieStore.prototype.onchange setter
+## CookieStore.prototype.onchange
 
-The [`CookieStore.prototype.onchange()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/onchange) event handler of the `CookieStore` interface fires when a change is made to any cookie.
+The [`onchange`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/onchange) EventHandler of the `CookieStore` interface fires when a change is made to any cookie.
 
 This distortion prevents code from accessing cookies outside of the sandbox.
 
@@ -289,25 +289,24 @@ Currently, Lightning Web Security doesn't support the `CookieStore.onchange` eve
 <hr>
 <a name="cookiestoredocsset-valuemd"></a>
 
-## CookieStore.prototype.set
+## CookieStore.prototype.set setter
 
-The [`CookieStore.prototype.set()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/set) method of the `CookieStore` interface sets a cookie with the given name and value or options object.
+The [`set()`](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/set) method of the `CookieStore` interface sets a cookie with the given name and value or options object.
 
-Distortion of `CookieStore.prototype.set` is required so `CookieStore.prototype.get` can retrieve sandbox cookies that are similarly distorted with the sandbox prefix.
+Distortion of `CookieStore.prototype.set` is required so `CookieStore.prototype.get` can retrieve sandbox cookies that are similarly distorted with the sandbox prefix. 
 
 This distortion also prevents malicious code from accessing system cookies that Salesforce uses to function. Otherwise any sandbox can send malicious payloads to the backend using cookies.
 
 ### Distorted Behavior
 
-The `set()` method automatically adds the sandbox prefix to keys for sandbox cookies.
-<hr>
+The `set()` method automatically adds the sandbox prefix to keys for sandbox cookies. <hr>
 <a name="customelementregistrydocsdefine-valuemd"></a>
 
 ## CustomElementRegistry.prototype.define
 
-The [`define`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the `CustomElementRegistry` interface defines a new custom element.
+The [`define()`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the `CustomElementRegistry` interface defines a new custom element. 
 
-Lightning Web Security doesn't allow defining custom elements because the registry is global to the page. You can't register custom elements in the sandbox.
+Lightning Web Security doesn't allow defining custom elements because the registry is global to the page. You can't register custom elements in the sandbox. 
 ### Distorted Behavior
 
 This distortion prevents invoking `define` method from `CustomElementRegistry` and displays an error.
@@ -316,9 +315,9 @@ This distortion prevents invoking `define` method from `CustomElementRegistry` a
 
 ## CustomElementRegistry.prototype.get
 
-The [`get`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/get) method of `CustomElementRegistry` interface returns the constructor for a previously-defined custom element.
+The [`get`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/get) method of `CustomElementRegistry` interface returns the constructor for a previously-defined custom element. 
 
-Lightning Web Security allows sandboxed code to access existing custom element constructors from the global registry only if the custom element is prefixed with the same namespace.
+Lightning Web Security allows sandboxed code to access existing custom element constructors from the global registry only if the custom element is prefixed with the same namespace. 
 
 ### Distorted Behavior
 
@@ -342,7 +341,7 @@ This distortion sanitizes HTML strings prior to parsing and document creation.
 
 The [`Document.cookie`](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie) property lets you read and write cookies associated with the document. It serves as a getter and setter for the actual values of the cookies.
 
-Protecting access to cookies is crucial. If malicious code can access all cookies on a page, it can issue XHR requests impersonating the user who's logged in. This can have catastrophic effects in a multi-tenant environment like Salesforce.
+Protecting access to cookies is crucial. If malicious code can access all cookies on a page, it can issue XHR requests impersonating the user who's logged in. This can have catastrophic effects in a multi-tenant environment like Salesforce. 
 
 This distortion protects the getter of `Document.prototype.cookie` and limits the view to what is being set from within the sandbox. Cookies inside the sandbox are protected from code outside or in other sandboxes.
 
@@ -368,14 +367,14 @@ The setter can modify only cookies that belong to the sandbox.
 
 The deprecated [`Document.domain`](https://developer.mozilla.org/en-US/docs/Web/API/Document/domain) property gets/sets the domain portion of the origin of the current document, as used by the same-origin policy.
 
-According to [W3C](https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-2250147) the `Document.domain` property should be read-only.
+According to [W3C](https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-2250147) the `Document.domain` property should be read-only. 
 
-Firefox doesn't allow setting this property and throws a SecurityError, but Chrome, Safari, and Edge (Webkit) allow it. In those browsers, the property can't be set to a random value, it must match the suffix of the initial domain. So if the initial value is `my.domain.com` the domain value that can be set is `domain.com` because that is the suffix.
+Firefox doesn't allow setting this property and throws a SecurityError, but Chrome, Safari, and Edge (Webkit) allow it. In those browsers, the property can't be set to a random value, it must match the suffix of the initial domain. So if the initial value is `my.domain.com` the domain value that can be set is `domain.com` because that is the suffix. 
 
 The distortion doesn't allow code in a sandbox to change the domain of the root document even if the browser allows it.
 ### Distorted Behavior
 
-On Firefox the distortion throws an Error instead of SecurityError.
+On Firefox the distortion throws an Error instead of SecurityError. 
 
 On Chrome, Safari and Edge (Webkit) it throws an Error instead of allowing the setter to execute.
 <hr>
@@ -383,9 +382,9 @@ On Chrome, Safari and Edge (Webkit) it throws an Error instead of allowing the s
 
 ## Document.prototype.execCommand
 
-When an HTML document has been switched to `designMode`, its `document` object exposes an [`execCommand()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand) method to run commands that manipulate the current editable region, such as form inputs or `contentEditable` elements.
+When an HTML document has been switched to `designMode`, its `document` object exposes an [`execCommand()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand) method to run commands that manipulate the current editable region, such as form inputs or `contentEditable` elements. 
 
-The `insertHTML` command inserts new elements on the currently active editable element.
+The `insertHTML` command inserts new elements on the currently active editable element. 
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>` and `<body>` elements are shared. If malicious code can insert any specified text as HTML into the DOM tree, even outside of the shared `<head>` and `<body>` elements, it can pollute the DOM. For this reason, any elements added to this shared DOM are sanitized to strip out malicious code.
 ### Distorted Behavior
@@ -394,7 +393,7 @@ This distortion sanitizes the inserted HTML string.
 <hr>
 <a name="documentdocsopen-valuemd"></a>
 
-## Document.prototype.open
+## Document.open
 
 The [`document.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/open) method opens a document for writing.
 
@@ -408,14 +407,13 @@ When `document.open()` is invoked with three arguments, the distortion returns a
 
 ## Element.prototype.after
 
-The [`Element.prototype.after()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/after) method inserts a set of `Node` objects or `DOMString` objects after the `Element`. `DOMString` objects are inserted as equivalent `Text` nodes.
+The [`Element.prototype.after()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/after) method inserts a set of `Node` objects or `DOMString` objects after the `Element`. `DOMString` objects are inserted as equivalent `Text` nodes. 
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>` and `<body>` elements are shared. Malicious code can add nodes or text after those shared elements, corrupting the DOM of the current rendered page.
 
 ### Distorted Behavior
 
-This distortion allows only a `<script>` or `<link>` element to be added after `<html>`, `<head>`, and `<body>` elements. It throws an exception if any other element is specified.
-<hr>
+This distortion allows only a `<script>` or `<link>` element to be added after `<html>`, `<head>`, and `<body>` elements. It throws an exception if any other element is specified. <hr>
 <a name="elementdocsappend-valuemd"></a>
 
 ## Element.prototype.append
@@ -432,7 +430,7 @@ Lightning Web Security runs in the main window, where the `<html>`, `<head>`, an
 This distortion allows only a `<script>` or `<link>` element to be added after `<html>`, `<head>`, and `<body>` elements. It throws an exception if any other element is specified.<hr>
 <a name="elementdocsattachshadow-valuemd"></a>
 
-## Element.prototype.attachShadow
+## Element.prototype.attachShadow setter
 
 The [`Element.prototype.attachShadow()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow) method attaches a shadow DOM tree to the specified element and returns a reference to its `ShadowRoot`.
 
@@ -446,9 +444,9 @@ This distortion throws an exception when the `mode` value is not `closed`, which
 
 ## Element.prototype.attributes getter
 
-The [`Element.prototype.attributes`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) property returns a live collection of all attribute nodes registered to the specified node. It is a `NamedNodeMap`, not an `Array`, so it has no `Array` methods and the `Attr` nodes' indexes may differ among browsers.
+The [`Element.prototype.attributes`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) property returns a live collection of all attribute nodes registered to the specified node. It is a `NamedNodeMap`, not an `Array`, so it has no `Array` methods and the `Attr` nodes' indexes may differ among browsers. 
 
-The `attributes` collection can be used to set and remove attributes on an element.
+The `attributes` collection can be used to set and remove attributes on an element. 
 
 The distortion on this getter doesn't alter its functionality. It pairs an `Element` instance with a `NamedNodeMap` instance so that the  distortion on `NamedNodeMap.prototype.setNamedItem` can retrieve the element.
 
@@ -460,14 +458,13 @@ No distorted behavior.
 
 ## Element.prototype.before
 
-The [`Element.prototype.before()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/before) method inserts a set of `Node` objects or `DOMString` objects before the `Element` in the child list of the parent of the `Element`. `DOMString` objects are inserted as equivalent `Text` nodes.
+The [`Element.prototype.before()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/before) method inserts a set of `Node` objects or `DOMString` objects before the `Element` in the child list of the parent of the `Element`. `DOMString` objects are inserted as equivalent `Text` nodes. 
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can add nodes or text before those shared elements, corrupting the DOM of the current rendered page.
 
 ### Distorted Behavior
 
-This distortion allows only a `<script>` or `<link>` element to be added after `<html>`, `<head>`, and `<body>` elements. It throws an exception if any other element is specified.
-<hr>
+This distortion allows only a `<script>` or `<link>` element to be added after `<html>`, `<head>`, and `<body>` elements. It throws an exception if any other element is specified.<hr>
 <a name="elementdocsblocked-propertiesmd"></a>
 
 ## Fullscreen API: Element.prototype
@@ -476,11 +473,11 @@ The [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen
 
 It is supported by all major browsers, with varying implementations.
 
-This API doesn't adjust the DOM in the element. Instead, the native fullscreen hooks onto the browser. Malicious code can use the fullscreen API for phishing attacks. For example, because the fullscreen API obscures the browser's address bar, malicious code can hide the fake URL of a phishing page. Malicious coders can also fake an address bar with their own DOM.
+This API doesn't adjust the DOM in the element. Instead, the native fullscreen hooks onto the browser. Malicious code can use the fullscreen API for phishing attacks. For example, because the fullscreen API obscures the browser's address bar, malicious code can hide the fake URL of a phishing page. Malicious coders can also fake an address bar with their own DOM. 
 
 ### Distorted Behavior
 
-This distortion prevents code from requesting full screen by
+This distortion prevents code from requesting full screen by 
 blocking these properties from `Element.prototype` on specified browsers:
 
 * `onfullscreenchange` [Chrome, Edge, Firefox]
@@ -488,15 +485,14 @@ blocking these properties from `Element.prototype` on specified browsers:
 * `requestFullscreen` [Chrome, Edge, Firefox]
 * `webkitRequestFullScreen` [Chrome, Edge, Safari]
 * `webkitRequestFullscreen` [Chrome, Edge, Safari]
-* `mozRequestFullScreen` [Firefox]
-<hr>
+* `mozRequestFullScreen` [Firefox]<hr>
 <a name="elementdocsinnerhtml-settermd"></a>
 
 ## Element.prototype.innerHTML setter
 
-The [`Element.prototype.innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML) property gets or sets the HTML or XML markup contained within the element.
+The [`Element.prototype.innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML) property gets or sets the HTML or XML markup contained within the element. 
 
-You can set `Element.prototype.innerHTML` to replace DOM inside the element with nodes parsed from the given specified text as HTML.
+You can set `Element.prototype.innerHTML` to replace DOM inside the element with nodes parsed from the given specified text as HTML. 
 
 Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace the DOM of the `<head>` and `<body>` elements, corrupting the DOM.
 
@@ -510,24 +506,22 @@ This distortion sanitizes and prevents HTML from replacing the DOM within shared
 
 The [`Element.prototype.insertAdjacentElement()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement) method inserts a given element node at a given position relative to the element it is invoked upon.
 
-Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can be added to those elements by using the `insertAdjacentElement()` method, corrupting the DOM of the current rendered page.
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can be added to those elements by using the `insertAdjacentElement()` method, corrupting the DOM of the current rendered page. 
 
 ### Distorted Behavior
 
-This distortion sanitizes HTML to prevent malicious code from being added to the `<html>`, `<head>`, and `<body>` shared elements.
-<hr>
+This distortion sanitizes HTML to prevent malicious code from being added to the `<html>`, `<head>`, and `<body>` shared elements.<hr>
 <a name="elementdocsinsertadjacenthtml-valuemd"></a>
 
 ## Element.prototype.insertAdjacentHTML
 
-The [`Element.prototype.insertAdjacentHTML()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML) method parses the specified text as HTML or XML and inserts the resulting nodes into the DOM tree at a specified position.
+The [`Element.prototype.insertAdjacentHTML()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML) method parses the specified text as HTML or XML and inserts the resulting nodes into the DOM tree at a specified position. 
 
-Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can be added to those elements by using the `insertAdjacentHTML()` method, corrupting the DOM of the current rendered page.
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can be added to those elements by using the `insertAdjacentHTML()` method, corrupting the DOM of the current rendered page. 
 
 ### Distorted Behavior
 
-This distortion sanitizes the text string to prevent malicious code from being added to the `<html>`, `<head>`, and `<body>` shared elements.
-<hr>
+This distortion sanitizes the text string to prevent malicious code from being added to the `<html>`, `<head>`, and `<body>` shared elements.<hr>
 <a name="elementdocsouterhtml-settermd"></a>
 
 ## Element.prototype.outerHTML setter
@@ -556,9 +550,9 @@ This distortion allows only a `<script>` or `<link>` element to be prepended to 
 
 ## Element.prototype.remove
 
-The [`Element.prototype.remove()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method removes the element from the tree it belongs to.
+The [`Element.prototype.remove()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method removes the element from the tree it belongs to. 
 
-Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can remove any of the shared elements, corrupting the DOM of the current rendered page.
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can remove any of the shared elements, corrupting the DOM of the current rendered page. 
 
 ### Distorted Behavior
 
@@ -568,9 +562,9 @@ This distortion prevents removing shared elements `<html>`, `<head>`, and `<body
 
 ## Element.prototype.replaceChildren
 
-The [`Element.prototype.replaceChildren()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren) method replaces the existing children of a `Node` with a specified new set of children. These can be `DOMString` or `Node` objects.
+The [`Element.prototype.replaceChildren()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren) method replaces the existing children of a `Node` with a specified new set of children. These can be `DOMString` or `Node` objects. 
 
-Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace those elements, or the children of those elements, corrupting the DOM of the current rendered page.
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace those elements, or the children of those elements, corrupting the DOM of the current rendered page. 
 
 ### Distorted Behavior
 
@@ -580,9 +574,9 @@ This distortion prevents replacing all child elements of shared elements `<html>
 
 ## Element.prototype.replaceWith
 
-The [`Element.prototype.replaceWith()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceWith) method replaces this `Element` in the children list of its parent with a set of `Node` or `DOMString` objects. `DOMString` objects are inserted as equivalent `Text` nodes.
+The [`Element.prototype.replaceWith()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceWith) method replaces this `Element` in the children list of its parent with a set of `Node` or `DOMString` objects. `DOMString` objects are inserted as equivalent `Text` nodes. 
 
-Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace those elements, corrupting the DOM of the current rendered page.
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace those elements, corrupting the DOM of the current rendered page. 
 
 ### Distorted Behavior
 
@@ -598,8 +592,7 @@ Distortions for these methods use internal registries to invoke other distortion
  - [`Element.prototype.setAttributeNS()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNS) adds a new attribute or changes the value of an attribute with the given namespace and name.
  - [`Element.prototype.setAttributeNode()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNode) adds a new `Attr` node to the specified element.
  - [`Element.prototype.setAttributeNodeNS()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNodeNS) adds a new namespaced attribute node to an element.
- - [`Element.prototype.toggleAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/toggleAttribute) toggles a Boolean attribute (removing it if it is present and adding it if it is not present) on the given element.
-
+ 
 
 The `setAttribute*` distortions themselves defend against shape-shifting objects. Shape-shifting objects don't affect native DOM APIs because values are automatically coerced. However, shape-shifting attacks can attempt to bypass Lightning Web Security distortions.
 
@@ -621,7 +614,7 @@ const element = document.createElement('link');
 element.setAttribute('rel', attrValue);
 ```
 
-Because Lightning Web Security distorts `setAttribute` and the value is read at least twice (once by LWS and once by the native API), LWS can mistakenly determine that the value is `'foo'` and it's safe to pass through. However, at the second read of `attrValue` its value is `'import'`.
+Because Lightning Web Security distorts `setAttribute` and the value is read at least twice (once by LWS and once by the native API), LWS can mistakenly determine that the value is `'foo'` and it's safe to pass through. However, at the second read of `attrValue` its value is `'import'`. 
 
 
 
@@ -637,7 +630,7 @@ code in sandbox calls setAttribute with shape-shifting object
 
 ```
 
-The `setAttribute` distortion sanitizes the passed value to prevent shape-shifting attacks.
+The `setAttribute` distortion sanitizes the passed value to prevent shape-shifting attacks. 
 
 The `setAttributeNode` distortion checks that the passed attribute argument is indeed an instance of `Attr`. No actual validation happens and the getter utilities automatically detect if this is not an instance of `Attr`. The value property of the attribute is coerced to a string.
 
@@ -645,21 +638,19 @@ The `setAttributeNode` distortion checks that the passed attribute argument is i
 
 - Arguments are sanitized to prevent shape-shifting attacks.
 - The behavior varies according to the invoked registered distortion.
-- When no distortions are registered, behavior seems like native behavior.
-<hr>
+- When no distortions are registered, behavior seems like native behavior.<hr>
 <a name="elementdocsshadowroot-gettermd"></a>
 
 ## Element.prototype.shadowRoot getter
 
 The [`Element.prototype.shadowRoot`](https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot) read-only property represents the shadow root hosted by the element.
 
-This property allows retrieving the shadow DOM of custom elements created with `attachShadow({mode: 'open'})`.
+This property allows retrieving the shadow DOM of custom elements created with `attachShadow({mode: 'open'})`. 
 
-In a sandbox, the distortion for `attachShadow()` prevents code from creating elements with `mode: 'open'`, but doesn't prevent code that's running outside a sandbox from creating custom elements in `open` mode. Elements that are passed as function arguments or queried from the Light DOM or shadow DOM are at risk.
+In a sandbox, the distortion for `attachShadow()` prevents code from creating elements with `mode: 'open'`, but doesn't prevent code that's running outside a sandbox from creating custom elements in `open` mode. Elements that are passed as function arguments or queried from the Light DOM or shadow DOM are at risk. 
 ### Distorted Behavior
 
-This distortion returns `null` when you try to access the `shadowRoot` property on a Light DOM element.
-<hr>
+This distortion returns `null` when you try to access the `shadowRoot` property on a Light DOM element.<hr>
 <a name="eventdocscomposedpath-valuemd"></a>
 
 ## Event.prototype.composedPath
@@ -710,11 +701,11 @@ This distortion alters the getter of the `dataset` property for any `HTMLElement
 <hr>
 <a name="htmlelementdocsinnertext-settermd"></a>
 
-## HTMLElement.prototype.innerText setter
+## HTMLElement.prototype.innerText setter [Chrome, Edge, Opera, Safari]
 
-The [`HTMLElement.prototype.innerText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText) property of represents the "rendered" text content of a node and its descendants. As a setter, it can be used to replace the rendered content of the element.
+The [`HTMLElement.prototype.innerText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText) property of represents the "rendered" text content of a node and its descendants. As a setter, it can be used to replace the rendered content of the element. 
 
-Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace the contents of those elements by assigning a new value to the `.innerText` property, corrupting the DOM of the current rendered page.
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can replace the contents of those elements by assigning a new value to the `.innerText` property, corrupting the DOM of the current rendered page.  
 
 ### Distorted Behavior
 
@@ -722,7 +713,7 @@ This distortion sanitizes the given text and prevents it from replacing the text
 <hr>
 <a name="htmlelementdocsoutertext-settermd"></a>
 
-## HTMLElement.prototype.outerText setter
+## HTMLElement.prototype.outerText setter [Chrome, Edge, Opera, Safari]
 
 [`HTMLElement.prototype.outerText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText) is a non-standard property. As a getter, it returns the same value as `HTMLElement.prototype.innerText`. As a setter, it removes the current node and replaces it with the given text.
 
@@ -736,11 +727,11 @@ As a non-standard property, the `outerText` descriptor could be undefined. Firef
 <hr>
 <a name="htmlelementdocsstyle-gettermd"></a>
 
-## HTMLElement.prototype.style getter
+## HTMLElement.prototype.style getter [Chrome, Edge, Opera, Safari]
 
 The [`HTMLElement.prototype.style`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style) read-only property returns the inline style of an element in the form of a `CSSStyleDeclaration` object that contains a list of all styles properties for that element with values assigned for the attributes that are defined in the element's inline `style` attribute.
 
-The `style` property on any `HTMLElement` object lets you manipulate CSS styles with JavaScript via assignments. For example, you could change an element's text color using `element.style.color = 'red'`.
+The `style` property on any `HTMLElement` object lets you manipulate CSS styles with JavaScript via assignments. For example, you could change an element's text color using `element.style.color = 'red'`. 
 
 A property set on a `HTMLElement` object reflects in the DOM via the `style` attribute on an element, making this object "magical" because of this behavior.
 
@@ -752,7 +743,7 @@ This distortion alters the getter of the `style` property for any `HTMLElement`.
 
 ## HTMLFrameElement.prototype.contentDocument getter
 
-The `HTMLFrameElement.prototype.contentDocument` property getter returns the `Document` object of the specified frame.
+The `HTMLFrameElement.prototype.contentDocument` property getter returns the `Document` object of the specified frame. 
 The `HTMLFrameElement` interface is deprecated in HTML5.
 
 To reduce the possibility of exploit, Lightning Web Security returns `null` for the `HTMLFrameElement.prototype.contentDocument` property.
@@ -781,14 +772,13 @@ This distortion returns an artificial `contentWindow` object per frame and cache
 
 ## HTMLIFrameElement.prototype.contentDocument getter
 
-The [`HTMLIFrameElement.contentDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentDocument) property getter returns a `Document` corresponding to the active document in the inline frame's nested browsing context if the iframe and the iframe's parent document are Same Origin. Otherwise, the property returns `null`.
+The [`HTMLIFrameElement.contentDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentDocument) property getter returns a `Document` corresponding to the active document in the inline frame's nested browsing context if the iframe and the iframe's parent document are Same Origin. Otherwise, the property returns `null`. 
 
 To reduce the possibility of exploit, Lightning Web Security returns `null` for the `contentDocument` property, even when an iframe and the iframe's parent document have the same origin.
 
 ### Distorted Behavior
 
-This distortion returns `null` for `contentDocument`.
-<hr>
+This distortion returns `null` for `contentDocument`.<hr>
 <a name="htmliframeelementdocscontentwindow-gettermd"></a>
 
 ## HTMLIFrameElement.prototype.contentWindow getter
@@ -810,7 +800,7 @@ This distortion returns an artificial `contentWindow` object per iframe and cach
 
 ## HTMLIFrameElement.prototype.src setter
 
-The [`HTMLIFrameElement.prototype.src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/src) property reflects the HTML `referrerpolicy` attribute of the `<iframe>` element defining which referrer is sent when fetching the resource. The `src` value is a string that reflects the `src` HTML attribute, containing the address of the content to be embedded.
+The [`HTMLIFrameElement.prototype.src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/src) property reflects the HTML `referrerpolicy` attribute of the `<iframe>` element defining which referrer is sent when fetching the resource. The `src` value is a string that reflects the `src` HTML attribute, containing the address of the content to be embedded. 
 
 Lightning Web Security sanitizes the `src` value and only permits `http://` and `https://` schemes. URL schemes like `javascript://` aren't allowed.
 
@@ -838,7 +828,7 @@ This distortion prevents code from setting the `rel` property value to `import`.
 
 The [`HTMLLinkElement.relList`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/relList) read-only property reflects the `rel` attribute. It is a live `DOMTokenList` containing the set of link types indicating the relationship between the resource represented by the `<link>` element and the current document. The property itself is read-only, meaning you can substitute the `DOMTokenList` by another one, but the content of the returned list can't be changed.
 
-Malicious code can set `rel` to the value `import`, which allows it to import script resources that can bypass Lightning Web Security distortions and access the raw window.
+Malicious code can set `rel` to the value `import`, which allows it to import script resources that can bypass Lightning Web Security distortions and access the raw window. 
 
 To reduce the possibility of exploit, Lightning Web Security prevents setting the `import` value to the `rel` property of link elements.
 
@@ -883,23 +873,22 @@ This distortion returns an artificial `contentWindow` object per iframe and cach
 
 [`HTMLScriptElement.prototype.src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement) property is a `DOMString` representing the URL of an external script. It reflects the `src` attribute of the `<script>` element specifying the URL to an external script.
 
-Lightning Web Security sets the original url to a different attribute named `data-distorted-src`, while the `src` attribute points to a distorted value that's not revealed in the sandbox.
+Lightning Web Security sets the original url to a different attribute named `data-distorted-src`, while the `src` attribute points to a distorted value that's not revealed in the sandbox. 
 
-Lightning Web Security's distortion for the `src` getter obtains the original value from `data-distorted-src`.
+Lightning Web Security's distortion for the `src` getter obtains the original value from `data-distorted-src`. 
 
 In some scenarios, a `<script>` element is already present in the DOM, inserted by the system through some other mechanisms. In these cases, LWS accesses the original `src` attribute.
 
 ### Distorted Behavior
 
-This distortion returns the value of `data-distorted-src` when code in the sandbox tries to access `src` attribute on a `<script>` element.
-<hr>
+This distortion returns the value of `data-distorted-src` when code in the sandbox tries to access `src` attribute on a `<script>` element.<hr>
 <a name="htmlscriptelementdocssrc-settermd"></a>
 
 ## HTMLScriptElement.prototype.src setter
 
 [`HTMLScriptElement.prototype.src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement) property is a `DOMString` representing the URL of an external script. It reflects the `src` attribute of the `script` element specifying the URL to an external script.
 
-To ensure that JavaScript code loaded through a `script` element runs in the sandbox, Lightning Web Security evaluates the source text in the same sandbox before the browser evaluates it. This prevents the native behavior of the `script` element from triggering.
+To ensure that JavaScript code loaded through a `script` element runs in the sandbox, Lightning Web Security evaluates the source text in the same sandbox before the browser evaluates it. This prevents the native behavior of the `script` element from triggering. 
 
 LWS stores the value of `src` in a different attribute `data-distorted-src`. LWS fetches the script file using an XHR request and sets the `src` attribute value to a distorted value that uses the script fetched by LWS. The browser reads the distorted value of the `src` attribute which kicks off the evaluation process in the sandbox.
 
@@ -912,7 +901,7 @@ This distortion prevents a script from running before LWS can evaluate it.
 
 ## MessageEvent.prototype.source getter
 
-The [`MessageEvent.prototype.source`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/source) read-only
+The [`MessageEvent.prototype.source`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/source) read-only 
 property is a `MessageEventSource` (which can be a `WindowProxy`, `MessagePort`, or `ServiceWorker` object) representing the message emitter.
 
 If the property references a `window`, malicious code can open a new browser tab that contains a `postMessage` to the current browser. After that, the current browser can access the raw `window` without protective Lightning Web Security distortions.
@@ -933,7 +922,7 @@ This distortion returns an artificial `window` object and caches the artificial 
 
 The [`NamedNodeMap`](https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap) interface represents a collection of `Attr` objects. Objects inside a `NamedNodeMap` are not in any particular order, unlike `NodeList`, although they may be accessed by an index as in an array. A `NamedNodeMap` object is live and will thus be auto-updated if changes are made to its contents internally or elsewhere.
 
-The `NamedNodeMap.prototype.setNamedItem()` method replaces or adds the `Attr` identified in the map by the given name. You can use it to set an attribute on an element, so Lightning Web Security must distort `NamedNodeMap.prototype.setNamedItem`.
+`NamedNodeMap.prototype.setNamedItem()` is a method that replaces or adds the `Attr` identified in the map by the given name. You can use it to set an attribute on an element, so Lightning Web Security must distort `NamedNodeMap.prototype.setNamedItem`. 
 
 This code would bypass LWS distortions for named properties and `setAttribute\*` and set the `rel` attribute on a link if `setNamedItem` is not distorted.
 ```js
@@ -943,11 +932,11 @@ attr.value = 'import';
 el.attributes.setNamedItem(attr);
 ```
 
-The `NamedNodeMap.prototype.setNamedItem` distortion works with the distortion for `Element.attributes getter` to pair elements with `NamedModeMap` instances when the getter is invoked for an attribute. Then the `NamedNodeMap.prototype.setNamedItem` distortion invokes other distortions for specific attributes.
+The `NamedNodeMap.prototype.setNamedItem` distortion works with the distortion for `Element.attributes getter` to pair elements with `NamedModeMap` instances when the getter is invoked for an attribute. Then the `NamedNodeMap.prototype.setNamedItem` distortion invokes other distortions for specific attributes. 
 
 ### Distorted Behavior
 
-If there is a distortion registered for an attribute, the behavior depends on the specific distortion. If there's no distortion registered for an attribute, the native invocation of `setNamedItem` is allowed.
+If there is a distortion registered for an attribute, the behavior depends on the specific distortion. If there's no distortion registered for an attribute, the native invocation of `setNamedItem` is allowed. 
 <hr>
 <a name="namednodemapdocssetnameditemns-valuemd"></a>
 
@@ -955,7 +944,7 @@ If there is a distortion registered for an attribute, the behavior depends on th
 
 The [`NamedNodeMap`](https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap) interface represents a collection of `Attr` objects. Objects inside a `NamedNodeMap` are not in any particular order, unlike `NodeList`, although they may be accessed by an index as in an array. A `NamedNodeMap` object is live and will thus be auto-updated if changes are made to its contents internally or elsewhere.
 
-The `NamedNodeMap.prototype.setNamedItemNS()` method replaces or adds the `Attr` identified in the map by the given name. You can use it to set an attribute on an element, so Lightning Web Security must distort `NamedNodeMap.prototype.setNamedItemNS`.
+`NamedNodeMap.prototype.setNamedItemNS()` is a method that replaces or adds the `Attr` identified in the map by the given name. You can use it to set an attribute on an element, so Lightning Web Security must distort `NamedNodeMap.prototype.setNamedItemNS`.
 
 This code would bypass LWS distortions for named properties and `setAttribute\*` and set the `rel` attribute on a link if `setNamedItemNS` is not distorted.
 ```js
@@ -1038,7 +1027,7 @@ The [`Range.prototype.createContextualFragment()`](https://developer.mozilla.org
 
 The `createContextualFragment()` method invokes the HTML fragment parsing algorithm or the XML fragment parsing algorithm with the start of the range (the parent of the selected node) as the context node. The document fragment can be added to the DOM tree.
 
-Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. The `createContextualFragment()` method can let malicious code insert specified text as HTML into the DOM tree. Although the fragment can only be inserted outside of the shared elements, it can pollute the DOM. LWS sanitizes elements added to the shared DOM.
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. The `createContextualFragment()` method can let malicious code insert specified text as HTML into the DOM tree. Although the fragment can only be inserted outside of the shared elements, it can pollute the DOM. LWS sanitizes elements added to the shared DOM. 
 
 ### Distorted Behavior
 
@@ -1085,7 +1074,7 @@ This distortion alters the getter of the `dataset` property for any `SVGElement`
 
 ## SVGScriptElement.prototype.href
 
-The [`SVGScriptElement.prototype.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGScriptElement) property is an `SVGAnimatedString` corresponding to the `href` or `xlink:href` attribute of the given `<script>` element.
+The [`SVGScriptElement.prototype.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGScriptElement) property is an `SVGAnimatedString` corresponding to the `href` or `xlink:href` attribute of the given `<script>` element. 
 
 The `SVGScriptElement.prototype.href` property reflects the `href` attribute of a `<script>` element inside an `<svg>` element, specifying the URL to an external script.
 
@@ -1099,7 +1088,7 @@ These steps ensure that different browsers work as expected, while preventing th
 
 ### Distorted Behavior
 
-This distortion for the `href` or `xlink:href` getter provides a distorted version of the script to the browser.
+This distortion for the `href` or `xlink:href` getter provides a distorted version of the script to the browser. 
 <hr>
 <a name="svguseelementdocshref-attributemd"></a>
 
@@ -1118,13 +1107,13 @@ These methods are covered by distortions on `Element` methods, but require more 
 
 ## Distorted Behavior
 
-This distortion sanitizes the value passed for attribute `href` or `xlink:href` on an `SVGUseElement`.
+This distortion sanitizes the value passed for attribute `href` or `xlink:href` on an `SVGUseElement`. 
 
-For the `href` or `xlink:href` getter, this distortion does nothing if the URL is to a document fragment in the `<svg>`.
+For the `href` or `xlink:href` getter, this distortion does nothing if the URL is to a document fragment in the `<svg>`. 
 
 If the URL is for an external resource, the distortion transforms the URL to a document fragment URL and assigns it to a hidden `<div>` element in the page. The document fragment URL is composed of current hostname, resource name, extension followed by an underscore and the id in the referenced resource. A URL such as `/resource.svg#circle` becomes `#HOSTNAMEresourcesvg_circle`.
 
-Lightning Web Security fetches the resource asynchronously using an XHR request and sanitizes the content, then places it in the `<div>` element that has the new document fragment URL. The content is rendered where the `<use>` tag is defined in the `<svg>`.
+Lightning Web Security fetches the resource asynchronously using an XHR request and sanitizes the content, then places it in the `<div>` element that has the new document fragment URL. The content is rendered where the `<use>` tag is defined in the `<svg>`. 
 #### Distorted Behavior for setAttributeNS
 ```js
 const el = document.createElementNS('http://www.w3.org/2000/svg', 'use');
@@ -1180,7 +1169,7 @@ self.addEventListener('fetch', (event) => {
 });
 ```
 
-To prevent JavaScript code from leaking data outside the sandbox, Lightning Web Security disallows access to any of the `ServiceWorkerContainer.prototype` properties or methods.
+To prevent JavaScript code from leaking data outside the sandbox, Lightning Web Security disallows access to any of the `ServiceWorkerContainer.prototype` properties or methods. 
 
 Although LWS already prevents access to `navigator.serviceWorker`, malicious code can access the `ServiceWorkerContainer` object in other ways, so this distortion prevents access to any of its operations.
 
@@ -1192,7 +1181,7 @@ This distortion throws a `TypeError` whenever any of the `ServiceWorkerContainer
 
 ## ShadowRoot.prototype.innerHTML setter
 
-The [`ShadowRoot.prototype.innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/innerHTML) property sets or returns a reference to the DOM tree inside the `ShadowRoot`.
+The [`ShadowRoot.prototype.innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/innerHTML) property sets or returns a reference to the DOM tree inside the `ShadowRoot`. 
 
 Malicious code can add `<script>` elements to the DOM tree inside the shadow root. The scripts run without being sanitized.
 
@@ -1215,7 +1204,7 @@ This distortion returns `closed` when a getter accesses the `mode` property on a
 
 The [`SharedWorker()`](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker/SharedWorker) constructor creates a `SharedWorker` object that executes the script at the specified URL. This script must obey the same-origin policy, a security mechanism that restricts how a document or script loaded by one origin can interact with a resource from another origin.
 
-Malicious code can use `SharedWorker()` to execute script at a specified URL to bypass Lightning Web Security distortions.
+Malicious code can use `SharedWorker()` to execute script at a specified URL to bypass Lightning Web Security distortions. 
 
 ### Distorted Behavior
 
@@ -1225,14 +1214,13 @@ This distortion throws an exception when calling the constructor, and blocks acc
 
 ## Storage.prototype.clear
 
-The [`Storage.prototype.clear()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear) method clears all keys and associated data stored in a given `Storage` object.
+The [`Storage.prototype.clear()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear) method clears all keys and associated data stored in a given `Storage` object. 
 
-Each sandbox uses its own synthetic storage. Lightning Web Security prevents `clear()` from clearing all the data items in another sandbox or outside sandboxes.
+Each sandbox uses its own synthetic storage. Lightning Web Security prevents `clear()` from clearing all the data items in another sandbox or outside sandboxes. 
 
 ### Distorted Behavior
 
-This distortion deletes all data items from the sandboxed code's synthetic storage.
-<hr>
+This distortion deletes all data items from the sandboxed code's synthetic storage.<hr>
 <a name="storagedocsconstructor-valuemd"></a>
 
 ## Storage API: Storage.prototype
@@ -1271,12 +1259,11 @@ The proxy wrap has traps that allow for our Storage to have features that are th
 
 The [`Storage.prototype.getItem()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem) method, when passed a key name, returns that key's value, or `null` if the key does not exist, in the given `Storage` object.
 
-Lightning Web Security creates synthetic storage for each sandbox. The synthetic storage prevents code in one sandbox from retrieving data belonging to another namespace or outside sandboxes.
+Lightning Web Security creates synthetic storage for each sandbox. The synthetic storage prevents code in one sandbox from retrieving data belonging to another namespace or outside sandboxes. 
 
 ### Distorted Behavior
 
-This distortion ensures sandboxed code retrieves data items from its own synthetic storage.
-<hr>
+This distortion ensures sandboxed code retrieves data items from its own synthetic storage.<hr>
 <a name="storagedocskey-valuemd"></a>
 
 ## Storage.prototype.key
@@ -1314,11 +1301,10 @@ This distortion deletes a data item from the sandboxed code's synthetic storage.
 
 The [`Storage.prototype.setItem()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem) method, when passed a key name and value,  adds that key to the given `Storage` object, or update that key's value if it already exists.
 
-Each sandbox uses its own synthetic storage. Lightning Web Security prevents `setItem()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem) from adding or modifying data items in another sandbox or outside sandboxes.
+Each sandbox uses its own synthetic storage. Lightning Web Security prevents `setItem()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem) from adding or modifying data items in another sandbox or outside sandboxes. 
 ### Distorted Behavior
 
-This distortion adds or modifies data items in the sandboxed code's synthetic storage.
-<hr>
+This distortion adds or modifies data items in the sandboxed code's synthetic storage.<hr>
 <a name="trustedtypepolicyfactorydocscreatepolicy-valuemd"></a>
 
 ## TrustedTypePolicyFactory.createPolicy
@@ -1345,9 +1331,9 @@ The [`URL.createObjectURL()`](https://developer.mozilla.org/en-US/docs/Web/API/U
 
 The method creates in memory a URL address location that HTML elements with `src` or `href` attributes can use to load stored content. The URL runs on the same domain as the code that loads it.
 
-Malicious code can use `URL.createObjectURL` to create an object of type File or Blob that uses a MIME type that can load malicious JavaScript code.
+Malicious code can use `URL.createObjectURL` to create an object of type File or Blob that uses a MIME type that can load malicious JavaScript code. 
 
-MIME types of concern include `text/html`, `image/svg+xml`, `text/xml` and `text/javascript`. The first three have valid use cases, but `text/javascript` doesn't since you can load a JavaScript file using the `<script>` tag instead.
+MIME types of concern include `text/html`, `image/svg+xml`, `text/xml` and `text/javascript`. The first three have valid use cases, but `text/javascript` doesn't since you can load a JavaScript file using the `<script>` tag instead. 
 
 Here's a simple example of malicious code:
 
@@ -1372,11 +1358,11 @@ This distortion throws an exception when MIME types `text/html`, `text/xml`, `im
 
 If no malicious content is detected when these MIME types are used, the content is allowed to load but the distortion enforces `charset=utf-8` to prevent exploits where the browser auto-interprets charset and special characters that can lead to XSS.
 
-For any unsupported MIME types, including `text/javascript`, the distortion throws an exception with the message `Lightning Web Security: Unsupported MIME type.`
+For any unsupported MIME types, including `text/javascript`, the distortion throws an exception with the message `Lightning Web Security: Unsupported MIME type.` 
 
 Empty MIME types on `File` and `Blob` objects are treated as `text/plain` since browsers treat this differently.
 
-All commonly used and non-malicious MIME types work as expected.
+All commonly used and non-malicious MIME types work as expected. 
 <hr>
 <a name="windowdocsfetch-valuemd"></a>
 
@@ -1394,7 +1380,7 @@ This distortion examines the `hostname` and the `pathname` of the URL. If there'
 
 ## window.frames getter
 
-The [`window.frames`](https://developer.mozilla.org/en-US/docs/Web/API/Window/frames) property returns an array-like object that lists all the `frame` and `iframe` elements in the current window.
+The [`window.frames`](https://developer.mozilla.org/en-US/docs/Web/API/Window/frames) property returns an array-like object that lists all the `frame` and `iframe` elements in the current window. 
 
 ```js
 frameList = window.frames;
@@ -1406,12 +1392,12 @@ Lightning Web Security restricts access by distorting the `frameList` object ret
 ### Distorted Behavior
 
 This distortion returns an artificial `frameList` object that includes
-all `frame` and `iframe` elements in the document, in insertion order.
+all `frame` and `iframe` elements in the document, in insertion order. 
 
-The `frameList` object supports access by index value or name property value, as the native one does.
+The `frameList` object supports access by index value or name property value, as the native one does. 
 
 However, the distorted `window.frames` doesn't allow access to `window` or provide proxy access to
-`window` properties.
+`window` properties. 
 
 ```js
 framelist !== window; // evaluates to true with this distortion
@@ -1425,7 +1411,7 @@ The [`window.length`](https://developer.mozilla.org/en-US/docs/Web/API/Window/le
 
 ### Distorted Behavior
 
-The `window.length` property always returns `0`.
+The `window.length` property always returns `0`. 
 
 Instead of `window.length`, use the `window.frames.length` value and `window.frames` object to iterate over the list of frames (either `<frame>` or `<iframe>` elements) attached to the `document`.
 <hr>
@@ -1445,7 +1431,7 @@ Currently, Lightning Web Security doesn't support the `window.onstorage` event, 
 
 ## window.open
 
-The [`window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open) method loads the specified resource into a new or existing browsing context with the specified name. If the name doesn't exist, then a new browsing context is opened in a new tab or a new window, and the specified resource is loaded into it.
+The [`window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open) method loads the specified resource into a new or existing browsing context with the specified name. If the name doesn't exist, then a new browsing context is opened in a new tab or a new window, and the specified resource is loaded into it. 
 
 This new browsing context isn’t sandboxed properly and malicious code can access system mode, so Lightning Web Security distorts the `window` object returned.
 
@@ -1483,7 +1469,7 @@ This distortion returns an artificial `window` object that allows only safe meth
 
 ## window.parent getter
 
-The [`window.parent`](https://developer.mozilla.org/en-US/docs/Web/API/Window/parent) property returns a reference to the parent of the current window or subframe. If a window does not have a parent, its `parent` property is a reference to itself.
+The [`window.parent`](https://developer.mozilla.org/en-US/docs/Web/API/Window/parent) property returns a reference to the parent of the current window or subframe. If a window does not have a parent, its `parent` property is a reference to itself. 
 
 If window `A` embeds window `B`, `B.parent` returns `A`.
 
@@ -1501,7 +1487,7 @@ This distortion returns an artificial `window` object that allows only safe meth
 
 ## window.setInterval
 
-The [`window.setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) method repeatedly calls a function or executes a code snippet, with a fixed time delay between each call.
+The [`window.setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) method repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. 
 
 Code snippet execution is supported by accepting a string for the first argument. This string evaluation escapes the sandbox.
 
@@ -1509,13 +1495,12 @@ Lightning Web Security must evaluate the string in the sandbox.
 
 ### Distorted Behavior
 
-If the first argument provided to `setInterval` is a string value, this distortion evaluates the string in the sandbox.
-<hr>
+If the first argument provided to `setInterval` is a string value, this distortion evaluates the string in the sandbox.<hr>
 <a name="windowdocssettimeout-valuemd"></a>
 
 ## window.setTimeout
 
-The [`window.setTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) method sets a timer which executes a function or specified piece of code when the timer expires.
+The [`window.setTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) method sets a timer which executes a function or specified piece of code when the timer expires. 
 
 Code snippet execution is supported by accepting a string for the first argument. This string evaluation escapes the sandbox.
 
@@ -1529,9 +1514,9 @@ If the first argument provided to `setTimeout` is a string value, this distortio
 
 ## Worker Global Constructor
 
-The [`Worker()`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker) constructor creates a `Worker` object that executes the script at the specified URL. This script must obey the same-origin policy.
+The [`Worker()`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker) constructor creates a `Worker` object that executes the script at the specified URL. This script must obey the same-origin policy. 
 
-Malicious code can execute a script at a specified URL to bypass Lightning Web Security evaluation rules.
+Malicious code can execute a script at a specified URL to bypass Lightning Web Security evaluation rules. 
 
 ### Distorted Behavior
 
@@ -1553,7 +1538,7 @@ This distortion examines the `hostname` and the `pathname` of the URL. If there'
 
 ## XMLHttpRequest.prototype.response getter
 
-The [`XMLHttpRequest.prototype.response`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response) property returns the response's body content as an `ArrayBuffer`, `Blob`, `Document`, JavaScript `Object`, or `DOMString`, depending on the value of the request's `responseType` property.
+The [`XMLHttpRequest.prototype.response`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response) property returns the response's body content as an `ArrayBuffer`, `Blob`, `Document`, JavaScript `Object`, or `DOMString`, depending on the value of the request's `responseType` property. 
 
 If the response's body content is a `Document`, malicious code can add `<script>` tags that run without being sanitized.
 
@@ -1565,7 +1550,7 @@ This distortion sanitizes the `response` property value when the body content is
 
 ## XMLHttpRequest.prototype.responseXML getter
 
-The [`XMLHttpRequest.prototype.responseXML`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseXML) read-only property returns a `Document` containing the HTML or XML retrieved by the request. It returns `null` if the request was unsuccessful, hasn't yet been sent, or if the data can't be parsed as XML or HTML.
+The [`XMLHttpRequest.prototype.responseXML`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseXML) read-only property returns a `Document` containing the HTML or XML retrieved by the request. It returns `null` if the request was unsuccessful, hasn't yet been sent, or if the data can't be parsed as XML or HTML. 
 
 Malicious code can add `<script>` tags that run without being sanitized.
 

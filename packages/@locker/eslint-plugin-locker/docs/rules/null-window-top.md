@@ -1,6 +1,6 @@
 # Null window.top (null-window-top)
 
-The value of `window.top` by Lightning Web Security is `null`. To prevent code from
+The value of `window.top` in Lightning Locker is `null`. To prevent code from
 breaking assume code is executing in the topmost window.
 
 The following `window.top` references are prohibited or fixable to `window`:

@@ -1,6 +1,6 @@
 # Distorted {XMLHttpRequest|Window}#open (distorted-xml-http-request-window-open)
 
-For security `{XMLHttpRequest|Window}#open` is distorted by Lightning Web Security.
+For security `{XMLHttpRequest|Window}#open` is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/XMLHttpRequest/docs/open-value.md -->
 ## XMLHttpRequest.prototype.open
@@ -17,7 +17,7 @@ This distortion examines the `hostname` and the `pathname` of the URL. If there'
 <!-- START generated embed: @locker/distortion/src/Window/docs/open-value.md -->
 ## window.open
 
-The [`window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open) method loads the specified resource into a new or existing browsing context with the specified name. If the name doesn't exist, then a new browsing context is opened in a new tab or a new window, and the specified resource is loaded into it.
+The [`window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open) method loads the specified resource into a new or existing browsing context with the specified name. If the name doesn't exist, then a new browsing context is opened in a new tab or a new window, and the specified resource is loaded into it. 
 
 This new browsing context isn’t sandboxed properly and malicious code can access system mode, so Lightning Web Security distorts the `window` object returned.
 

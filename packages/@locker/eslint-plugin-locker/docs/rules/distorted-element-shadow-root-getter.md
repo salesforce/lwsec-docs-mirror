@@ -19,9 +19,9 @@ element.shadowRoot.querySelector('div');
 
 The [`Element.prototype.shadowRoot`](https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot) read-only property represents the shadow root hosted by the element.
 
-This property allows retrieving the shadow DOM of custom elements created with `attachShadow({mode: 'open'})`.
+This property allows retrieving the shadow DOM of custom elements created with `attachShadow({mode: 'open'})`. 
 
-In a sandbox, the distortion for `attachShadow()` prevents code from creating elements with `mode: 'open'`, but doesn't prevent code that's running outside a sandbox from creating custom elements in `open` mode. Elements that are passed as function arguments or queried from the Light DOM or shadow DOM are at risk.
+In a sandbox, the distortion for `attachShadow()` prevents code from creating elements with `mode: 'open'`, but doesn't prevent code that's running outside a sandbox from creating custom elements in `open` mode. Elements that are passed as function arguments or queried from the Light DOM or shadow DOM are at risk. 
 ### Distorted Behavior
 
 This distortion returns `null` when you try to access the `shadowRoot` property on a Light DOM element.

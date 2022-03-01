@@ -1,6 +1,6 @@
 # Empty window.location (empty-window-location)
 
-The value of `window.location` by Lightning Web Security is an empty location object.
+The value of `window.location` in Lightning Locker is an empty location object.
 To prevent code from breaking use the [`@locker/rollup-plugin`].
 
 ## Rule Details

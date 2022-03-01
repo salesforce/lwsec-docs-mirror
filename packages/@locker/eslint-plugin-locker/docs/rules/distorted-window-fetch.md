@@ -1,6 +1,6 @@
 # Distorted window.fetch (distorted-window-fetch)
 
-For security the `window.fetch` constructor is distorted by Lightning Web Security.
+For security the `window.fetch` constructor is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/fetch-value.md -->
 ## Window.fetch

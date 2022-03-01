@@ -1,6 +1,6 @@
 # Null document.location (null-document-location)
 
-The value of `document.location` by Lightning Web Security is `null`. To prevent
+The value of `document.location` in Lightning Locker is `null`. To prevent
 code from breaking use the [`@locker/rollup-plugin`].
 
 ## Rule Details

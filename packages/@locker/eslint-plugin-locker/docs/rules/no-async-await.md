@@ -1,6 +1,6 @@
 # Disallow async-await Syntax Usage (no-async-await)
 
-The [async-await][1] syntax is  not supported by Lightning Web Security. To prevent
+The [async-await][1] syntax is  not supported in Lightning Locker. To prevent
 code from breaking use the [`@locker/rollup-plugin`].
 
 ## Rule Details

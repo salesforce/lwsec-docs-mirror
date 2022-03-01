@@ -1,9 +1,9 @@
 # Distorted HTMLElement#outerText Setter (distorted-html-element-outer-text-setter)
 
-For security the `HTMLElement#outerText` setter is distorted by Lightning Web Security.
+For security the `HTMLElement#outerText` setter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/HTMLElement/docs/outerText-setter.md -->
-## HTMLElement.prototype.outerText setter
+## HTMLElement.prototype.outerText setter [Chrome, Edge, Opera, Safari]
 
 [`HTMLElement.prototype.outerText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText) is a non-standard property. As a getter, it returns the same value as `HTMLElement.prototype.innerText`. As a setter, it removes the current node and replaces it with the given text.
 

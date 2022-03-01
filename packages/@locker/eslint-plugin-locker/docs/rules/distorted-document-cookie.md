@@ -1,13 +1,13 @@
 # Distorted document.cookie (distorted-document-cookie)
 
-For security the `document.cookie` getter and setter are distorted by Lightning Web Security.
+For security the `document.cookie` getter and setter are distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Document/docs/cookie-getter.md -->
 ## Document.prototype.cookie getter
 
 The [`Document.cookie`](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie) property lets you read and write cookies associated with the document. It serves as a getter and setter for the actual values of the cookies.
 
-Protecting access to cookies is crucial. If malicious code can access all cookies on a page, it can issue XHR requests impersonating the user who's logged in. This can have catastrophic effects in a multi-tenant environment like Salesforce.
+Protecting access to cookies is crucial. If malicious code can access all cookies on a page, it can issue XHR requests impersonating the user who's logged in. This can have catastrophic effects in a multi-tenant environment like Salesforce. 
 
 This distortion protects the getter of `Document.prototype.cookie` and limits the view to what is being set from within the sandbox. Cookies inside the sandbox are protected from code outside or in other sandboxes.
 

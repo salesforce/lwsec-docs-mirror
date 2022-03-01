@@ -1,7 +1,7 @@
 # Distorted Element#setAttribute APIs (distorted-element-set-attribute)
 
 For security the `Element#setAttribute` and `Element#setAttributeNS` are distorted
-by Lightning Web Security.
+in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/setAttribute-family-apis.md -->
 ## Element.prototype.setAttribute*
@@ -12,8 +12,7 @@ Distortions for these methods use internal registries to invoke other distortion
  - [`Element.prototype.setAttributeNS()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNS) adds a new attribute or changes the value of an attribute with the given namespace and name.
  - [`Element.prototype.setAttributeNode()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNode) adds a new `Attr` node to the specified element.
  - [`Element.prototype.setAttributeNodeNS()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNodeNS) adds a new namespaced attribute node to an element.
- - [`Element.prototype.toggleAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/toggleAttribute) toggles a Boolean attribute (removing it if it is present and adding it if it is not present) on the given element.
-
+ 
 
 The `setAttribute*` distortions themselves defend against shape-shifting objects. Shape-shifting objects don't affect native DOM APIs because values are automatically coerced. However, shape-shifting attacks can attempt to bypass Lightning Web Security distortions.
 
@@ -35,7 +34,7 @@ const element = document.createElement('link');
 element.setAttribute('rel', attrValue);
 ```
 
-Because Lightning Web Security distorts `setAttribute` and the value is read at least twice (once by LWS and once by the native API), LWS can mistakenly determine that the value is `'foo'` and it's safe to pass through. However, at the second read of `attrValue` its value is `'import'`.
+Because Lightning Web Security distorts `setAttribute` and the value is read at least twice (once by LWS and once by the native API), LWS can mistakenly determine that the value is `'foo'` and it's safe to pass through. However, at the second read of `attrValue` its value is `'import'`. 
 
 
 
@@ -51,7 +50,7 @@ code in sandbox calls setAttribute with shape-shifting object
 
 ```
 
-The `setAttribute` distortion sanitizes the passed value to prevent shape-shifting attacks.
+The `setAttribute` distortion sanitizes the passed value to prevent shape-shifting attacks. 
 
 The `setAttributeNode` distortion checks that the passed attribute argument is indeed an instance of `Attr`. No actual validation happens and the getter utilities automatically detect if this is not an instance of `Attr`. The value property of the attribute is coerced to a string.
 

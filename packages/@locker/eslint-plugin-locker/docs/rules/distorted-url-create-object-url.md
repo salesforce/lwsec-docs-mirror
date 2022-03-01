@@ -1,6 +1,6 @@
 # Distorted URL.createObjectURL (distorted-url-create-object-url)
 
-For security `URL.createObjectURL` is distorted by Lightning Web Security.
+For security `URL.createObjectURL` is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/URL/docs/createObjectURL-value.md -->
 ## URL.createObjectURL
@@ -9,9 +9,9 @@ The [`URL.createObjectURL()`](https://developer.mozilla.org/en-US/docs/Web/API/U
 
 The method creates in memory a URL address location that HTML elements with `src` or `href` attributes can use to load stored content. The URL runs on the same domain as the code that loads it.
 
-Malicious code can use `URL.createObjectURL` to create an object of type File or Blob that uses a MIME type that can load malicious JavaScript code.
+Malicious code can use `URL.createObjectURL` to create an object of type File or Blob that uses a MIME type that can load malicious JavaScript code. 
 
-MIME types of concern include `text/html`, `image/svg+xml`, `text/xml` and `text/javascript`. The first three have valid use cases, but `text/javascript` doesn't since you can load a JavaScript file using the `<script>` tag instead.
+MIME types of concern include `text/html`, `image/svg+xml`, `text/xml` and `text/javascript`. The first three have valid use cases, but `text/javascript` doesn't since you can load a JavaScript file using the `<script>` tag instead. 
 
 Here's a simple example of malicious code:
 
@@ -36,7 +36,7 @@ This distortion throws an exception when MIME types `text/html`, `text/xml`, `im
 
 If no malicious content is detected when these MIME types are used, the content is allowed to load but the distortion enforces `charset=utf-8` to prevent exploits where the browser auto-interprets charset and special characters that can lead to XSS.
 
-For any unsupported MIME types, including `text/javascript`, the distortion throws an exception with the message `Lightning Web Security: Unsupported MIME type.`
+For any unsupported MIME types, including `text/javascript`, the distortion throws an exception with the message `Lightning Web Security: Unsupported MIME type.` 
 
 Empty MIME types on `File` and `Blob` objects are treated as `text/plain` since browsers treat this differently.
 

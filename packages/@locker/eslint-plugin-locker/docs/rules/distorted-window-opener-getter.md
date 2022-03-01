@@ -1,6 +1,6 @@
 # Distorted window.opener Getter (distorted-window-opener-getter)
 
-For security the `window.opener` getter is distorted by Lightning Web Security.
+For security the `window.opener` getter is distorted in Lightning Locker.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/opener-getter.md -->
 ## window.opener getter

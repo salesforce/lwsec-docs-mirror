@@ -19,14 +19,14 @@ document.domain = 'example.com';
 
 The deprecated [`Document.domain`](https://developer.mozilla.org/en-US/docs/Web/API/Document/domain) property gets/sets the domain portion of the origin of the current document, as used by the same-origin policy.
 
-According to [W3C](https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-2250147) the `Document.domain` property should be read-only.
+According to [W3C](https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-2250147) the `Document.domain` property should be read-only. 
 
-Firefox doesn't allow setting this property and throws a SecurityError, but Chrome, Safari, and Edge (Webkit) allow it. In those browsers, the property can't be set to a random value, it must match the suffix of the initial domain. So if the initial value is `my.domain.com` the domain value that can be set is `domain.com` because that is the suffix.
+Firefox doesn't allow setting this property and throws a SecurityError, but Chrome, Safari, and Edge (Webkit) allow it. In those browsers, the property can't be set to a random value, it must match the suffix of the initial domain. So if the initial value is `my.domain.com` the domain value that can be set is `domain.com` because that is the suffix. 
 
 The distortion doesn't allow code in a sandbox to change the domain of the root document even if the browser allows it.
 ### Distorted Behavior
 
-On Firefox the distortion throws an Error instead of SecurityError.
+On Firefox the distortion throws an Error instead of SecurityError. 
 
 On Chrome, Safari and Edge (Webkit) it throws an Error instead of allowing the setter to execute.
 <!-- END generated embed, please keep comment -->
