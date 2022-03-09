@@ -1,6 +1,6 @@
 # Distorted ShadowRoot#mode Getter (distorted-shadow-root-mode-getter)
 
-For security the `ShadowRoot#mode` getter is distorted in Lightning Locker.
+For security the `ShadowRoot#mode` getter is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/ShadowRoot/docs/mode-getter.md -->
 ## ShadowRoot.prototype.mode getter

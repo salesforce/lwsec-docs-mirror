@@ -1,6 +1,6 @@
 # Distorted Element#outerHTML Setter (distorted-element-outer-html-setter)
 
-For security the `Element#outerHTML` setter is distorted in Lightning Locker.
+For security the `Element#outerHTML` setter is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/outerHTML-setter.md -->
 ## Element.prototype.outerHTML setter

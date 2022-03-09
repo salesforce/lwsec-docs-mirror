@@ -15,11 +15,11 @@ const worker = new Worker('/worker.js');
 ## Related Distortions
 
 <!-- START generated embed: @locker/distortion/src/Worker/docs/constructor-value.md -->
-## Worker Global Constructor
+## Worker Constructor
 
-The [`Worker()`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker) constructor creates a `Worker` object that executes the script at the specified URL. This script must obey the same-origin policy. 
+The [`Worker()`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker) constructor creates a `Worker` object that executes the script at the specified URL. This script must obey the same-origin policy.
 
-Malicious code can execute a script at a specified URL to bypass Lightning Web Security evaluation rules. 
+Malicious code can execute a script at a specified URL to bypass Lightning Web Security evaluation rules.
 
 ### Distorted Behavior
 

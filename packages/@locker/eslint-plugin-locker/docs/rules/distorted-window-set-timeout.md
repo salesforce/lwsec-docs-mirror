@@ -1,11 +1,11 @@
 # Distorted window.setTimeout (distorted-window-set-timeout)
 
-For security the `window.setTimeout` constructor is distorted in Lightning Locker.
+For security the `window.setTimeout` constructor is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Window/docs/setTimeout-value.md -->
 ## window.setTimeout
 
-The [`window.setTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) method sets a timer which executes a function or specified piece of code when the timer expires. 
+The [`window.setTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) method sets a timer which executes a function or specified piece of code when the timer expires.
 
 Code snippet execution is supported by accepting a string for the first argument. This string evaluation escapes the sandbox.
 

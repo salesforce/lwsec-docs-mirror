@@ -1,7 +1,7 @@
 # Distorted HTML{Frame|IFrame|Object}Element#contentWindow Getter (distorted-html-frame-iframe-object-element-content-window-getter)
 
 For security the `HTML{Frame|IFrame|Object}Element#contentWindow` getter is
-distorted in Lightning Locker.
+distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/HTMLFrameElement/docs/contentWindow-getter.md -->
 ## HTMLFrameElement.prototype.contentWindow getter

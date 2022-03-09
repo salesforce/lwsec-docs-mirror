@@ -1,6 +1,6 @@
 # Distorted Storage Constructor (distorted-storage-constructor)
 
-For security the `Storage` constructor is distorted in Lightning Locker.
+For security the `Storage` constructor is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Storage/docs/constructor-value.md -->
 ## Storage API: Storage.prototype
@@ -38,9 +38,9 @@ The proxy wrap has traps that allow for our Storage to have features that are th
 <!-- START generated embed: @locker/distortion/src/Storage/docs/clear-value.md -->
 ## Storage.prototype.clear
 
-The [`Storage.prototype.clear()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear) method clears all keys and associated data stored in a given `Storage` object. 
+The [`Storage.prototype.clear()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear) method clears all keys and associated data stored in a given `Storage` object.
 
-Each sandbox uses its own synthetic storage. Lightning Web Security prevents `clear()` from clearing all the data items in another sandbox or outside sandboxes. 
+Each sandbox uses its own synthetic storage. Lightning Web Security prevents `clear()` from clearing all the data items in another sandbox or outside sandboxes.
 
 ### Distorted Behavior
 
@@ -52,7 +52,7 @@ This distortion deletes all data items from the sandboxed code's synthetic stora
 
 The [`Storage.prototype.getItem()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem) method, when passed a key name, returns that key's value, or `null` if the key does not exist, in the given `Storage` object.
 
-Lightning Web Security creates synthetic storage for each sandbox. The synthetic storage prevents code in one sandbox from retrieving data belonging to another namespace or outside sandboxes. 
+Lightning Web Security creates synthetic storage for each sandbox. The synthetic storage prevents code in one sandbox from retrieving data belonging to another namespace or outside sandboxes.
 
 ### Distorted Behavior
 
@@ -98,7 +98,7 @@ This distortion deletes a data item from the sandboxed code's synthetic storage.
 
 The [`Storage.prototype.setItem()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem) method, when passed a key name and value,  adds that key to the given `Storage` object, or update that key's value if it already exists.
 
-Each sandbox uses its own synthetic storage. Lightning Web Security prevents `setItem()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem) from adding or modifying data items in another sandbox or outside sandboxes. 
+Each sandbox uses its own synthetic storage. Lightning Web Security prevents `setItem()`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem) from adding or modifying data items in another sandbox or outside sandboxes.
 ### Distorted Behavior
 
 This distortion adds or modifies data items in the sandboxed code's synthetic storage.

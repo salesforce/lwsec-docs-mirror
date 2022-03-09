@@ -1,7 +1,6 @@
-# Distorted Element#setAttribute APIs (distorted-element-set-attribute)
+# Distorted Element.prototype.toggleAttribute (distorted-element-toggle-attribute)
 
-For security the `Element#setAttribute` and `Element#setAttributeNS` are distorted
-by Lightning Web Security.
+For security `Element.prototype.toggleAttribute` is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/setAttribute-family-apis.md -->
 ## Element.prototype.setAttribute*

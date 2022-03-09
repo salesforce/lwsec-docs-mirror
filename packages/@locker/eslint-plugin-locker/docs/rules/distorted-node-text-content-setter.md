@@ -1,6 +1,6 @@
 # Distorted Node#textContent Setter (distorted-node-text-content-setter)
 
-For security the `Node#textContent` setter is distorted in Lightning Locker.
+For security the `Node#textContent` setter is distorted by Lightning Web Security.
 
 <!-- START generated embed: @locker/distortion/src/Node/docs/textContent-setter.md -->
 ## Node.prototype.textContent setter
