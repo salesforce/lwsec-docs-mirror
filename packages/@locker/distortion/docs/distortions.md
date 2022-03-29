@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.15.12<br>
-Generated: Mar 22, 2022
+Version: 0.15.13<br>
+Generated: Mar 28, 2022
 
 ## Table of Contents
 
@@ -124,113 +124,119 @@ Generated: Mar 22, 2022
   - [Distorted Behavior](#distorted-behavior-54)
 - [NamedNodeMap.prototype.setNamedItemNS](#namednodemapprototypesetnameditemns)
   - [Distorted Behavior](#distorted-behavior-55)
-- [Navigator.prototype.serviceWorker getter](#navigatorprototypeserviceworker-getter)
+- [Navigator.sendBeacon()](#navigatorsendbeacon)
   - [Distorted Behavior](#distorted-behavior-56)
-- [Node.prototype.appendChild](#nodeprototypeappendchild)
+- [Navigator.prototype.serviceWorker getter](#navigatorprototypeserviceworker-getter)
   - [Distorted Behavior](#distorted-behavior-57)
-- [Node.prototype.removeChild](#nodeprototyperemovechild)
+- [Node.prototype.appendChild](#nodeprototypeappendchild)
   - [Distorted Behavior](#distorted-behavior-58)
-- [Node.prototype.replaceChild](#nodeprototypereplacechild)
+- [Node.prototype.insertBefore](#nodeprototypeinsertbefore)
   - [Distorted Behavior](#distorted-behavior-59)
-- [Node.prototype.textContent setter](#nodeprototypetextcontent-setter)
+- [Node.prototype.removeChild](#nodeprototyperemovechild)
   - [Distorted Behavior](#distorted-behavior-60)
-- [Notification Constructor](#notification-constructor)
+- [Node.prototype.replaceChild](#nodeprototypereplacechild)
   - [Distorted Behavior](#distorted-behavior-61)
-- [Range.prototype.createContextualFragment](#rangeprototypecreatecontextualfragment)
+- [Node.prototype.textContent setter](#nodeprototypetextcontent-setter)
   - [Distorted Behavior](#distorted-behavior-62)
-- [Range.prototype.deleteContents](#rangeprototypedeletecontents)
+- [Notification Constructor](#notification-constructor)
   - [Distorted Behavior](#distorted-behavior-63)
-- [Range.prototype.extractContents](#rangeprototypeextractcontents)
+- [Range.prototype.createContextualFragment](#rangeprototypecreatecontextualfragment)
   - [Distorted Behavior](#distorted-behavior-64)
-- [SVGAnimateElement: `attributeName` attribute](#svganimateelement-attributename-attribute)
+- [Range.prototype.deleteContents](#rangeprototypedeletecontents)
   - [Distorted Behavior](#distorted-behavior-65)
-- [SVGAnimateElement: `from` attribute](#svganimateelement-from-attribute)
+- [Range.prototype.extractContents](#rangeprototypeextractcontents)
   - [Distorted Behavior](#distorted-behavior-66)
-- [SVGAnimateElement: `to` attribute](#svganimateelement-to-attribute)
+- [Range.prototype.insertNode](#rangeprototypeinsertnode)
   - [Distorted Behavior](#distorted-behavior-67)
-- [SVGAnimateElement: `values` attribute](#svganimateelement-values-attribute)
+- [SVGAnimateElement: `attributeName` attribute](#svganimateelement-attributename-attribute)
   - [Distorted Behavior](#distorted-behavior-68)
-- [SVGElement.prototype.nonce](#svgelementprototypenonce)
+- [SVGAnimateElement: `from` attribute](#svganimateelement-from-attribute)
   - [Distorted Behavior](#distorted-behavior-69)
-- [SVGElement.prototype.dataset getter](#svgelementprototypedataset-getter)
+- [SVGAnimateElement: `to` attribute](#svganimateelement-to-attribute)
   - [Distorted Behavior](#distorted-behavior-70)
-- [SVGScriptElement.prototype.href](#svgscriptelementprototypehref)
+- [SVGAnimateElement: `values` attribute](#svganimateelement-values-attribute)
   - [Distorted Behavior](#distorted-behavior-71)
-- [SVGSetElement: `attributeName` attribute](#svgsetelement-attributename-attribute)
+- [SVGElement.prototype.nonce](#svgelementprototypenonce)
   - [Distorted Behavior](#distorted-behavior-72)
-- [SVGSetElement: `to` attribute](#svgsetelement-to-attribute)
+- [SVGElement.prototype.dataset getter](#svgelementprototypedataset-getter)
   - [Distorted Behavior](#distorted-behavior-73)
-- [SVGUseElement: `href` attribute](#svguseelement-href-attribute)
+- [SVGScriptElement.prototype.href](#svgscriptelementprototypehref)
   - [Distorted Behavior](#distorted-behavior-74)
+- [SVGSetElement: `attributeName` attribute](#svgsetelement-attributename-attribute)
+  - [Distorted Behavior](#distorted-behavior-75)
+- [SVGSetElement: `to` attribute](#svgsetelement-to-attribute)
+  - [Distorted Behavior](#distorted-behavior-76)
+- [SVGUseElement: `href` attribute](#svguseelement-href-attribute)
+  - [Distorted Behavior](#distorted-behavior-77)
   - [Distorted Behavior for setAttribute](#distorted-behavior-for-setattribute)
   - [Distorted Behavior for setAttributeNode](#distorted-behavior-for-setattributenode)
   - [Distorted Behavior for setAttributeNS](#distorted-behavior-for-setattributens)
 - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
-  - [Distorted Behavior](#distorted-behavior-75)
-- [ShadowRoot.prototype.innerHTML setter](#shadowrootprototypeinnerhtml-setter)
-  - [Distorted Behavior](#distorted-behavior-76)
-- [ShadowRoot.prototype.mode getter](#shadowrootprototypemode-getter)
-  - [Distorted Behavior](#distorted-behavior-77)
-- [SharedWorker Constructor](#sharedworker-constructor)
   - [Distorted Behavior](#distorted-behavior-78)
-- [Storage.prototype.clear](#storageprototypeclear)
+- [ShadowRoot.prototype.innerHTML setter](#shadowrootprototypeinnerhtml-setter)
   - [Distorted Behavior](#distorted-behavior-79)
-- [Storage API: Storage.prototype](#storage-api-storageprototype)
+- [ShadowRoot.prototype.mode getter](#shadowrootprototypemode-getter)
   - [Distorted Behavior](#distorted-behavior-80)
-- [Storage.prototype.getItem](#storageprototypegetitem)
+- [SharedWorker Constructor](#sharedworker-constructor)
   - [Distorted Behavior](#distorted-behavior-81)
-- [Storage.prototype.key](#storageprototypekey)
+- [Storage.prototype.clear](#storageprototypeclear)
   - [Distorted Behavior](#distorted-behavior-82)
-- [Storage.prototype.length getter](#storageprototypelength-getter)
+- [Storage API: Storage.prototype](#storage-api-storageprototype)
   - [Distorted Behavior](#distorted-behavior-83)
-- [Storage.prototype.removeItem](#storageprototyperemoveitem)
+- [Storage.prototype.getItem](#storageprototypegetitem)
   - [Distorted Behavior](#distorted-behavior-84)
-- [Storage.prototype.setItem](#storageprototypesetitem)
+- [Storage.prototype.key](#storageprototypekey)
   - [Distorted Behavior](#distorted-behavior-85)
-- [TrustedTypePolicyFactory.createPolicy](#trustedtypepolicyfactorycreatepolicy)
+- [Storage.prototype.length getter](#storageprototypelength-getter)
   - [Distorted Behavior](#distorted-behavior-86)
-- [URL.createObjectURL](#urlcreateobjecturl)
+- [Storage.prototype.removeItem](#storageprototyperemoveitem)
   - [Distorted Behavior](#distorted-behavior-87)
-- [Window.fetch](#windowfetch)
+- [Storage.prototype.setItem](#storageprototypesetitem)
   - [Distorted Behavior](#distorted-behavior-88)
-- [window.frames getter](#windowframes-getter)
+- [TrustedTypePolicyFactory.createPolicy](#trustedtypepolicyfactorycreatepolicy)
   - [Distorted Behavior](#distorted-behavior-89)
-- [Window.prototype.getComputedStyle](#windowprototypegetcomputedstyle)
+- [URL.createObjectURL](#urlcreateobjecturl)
   - [Distorted Behavior](#distorted-behavior-90)
-- [window.length getter](#windowlength-getter)
+- [Window.fetch](#windowfetch)
   - [Distorted Behavior](#distorted-behavior-91)
-- [WindowEventHandlers.onstorage](#windoweventhandlersonstorage)
+- [window.frames getter](#windowframes-getter)
   - [Distorted Behavior](#distorted-behavior-92)
-- [window.open](#windowopen)
+- [Window.prototype.getComputedStyle](#windowprototypegetcomputedstyle)
   - [Distorted Behavior](#distorted-behavior-93)
-- [window.opener getter](#windowopener-getter)
+- [window.length getter](#windowlength-getter)
   - [Distorted Behavior](#distorted-behavior-94)
-- [window.parent getter](#windowparent-getter)
+- [WindowEventHandlers.onstorage](#windoweventhandlersonstorage)
   - [Distorted Behavior](#distorted-behavior-95)
-- [Window.prototype.postMessage](#windowprototypepostmessage)
+- [window.open](#windowopen)
   - [Distorted Behavior](#distorted-behavior-96)
-- [window.setInterval](#windowsetinterval)
+- [window.opener getter](#windowopener-getter)
   - [Distorted Behavior](#distorted-behavior-97)
-- [window.setTimeout](#windowsettimeout)
+- [window.parent getter](#windowparent-getter)
   - [Distorted Behavior](#distorted-behavior-98)
-- [Window.prototype.structuredClone](#windowprototypestructuredclone)
+- [Window.prototype.postMessage](#windowprototypepostmessage)
   - [Distorted Behavior](#distorted-behavior-99)
-- [Worker Constructor](#worker-constructor)
+- [window.setInterval](#windowsetinterval)
   - [Distorted Behavior](#distorted-behavior-100)
-- [XMLHttpRequest.prototype.open](#xmlhttprequestprototypeopen)
+- [window.setTimeout](#windowsettimeout)
   - [Distorted Behavior](#distorted-behavior-101)
-- [XMLHttpRequest.prototype.response getter](#xmlhttprequestprototyperesponse-getter)
+- [Window.prototype.structuredClone](#windowprototypestructuredclone)
   - [Distorted Behavior](#distorted-behavior-102)
-- [XMLHttpRequest.prototype.responseXML getter](#xmlhttprequestprototyperesponsexml-getter)
+- [Worker Constructor](#worker-constructor)
   - [Distorted Behavior](#distorted-behavior-103)
-- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
+- [XMLHttpRequest.prototype.open](#xmlhttprequestprototypeopen)
   - [Distorted Behavior](#distorted-behavior-104)
-- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument-1)
+- [XMLHttpRequest.prototype.response getter](#xmlhttprequestprototyperesponse-getter)
   - [Distorted Behavior](#distorted-behavior-105)
-- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
+- [XMLHttpRequest.prototype.responseXML getter](#xmlhttprequestprototyperesponsexml-getter)
   - [Distorted Behavior](#distorted-behavior-106)
-- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment-1)
+- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
   - [Distorted Behavior](#distorted-behavior-107)
+- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument-1)
+  - [Distorted Behavior](#distorted-behavior-108)
+- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
+  - [Distorted Behavior](#distorted-behavior-109)
+- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment-1)
+  - [Distorted Behavior](#distorted-behavior-110)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -1056,6 +1062,18 @@ The `NamedNodeMap.prototype.setNamedItemNS` distortion works with the distortion
 
 If there is a distortion registered for an attribute, the behavior depends on the specific distortion. If there's no distortion registered for an attribute, the native invocation of `setNamedItemNS` is allowed.
 <hr>
+<a name="navigatordocssendbeacon-valuemd"></a>
+
+## Navigator.sendBeacon()
+
+The [`navigator.sendBeacon()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) method asynchronously sends an HTTP POST request containing a small amount of data to a web server.
+
+Lightning Web Security disallows access to URL endpoints containing `"/aura"` and `"/webruntime"` because they are part of the Lightning Component framework.
+
+### Distorted Behavior 
+
+This distortion examines the `hostname` and the `pathname` of the URL. If there's a match to a disallowed endpoint, it rejects the promise. 
+<hr>
 <a name="navigatordocsserviceworker-gettermd"></a>
 
 ## Navigator.prototype.serviceWorker getter
@@ -1098,6 +1116,22 @@ Lightning Web Security runs in the main window, where the `<html>` and `<head>` 
 ### Distorted Behavior
 
 This distortion allows only a `<script>` or `<link>` element to be appended as a child to `<html>` and `<head>` elements. It throws an exception if any other element is specified.<hr>
+<a name="nodedocsinsertbefore-valuemd"></a>
+
+## Node.prototype.insertBefore
+
+The [`Node.prototype.insertBefore()`](https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore) method of the `Node` interface inserts a node before a reference node as a child of a specified parent node.
+
+If the given node already exists in the document, `insertBefore()` moves it from its current position to the new position. (That is, it will automatically be removed from its existing parent before appending it to the specified new parent.)
+
+This means that a node cannot be in two locations of the document simultaneously.
+
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. Malicious code can append a child element directly to those shared elements, corrupting the DOM of the current rendered page.
+
+### Distorted Behavior
+
+This distortion allows only a `<script>` or `<link>` element to be appended as a child to `<html>`, `<head>`, and `<body>` elements. It throws an exception if any other element is specified.
+<hr>
 <a name="nodedocsremovechild-valuemd"></a>
 
 ## Node.prototype.removeChild
@@ -1190,6 +1224,22 @@ Lightning Web Security runs in the main window, where the `<html>`, `<head>`, an
 ### Distorted Behavior
 
 This distortion prevents `extractContents()` from moving any shared elements.<hr>
+<a name="rangedocsinsertnode-valuemd"></a>
+
+## Range.prototype.insertNode
+
+The [`Range.prototype.insertNode()`](https://developer.mozilla.org/en-US/docs/Web/API/Range/insertNode) method inserts a node at the start of the `Range`.
+
+The new node is inserted at the start boundary point of the `Range`. If the new node is to be added to a text `Node`, that `Node` is split at the insertion point, and the insertion occurs between the two text nodes.
+
+If the new node is a document fragment, the children of the document fragment are inserted instead.
+
+Lightning Web Security runs in the main window, where the `<html>`, `<head>`, and `<body>` elements are shared. The `insertNode()` method can let malicious code move the shared elements. LWS prevents moving any shared elements.
+
+### Distorted Behavior
+
+This distortion allows only a `<script>` or `<link>` element to be inserted as an immediate child to `<html>`, `<head>`, and `<body>` elements. It throws an exception if any other element is specified.
+<hr>
 <a name="svganimateelementdocsattributename-attributemd"></a>
 
 ## SVGAnimateElement: `attributeName` attribute
