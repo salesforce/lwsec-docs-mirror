@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.15.16<br>
-Generated: Apr 13, 2022
+Version: 0.16.6<br>
+Generated: Apr 12, 2022
 
 ## Table of Contents
 
@@ -15,238 +15,228 @@ Generated: Apr 13, 2022
   - [Distorted Behavior](#distorted-behavior)
 - [CSSStyleRule.prototype.style getter](#cssstyleruleprototypestyle-getter)
   - [Distorted Behavior](#distorted-behavior-1)
-- [CacheStorage.prototype.delete](#cachestorageprototypedelete)
-  - [Distorted Behavior](#distorted-behavior-2)
-- [CacheStorage.prototype.has](#cachestorageprototypehas)
-  - [Distorted Behavior](#distorted-behavior-3)
-- [CacheStorage.prototype.keys](#cachestorageprototypekeys)
-  - [Distorted Behavior](#distorted-behavior-4)
-- [CacheStorage.prototype.match](#cachestorageprototypematch)
-  - [Distorted Behavior](#distorted-behavior-5)
-- [CacheStorage.prototype.open](#cachestorageprototypeopen)
-  - [Distorted Behavior](#distorted-behavior-6)
 - [CookieStore.prototype.addEventListener](#cookiestoreprototypeaddeventlistener)
-  - [Distorted Behavior](#distorted-behavior-7)
+  - [Distorted Behavior](#distorted-behavior-2)
 - [CookieStore.prototype.delete](#cookiestoreprototypedelete)
-  - [Distorted Behavior](#distorted-behavior-8)
+  - [Distorted Behavior](#distorted-behavior-3)
 - [CookieStore.prototype.get](#cookiestoreprototypeget)
-  - [Distorted Behavior](#distorted-behavior-9)
+  - [Distorted Behavior](#distorted-behavior-4)
 - [CookieStore.prototype.getAll](#cookiestoreprototypegetall)
-  - [Distorted Behavior](#distorted-behavior-10)
+  - [Distorted Behavior](#distorted-behavior-5)
 - [CookieStore.prototype.onchange setter](#cookiestoreprototypeonchange-setter)
-  - [Distorted Behavior](#distorted-behavior-11)
+  - [Distorted Behavior](#distorted-behavior-6)
 - [CookieStore.prototype.set](#cookiestoreprototypeset)
-  - [Distorted Behavior](#distorted-behavior-12)
+  - [Distorted Behavior](#distorted-behavior-7)
 - [CustomElementRegistry.prototype.define](#customelementregistryprototypedefine)
-  - [Distorted Behavior](#distorted-behavior-13)
+  - [Distorted Behavior](#distorted-behavior-8)
 - [CustomElementRegistry.prototype.get](#customelementregistryprototypeget)
-  - [Distorted Behavior](#distorted-behavior-14)
+  - [Distorted Behavior](#distorted-behavior-9)
 - [DOMParser.prototype.parseFromString](#domparserprototypeparsefromstring)
-  - [Distorted Behavior](#distorted-behavior-15)
+  - [Distorted Behavior](#distorted-behavior-10)
 - [Document.prototype.cookie getter](#documentprototypecookie-getter)
-  - [Distorted Behavior](#distorted-behavior-16)
+  - [Distorted Behavior](#distorted-behavior-11)
 - [Document.prototype.cookie setter](#documentprototypecookie-setter)
-  - [Distorted Behavior](#distorted-behavior-17)
+  - [Distorted Behavior](#distorted-behavior-12)
 - [Document.prototype.domain setter](#documentprototypedomain-setter)
-  - [Distorted Behavior](#distorted-behavior-18)
+  - [Distorted Behavior](#distorted-behavior-13)
 - [Document.prototype.execCommand](#documentprototypeexeccommand)
-  - [Distorted Behavior](#distorted-behavior-19)
+  - [Distorted Behavior](#distorted-behavior-14)
 - [Document.prototype.open](#documentprototypeopen)
-  - [Distorted Behavior](#distorted-behavior-20)
+  - [Distorted Behavior](#distorted-behavior-15)
 - [Document.prototype.replaceChildren](#documentprototypereplacechildren)
-  - [Distorted Behavior](#distorted-behavior-21)
+  - [Distorted Behavior](#distorted-behavior-16)
 - [Element.prototype.after](#elementprototypeafter)
-  - [Distorted Behavior](#distorted-behavior-22)
+  - [Distorted Behavior](#distorted-behavior-17)
 - [Element.prototype.append](#elementprototypeappend)
   - [Summary](#summary)
-  - [Distorted Behavior](#distorted-behavior-23)
+  - [Distorted Behavior](#distorted-behavior-18)
 - [Element.prototype.attachShadow](#elementprototypeattachshadow)
-  - [Distorted Behavior](#distorted-behavior-24)
+  - [Distorted Behavior](#distorted-behavior-19)
 - [Element.prototype.attributes getter](#elementprototypeattributes-getter)
-  - [Distorted Behavior](#distorted-behavior-25)
+  - [Distorted Behavior](#distorted-behavior-20)
 - [Element.prototype.before](#elementprototypebefore)
-  - [Distorted Behavior](#distorted-behavior-26)
+  - [Distorted Behavior](#distorted-behavior-21)
 - [Fullscreen API: Element.prototype](#fullscreen-api-elementprototype)
-  - [Distorted Behavior](#distorted-behavior-27)
+  - [Distorted Behavior](#distorted-behavior-22)
 - [Element.prototype.innerHTML setter](#elementprototypeinnerhtml-setter)
-  - [Distorted Behavior](#distorted-behavior-28)
+  - [Distorted Behavior](#distorted-behavior-23)
 - [Element.prototype.insertAdjacentElement](#elementprototypeinsertadjacentelement)
-  - [Distorted Behavior](#distorted-behavior-29)
+  - [Distorted Behavior](#distorted-behavior-24)
 - [Element.prototype.insertAdjacentHTML](#elementprototypeinsertadjacenthtml)
-  - [Distorted Behavior](#distorted-behavior-30)
+  - [Distorted Behavior](#distorted-behavior-25)
 - [Element.prototype.outerHTML setter](#elementprototypeouterhtml-setter)
-  - [Distorted Behavior](#distorted-behavior-31)
+  - [Distorted Behavior](#distorted-behavior-26)
 - [Element.prototype.prepend](#elementprototypeprepend)
-  - [Distorted Behavior](#distorted-behavior-32)
+  - [Distorted Behavior](#distorted-behavior-27)
 - [Element.prototype.remove](#elementprototyperemove)
-  - [Distorted Behavior](#distorted-behavior-33)
+  - [Distorted Behavior](#distorted-behavior-28)
 - [Element.prototype.replaceChildren](#elementprototypereplacechildren)
-  - [Distorted Behavior](#distorted-behavior-34)
+  - [Distorted Behavior](#distorted-behavior-29)
 - [Element.prototype.replaceWith](#elementprototypereplacewith)
-  - [Distorted Behavior](#distorted-behavior-35)
+  - [Distorted Behavior](#distorted-behavior-30)
 - [Element.prototype.setAttribute*](#elementprototypesetattribute)
-  - [Distorted Behavior](#distorted-behavior-36)
+  - [Distorted Behavior](#distorted-behavior-31)
 - [Element.prototype.shadowRoot getter](#elementprototypeshadowroot-getter)
-  - [Distorted Behavior](#distorted-behavior-37)
+  - [Distorted Behavior](#distorted-behavior-32)
 - [Event.prototype.composedPath](#eventprototypecomposedpath)
-  - [Distorted Behavior](#distorted-behavior-38)
+  - [Distorted Behavior](#distorted-behavior-33)
 - [HTMLElement.prototype.onrejectionhandled and HTMLElement.prototype.onunhandledrejection [Safari]](#htmlelementprototypeonrejectionhandled-and-htmlelementprototypeonunhandledrejection-safari)
-  - [Distorted Behavior](#distorted-behavior-39)
+  - [Distorted Behavior](#distorted-behavior-34)
 - [HTMLElement.prototype.nonce](#htmlelementprototypenonce)
-  - [Distorted Behavior](#distorted-behavior-40)
+  - [Distorted Behavior](#distorted-behavior-35)
 - [HTMLElement.prototype.dataset getter](#htmlelementprototypedataset-getter)
-  - [Distorted Behavior](#distorted-behavior-41)
+  - [Distorted Behavior](#distorted-behavior-36)
 - [HTMLElement.prototype.innerText setter](#htmlelementprototypeinnertext-setter)
-  - [Distorted Behavior](#distorted-behavior-42)
+  - [Distorted Behavior](#distorted-behavior-37)
 - [HTMLElement.prototype.outerText setter](#htmlelementprototypeoutertext-setter)
-  - [Distorted Behavior](#distorted-behavior-43)
+  - [Distorted Behavior](#distorted-behavior-38)
 - [HTMLElement.prototype.style getter](#htmlelementprototypestyle-getter)
-  - [Distorted Behavior](#distorted-behavior-44)
+  - [Distorted Behavior](#distorted-behavior-39)
 - [HTMLFrameElement.prototype.contentDocument getter](#htmlframeelementprototypecontentdocument-getter)
-  - [Distorted Behavior](#distorted-behavior-45)
+  - [Distorted Behavior](#distorted-behavior-40)
 - [HTMLFrameElement.prototype.contentWindow getter](#htmlframeelementprototypecontentwindow-getter)
-  - [Distorted Behavior](#distorted-behavior-46)
+  - [Distorted Behavior](#distorted-behavior-41)
 - [HTMLIFrameElement.prototype.contentDocument getter](#htmliframeelementprototypecontentdocument-getter)
-  - [Distorted Behavior](#distorted-behavior-47)
+  - [Distorted Behavior](#distorted-behavior-42)
 - [HTMLIFrameElement.prototype.contentWindow getter](#htmliframeelementprototypecontentwindow-getter)
-  - [Distorted Behavior](#distorted-behavior-48)
+  - [Distorted Behavior](#distorted-behavior-43)
 - [HTMLIFrameElement.prototype.src setter](#htmliframeelementprototypesrc-setter)
-  - [Distorted Behavior](#distorted-behavior-49)
+  - [Distorted Behavior](#distorted-behavior-44)
 - [HTMLLinkElement.prototype.rel setter](#htmllinkelementprototyperel-setter)
-  - [Distorted Behavior](#distorted-behavior-50)
+  - [Distorted Behavior](#distorted-behavior-45)
 - [HTMLLinkElement.prototype.relList setter](#htmllinkelementprototyperellist-setter)
-  - [Distorted Behavior](#distorted-behavior-51)
+  - [Distorted Behavior](#distorted-behavior-46)
 - [HTMLObjectElement.prototype.contentDocument getter](#htmlobjectelementprototypecontentdocument-getter)
-  - [Distorted Behavior](#distorted-behavior-52)
+  - [Distorted Behavior](#distorted-behavior-47)
 - [HTMLObjectElement.prototype.contentWindow getter](#htmlobjectelementprototypecontentwindow-getter)
-  - [Distorted Behavior](#distorted-behavior-53)
+  - [Distorted Behavior](#distorted-behavior-48)
 - [HTMLScriptElement.prototype.src getter](#htmlscriptelementprototypesrc-getter)
-  - [Distorted Behavior](#distorted-behavior-54)
+  - [Distorted Behavior](#distorted-behavior-49)
 - [HTMLScriptElement.prototype.src setter](#htmlscriptelementprototypesrc-setter)
-  - [Distorted Behavior](#distorted-behavior-55)
+  - [Distorted Behavior](#distorted-behavior-50)
 - [History.prototype.pushState](#historyprototypepushstate)
-  - [Distorted Behavior](#distorted-behavior-56)
+  - [Distorted Behavior](#distorted-behavior-51)
 - [History.prototype.replaceState](#historyprototypereplacestate)
-  - [Distorted Behavior](#distorted-behavior-57)
+  - [Distorted Behavior](#distorted-behavior-52)
 - [MessageEvent.prototype.source getter](#messageeventprototypesource-getter)
-  - [Distorted Behavior](#distorted-behavior-58)
+  - [Distorted Behavior](#distorted-behavior-53)
 - [NamedNodeMap.prototype.setNamedItem](#namednodemapprototypesetnameditem)
-  - [Distorted Behavior](#distorted-behavior-59)
+  - [Distorted Behavior](#distorted-behavior-54)
 - [NamedNodeMap.prototype.setNamedItemNS](#namednodemapprototypesetnameditemns)
-  - [Distorted Behavior](#distorted-behavior-60)
+  - [Distorted Behavior](#distorted-behavior-55)
 - [Navigator.sendBeacon()](#navigatorsendbeacon)
-  - [Distorted Behavior](#distorted-behavior-61)
+  - [Distorted Behavior](#distorted-behavior-56)
 - [Navigator.prototype.serviceWorker getter](#navigatorprototypeserviceworker-getter)
-  - [Distorted Behavior](#distorted-behavior-62)
+  - [Distorted Behavior](#distorted-behavior-57)
 - [Node.prototype.appendChild](#nodeprototypeappendchild)
-  - [Distorted Behavior](#distorted-behavior-63)
+  - [Distorted Behavior](#distorted-behavior-58)
 - [Node.prototype.insertBefore](#nodeprototypeinsertbefore)
-  - [Distorted Behavior](#distorted-behavior-64)
+  - [Distorted Behavior](#distorted-behavior-59)
 - [Node.prototype.removeChild](#nodeprototyperemovechild)
-  - [Distorted Behavior](#distorted-behavior-65)
+  - [Distorted Behavior](#distorted-behavior-60)
 - [Node.prototype.replaceChild](#nodeprototypereplacechild)
-  - [Distorted Behavior](#distorted-behavior-66)
+  - [Distorted Behavior](#distorted-behavior-61)
 - [Node.prototype.textContent setter](#nodeprototypetextcontent-setter)
-  - [Distorted Behavior](#distorted-behavior-67)
+  - [Distorted Behavior](#distorted-behavior-62)
 - [Notification Constructor](#notification-constructor)
-  - [Distorted Behavior](#distorted-behavior-68)
+  - [Distorted Behavior](#distorted-behavior-63)
 - [Range.prototype.createContextualFragment](#rangeprototypecreatecontextualfragment)
-  - [Distorted Behavior](#distorted-behavior-69)
+  - [Distorted Behavior](#distorted-behavior-64)
 - [Range.prototype.deleteContents](#rangeprototypedeletecontents)
-  - [Distorted Behavior](#distorted-behavior-70)
+  - [Distorted Behavior](#distorted-behavior-65)
 - [Range.prototype.extractContents](#rangeprototypeextractcontents)
-  - [Distorted Behavior](#distorted-behavior-71)
+  - [Distorted Behavior](#distorted-behavior-66)
 - [Range.prototype.insertNode](#rangeprototypeinsertnode)
-  - [Distorted Behavior](#distorted-behavior-72)
+  - [Distorted Behavior](#distorted-behavior-67)
 - [SVGAnimateElement: `attributeName` attribute](#svganimateelement-attributename-attribute)
-  - [Distorted Behavior](#distorted-behavior-73)
+  - [Distorted Behavior](#distorted-behavior-68)
 - [SVGAnimateElement: `from` attribute](#svganimateelement-from-attribute)
-  - [Distorted Behavior](#distorted-behavior-74)
+  - [Distorted Behavior](#distorted-behavior-69)
 - [SVGAnimateElement: `to` attribute](#svganimateelement-to-attribute)
-  - [Distorted Behavior](#distorted-behavior-75)
+  - [Distorted Behavior](#distorted-behavior-70)
 - [SVGAnimateElement: `values` attribute](#svganimateelement-values-attribute)
-  - [Distorted Behavior](#distorted-behavior-76)
+  - [Distorted Behavior](#distorted-behavior-71)
 - [SVGElement.prototype.nonce](#svgelementprototypenonce)
-  - [Distorted Behavior](#distorted-behavior-77)
+  - [Distorted Behavior](#distorted-behavior-72)
 - [SVGElement.prototype.dataset getter](#svgelementprototypedataset-getter)
-  - [Distorted Behavior](#distorted-behavior-78)
+  - [Distorted Behavior](#distorted-behavior-73)
 - [SVGScriptElement.prototype.href](#svgscriptelementprototypehref)
-  - [Distorted Behavior](#distorted-behavior-79)
+  - [Distorted Behavior](#distorted-behavior-74)
 - [SVGSetElement: `attributeName` attribute](#svgsetelement-attributename-attribute)
-  - [Distorted Behavior](#distorted-behavior-80)
+  - [Distorted Behavior](#distorted-behavior-75)
 - [SVGSetElement: `to` attribute](#svgsetelement-to-attribute)
-  - [Distorted Behavior](#distorted-behavior-81)
+  - [Distorted Behavior](#distorted-behavior-76)
 - [SVGUseElement: `href` attribute](#svguseelement-href-attribute)
-  - [Distorted Behavior](#distorted-behavior-82)
+  - [Distorted Behavior](#distorted-behavior-77)
   - [Distorted Behavior for setAttribute](#distorted-behavior-for-setattribute)
   - [Distorted Behavior for setAttributeNode](#distorted-behavior-for-setattributenode)
   - [Distorted Behavior for setAttributeNS](#distorted-behavior-for-setattributens)
 - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
-  - [Distorted Behavior](#distorted-behavior-83)
+  - [Distorted Behavior](#distorted-behavior-78)
 - [ShadowRoot.prototype.innerHTML setter](#shadowrootprototypeinnerhtml-setter)
-  - [Distorted Behavior](#distorted-behavior-84)
+  - [Distorted Behavior](#distorted-behavior-79)
 - [ShadowRoot.prototype.mode getter](#shadowrootprototypemode-getter)
-  - [Distorted Behavior](#distorted-behavior-85)
+  - [Distorted Behavior](#distorted-behavior-80)
 - [SharedWorker Constructor](#sharedworker-constructor)
-  - [Distorted Behavior](#distorted-behavior-86)
+  - [Distorted Behavior](#distorted-behavior-81)
 - [Storage.prototype.clear](#storageprototypeclear)
-  - [Distorted Behavior](#distorted-behavior-87)
+  - [Distorted Behavior](#distorted-behavior-82)
 - [Storage API: Storage.prototype](#storage-api-storageprototype)
-  - [Distorted Behavior](#distorted-behavior-88)
+  - [Distorted Behavior](#distorted-behavior-83)
 - [Storage.prototype.getItem](#storageprototypegetitem)
-  - [Distorted Behavior](#distorted-behavior-89)
+  - [Distorted Behavior](#distorted-behavior-84)
 - [Storage.prototype.key](#storageprototypekey)
-  - [Distorted Behavior](#distorted-behavior-90)
+  - [Distorted Behavior](#distorted-behavior-85)
 - [Storage.prototype.length getter](#storageprototypelength-getter)
-  - [Distorted Behavior](#distorted-behavior-91)
+  - [Distorted Behavior](#distorted-behavior-86)
 - [Storage.prototype.removeItem](#storageprototyperemoveitem)
-  - [Distorted Behavior](#distorted-behavior-92)
+  - [Distorted Behavior](#distorted-behavior-87)
 - [Storage.prototype.setItem](#storageprototypesetitem)
-  - [Distorted Behavior](#distorted-behavior-93)
+  - [Distorted Behavior](#distorted-behavior-88)
 - [TrustedTypePolicyFactory.createPolicy](#trustedtypepolicyfactorycreatepolicy)
-  - [Distorted Behavior](#distorted-behavior-94)
+  - [Distorted Behavior](#distorted-behavior-89)
 - [URL.createObjectURL](#urlcreateobjecturl)
-  - [Distorted Behavior](#distorted-behavior-95)
+  - [Distorted Behavior](#distorted-behavior-90)
 - [Window.fetch](#windowfetch)
-  - [Distorted Behavior](#distorted-behavior-96)
+  - [Distorted Behavior](#distorted-behavior-91)
 - [window.frames getter](#windowframes-getter)
-  - [Distorted Behavior](#distorted-behavior-97)
+  - [Distorted Behavior](#distorted-behavior-92)
 - [Window.prototype.getComputedStyle](#windowprototypegetcomputedstyle)
-  - [Distorted Behavior](#distorted-behavior-98)
+  - [Distorted Behavior](#distorted-behavior-93)
 - [window.length getter](#windowlength-getter)
-  - [Distorted Behavior](#distorted-behavior-99)
+  - [Distorted Behavior](#distorted-behavior-94)
 - [WindowEventHandlers.onstorage](#windoweventhandlersonstorage)
-  - [Distorted Behavior](#distorted-behavior-100)
+  - [Distorted Behavior](#distorted-behavior-95)
 - [window.open](#windowopen)
-  - [Distorted Behavior](#distorted-behavior-101)
+  - [Distorted Behavior](#distorted-behavior-96)
 - [window.opener getter](#windowopener-getter)
-  - [Distorted Behavior](#distorted-behavior-102)
+  - [Distorted Behavior](#distorted-behavior-97)
 - [window.parent getter](#windowparent-getter)
-  - [Distorted Behavior](#distorted-behavior-103)
+  - [Distorted Behavior](#distorted-behavior-98)
 - [Window.prototype.postMessage](#windowprototypepostmessage)
-  - [Distorted Behavior](#distorted-behavior-104)
+  - [Distorted Behavior](#distorted-behavior-99)
 - [window.setInterval](#windowsetinterval)
-  - [Distorted Behavior](#distorted-behavior-105)
+  - [Distorted Behavior](#distorted-behavior-100)
 - [window.setTimeout](#windowsettimeout)
-  - [Distorted Behavior](#distorted-behavior-106)
+  - [Distorted Behavior](#distorted-behavior-101)
 - [Window.prototype.structuredClone](#windowprototypestructuredclone)
-  - [Distorted Behavior](#distorted-behavior-107)
+  - [Distorted Behavior](#distorted-behavior-102)
 - [Worker Constructor](#worker-constructor)
-  - [Distorted Behavior](#distorted-behavior-108)
+  - [Distorted Behavior](#distorted-behavior-103)
 - [XMLHttpRequest.prototype.open](#xmlhttprequestprototypeopen)
-  - [Distorted Behavior](#distorted-behavior-109)
+  - [Distorted Behavior](#distorted-behavior-104)
 - [XMLHttpRequest.prototype.response getter](#xmlhttprequestprototyperesponse-getter)
-  - [Distorted Behavior](#distorted-behavior-110)
+  - [Distorted Behavior](#distorted-behavior-105)
 - [XMLHttpRequest.prototype.responseXML getter](#xmlhttprequestprototyperesponsexml-getter)
-  - [Distorted Behavior](#distorted-behavior-111)
+  - [Distorted Behavior](#distorted-behavior-106)
 - [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
-  - [Distorted Behavior](#distorted-behavior-112)
+  - [Distorted Behavior](#distorted-behavior-107)
 - [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument-1)
-  - [Distorted Behavior](#distorted-behavior-113)
+  - [Distorted Behavior](#distorted-behavior-108)
 - [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
-  - [Distorted Behavior](#distorted-behavior-114)
+  - [Distorted Behavior](#distorted-behavior-109)
 - [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment-1)
-  - [Distorted Behavior](#distorted-behavior-115)
+  - [Distorted Behavior](#distorted-behavior-110)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -287,76 +277,6 @@ The `style` property of a `CSSStyleRule` object lets you manipulate CSS styles w
 ### Distorted Behavior
 
 This distortion alters the getter of the `style` property for any `CSSStyleRule`. The `style` object is marked as live so that its native behavior is preserved and any properties changed from within the sandbox are also reflected in the DOM.
-<hr>
-<a name="cachestoragedocsdelete-valuemd"></a>
-
-## CacheStorage.prototype.delete
-
-The [`CacheStorage.prototype.delete()`](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/delete) method of the `CacheStorage` interface finds the `Cache` object matching the `cacheName`, and if found, deletes the `Cache` object and returns a `Promise` that resolves to `true`. If no `Cache` object is found, it resolves to `false`.
-
-If malicious code can access any cache object on a page, it can arbitrarily replace or remove cache objects. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce.
-
-### Distorted Behavior
-
-This distortion prevents deletion of cache objects outside the sandbox. Cache objects in the sandbox are protected from code outside or in other sandboxes.
-
-The `delete()` method is restricted to cache objects created by the requesting sandbox.
-<hr>
-<a name="cachestoragedocshas-valuemd"></a>
-
-## CacheStorage.prototype.has
-
-The [`CacheStorage.prototype.has()`](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/has) method of the `CacheStorage` interface returns a `Promise` that resolves to `true` if a `Cache` object matches the `cacheName`.
-
-If malicious code can detect any cache object on a page, it can potentially modify cache objects. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce.
-
-### Distorted Behavior
-
-This distortion prevents detection of cache objects outside the sandbox. Cache objects in the sandbox are protected from code outside or in other sandboxes.
-
-The `has()` method is restricted to cache objects created by the requesting sandbox.
-<hr>
-<a name="cachestoragedocskeys-valuemd"></a>
-
-## CacheStorage.prototype.keys
-
-The [`CacheStorage.prototype.keys()`](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/keys) method of the `CacheStorage` interface returns a `Promise` that will resolve with an array containing strings corresponding to all of the named `Cache` objects tracked by the `CacheStorage` object in the order they were created. Use this method to iterate over a list of all `Cache` objects.
-
-If malicious code can access any cache object on a page, it can arbitrarily replace or remove cache objects. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce.
-
-### Distorted Behavior
-
-This distortion prevents access to cache objects outside the sandbox. Cache objects in the sandbox are protected from code outside or in other sandboxes.
-
-The `keys()` method is restricted to cache objects created by the requesting sandbox.
-<hr>
-<a name="cachestoragedocsmatch-valuemd"></a>
-
-## CacheStorage.prototype.match
-
-The [`CacheStorage.prototype.match()`](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match) method of the `CacheStorage` interface checks if a given `Request` or url string is a key for a stored `Response`. This method returns a `Promise` for a `Response`, or a `Promise` which resolves to `undefined` if no match is found.
-
-If malicious code can access any cache object on a page, it can arbitrarily replace or remove cache objects. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce.
-
-### Distorted Behavior
-
-This distortion requires `caches.match()` calls to include the second `options` argument and provide an explicit `cacheName` property value.
-
-The `match()` method rejects the promise if `options` is omitted, or if the `cacheName` property of `options` is omitted.
-<hr>
-<a name="cachestoragedocsopen-valuemd"></a>
-
-## CacheStorage.prototype.open
-
-The [`CacheStorage.prototype.open()`](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/open) method of the `CacheStorage` interface returns a `Promise` that resolves to the `Cache` object matching `cacheName`.
-
-If malicious code can access any cache object on a page, it can arbitrarily replace or remove cache objects. This behavior can have catastrophic effects in a multi-tenant environment like Salesforce.
-
-### Distorted Behavior
-
-This distortion prevents access to cache objects outside the sandbox. Cache objects in the sandbox are protected from code outside or in other sandboxes.
-
-The `open()` method is restricted to cache objects created by the requesting sandbox.
 <hr>
 <a name="cookiestoredocsaddeventlistener-valuemd"></a>
 
