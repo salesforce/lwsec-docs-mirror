@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.16.9<br>
-Generated: Apr 21, 2022
+Version: 0.16.10<br>
+Generated: May 16, 2022
 
 ## Table of Contents
 
@@ -241,12 +241,8 @@ Generated: Apr 21, 2022
   - [Distorted Behavior](#distorted-behavior-111)
 - [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
   - [Distorted Behavior](#distorted-behavior-112)
-- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument-1)
-  - [Distorted Behavior](#distorted-behavior-113)
 - [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
-  - [Distorted Behavior](#distorted-behavior-114)
-- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment-1)
-  - [Distorted Behavior](#distorted-behavior-115)
+  - [Distorted Behavior](#distorted-behavior-113)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -1746,7 +1742,7 @@ To guard against exploits, Lightning Web Security fetches the content of the URL
 
 ### Distorted Behavior
 
-This distortion throws an exception when MIME types `text/html`, `text/xml`, `image/svg+xml` are used with `Blob` or `File` objects that try to load malicious content: `Lightning Web Security: Cannot "createObjectURL" using an unsecure [object Blob]!`
+This distortion throws an exception when MIME types `text/html`, `text/xml`, `image/svg+xml` are used with `Blob` or `File` objects that try to load malicious content: `Lightning Web Security: Cannot 'createObjectURL' using an unsecure [object Blob]!`
 
 If no malicious content is detected when these MIME types are used, the content is allowed to load but the distortion enforces `charset=utf-8` to prevent exploits where the browser auto-interprets charset and special characters that can lead to XSS.
 
@@ -1999,35 +1995,7 @@ This function can be used to parse and transform XML documents with XSLT into va
 
 This method is blocked by LWS, and an exception is thrown if code attempts to call it.
 <hr>
-<a name="xsltprocessordocstransformtodocumentmd"></a>
-
-## XSLTProcessor.prototype.transformToDocument
-
-**Non-standard**: This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.
-
-`XSLTProcessor.prototype.transformToDocument(Node source, Document owner)` transforms the node source by applying the stylesheet imported using the `XSLTProcessor.prototype.importStylesheet()` function. The owner document of the resulting document fragment is the owner node.
-
-This function can be used to parse and transform XML documents with XSLT into valid HTML documents, which can be inserted into the current DOM. By using XSLT, it is possible to create arbitrary HTML tags and therefore gain access to the raw window object.
-
-### Distorted Behavior
-
-This method is blocked by LWS, and an exception is thrown if code attempts to call it.
-<hr>
 <a name="xsltprocessordocstransformtofragment-valuemd"></a>
-
-## XSLTProcessor.prototype.transformToFragment
-
-**Non-standard**: This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.
-
-`XSLTProcessor.prototype.transformToFragment(Node source, Document owner)` transforms the node source by applying the stylesheet imported using the `XSLTProcessor.prototype.importStylesheet()` function. The owner document of the resulting document fragment is the owner node.
-
-This function can be used to parse and transform XML documents with XSLT into valid HTML documents, which can be inserted into the current DOM. By using XSLT, it is possible to create arbitrary HTML tags and therefore gain access to the raw window object.
-
-### Distorted Behavior
-
-This method is blocked by LWS, and an exception is thrown if code attempts to call it.
-<hr>
-<a name="xsltprocessordocstransformtofragmentmd"></a>
 
 ## XSLTProcessor.prototype.transformToFragment
 
