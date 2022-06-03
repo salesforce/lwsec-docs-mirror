@@ -32,7 +32,7 @@ To guard against exploits, Lightning Web Security fetches the content of the URL
 
 ### Distorted Behavior
 
-This distortion throws an exception when MIME types `text/html`, `text/xml`, `image/svg+xml` are used with `Blob` or `File` objects that try to load malicious content: `Lightning Web Security: Cannot 'createObjectURL' using an unsecure [object Blob]!`
+This distortion throws an exception when MIME types `text/html`, `text/xml`, `image/svg+xml` are used with `Blob` or `File` objects that try to load malicious content: `Lightning Web Security: Cannot "createObjectURL" using an unsecure [object Blob]!`
 
 If no malicious content is detected when these MIME types are used, the content is allowed to load but the distortion enforces `charset=utf-8` to prevent exploits where the browser auto-interprets charset and special characters that can lead to XSS.
 
