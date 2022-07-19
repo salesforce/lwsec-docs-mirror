@@ -2,7 +2,7 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.16.21-test.2<br>
+Version: 0.16.22<br>
 Generated: Jul 19, 2022
 
 ## Table of Contents
