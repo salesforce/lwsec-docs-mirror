@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.16.23<br>
-Generated: Jul 20, 2022
+Version: 0.17.0<br>
+Generated: Jul 26, 2022
 
 ## Table of Contents
 
@@ -247,10 +247,14 @@ Generated: Jul 20, 2022
   - [Distorted Behavior](#distorted-behavior-114)
 - [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
   - [Distorted Behavior](#distorted-behavior-115)
-- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
+- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument-1)
   - [Distorted Behavior](#distorted-behavior-116)
-- [eval](#eval)
+- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
   - [Distorted Behavior](#distorted-behavior-117)
+- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment-1)
+  - [Distorted Behavior](#distorted-behavior-118)
+- [eval](#eval)
+  - [Distorted Behavior](#distorted-behavior-119)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -917,7 +921,7 @@ This distortion alters the getter of the `style` property of an `HTMLElement`. T
 
 ## HTMLFrameElement.prototype.contentDocument getter
 
-The `HTMLFrameElement.prototype.contentDocument` property getter returns the `Document` object of the specified frame. 
+The `HTMLFrameElement.prototype.contentDocument` property getter returns the `Document` object of the specified frame.
 The `HTMLFrameElement` interface is deprecated in HTML5.
 
 To reduce the possibility of exploit, Lightning Web Security returns `null` for the `HTMLFrameElement.prototype.contentDocument` property.
@@ -946,13 +950,14 @@ This distortion returns an artificial `contentWindow` object per frame and cache
 
 ## HTMLIFrameElement.prototype.contentDocument getter
 
-The [`HTMLIFrameElement.contentDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentDocument) property getter returns a `Document` corresponding to the active document in the inline frame's nested browsing context if the iframe and the iframe's parent document are Same Origin. Otherwise, the property returns `null`. 
+The [`HTMLIFrameElement.contentDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentDocument) property getter returns a `Document` corresponding to the active document in the inline frame's nested browsing context if the iframe and the iframe's parent document are Same Origin. Otherwise, the property returns `null`.
 
 To reduce the possibility of exploit, Lightning Web Security returns `null` for the `contentDocument` property, even when an iframe and the iframe's parent document have the same origin.
 
 ### Distorted Behavior
 
-This distortion returns `null` for `contentDocument`.<hr>
+This distortion returns `null` for `contentDocument`.
+<hr>
 <a name="htmliframeelementdocscontentwindow-gettermd"></a>
 
 ## HTMLIFrameElement.prototype.contentWindow getter
@@ -1108,7 +1113,7 @@ This distortion preserves the `replaceState()` method's native behavior in the s
 
 ## MessageEvent.prototype.source getter
 
-The [`MessageEvent.prototype.source`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/source) read-only 
+The [`MessageEvent.prototype.source`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/source) read-only
 property is a `MessageEventSource` (which can be a `WindowProxy`, `MessagePort`, or `ServiceWorker` object) representing the message emitter.
 
 If the property references a `window`, malicious code can open a new browser tab that contains a `postMessage` to the current browser. After that, the current browser can access the raw `window` without protective Lightning Web Security distortions.
@@ -1924,7 +1929,7 @@ This distortion returns an artificial `window` object that allows only safe meth
 
 ## window.parent getter
 
-The [`window.parent`](https://developer.mozilla.org/en-US/docs/Web/API/Window/parent) property returns a reference to the parent of the current window or subframe. If a window does not have a parent, its `parent` property is a reference to itself. 
+The [`window.parent`](https://developer.mozilla.org/en-US/docs/Web/API/Window/parent) property returns a reference to the parent of the current window or subframe. If a window does not have a parent, its `parent` property is a reference to itself.
 
 If window `A` embeds window `B`, `B.parent` returns `A`.
 
@@ -2048,7 +2053,35 @@ This function can be used to parse and transform XML documents with XSLT into va
 
 This method is blocked by LWS, and an exception is thrown if code attempts to call it.
 <hr>
+<a name="xsltprocessordocstransformtodocumentmd"></a>
+
+## XSLTProcessor.prototype.transformToDocument
+
+**Non-standard**: This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.
+
+`XSLTProcessor.prototype.transformToDocument(Node source, Document owner)` transforms the node source by applying the stylesheet imported using the `XSLTProcessor.prototype.importStylesheet()` function. The owner document of the resulting document fragment is the owner node.
+
+This function can be used to parse and transform XML documents with XSLT into valid HTML documents, which can be inserted into the current DOM. By using XSLT, it is possible to create arbitrary HTML tags and therefore gain access to the raw window object.
+
+### Distorted Behavior
+
+This method is blocked by LWS, and an exception is thrown if code attempts to call it.
+<hr>
 <a name="xsltprocessordocstransformtofragment-valuemd"></a>
+
+## XSLTProcessor.prototype.transformToFragment
+
+**Non-standard**: This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.
+
+`XSLTProcessor.prototype.transformToFragment(Node source, Document owner)` transforms the node source by applying the stylesheet imported using the `XSLTProcessor.prototype.importStylesheet()` function. The owner document of the resulting document fragment is the owner node.
+
+This function can be used to parse and transform XML documents with XSLT into valid HTML documents, which can be inserted into the current DOM. By using XSLT, it is possible to create arbitrary HTML tags and therefore gain access to the raw window object.
+
+### Distorted Behavior
+
+This method is blocked by LWS, and an exception is thrown if code attempts to call it.
+<hr>
+<a name="xsltprocessordocstransformtofragmentmd"></a>
 
 ## XSLTProcessor.prototype.transformToFragment
 
