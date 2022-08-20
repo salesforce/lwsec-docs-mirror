@@ -2,7 +2,7 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.17.2<br>
+Version: 0.17.3<br>
 Generated: Aug 19, 2022
 
 ## Table of Contents
@@ -247,10 +247,14 @@ Generated: Aug 19, 2022
   - [Distorted Behavior](#distorted-behavior-114)
 - [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
   - [Distorted Behavior](#distorted-behavior-115)
-- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
+- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument-1)
   - [Distorted Behavior](#distorted-behavior-116)
-- [eval](#eval)
+- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
   - [Distorted Behavior](#distorted-behavior-117)
+- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment-1)
+  - [Distorted Behavior](#distorted-behavior-118)
+- [eval](#eval)
+  - [Distorted Behavior](#distorted-behavior-119)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -2049,7 +2053,35 @@ This function can be used to parse and transform XML documents with XSLT into va
 
 This method is blocked by LWS, and an exception is thrown if code attempts to call it.
 <hr>
+<a name="xsltprocessordocstransformtodocumentmd"></a>
+
+## XSLTProcessor.prototype.transformToDocument
+
+**Non-standard**: This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.
+
+`XSLTProcessor.prototype.transformToDocument(Node source, Document owner)` transforms the node source by applying the stylesheet imported using the `XSLTProcessor.prototype.importStylesheet()` function. The owner document of the resulting document fragment is the owner node.
+
+This function can be used to parse and transform XML documents with XSLT into valid HTML documents, which can be inserted into the current DOM. By using XSLT, it is possible to create arbitrary HTML tags and therefore gain access to the raw window object.
+
+### Distorted Behavior
+
+This method is blocked by LWS, and an exception is thrown if code attempts to call it.
+<hr>
 <a name="xsltprocessordocstransformtofragment-valuemd"></a>
+
+## XSLTProcessor.prototype.transformToFragment
+
+**Non-standard**: This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.
+
+`XSLTProcessor.prototype.transformToFragment(Node source, Document owner)` transforms the node source by applying the stylesheet imported using the `XSLTProcessor.prototype.importStylesheet()` function. The owner document of the resulting document fragment is the owner node.
+
+This function can be used to parse and transform XML documents with XSLT into valid HTML documents, which can be inserted into the current DOM. By using XSLT, it is possible to create arbitrary HTML tags and therefore gain access to the raw window object.
+
+### Distorted Behavior
+
+This method is blocked by LWS, and an exception is thrown if code attempts to call it.
+<hr>
+<a name="xsltprocessordocstransformtofragmentmd"></a>
 
 ## XSLTProcessor.prototype.transformToFragment
 
