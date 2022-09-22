@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.17.5<br>
-Generated: Sep 8, 2022
+Version: 0.17.6<br>
+Generated: Sep 22, 2022
 
 ## Table of Contents
 
@@ -104,157 +104,135 @@ Generated: Sep 8, 2022
   - [Distorted Behavior](#distorted-behavior-44)
 - [HTMLElement.prototype.style getter](#htmlelementprototypestyle-getter)
   - [Distorted Behavior](#distorted-behavior-45)
-- [HTMLFrameElement.prototype.contentDocument getter](#htmlframeelementprototypecontentdocument-getter)
-  - [Distorted Behavior](#distorted-behavior-46)
-- [HTMLFrameElement.prototype.contentWindow getter](#htmlframeelementprototypecontentwindow-getter)
-  - [Distorted Behavior](#distorted-behavior-47)
-- [HTMLIFrameElement.prototype.contentDocument getter](#htmliframeelementprototypecontentdocument-getter)
-  - [Distorted Behavior](#distorted-behavior-48)
-- [HTMLIFrameElement.prototype.contentWindow getter](#htmliframeelementprototypecontentwindow-getter)
-  - [Distorted Behavior](#distorted-behavior-49)
 - [HTMLIFrameElement.prototype.src setter](#htmliframeelementprototypesrc-setter)
-  - [Distorted Behavior](#distorted-behavior-50)
+  - [Distorted Behavior](#distorted-behavior-46)
 - [HTMLLinkElement.prototype.rel setter](#htmllinkelementprototyperel-setter)
-  - [Distorted Behavior](#distorted-behavior-51)
+  - [Distorted Behavior](#distorted-behavior-47)
 - [HTMLLinkElement.prototype.relList setter](#htmllinkelementprototyperellist-setter)
-  - [Distorted Behavior](#distorted-behavior-52)
-- [HTMLObjectElement.prototype.contentDocument getter](#htmlobjectelementprototypecontentdocument-getter)
-  - [Distorted Behavior](#distorted-behavior-53)
-- [HTMLObjectElement.prototype.contentWindow getter](#htmlobjectelementprototypecontentwindow-getter)
-  - [Distorted Behavior](#distorted-behavior-54)
+  - [Distorted Behavior](#distorted-behavior-48)
 - [HTMLObjectElement.prototype.data setter](#htmlobjectelementprototypedata-setter)
-  - [Distorted Behavior](#distorted-behavior-55)
+  - [Distorted Behavior](#distorted-behavior-49)
 - [HTMLScriptElement.prototype.src getter](#htmlscriptelementprototypesrc-getter)
-  - [Distorted Behavior](#distorted-behavior-56)
+  - [Distorted Behavior](#distorted-behavior-50)
 - [HTMLScriptElement.prototype.src setter](#htmlscriptelementprototypesrc-setter)
-  - [Distorted Behavior](#distorted-behavior-57)
+  - [Distorted Behavior](#distorted-behavior-51)
 - [History.prototype.pushState](#historyprototypepushstate)
-  - [Distorted Behavior](#distorted-behavior-58)
+  - [Distorted Behavior](#distorted-behavior-52)
 - [History.prototype.replaceState](#historyprototypereplacestate)
-  - [Distorted Behavior](#distorted-behavior-59)
-- [MessageEvent.prototype.source getter](#messageeventprototypesource-getter)
-  - [Distorted Behavior](#distorted-behavior-60)
+  - [Distorted Behavior](#distorted-behavior-53)
 - [NamedNodeMap.prototype.setNamedItem](#namednodemapprototypesetnameditem)
-  - [Distorted Behavior](#distorted-behavior-61)
+  - [Distorted Behavior](#distorted-behavior-54)
 - [NamedNodeMap.prototype.setNamedItemNS](#namednodemapprototypesetnameditemns)
-  - [Distorted Behavior](#distorted-behavior-62)
+  - [Distorted Behavior](#distorted-behavior-55)
 - [Navigator.sendBeacon()](#navigatorsendbeacon)
-  - [Distorted Behavior](#distorted-behavior-63)
+  - [Distorted Behavior](#distorted-behavior-56)
 - [Navigator.prototype.serviceWorker getter](#navigatorprototypeserviceworker-getter)
-  - [Distorted Behavior](#distorted-behavior-64)
+  - [Distorted Behavior](#distorted-behavior-57)
 - [Node.prototype.appendChild](#nodeprototypeappendchild)
-  - [Distorted Behavior](#distorted-behavior-65)
+  - [Distorted Behavior](#distorted-behavior-58)
 - [Node.prototype.insertBefore](#nodeprototypeinsertbefore)
-  - [Distorted Behavior](#distorted-behavior-66)
+  - [Distorted Behavior](#distorted-behavior-59)
 - [Node.prototype.removeChild](#nodeprototyperemovechild)
-  - [Distorted Behavior](#distorted-behavior-67)
+  - [Distorted Behavior](#distorted-behavior-60)
 - [Node.prototype.replaceChild](#nodeprototypereplacechild)
-  - [Distorted Behavior](#distorted-behavior-68)
+  - [Distorted Behavior](#distorted-behavior-61)
 - [Node.prototype.textContent setter](#nodeprototypetextcontent-setter)
-  - [Distorted Behavior](#distorted-behavior-69)
+  - [Distorted Behavior](#distorted-behavior-62)
 - [Notification Constructor](#notification-constructor)
-  - [Distorted Behavior](#distorted-behavior-70)
+  - [Distorted Behavior](#distorted-behavior-63)
 - [Range.prototype.createContextualFragment](#rangeprototypecreatecontextualfragment)
-  - [Distorted Behavior](#distorted-behavior-71)
+  - [Distorted Behavior](#distorted-behavior-64)
 - [Range.prototype.deleteContents](#rangeprototypedeletecontents)
-  - [Distorted Behavior](#distorted-behavior-72)
+  - [Distorted Behavior](#distorted-behavior-65)
 - [Range.prototype.extractContents](#rangeprototypeextractcontents)
-  - [Distorted Behavior](#distorted-behavior-73)
+  - [Distorted Behavior](#distorted-behavior-66)
 - [Range.prototype.insertNode](#rangeprototypeinsertnode)
-  - [Distorted Behavior](#distorted-behavior-74)
+  - [Distorted Behavior](#distorted-behavior-67)
 - [Range.prototype.*](#rangeprototype)
-  - [Distorted Behavior](#distorted-behavior-75)
+  - [Distorted Behavior](#distorted-behavior-68)
 - [SVGAnimateElement: `attributeName` attribute](#svganimateelement-attributename-attribute)
-  - [Distorted Behavior](#distorted-behavior-76)
+  - [Distorted Behavior](#distorted-behavior-69)
 - [SVGAnimateElement: `from` attribute](#svganimateelement-from-attribute)
-  - [Distorted Behavior](#distorted-behavior-77)
+  - [Distorted Behavior](#distorted-behavior-70)
 - [SVGAnimateElement: `to` attribute](#svganimateelement-to-attribute)
-  - [Distorted Behavior](#distorted-behavior-78)
+  - [Distorted Behavior](#distorted-behavior-71)
 - [SVGAnimateElement: `values` attribute](#svganimateelement-values-attribute)
-  - [Distorted Behavior](#distorted-behavior-79)
+  - [Distorted Behavior](#distorted-behavior-72)
 - [SVGElement.prototype.nonce](#svgelementprototypenonce)
-  - [Distorted Behavior](#distorted-behavior-80)
+  - [Distorted Behavior](#distorted-behavior-73)
 - [SVGElement.prototype.dataset getter](#svgelementprototypedataset-getter)
-  - [Distorted Behavior](#distorted-behavior-81)
+  - [Distorted Behavior](#distorted-behavior-74)
 - [SVGScriptElement.prototype.href](#svgscriptelementprototypehref)
-  - [Distorted Behavior](#distorted-behavior-82)
+  - [Distorted Behavior](#distorted-behavior-75)
 - [SVGSetElement: `attributeName` attribute](#svgsetelement-attributename-attribute)
-  - [Distorted Behavior](#distorted-behavior-83)
+  - [Distorted Behavior](#distorted-behavior-76)
 - [SVGSetElement: `to` attribute](#svgsetelement-to-attribute)
-  - [Distorted Behavior](#distorted-behavior-84)
+  - [Distorted Behavior](#distorted-behavior-77)
 - [SVGUseElement: `href` attribute](#svguseelement-href-attribute)
-  - [Distorted Behavior](#distorted-behavior-85)
+  - [Distorted Behavior](#distorted-behavior-78)
   - [Distorted Behavior for setAttribute](#distorted-behavior-for-setattribute)
   - [Distorted Behavior for setAttributeNode](#distorted-behavior-for-setattributenode)
   - [Distorted Behavior for setAttributeNS](#distorted-behavior-for-setattributens)
 - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
-  - [Distorted Behavior](#distorted-behavior-86)
+  - [Distorted Behavior](#distorted-behavior-79)
 - [ShadowRoot.prototype.innerHTML setter](#shadowrootprototypeinnerhtml-setter)
-  - [Distorted Behavior](#distorted-behavior-87)
+  - [Distorted Behavior](#distorted-behavior-80)
 - [ShadowRoot.prototype.mode getter](#shadowrootprototypemode-getter)
-  - [Distorted Behavior](#distorted-behavior-88)
+  - [Distorted Behavior](#distorted-behavior-81)
 - [SharedWorker Constructor](#sharedworker-constructor)
-  - [Distorted Behavior](#distorted-behavior-89)
+  - [Distorted Behavior](#distorted-behavior-82)
 - [Storage.prototype.clear](#storageprototypeclear)
-  - [Distorted Behavior](#distorted-behavior-90)
+  - [Distorted Behavior](#distorted-behavior-83)
 - [Storage API: Storage.prototype](#storage-api-storageprototype)
-  - [Distorted Behavior](#distorted-behavior-91)
+  - [Distorted Behavior](#distorted-behavior-84)
 - [Storage.prototype.getItem](#storageprototypegetitem)
-  - [Distorted Behavior](#distorted-behavior-92)
+  - [Distorted Behavior](#distorted-behavior-85)
 - [Storage.prototype.key](#storageprototypekey)
-  - [Distorted Behavior](#distorted-behavior-93)
+  - [Distorted Behavior](#distorted-behavior-86)
 - [Storage.prototype.length getter](#storageprototypelength-getter)
-  - [Distorted Behavior](#distorted-behavior-94)
+  - [Distorted Behavior](#distorted-behavior-87)
 - [Storage.prototype.removeItem](#storageprototyperemoveitem)
-  - [Distorted Behavior](#distorted-behavior-95)
+  - [Distorted Behavior](#distorted-behavior-88)
 - [Storage.prototype.setItem](#storageprototypesetitem)
-  - [Distorted Behavior](#distorted-behavior-96)
+  - [Distorted Behavior](#distorted-behavior-89)
 - [TrustedTypePolicyFactory.createPolicy](#trustedtypepolicyfactorycreatepolicy)
-  - [Distorted Behavior](#distorted-behavior-97)
+  - [Distorted Behavior](#distorted-behavior-90)
 - [URL.createObjectURL](#urlcreateobjecturl)
-  - [Distorted Behavior](#distorted-behavior-98)
+  - [Distorted Behavior](#distorted-behavior-91)
 - [Window.fetch](#windowfetch)
-  - [Distorted Behavior](#distorted-behavior-99)
+  - [Distorted Behavior](#distorted-behavior-92)
 - [window.frames getter](#windowframes-getter)
-  - [Distorted Behavior](#distorted-behavior-100)
+  - [Distorted Behavior](#distorted-behavior-93)
 - [Window.prototype.getComputedStyle](#windowprototypegetcomputedstyle)
-  - [Distorted Behavior](#distorted-behavior-101)
+  - [Distorted Behavior](#distorted-behavior-94)
 - [window.length getter](#windowlength-getter)
-  - [Distorted Behavior](#distorted-behavior-102)
+  - [Distorted Behavior](#distorted-behavior-95)
 - [WindowEventHandlers.onstorage](#windoweventhandlersonstorage)
-  - [Distorted Behavior](#distorted-behavior-103)
+  - [Distorted Behavior](#distorted-behavior-96)
 - [window.open](#windowopen)
-  - [Distorted Behavior](#distorted-behavior-104)
-- [window.opener getter](#windowopener-getter)
-  - [Distorted Behavior](#distorted-behavior-105)
-- [window.parent getter](#windowparent-getter)
-  - [Distorted Behavior](#distorted-behavior-106)
+  - [Distorted Behavior](#distorted-behavior-97)
 - [Window.prototype.postMessage](#windowprototypepostmessage)
-  - [Distorted Behavior](#distorted-behavior-107)
+  - [Distorted Behavior](#distorted-behavior-98)
 - [window.setInterval](#windowsetinterval)
-  - [Distorted Behavior](#distorted-behavior-108)
+  - [Distorted Behavior](#distorted-behavior-99)
 - [window.setTimeout](#windowsettimeout)
-  - [Distorted Behavior](#distorted-behavior-109)
+  - [Distorted Behavior](#distorted-behavior-100)
 - [Window.prototype.structuredClone](#windowprototypestructuredclone)
-  - [Distorted Behavior](#distorted-behavior-110)
+  - [Distorted Behavior](#distorted-behavior-101)
 - [Worker Constructor](#worker-constructor)
-  - [Distorted Behavior](#distorted-behavior-111)
+  - [Distorted Behavior](#distorted-behavior-102)
 - [XMLHttpRequest.prototype.open](#xmlhttprequestprototypeopen)
-  - [Distorted Behavior](#distorted-behavior-112)
+  - [Distorted Behavior](#distorted-behavior-103)
 - [XMLHttpRequest.prototype.response getter](#xmlhttprequestprototyperesponse-getter)
-  - [Distorted Behavior](#distorted-behavior-113)
+  - [Distorted Behavior](#distorted-behavior-104)
 - [XMLHttpRequest.prototype.responseXML getter](#xmlhttprequestprototyperesponsexml-getter)
-  - [Distorted Behavior](#distorted-behavior-114)
+  - [Distorted Behavior](#distorted-behavior-105)
 - [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
-  - [Distorted Behavior](#distorted-behavior-115)
-- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument-1)
-  - [Distorted Behavior](#distorted-behavior-116)
+  - [Distorted Behavior](#distorted-behavior-106)
 - [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
-  - [Distorted Behavior](#distorted-behavior-117)
-- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment-1)
-  - [Distorted Behavior](#distorted-behavior-118)
+  - [Distorted Behavior](#distorted-behavior-107)
 - [eval](#eval)
-  - [Distorted Behavior](#distorted-behavior-119)
+  - [Distorted Behavior](#distorted-behavior-108)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -917,64 +895,6 @@ A property set on a `HTMLElement` object reflects in the DOM via the `style` att
 
 This distortion alters the getter of the `style` property of an `HTMLElement`. The `style` object is marked as live so that its native behavior is preserved and any properties changed from within the sandbox are also reflected in the DOM.
 <hr>
-<a name="htmlframeelementdocscontentdocument-gettermd"></a>
-
-## HTMLFrameElement.prototype.contentDocument getter
-
-The `HTMLFrameElement.prototype.contentDocument` property getter returns the `Document` object of the specified frame.
-The `HTMLFrameElement` interface is deprecated in HTML5.
-
-To reduce the possibility of exploit, Lightning Web Security returns `null` for the `HTMLFrameElement.prototype.contentDocument` property.
-### Distorted Behavior
-
-This distortion returns `null` for `contentDocument`.
-<hr>
-<a name="htmlframeelementdocscontentwindow-gettermd"></a>
-
-## HTMLFrameElement.prototype.contentWindow getter
-
-The `HTMLFrameElement.prototype.contentWindow` property returns the `Window` object of the specified frame. You can use this `Window` object to access the frame's document and its internal DOM. This attribute is read-only, but its properties can be manipulated like the global `Window` object. The `HTMLFrameElement` interface is deprecated in HTML5.
-
-To reduce the possibility of exploit, Lightning Web Security creates an artificial `contentWindow` object that allows access to a reduced set of properties.
-  - `close`
-  - `closed`
-  - `focus`
-  - `opener`
-  - `parent`
-  - `postMessage`
-### Distorted Behavior
-
-This distortion returns an artificial `contentWindow` object per frame and caches the artificial `contentWindow` object for subsequent accesses.
-<hr>
-<a name="htmliframeelementdocscontentdocument-gettermd"></a>
-
-## HTMLIFrameElement.prototype.contentDocument getter
-
-The [`HTMLIFrameElement.contentDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentDocument) property getter returns a `Document` corresponding to the active document in the inline frame's nested browsing context if the iframe and the iframe's parent document are Same Origin. Otherwise, the property returns `null`.
-
-To reduce the possibility of exploit, Lightning Web Security returns `null` for the `contentDocument` property, even when an iframe and the iframe's parent document have the same origin.
-
-### Distorted Behavior
-
-This distortion returns `null` for `contentDocument`.
-<hr>
-<a name="htmliframeelementdocscontentwindow-gettermd"></a>
-
-## HTMLIFrameElement.prototype.contentWindow getter
-
-The [`HTMLIFrameElement.prototype.contentWindow`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentWindow) property returns the `Window` object of an `HTMLIFrameElement`. You can use this `Window` object to access the iframe's document and its internal DOM. This attribute is read-only, but its properties can be manipulated like the global `Window` object.
-
-To reduce the possibility of exploit, Lightning Web Security creates an artificial `contentWindow` object that allows access to a reduced set of properties.
-  - `close`
-  - `closed`
-  - `focus`
-  - `opener`
-  - `parent`
-  - `postMessage`
-
-### Distorted Behavior
-
-This distortion returns an artificial `contentWindow` object per iframe and caches the artificial `contentWindow` object for subsequent accesses.<hr>
 <a name="htmliframeelementdocssrc-settermd"></a>
 
 ## HTMLIFrameElement.prototype.src setter
@@ -1015,36 +935,6 @@ To reduce the possibility of exploit, Lightning Web Security prevents setting th
 ### Distorted Behavior
 
 This distortion prevents code from setting the `relList` property value to `import`.
-<hr>
-<a name="htmlobjectelementdocscontentdocument-gettermd"></a>
-
-## HTMLObjectElement.prototype.contentDocument getter
-
-The [`HTMLObjectElement.prototype.contentDocument`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentDocument) read-only property returns a `Document` representing the active document of the object element's nested browsing context, if any; otherwise null.
-
-To reduce the possibility of exploit, Lightning Web Security returns `null` for the `contentDocument` property of object elements.
-
-### Distorted Behavior
-
-This distortion returns `null` for `contentDocument`.
-<hr>
-<a name="htmlobjectelementdocscontentwindow-gettermd"></a>
-
-## HTMLObjectElement.prototype.contentWindow getter
-
-The [`HTMLObjectElement.prototype.contentWindow`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentWindow) property returns a `WindowProxy` representing the window proxy of the object element's nested browsing context, if any; otherwise null.
-
-To reduce the possibility of exploit, Lightning Web Security creates an artificial `contentWindow` object that allows access to a reduced set of properties.
-  - `close`
-  - `closed`
-  - `focus`
-  - `opener`
-  - `parent`
-  - `postMessage`
-
-### Distorted Behavior
-
-This distortion returns an artificial `contentWindow` object per iframe and caches the artificial `contentWindow` object for subsequent accesses.
 <hr>
 <a name="htmlobjectelementdocsdata-settermd"></a>
 
@@ -1108,25 +998,6 @@ The [`History.prototype.replaceState()`](https://developer.mozilla.org/en-US/doc
 ### Distorted Behavior
 
 This distortion preserves the `replaceState()` method's native behavior in the sandbox by ensuring that the [structured clone algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) works correctly on the `state` parameter. 
-<hr>
-<a name="messageeventdocssource-gettermd"></a>
-
-## MessageEvent.prototype.source getter
-
-The [`MessageEvent.prototype.source`](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/source) read-only
-property is a `MessageEventSource` (which can be a `WindowProxy`, `MessagePort`, or `ServiceWorker` object) representing the message emitter.
-
-If the property references a `window`, malicious code can open a new browser tab that contains a `postMessage` to the current browser. After that, the current browser can access the raw `window` without protective Lightning Web Security distortions.
-
-To reduce the possibility of exploit, when the `source` property is a window, Lightning Web Security creates an artificial `window` object that allows access to a reduced set of properties.
-  - `close`
-  - `closed`
-  - `focus`
-  - `postMessage`
-
-### Distorted Behavior
-
-This distortion returns an artificial `window` object and caches the artificial `window` object for subsequent accesses.
 <hr>
 <a name="namednodemapdocssetnameditem-valuemd"></a>
 
@@ -1524,9 +1395,10 @@ For the `href` or `xlink:href` getter, this distortion does nothing if the URL i
 
 If the URL is for an external resource, the distortion transforms the URL to a document fragment URL and assigns it to a hidden `<div>` element in the page. The document fragment URL is composed of current hostname, resource name, extension followed by an underscore and the id in the referenced resource. A URL such as `/resource.svg#circle` becomes `#HOSTNAMEresourcesvg_circle`.
 
-Lightning Web Security fetches the resource asynchronously using an XHR request and sanitizes the content, then places it in the `<div>` element that has the new document fragment URL. The content is rendered where the `<use>` tag is defined in the `<svg>`. 
+Lightning Web Security fetches the resource asynchronously using an XHR request and sanitizes the content, then places it in the `<div>` element that has the new document fragment URL. The content is rendered where the `<use>` tag is defined in the `<svg>`.
 
 ### Distorted Behavior for setAttribute
+
 ```js
 const el = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 
@@ -1541,6 +1413,7 @@ console.log(el.getAttribute('xlink:href')); // httpmycurrenthostmyresourcesvg_ci
 ```
 
 ### Distorted Behavior for setAttributeNode
+
 ```js
 const el = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 let attr = document.createAttribute('href');
@@ -1558,6 +1431,7 @@ console.log(el.getAttribute('xlink:href')); // null
 ```
 
 ### Distorted Behavior for setAttributeNS
+
 ```js
 const el = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 
@@ -1571,6 +1445,7 @@ console.log(el.getAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href')); //
 ```
 
 #### Distorted Behavior for setAttributeNodeNS
+
 ```js
 const el = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 
@@ -1905,44 +1780,6 @@ This distortion returns an artificial `window` object that allows only safe meth
 
 [//]: # (This will change after multi-window support)
 <hr>
-<a name="windowdocsopener-gettermd"></a>
-
-## window.opener getter
-
-The [`window.opener`](https://developer.mozilla.org/en-US/docs/Web/API/Window/opener) property getter returns a reference to the window that opened the window, either with `open()`, or by navigating a link with a `target` attribute.
-
-In other words, if window `A` opens window `B`, `B.opener` returns `A`.
-
-Lightning Web Security doesn't allow access to the raw `window` object.
-
-### Distorted Behavior
-
-This distortion returns an artificial `window` object that allows only safe methods.
-
-- `close`
-- `focus`
-- `postMessage`
-
-[//]: # (This will change after multi-window support)
-<hr>
-<a name="windowdocsparent-gettermd"></a>
-
-## window.parent getter
-
-The [`window.parent`](https://developer.mozilla.org/en-US/docs/Web/API/Window/parent) property returns a reference to the parent of the current window or subframe. If a window does not have a parent, its `parent` property is a reference to itself.
-
-If window `A` embeds window `B`, `B.parent` returns `A`.
-
-### Distorted Behavior
-
-This distortion returns an artificial `window` object that allows only safe methods.
-
-- `close`
-- `focus`
-- `postMessage`
-
-[//]: # (This will change after multi-window support)
-<hr>
 <a name="windowdocspostmessage-valuemd"></a>
 
 ## Window.prototype.postMessage
@@ -2053,35 +1890,7 @@ This function can be used to parse and transform XML documents with XSLT into va
 
 This method is blocked by LWS, and an exception is thrown if code attempts to call it.
 <hr>
-<a name="xsltprocessordocstransformtodocumentmd"></a>
-
-## XSLTProcessor.prototype.transformToDocument
-
-**Non-standard**: This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.
-
-`XSLTProcessor.prototype.transformToDocument(Node source, Document owner)` transforms the node source by applying the stylesheet imported using the `XSLTProcessor.prototype.importStylesheet()` function. The owner document of the resulting document fragment is the owner node.
-
-This function can be used to parse and transform XML documents with XSLT into valid HTML documents, which can be inserted into the current DOM. By using XSLT, it is possible to create arbitrary HTML tags and therefore gain access to the raw window object.
-
-### Distorted Behavior
-
-This method is blocked by LWS, and an exception is thrown if code attempts to call it.
-<hr>
 <a name="xsltprocessordocstransformtofragment-valuemd"></a>
-
-## XSLTProcessor.prototype.transformToFragment
-
-**Non-standard**: This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.
-
-`XSLTProcessor.prototype.transformToFragment(Node source, Document owner)` transforms the node source by applying the stylesheet imported using the `XSLTProcessor.prototype.importStylesheet()` function. The owner document of the resulting document fragment is the owner node.
-
-This function can be used to parse and transform XML documents with XSLT into valid HTML documents, which can be inserted into the current DOM. By using XSLT, it is possible to create arbitrary HTML tags and therefore gain access to the raw window object.
-
-### Distorted Behavior
-
-This method is blocked by LWS, and an exception is thrown if code attempts to call it.
-<hr>
-<a name="xsltprocessordocstransformtofragmentmd"></a>
 
 ## XSLTProcessor.prototype.transformToFragment
 
@@ -2103,4 +1912,4 @@ The [`eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 
 ### Distorted Behavior
 
-This distortion ensures that code is evaluated in the executing sandbox's global object context.
+This distortion ensures code executes in the sandbox.
