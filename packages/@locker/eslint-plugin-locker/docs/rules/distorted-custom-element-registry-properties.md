@@ -7,10 +7,11 @@ For security the following `CustomElementRegistry` properties are distorted by L
 
 The [`define`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the `CustomElementRegistry` interface defines a new custom element.
 
-Lightning Web Security doesn't allow defining custom elements because the registry is global to the page. You can't register custom elements in the sandbox.
+Lightning Web Security controls the definition of custom elements by virtualizing the registry per sandbox to prevent usage of custom elements defined by system mode or others namespaces.
+
 ### Distorted Behavior
 
-This distortion prevents invoking `define` method from `CustomElementRegistry` and displays an error.
+Custom Elements defined by the sandbox will never conflict with custom elements with the same name defined by another sandbox or by the system.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/CustomElementRegistry/docs/get-value.md -->
@@ -18,9 +19,9 @@ This distortion prevents invoking `define` method from `CustomElementRegistry` a
 
 The [`get`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/get) method of `CustomElementRegistry` interface returns the constructor for a previously-defined custom element.
 
-Lightning Web Security allows sandboxed code to access existing custom element constructors from the global registry only if the custom element is prefixed with the same namespace.
+Lightning Web Security controls the access to defined custom elements by virtualizing the registry per sandbox to prevent usage of custom elements defined by system mode or others namespaces.
 
 ### Distorted Behavior
 
-When called with the wrong prefix, the `get` method returns `undefined`.
+The sandbox can only get Custom Elements defined by the sandbox itself for a given name. It will prevent access to conflict with custom elements with the same name defined by another sandbox or by the system.
 <!-- END generated embed, please keep comment -->

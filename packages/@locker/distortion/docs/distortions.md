@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.17.6<br>
-Generated: Sep 22, 2022
+Version: 0.18.19<br>
+Generated: Apr 26, 2023
 
 ## Table of Contents
 
@@ -13,226 +13,244 @@ Generated: Sep 22, 2022
 
 - [Attr.prototype.value setter](#attrprototypevalue-setter)
   - [Distorted Behavior](#distorted-behavior)
-- [CSSStyleRule.prototype.style getter](#cssstyleruleprototypestyle-getter)
-  - [Distorted Behavior](#distorted-behavior-1)
 - [CacheStorage.prototype.delete](#cachestorageprototypedelete)
-  - [Distorted Behavior](#distorted-behavior-2)
+  - [Distorted Behavior](#distorted-behavior-1)
 - [CacheStorage.prototype.has](#cachestorageprototypehas)
-  - [Distorted Behavior](#distorted-behavior-3)
+  - [Distorted Behavior](#distorted-behavior-2)
 - [CacheStorage.prototype.keys](#cachestorageprototypekeys)
-  - [Distorted Behavior](#distorted-behavior-4)
+  - [Distorted Behavior](#distorted-behavior-3)
 - [CacheStorage.prototype.match](#cachestorageprototypematch)
-  - [Distorted Behavior](#distorted-behavior-5)
+  - [Distorted Behavior](#distorted-behavior-4)
 - [CacheStorage.prototype.open](#cachestorageprototypeopen)
-  - [Distorted Behavior](#distorted-behavior-6)
+  - [Distorted Behavior](#distorted-behavior-5)
 - [CookieStore.prototype.addEventListener](#cookiestoreprototypeaddeventlistener)
-  - [Distorted Behavior](#distorted-behavior-7)
+  - [Distorted Behavior](#distorted-behavior-6)
 - [CookieStore.prototype.delete](#cookiestoreprototypedelete)
-  - [Distorted Behavior](#distorted-behavior-8)
+  - [Distorted Behavior](#distorted-behavior-7)
 - [CookieStore.prototype.get](#cookiestoreprototypeget)
-  - [Distorted Behavior](#distorted-behavior-9)
+  - [Distorted Behavior](#distorted-behavior-8)
 - [CookieStore.prototype.getAll](#cookiestoreprototypegetall)
-  - [Distorted Behavior](#distorted-behavior-10)
+  - [Distorted Behavior](#distorted-behavior-9)
 - [CookieStore.prototype.onchange setter](#cookiestoreprototypeonchange-setter)
-  - [Distorted Behavior](#distorted-behavior-11)
+  - [Distorted Behavior](#distorted-behavior-10)
 - [CookieStore.prototype.set](#cookiestoreprototypeset)
-  - [Distorted Behavior](#distorted-behavior-12)
+  - [Distorted Behavior](#distorted-behavior-11)
 - [CustomElementRegistry.prototype.define](#customelementregistryprototypedefine)
-  - [Distorted Behavior](#distorted-behavior-13)
+  - [Distorted Behavior](#distorted-behavior-12)
 - [CustomElementRegistry.prototype.get](#customelementregistryprototypeget)
+  - [Distorted Behavior](#distorted-behavior-13)
+- [CustomElementRegistry.prototype.whenDefined](#customelementregistryprototypewhendefined)
   - [Distorted Behavior](#distorted-behavior-14)
 - [DOMParser.prototype.parseFromString](#domparserprototypeparsefromstring)
   - [Distorted Behavior](#distorted-behavior-15)
-- [Document.prototype.cookie getter](#documentprototypecookie-getter)
+- [Document.prototype.createProcessingInstruction](#documentprototypecreateprocessinginstruction)
   - [Distorted Behavior](#distorted-behavior-16)
-- [Document.prototype.cookie setter](#documentprototypecookie-setter)
+- [Fullscreen API: Document.prototype](#fullscreen-api-documentprototype)
   - [Distorted Behavior](#distorted-behavior-17)
-- [Document.prototype.domain setter](#documentprototypedomain-setter)
+- [Document.prototype.onrejectionhandled and Document.prototype.onunhandledrejection [Safari]](#documentprototypeonrejectionhandled-and-documentprototypeonunhandledrejection-safari)
   - [Distorted Behavior](#distorted-behavior-18)
-- [Document.prototype.execCommand](#documentprototypeexeccommand)
+- [onsecuritypolicyviolation](#onsecuritypolicyviolation)
   - [Distorted Behavior](#distorted-behavior-19)
-- [Document.prototype.open](#documentprototypeopen)
+- [Document.prototype.releaseCapture](#documentprototypereleasecapture)
   - [Distorted Behavior](#distorted-behavior-20)
-- [Document.prototype.replaceChildren](#documentprototypereplacechildren)
+- [Document.prototype.releaseEvents](#documentprototypereleaseevents)
   - [Distorted Behavior](#distorted-behavior-21)
-- [Element.prototype.after](#elementprototypeafter)
+- [Document.prototype.write](#documentprototypewrite)
   - [Distorted Behavior](#distorted-behavior-22)
+- [Document.prototype.writeln](#documentprototypewriteln)
+  - [Distorted Behavior](#distorted-behavior-23)
+- [Document.prototype.cookie getter](#documentprototypecookie-getter)
+  - [Distorted Behavior](#distorted-behavior-24)
+- [Document.prototype.cookie setter](#documentprototypecookie-setter)
+  - [Distorted Behavior](#distorted-behavior-25)
+- [Document.prototype.domain setter](#documentprototypedomain-setter)
+  - [Distorted Behavior](#distorted-behavior-26)
+- [Document.prototype.execCommand](#documentprototypeexeccommand)
+  - [Distorted Behavior](#distorted-behavior-27)
+- [Document securitypolicyviolation event](#document-securitypolicyviolation-event)
+  - [Distorted Behavior](#distorted-behavior-28)
+- [Document.prototype.open](#documentprototypeopen)
+  - [Distorted Behavior](#distorted-behavior-29)
+- [Document.prototype.replaceChildren](#documentprototypereplacechildren)
+  - [Distorted Behavior](#distorted-behavior-30)
+- [Element.prototype.after](#elementprototypeafter)
+  - [Distorted Behavior](#distorted-behavior-31)
 - [Element.prototype.append](#elementprototypeappend)
   - [Summary](#summary)
-  - [Distorted Behavior](#distorted-behavior-23)
-- [Element.prototype.attachShadow](#elementprototypeattachshadow)
-  - [Distorted Behavior](#distorted-behavior-24)
-- [Element.prototype.attributes getter](#elementprototypeattributes-getter)
-  - [Distorted Behavior](#distorted-behavior-25)
-- [Element.prototype.before](#elementprototypebefore)
-  - [Distorted Behavior](#distorted-behavior-26)
-- [Fullscreen API: Element.prototype](#fullscreen-api-elementprototype)
-  - [Distorted Behavior](#distorted-behavior-27)
-- [Element.prototype.innerHTML setter](#elementprototypeinnerhtml-setter)
-  - [Distorted Behavior](#distorted-behavior-28)
-- [Element.prototype.insertAdjacentElement](#elementprototypeinsertadjacentelement)
-  - [Distorted Behavior](#distorted-behavior-29)
-- [Element.prototype.insertAdjacentHTML](#elementprototypeinsertadjacenthtml)
-  - [Distorted Behavior](#distorted-behavior-30)
-- [Element.prototype.outerHTML setter](#elementprototypeouterhtml-setter)
-  - [Distorted Behavior](#distorted-behavior-31)
-- [Element.prototype.prepend](#elementprototypeprepend)
   - [Distorted Behavior](#distorted-behavior-32)
-- [Element.prototype.remove](#elementprototyperemove)
+- [Element.prototype.attachShadow](#elementprototypeattachshadow)
   - [Distorted Behavior](#distorted-behavior-33)
-- [Element.prototype.replaceChildren](#elementprototypereplacechildren)
+- [Element.prototype.attributes getter](#elementprototypeattributes-getter)
   - [Distorted Behavior](#distorted-behavior-34)
-- [Element.prototype.replaceWith](#elementprototypereplacewith)
+- [Element.prototype.before](#elementprototypebefore)
   - [Distorted Behavior](#distorted-behavior-35)
-- [Element.prototype.setAttribute*](#elementprototypesetattribute)
+- [Fullscreen API: Element.prototype](#fullscreen-api-elementprototype)
   - [Distorted Behavior](#distorted-behavior-36)
-- [Element.prototype.shadowRoot getter](#elementprototypeshadowroot-getter)
+- [Element.prototype.innerHTML setter](#elementprototypeinnerhtml-setter)
   - [Distorted Behavior](#distorted-behavior-37)
-- [Event.prototype.composedPath](#eventprototypecomposedpath)
+- [Element.prototype.insertAdjacentElement](#elementprototypeinsertadjacentelement)
   - [Distorted Behavior](#distorted-behavior-38)
-- [Function Constructor](#function-constructor)
+- [Element.prototype.insertAdjacentHTML](#elementprototypeinsertadjacenthtml)
   - [Distorted Behavior](#distorted-behavior-39)
-- [HTMLElement.prototype.onrejectionhandled and HTMLElement.prototype.onunhandledrejection [Safari]](#htmlelementprototypeonrejectionhandled-and-htmlelementprototypeonunhandledrejection-safari)
+- [Element.prototype.outerHTML setter](#elementprototypeouterhtml-setter)
   - [Distorted Behavior](#distorted-behavior-40)
-- [HTMLElement.prototype.nonce](#htmlelementprototypenonce)
+- [Element.prototype.prepend](#elementprototypeprepend)
   - [Distorted Behavior](#distorted-behavior-41)
-- [HTMLElement.prototype.dataset getter](#htmlelementprototypedataset-getter)
+- [Element.prototype.remove](#elementprototyperemove)
   - [Distorted Behavior](#distorted-behavior-42)
-- [HTMLElement.prototype.innerText setter](#htmlelementprototypeinnertext-setter)
+- [Element.prototype.replaceChildren](#elementprototypereplacechildren)
   - [Distorted Behavior](#distorted-behavior-43)
-- [HTMLElement.prototype.outerText setter](#htmlelementprototypeoutertext-setter)
+- [Element.prototype.replaceWith](#elementprototypereplacewith)
   - [Distorted Behavior](#distorted-behavior-44)
-- [HTMLElement.prototype.style getter](#htmlelementprototypestyle-getter)
+- [Element.prototype.setAttribute*](#elementprototypesetattribute)
   - [Distorted Behavior](#distorted-behavior-45)
-- [HTMLIFrameElement.prototype.src setter](#htmliframeelementprototypesrc-setter)
+- [Element.prototype.shadowRoot getter](#elementprototypeshadowroot-getter)
   - [Distorted Behavior](#distorted-behavior-46)
-- [HTMLLinkElement.prototype.rel setter](#htmllinkelementprototyperel-setter)
+- [Event.prototype.composedPath](#eventprototypecomposedpath)
   - [Distorted Behavior](#distorted-behavior-47)
-- [HTMLLinkElement.prototype.relList setter](#htmllinkelementprototyperellist-setter)
+- [Function Constructor](#function-constructor)
   - [Distorted Behavior](#distorted-behavior-48)
-- [HTMLObjectElement.prototype.data setter](#htmlobjectelementprototypedata-setter)
+- [HTMLElement.prototype.nonce](#htmlelementprototypenonce)
   - [Distorted Behavior](#distorted-behavior-49)
-- [HTMLScriptElement.prototype.src getter](#htmlscriptelementprototypesrc-getter)
+- [HTMLElement.prototype.onrejectionhandled and HTMLElement.prototype.onunhandledrejection [Safari]](#htmlelementprototypeonrejectionhandled-and-htmlelementprototypeonunhandledrejection-safari)
   - [Distorted Behavior](#distorted-behavior-50)
-- [HTMLScriptElement.prototype.src setter](#htmlscriptelementprototypesrc-setter)
+- [HTMLElement.prototype.innerText setter](#htmlelementprototypeinnertext-setter)
   - [Distorted Behavior](#distorted-behavior-51)
-- [History.prototype.pushState](#historyprototypepushstate)
+- [HTMLElement.prototype.outerText setter](#htmlelementprototypeoutertext-setter)
   - [Distorted Behavior](#distorted-behavior-52)
-- [History.prototype.replaceState](#historyprototypereplacestate)
+- [HTMLEmbedElement.prototype.getSVGDocument](#htmlembedelementprototypegetsvgdocument)
   - [Distorted Behavior](#distorted-behavior-53)
-- [NamedNodeMap.prototype.setNamedItem](#namednodemapprototypesetnameditem)
+- [HTMLIFrameElement.prototype.allowPaymentRequest](#htmliframeelementprototypeallowpaymentrequest)
   - [Distorted Behavior](#distorted-behavior-54)
-- [NamedNodeMap.prototype.setNamedItemNS](#namednodemapprototypesetnameditemns)
+- [HTMLIFrameElement.prototype.csp](#htmliframeelementprototypecsp)
   - [Distorted Behavior](#distorted-behavior-55)
-- [Navigator.sendBeacon()](#navigatorsendbeacon)
+- [HTMLIFrameElement.prototype.featurePolicy](#htmliframeelementprototypefeaturepolicy)
   - [Distorted Behavior](#distorted-behavior-56)
-- [Navigator.prototype.serviceWorker getter](#navigatorprototypeserviceworker-getter)
+- [HTMLIFrameElement.prototype.getSVGDocument](#htmliframeelementprototypegetsvgdocument)
   - [Distorted Behavior](#distorted-behavior-57)
-- [Node.prototype.appendChild](#nodeprototypeappendchild)
+- [HTMLIFrameElement.prototype.referrerPolicy](#htmliframeelementprototypereferrerpolicy)
   - [Distorted Behavior](#distorted-behavior-58)
-- [Node.prototype.insertBefore](#nodeprototypeinsertbefore)
+- [HTMLIFrameElement.prototype.srcdoc](#htmliframeelementprototypesrcdoc)
   - [Distorted Behavior](#distorted-behavior-59)
-- [Node.prototype.removeChild](#nodeprototyperemovechild)
+- [HTMLIFrameElement.prototype.src setter](#htmliframeelementprototypesrc-setter)
   - [Distorted Behavior](#distorted-behavior-60)
-- [Node.prototype.replaceChild](#nodeprototypereplacechild)
+- [HTMLLinkElement.prototype.rel setter](#htmllinkelementprototyperel-setter)
   - [Distorted Behavior](#distorted-behavior-61)
-- [Node.prototype.textContent setter](#nodeprototypetextcontent-setter)
+- [HTMLLinkElement.prototype.relList setter](#htmllinkelementprototyperellist-setter)
   - [Distorted Behavior](#distorted-behavior-62)
-- [Notification Constructor](#notification-constructor)
+- [HTMLObjectElement.prototype.getSVGDocument](#htmlobjectelementprototypegetsvgdocument)
   - [Distorted Behavior](#distorted-behavior-63)
-- [Range.prototype.createContextualFragment](#rangeprototypecreatecontextualfragment)
+- [HTMLObjectElement.prototype.data setter](#htmlobjectelementprototypedata-setter)
   - [Distorted Behavior](#distorted-behavior-64)
-- [Range.prototype.deleteContents](#rangeprototypedeletecontents)
+- [HTMLScriptElement.prototype.nonce](#htmlscriptelementprototypenonce)
   - [Distorted Behavior](#distorted-behavior-65)
-- [Range.prototype.extractContents](#rangeprototypeextractcontents)
+- [HTMLScriptElement.prototype.src setter](#htmlscriptelementprototypesrc-setter)
   - [Distorted Behavior](#distorted-behavior-66)
-- [Range.prototype.insertNode](#rangeprototypeinsertnode)
+- [NamedNodeMap.prototype.setNamedItem](#namednodemapprototypesetnameditem)
   - [Distorted Behavior](#distorted-behavior-67)
-- [Range.prototype.*](#rangeprototype)
+- [NamedNodeMap.prototype.setNamedItemNS](#namednodemapprototypesetnameditemns)
   - [Distorted Behavior](#distorted-behavior-68)
-- [SVGAnimateElement: `attributeName` attribute](#svganimateelement-attributename-attribute)
+- [Navigator.sendBeacon()](#navigatorsendbeacon)
   - [Distorted Behavior](#distorted-behavior-69)
-- [SVGAnimateElement: `from` attribute](#svganimateelement-from-attribute)
+- [Navigator.prototype.serviceWorker getter](#navigatorprototypeserviceworker-getter)
   - [Distorted Behavior](#distorted-behavior-70)
-- [SVGAnimateElement: `to` attribute](#svganimateelement-to-attribute)
+- [Node.prototype.appendChild](#nodeprototypeappendchild)
   - [Distorted Behavior](#distorted-behavior-71)
-- [SVGAnimateElement: `values` attribute](#svganimateelement-values-attribute)
+- [Node.prototype.insertBefore](#nodeprototypeinsertbefore)
   - [Distorted Behavior](#distorted-behavior-72)
-- [SVGElement.prototype.nonce](#svgelementprototypenonce)
+- [Node.prototype.removeChild](#nodeprototyperemovechild)
   - [Distorted Behavior](#distorted-behavior-73)
-- [SVGElement.prototype.dataset getter](#svgelementprototypedataset-getter)
+- [Node.prototype.replaceChild](#nodeprototypereplacechild)
   - [Distorted Behavior](#distorted-behavior-74)
-- [SVGScriptElement.prototype.href](#svgscriptelementprototypehref)
+- [Node.prototype.textContent setter](#nodeprototypetextcontent-setter)
   - [Distorted Behavior](#distorted-behavior-75)
-- [SVGSetElement: `attributeName` attribute](#svgsetelement-attributename-attribute)
+- [Range.prototype.createContextualFragment](#rangeprototypecreatecontextualfragment)
   - [Distorted Behavior](#distorted-behavior-76)
-- [SVGSetElement: `to` attribute](#svgsetelement-to-attribute)
+- [Range.prototype.deleteContents](#rangeprototypedeletecontents)
   - [Distorted Behavior](#distorted-behavior-77)
-- [SVGUseElement: `href` attribute](#svguseelement-href-attribute)
+- [Range.prototype.extractContents](#rangeprototypeextractcontents)
   - [Distorted Behavior](#distorted-behavior-78)
+- [Range.prototype.insertNode](#rangeprototypeinsertnode)
+  - [Distorted Behavior](#distorted-behavior-79)
+- [Range.prototype.*](#rangeprototype)
+  - [Distorted Behavior](#distorted-behavior-80)
+- [SVGAnimateElement: `attributeName` attribute](#svganimateelement-attributename-attribute)
+  - [Distorted Behavior](#distorted-behavior-81)
+- [SVGAnimateElement: `from` attribute](#svganimateelement-from-attribute)
+  - [Distorted Behavior](#distorted-behavior-82)
+- [SVGAnimateElement: `to` attribute](#svganimateelement-to-attribute)
+  - [Distorted Behavior](#distorted-behavior-83)
+- [SVGAnimateElement: `values` attribute](#svganimateelement-values-attribute)
+  - [Distorted Behavior](#distorted-behavior-84)
+- [SVGElement.prototype.nonce](#svgelementprototypenonce)
+  - [Distorted Behavior](#distorted-behavior-85)
+- [SVGScriptElement.prototype.href setter](#svgscriptelementprototypehref-setter)
+  - [Distorted Behavior](#distorted-behavior-86)
+- [SVGSetElement: `attributeName` attribute](#svgsetelement-attributename-attribute)
+  - [Distorted Behavior](#distorted-behavior-87)
+- [SVGSetElement: `to` attribute](#svgsetelement-to-attribute)
+  - [Distorted Behavior](#distorted-behavior-88)
+- [SVGUseElement: `href` attribute](#svguseelement-href-attribute)
+  - [Distorted Behavior](#distorted-behavior-89)
   - [Distorted Behavior for setAttribute](#distorted-behavior-for-setattribute)
   - [Distorted Behavior for setAttributeNode](#distorted-behavior-for-setattributenode)
   - [Distorted Behavior for setAttributeNS](#distorted-behavior-for-setattributens)
 - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
-  - [Distorted Behavior](#distorted-behavior-79)
-- [ShadowRoot.prototype.innerHTML setter](#shadowrootprototypeinnerhtml-setter)
-  - [Distorted Behavior](#distorted-behavior-80)
-- [ShadowRoot.prototype.mode getter](#shadowrootprototypemode-getter)
-  - [Distorted Behavior](#distorted-behavior-81)
-- [SharedWorker Constructor](#sharedworker-constructor)
-  - [Distorted Behavior](#distorted-behavior-82)
-- [Storage.prototype.clear](#storageprototypeclear)
-  - [Distorted Behavior](#distorted-behavior-83)
-- [Storage API: Storage.prototype](#storage-api-storageprototype)
-  - [Distorted Behavior](#distorted-behavior-84)
-- [Storage.prototype.getItem](#storageprototypegetitem)
-  - [Distorted Behavior](#distorted-behavior-85)
-- [Storage.prototype.key](#storageprototypekey)
-  - [Distorted Behavior](#distorted-behavior-86)
-- [Storage.prototype.length getter](#storageprototypelength-getter)
-  - [Distorted Behavior](#distorted-behavior-87)
-- [Storage.prototype.removeItem](#storageprototyperemoveitem)
-  - [Distorted Behavior](#distorted-behavior-88)
-- [Storage.prototype.setItem](#storageprototypesetitem)
-  - [Distorted Behavior](#distorted-behavior-89)
-- [TrustedTypePolicyFactory.createPolicy](#trustedtypepolicyfactorycreatepolicy)
   - [Distorted Behavior](#distorted-behavior-90)
-- [URL.createObjectURL](#urlcreateobjecturl)
+- [ShadowRoot.prototype.innerHTML setter](#shadowrootprototypeinnerhtml-setter)
   - [Distorted Behavior](#distorted-behavior-91)
-- [Window.fetch](#windowfetch)
+- [ShadowRoot.prototype.mode getter](#shadowrootprototypemode-getter)
   - [Distorted Behavior](#distorted-behavior-92)
-- [window.frames getter](#windowframes-getter)
+- [SharedWorker Constructor](#sharedworker-constructor)
   - [Distorted Behavior](#distorted-behavior-93)
-- [Window.prototype.getComputedStyle](#windowprototypegetcomputedstyle)
+- [Storage.prototype.clear](#storageprototypeclear)
   - [Distorted Behavior](#distorted-behavior-94)
-- [window.length getter](#windowlength-getter)
+- [Storage API: Storage.prototype](#storage-api-storageprototype)
   - [Distorted Behavior](#distorted-behavior-95)
-- [WindowEventHandlers.onstorage](#windoweventhandlersonstorage)
+- [Storage.prototype.getItem](#storageprototypegetitem)
   - [Distorted Behavior](#distorted-behavior-96)
-- [window.open](#windowopen)
+- [Storage.prototype.key](#storageprototypekey)
   - [Distorted Behavior](#distorted-behavior-97)
-- [Window.prototype.postMessage](#windowprototypepostmessage)
+- [Storage.prototype.length getter](#storageprototypelength-getter)
   - [Distorted Behavior](#distorted-behavior-98)
-- [window.setInterval](#windowsetinterval)
+- [Storage.prototype.removeItem](#storageprototyperemoveitem)
   - [Distorted Behavior](#distorted-behavior-99)
-- [window.setTimeout](#windowsettimeout)
+- [Storage.prototype.setItem](#storageprototypesetitem)
   - [Distorted Behavior](#distorted-behavior-100)
-- [Window.prototype.structuredClone](#windowprototypestructuredclone)
+- [TrustedTypePolicyFactory.createPolicy](#trustedtypepolicyfactorycreatepolicy)
   - [Distorted Behavior](#distorted-behavior-101)
-- [Worker Constructor](#worker-constructor)
+- [URL.createObjectURL](#urlcreateobjecturl)
   - [Distorted Behavior](#distorted-behavior-102)
-- [XMLHttpRequest.prototype.open](#xmlhttprequestprototypeopen)
+- [Window.fetch](#windowfetch)
   - [Distorted Behavior](#distorted-behavior-103)
-- [XMLHttpRequest.prototype.response getter](#xmlhttprequestprototyperesponse-getter)
+- [window.frames getter](#windowframes-getter)
   - [Distorted Behavior](#distorted-behavior-104)
-- [XMLHttpRequest.prototype.responseXML getter](#xmlhttprequestprototyperesponsexml-getter)
+- [window.length getter](#windowlength-getter)
   - [Distorted Behavior](#distorted-behavior-105)
-- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
+- [Window securitypolicyviolation event](#window-securitypolicyviolation-event)
   - [Distorted Behavior](#distorted-behavior-106)
-- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
+- [WindowEventHandlers.onstorage](#windoweventhandlersonstorage)
   - [Distorted Behavior](#distorted-behavior-107)
-- [eval](#eval)
+- [window.open](#windowopen)
   - [Distorted Behavior](#distorted-behavior-108)
+- [window.setInterval](#windowsetinterval)
+  - [Distorted Behavior](#distorted-behavior-109)
+- [window.setTimeout](#windowsettimeout)
+  - [Distorted Behavior](#distorted-behavior-110)
+- [Worker Constructor](#worker-constructor)
+  - [Distorted Behavior](#distorted-behavior-111)
+- [XMLHttpRequest.prototype.open](#xmlhttprequestprototypeopen)
+  - [Distorted Behavior](#distorted-behavior-112)
+- [XMLHttpRequest.prototype.response getter](#xmlhttprequestprototyperesponse-getter)
+  - [Distorted Behavior](#distorted-behavior-113)
+- [XMLHttpRequest.prototype.responseXML getter](#xmlhttprequestprototyperesponsexml-getter)
+  - [Distorted Behavior](#distorted-behavior-114)
+- [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
+  - [Distorted Behavior](#distorted-behavior-115)
+- [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
+  - [Distorted Behavior](#distorted-behavior-116)
+- [eval](#eval)
+  - [Distorted Behavior](#distorted-behavior-117)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -256,23 +274,11 @@ const attr = createAttribute('rel');
 const el = createElement('link');
 el.setAttributeNode(attr); // bypass setAttributeNode distortion
 attr.value = 'import'; // attempt to set blocked value
-document.head.appendChild(el); // append to head
+document.head.append(el); // append to head
 ```
 ### Distorted Behavior
 
 The behavior varies according to the invoked distortion. If no distortions are registered for an attribute, the behavior seems native.
-<hr>
-<a name="cssstyleruledocsstyle-gettermd"></a>
-
-## CSSStyleRule.prototype.style getter
-
-The [`CSSStyleRule.prototype.style`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/style) read-only property is the `CSSStyleDeclaration` interface for the declaration block of the `CSSStyleRule`.
-
-The `style` property of a `CSSStyleRule` object lets you manipulate CSS styles with JavaScript by using  assignments. For example, you could change a style sheet rule's text color using `document.styleSheets[0].cssRules[0].style.color = 'red'`.
-
-### Distorted Behavior
-
-This distortion alters the getter of the `style` property for any `CSSStyleRule`. The `style` object is marked as live so that its native behavior is preserved and any properties changed from within the sandbox are also reflected in the DOM.
 <hr>
 <a name="cachestoragedocsdelete-valuemd"></a>
 
@@ -432,10 +438,11 @@ The `set()` method automatically adds the sandbox prefix to keys for sandbox coo
 
 The [`define`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the `CustomElementRegistry` interface defines a new custom element.
 
-Lightning Web Security doesn't allow defining custom elements because the registry is global to the page. You can't register custom elements in the sandbox.
+Lightning Web Security controls the definition of custom elements by virtualizing the registry per sandbox to prevent usage of custom elements defined by system mode or others namespaces.
+
 ### Distorted Behavior
 
-This distortion prevents invoking `define` method from `CustomElementRegistry` and displays an error.
+Custom Elements defined by the sandbox will never conflict with custom elements with the same name defined by another sandbox or by the system.
 <hr>
 <a name="customelementregistrydocsget-valuemd"></a>
 
@@ -443,11 +450,23 @@ This distortion prevents invoking `define` method from `CustomElementRegistry` a
 
 The [`get`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/get) method of `CustomElementRegistry` interface returns the constructor for a previously-defined custom element.
 
-Lightning Web Security allows sandboxed code to access existing custom element constructors from the global registry only if the custom element is prefixed with the same namespace.
+Lightning Web Security controls the access to defined custom elements by virtualizing the registry per sandbox to prevent usage of custom elements defined by system mode or others namespaces.
 
 ### Distorted Behavior
 
-When called with the wrong prefix, the `get` method returns `undefined`.
+The sandbox can only get Custom Elements defined by the sandbox itself for a given name. It will prevent access to conflict with custom elements with the same name defined by another sandbox or by the system.
+<hr>
+<a name="customelementregistrydocswhendefined-valuemd"></a>
+
+## CustomElementRegistry.prototype.whenDefined
+
+The [`whenDefined`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/whenDefined) method of the `CustomElementRegistry` interface returns a promise that fulfills when a new custom element of a given name is defined. 
+
+Lightning Web Security controls the definition of custom elements by virtualizing the registry per sandbox to prevent usage of custom elements defined by system mode or others namespaces.
+
+### Distorted Behavior
+
+The promise will only be resolved for Custom Elements defined by the sandbox itself, and will never resolve for name defined by another sandbox or by the system.
 <hr>
 <a name="domparserdocsparsefromstring-valuemd"></a>
 
@@ -460,6 +479,125 @@ Documents created via `new DOMParser().parseFromString('', 'text/html')` are sub
 ### Distorted Behavior
 
 This distortion sanitizes HTML strings prior to parsing and document creation.
+<hr>
+<a name="documentdocsblocked-properties-createprocessinginstruction-valuemd"></a>
+
+## Document.prototype.createProcessingInstruction
+
+The [`Document.prototype.createProcessingInstruction()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/createProcessingInstruction) generates a new processing instruction node and returns it.
+
+Malicious code can create a processing instruction from an external XSLT that contains code which can bypass Lightning Web Security distortions and access the raw window.
+
+### Distorted Behavior
+
+This distortion blocks access to `Document.prototype.createProcessingInstruction`.
+<hr>
+<a name="documentdocsblocked-properties-fullscreenmd"></a>
+
+## Fullscreen API: Document.prototype
+
+The [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API) adds methods to present a specific `Document` (and its descendants) in full-screen mode, and to exit full-screen mode when it is no longer needed. This API makes it possible to present desired content such as an online game, using the user's entire screen. Full-screen mode removes all browser user interface elements and other applications from the screen until full-screen mode is shut off.
+
+It is supported by all major browsers, with varying implementations.
+
+This API doesn't adjust the DOM in the element. Instead, the native fullscreen hooks onto the browser. Malicious code can use the fullscreen API for phishing attacks. For example, because the fullscreen API obscures the browser's address bar, malicious code can hide the fake URL of a phishing page. Malicious coders can also fake an address bar with their own DOM.
+
+### Distorted Behavior
+
+This distortion prevents code from requesting full screen by
+blocking these properties from `Document.prototype` on specified browsers:
+
+- `exitFullscreen` [Chrome, Edge, Firefox]
+- `fullscreen` [Chrome, Edge, Firefox]
+- `fullscreenElement` [Chrome, Edge, Firefox]
+- `fullscreenEnabled` [Chrome, Edge, Firefox]
+- `mozCancelFullScreen` [Firefox]
+- `mozFullScreen` [Firefox]
+- `mozFullScreenElement` [Firefox]
+- `mozFullScreenEnabled` [Firefox]
+- `mozRequestFullScreen` [Firefox]
+- `onfullscreenchange` [Chrome, Edge, Firefox]
+- `onfullscreenerror` [Chrome, Edge, Firefox]
+- `onmozfullscreenchange` [Firefox]
+- `onmozfullscreenerror` [Firefox]
+- `requestFullscreen` [Chrome, Edge, Firefox]
+- `webkitFullScreenKeyboardInputAllowed` [Safari]
+
+<hr>
+<a name="documentdocsblocked-properties-onrejectionhandledmd"></a>
+
+## Document.prototype.onrejectionhandled and Document.prototype.onunhandledrejection [Safari]
+
+The [`WindowEventHandlers`](https://html.spec.whatwg.org/#windoweventhandlers) mixin describes the event handlers common to several interfaces like `Window`, or `HTMLBodyElement` and `HTMLFrameSetElement`. Each of these interfaces can implement additional specific event handlers.
+
+The [`WindowEventHandlers.onrejectionhandled`](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onrejectionhandled) property is an event handler representing the code to be called when the `rejectionhandled` event is raised, indicating that a Promise was rejected and the rejection has been handled. The event is sent to the script's global scope.
+
+The [`WindowEventHandlers.onunhandledrejection`](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunhandledrejection) property is an event handler representing the code to be called when the `unhandledrejection` event is raised, indicating that a Promise was rejected but the rejection was not handled. The code handles the event that's sent to the script's global scope when a Promise is rejected, and there is no handler for the rejection.
+
+While most events are DOM related, these event handlers receive an event object containing information about the rejected promise, including the `type`, `promise`, and `reason` properties. Malicious code that accesses the event handler properties can look into the promise info.
+
+### Distorted Behavior
+
+This distortion blocks access to `Document.prototype.onrejectionhandled` and `Document.prototype.onunhandledrejection` in Safari.
+
+<hr>
+<a name="documentdocsblocked-properties-onsecuritypolicyviolationmd"></a>
+
+## onsecuritypolicyviolation
+
+The [`onsecuritypolicyviolation`](https://developer.mozilla.org/en-US/docs/Web/API/Element/securitypolicyviolation_event) event is fired when a Content Security Policy is violated.
+
+### Distorted Behavior
+
+This distortion blocks assignment to `onsecuritypolicyviolation`.
+<hr>
+<a name="documentdocsblocked-properties-releasecapture-valuemd"></a>
+
+## Document.prototype.releaseCapture
+
+The [`Document.prototype.releaseCapture()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/releaseCapture) method releases mouse capture if it's currently enabled on an element within this document. When mouse capture is released, mouse events are no longer directed to the element on which capture is enabled.
+
+Malicious code can use the `releaseCapture` API for phishing attacks.
+
+### Distorted Behavior
+
+This distortion blocks access to `Document.prototype.releaseCapture` in Firefox.
+<hr>
+<a name="documentdocsblocked-properties-releaseevents-valuemd"></a>
+
+## Document.prototype.releaseEvents
+
+The [`Document.prototype.releaseEvents()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/releaseEvents) releases the window from trapping events of a specific type.
+
+Malicious code can use the `releaseEvents` API for phishing attacks.
+
+### Distorted Behavior
+
+This distortion blocks access to `Document.prototype.releaseEvents` in Firefox.
+<hr>
+<a name="documentdocsblocked-properties-write-valuemd"></a>
+
+## Document.prototype.write
+
+The [`Document.prototype.write()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/write) method writes a string of text to a document stream opened by `document.open()`.
+
+Malicious code can use `document.write` to write arbitrary JavaScript code directly into the document, which can bypass Lightning Web Security distortions and access the raw window.
+
+### Distorted Behavior
+
+This distortion blocks access to `Document.prototype.write`.
+<hr>
+<a name="documentdocsblocked-properties-writeln-valuemd"></a>
+
+## Document.prototype.writeln
+
+The [`Document.prototype.writeln()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/writeln) method writes a string of text followed by a newline character to a document.
+
+Malicious code can use `document.writeln` to write arbitrary JavaScript code directly into the document, which can bypass Lightning Web Security distortions and access the raw window.
+
+### Distorted Behavior
+
+This distortion blocks access to `Document.prototype.writeln`.
 <hr>
 <a name="documentdocscookie-gettermd"></a>
 
@@ -516,6 +654,22 @@ Lightning Web Security runs in the main window, where the `<html>`, `<head>` and
 ### Distorted Behavior
 
 This distortion sanitizes the inserted HTML string.
+<hr>
+<a name="documentdocsonsecuritypolicyviolation-settermd"></a>
+
+## Document securitypolicyviolation event
+
+The [securitypolicyviolation](https://developer.mozilla.org/en-US/docs/Web/API/Element/securitypolicyviolation_event) event is fired when a Content Security Policy is violated.
+
+The event is fired on the element that violates the policy and bubbles. It is normally handled by an event handler on the `Window` or `Document` object.
+
+The handler can be assigned using the `onsecuritypolicyviolation` property or using `EventTarget.addEventListener()`.
+
+The event object associated with the `securitypolicyviolation` event exposes a property called `originalPolicy` which contains the `nonce` value. Malicious code with access to the `nonce` value can use it to bypass the Content Security Policy that determines whether a given script is allowed to proceed, and then run inline scripts.
+
+### Distorted Behavior
+
+Currently, Lightning Web Security doesn't support the `securitypolicyviolation` event, so setting the `onsecuritypolicyviolation` property, or adding a `securitypolicyviolation` event listener is not allowed and returns an error.
 <hr>
 <a name="documentdocsopen-valuemd"></a>
 
@@ -605,7 +759,7 @@ Lightning Web Security runs in the main window, where the `<html>`, `<head>`, an
 
 This distortion allows only a `<script>` or `<link>` element to be added after `<html>`, `<head>`, and `<body>` elements. It throws an exception if any other element is specified.
 <hr>
-<a name="elementdocsblocked-propertiesmd"></a>
+<a name="elementdocsblocked-properties-fullscreenmd"></a>
 
 ## Fullscreen API: Element.prototype
 
@@ -620,12 +774,12 @@ This API doesn't adjust the DOM in the element. Instead, the native fullscreen h
 This distortion prevents code from requesting full screen by
 blocking these properties from `Element.prototype` on specified browsers:
 
-* `onfullscreenchange` [Chrome, Edge, Firefox]
-* `onfullscreenerror` [Chrome, Edge, Firefox]
-* `requestFullscreen` [Chrome, Edge, Firefox]
-* `webkitRequestFullScreen` [Chrome, Edge, Safari]
-* `webkitRequestFullscreen` [Chrome, Edge, Safari]
-* `mozRequestFullScreen` [Firefox]
+- `mozRequestFullScreen` [Firefox]
+- `onfullscreenchange` [Chrome, Edge, Firefox]
+- `onfullscreenerror` [Chrome, Edge, Firefox]
+- `requestFullscreen` [Chrome, Edge, Firefox]
+- `webkitRequestFullscreen` [Chrome, Edge, Safari]
+- `webkitRequestFullScreen` [Chrome, Edge, Safari]
 <hr>
 <a name="elementdocsinnerhtml-settermd"></a>
 
@@ -817,11 +971,22 @@ The [`Function()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 This distortion ensures that code is evaluated in the executing sandbox's global object context.
 <hr>
+<a name="htmlelementdocsblocked-properties-noncemd"></a>
+
+## HTMLElement.prototype.nonce
+
+The [`HTMLElement.prototype.nonce`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/nonce) property returns an element's cryptographic nonce (number used once) that is used by Content Security Policy to determine whether a given fetch will be allowed to proceed.
+
+Lightning Web Security doesn't allow the use of inline scripts even when a nonce is used. Malicious code with access to the `nonce` value can use it to bypass the Content Security Policy that determines whether a given script is allowed to proceed, and then run inline scripts.
+
+### Distorted Behavior
+
+This distortion blocks access to `HTMLElement.prototype.nonce` in Chrome, Edge.<hr>
 <a name="htmlelementdocsblocked-properties-onrejectionhandledmd"></a>
 
 ## HTMLElement.prototype.onrejectionhandled and HTMLElement.prototype.onunhandledrejection [Safari]
 
-The [`WindowEventHandlers`](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers) mixin describes the event handlers common to several interfaces like `Window`, or `HTMLBodyElement` and `HTMLFrameSetElement`. Each of these interfaces can implement additional specific event handlers.
+The [`WindowEventHandlers`](https://html.spec.whatwg.org/#windoweventhandlers) mixin describes the event handlers common to several interfaces like `Window`, or `HTMLBodyElement` and `HTMLFrameSetElement`. Each of these interfaces can implement additional specific event handlers.
 
 The [`WindowEventHandlers.onrejectionhandled`](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onrejectionhandled) property is an event handler representing the code to be called when the `rejectionhandled` event is raised, indicating that a Promise was rejected and the rejection has been handled. The event is sent to the script's global scope.
 
@@ -833,27 +998,6 @@ While most events are DOM related, these event handlers receive an event object 
 
 This distortion blocks access to `HTMLElement.prototype.onrejectionhandled` and `HTMLElement.prototype.onunhandledrejection` in Safari.
 
-<hr>
-<a name="htmlelementdocsblocked-propertiesmd"></a>
-
-## HTMLElement.prototype.nonce
-
-The [`HTMLElement.prototype.nonce`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/nonce) property returns an element's cryptographic nonce (number used once) that is used by Content Security Policy to determine whether a given fetch will be allowed to proceed.
-
-Lightning Web Security doesn't allow the use of inline scripts even when a nonce is used. Malicious code with access to the `nonce` value can use it to bypass the Content Security Policy that determines whether a given script is allowed to proceed, and then run inline scripts.
-
-### Distorted Behavior
-
-This distortion blocks access to `HTMLElement.prototype.nonce` in Chrome, Edge.<hr>
-<a name="htmlelementdocsdataset-gettermd"></a>
-
-## HTMLElement.prototype.dataset getter
-
-The [`HTMLElement.prototype.dataset`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) read-only property of the HTMLElement interface provides read/write access to custom data attributes (`data-*`) on elements. It exposes a map of strings (`DOMStringMap`) with an entry for each `data-*` attribute.
-
-### Distorted Behavior
-
-This distortion alters the getter of the `dataset` property for any `HTMLElement`. The `dataset` object is marked as live such that any properties changed from within the sandbox are reflected in the DOM.
 <hr>
 <a name="htmlelementdocsinnertext-settermd"></a>
 
@@ -881,19 +1025,81 @@ This distortion sanitizes the given text and prevents it from replacing the shar
 
 As a non-standard property, the `outerText` descriptor could be undefined. Firefox doesn't support the property, so the distortion does nothing in that browser.
 <hr>
-<a name="htmlelementdocsstyle-gettermd"></a>
+<a name="htmlembedelementdocsblocked-properties-getsvgdocument-valuemd"></a>
 
-## HTMLElement.prototype.style getter
+## HTMLEmbedElement.prototype.getSVGDocument
 
-The [`HTMLElement.prototype.style`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style) read-only property returns the inline style of an element in the form of a `CSSStyleDeclaration` object that contains a list of all styles properties for that element with values assigned for the attributes that are defined in the element's inline `style` attribute.
+The [`HTMLEmbedElement.prototype.getSVGDocument()`](https://developer.mozilla.org/en-US/docs/Web/SVG/Scripting) method returns the XMLDocument representing the element's embedded SVG or null if the element doesn't represent an SVG document.
 
-The `style` property of an `HTMLElement` object lets you manipulate CSS styles with JavaScript by using assignments. For example, you could change an element's text color using `element.style.color = 'red'`.
-
-A property set on a `HTMLElement` object reflects in the DOM via the `style` attribute on an element.
+Malicious code can use `getSVGDocument` of an SVG element to bypass Lightning Web Security distortions and access the raw window.
 
 ### Distorted Behavior
 
-This distortion alters the getter of the `style` property of an `HTMLElement`. The `style` object is marked as live so that its native behavior is preserved and any properties changed from within the sandbox are also reflected in the DOM.
+This distortion blocks access to `HTMLEmbedElement.prototype.getSVGDocument`.
+<hr>
+<a name="htmliframeelementdocsblocked-properties-allowpaymentrequestmd"></a>
+
+## HTMLIFrameElement.prototype.allowPaymentRequest
+
+The [`HTMLIFrameElement.prototype.allowPaymentRequest`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/allowPaymentRequest) property of the HTMLIFrameElement interface returns a boolean value indicating whether the Payment Request API may be invoked on a cross-origin iframe.
+
+### Distorted Behavior
+
+This distortion blocks access to `HTMLIFrameElement.prototype.allowPaymentRequest`.
+<hr>
+<a name="htmliframeelementdocsblocked-properties-cspmd"></a>
+
+## HTMLIFrameElement.prototype.csp
+
+The [`HTMLIFrameElement.prototype.csp`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/csp) property of the HTMLIFrameElement interface specifies the Content Security Policy that an embedded document must agree to enforce upon itself.
+
+### Distorted Behavior
+
+This distortion blocks access to `HTMLIFrameElement.prototype.csp`.
+<hr>
+<a name="htmliframeelementdocsblocked-properties-featurepolicymd"></a>
+
+## HTMLIFrameElement.prototype.featurePolicy
+
+The [`HTMLIFrameElement.prototype.featurePolicy`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/featurePolicy) read-only property of the Document interface returns the FeaturePolicy interface which provides a simple API for inspecting the Permissions Policies applied to a specific document.
+
+### Distorted Behavior
+
+This distortion blocks access to `HTMLIFrameElement.prototype.featurePolicy`.
+<hr>
+<a name="htmliframeelementdocsblocked-properties-getsvgdocument-valuemd"></a>
+
+## HTMLIFrameElement.prototype.getSVGDocument
+
+The [`getSVGDocument()`](https://developer.mozilla.org/en-US/docs/Web/SVG/Scripting) method returns the XMLDocument representing the element's embedded SVG or null if the element doesn't represent an SVG document.
+
+Malicious code can use `getSVGDocument` of an SVG element to bypass Lightning Web Security distortions and access the raw window.
+
+### Distorted Behavior
+
+This distortion blocks access to `HTMLIFrameElement.prototype.getSVGDocument`.
+<hr>
+<a name="htmliframeelementdocsblocked-properties-referrerpolicymd"></a>
+
+## HTMLIFrameElement.prototype.referrerPolicy
+
+The [`HTMLIFrameElement.prototype.referrerPolicy`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/referrerPolicy) property reflects the HTML `referrerpolicy` attribute of the `<iframe>` element defining which referrer is sent when fetching the resource.
+
+### Distorted Behavior
+
+This distortion blocks access to `HTMLIFrameElement.prototype.referrerPolicy`.
+<hr>
+<a name="htmliframeelementdocsblocked-properties-srcdocmd"></a>
+
+## HTMLIFrameElement.prototype.srcdoc
+
+The [`HTMLIFrameElement.prototype.srcdoc`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/srcdoc) property of the HTMLIFrameElement specifies the content of the page.
+
+Malicious code can set `srcdoc` to some string that contains arbitrary JavaScript code that can bypass Lightning Web Security distortions and access the raw window.
+
+### Distorted Behavior
+
+This distortion blocks access to `HTMLIFrameElement.prototype.srcdoc`.
 <hr>
 <a name="htmliframeelementdocssrc-settermd"></a>
 
@@ -936,6 +1142,18 @@ To reduce the possibility of exploit, Lightning Web Security prevents setting th
 
 This distortion prevents code from setting the `relList` property value to `import`.
 <hr>
+<a name="htmlobjectelementdocsblocked-properties-getsvgdocument-valuemd"></a>
+
+## HTMLObjectElement.prototype.getSVGDocument
+
+The [`HTMLObjectElement.prototype.getSVGDocument()`](https://developer.mozilla.org/en-US/docs/Web/SVG/Scripting) method returns the XMLDocument representing the element's embedded SVG or null if the element doesn't represent an SVG document.
+
+Malicious code can use `getSVGDocument` of an SVG element to bypass Lightning Web Security distortions and access the raw window.
+
+### Distorted Behavior
+
+This distortion blocks access to `HTMLObjectElement.prototype.getSVGDocument`.
+<hr>
 <a name="htmlobjectelementdocsdata-settermd"></a>
 
 ## HTMLObjectElement.prototype.data setter
@@ -948,21 +1166,17 @@ Lightning Web Security restricts the `data` attribute to values that use the `ht
 
 This distortion throws an exception for values that use schemes other than `http://` or `https://`, or contain the `"/aura"` and `"/webruntime"` endpoints.
 <hr>
-<a name="htmlscriptelementdocssrc-gettermd"></a>
+<a name="htmlscriptelementdocsblocked-properties-noncemd"></a>
 
-## HTMLScriptElement.prototype.src getter
+## HTMLScriptElement.prototype.nonce
 
-[`HTMLScriptElement.prototype.src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement) property is a `DOMString` representing the URL of an external script. It reflects the `src` attribute of the `<script>` element specifying the URL to an external script.
+The [`HTMLScriptElement.prototype.nonce`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement) property returns an element's cryptographic nonce (number used once) that is used by Content Security Policy to determine whether a given fetch will be allowed to proceed.
 
-Lightning Web Security sets the original url to a different attribute named `data-distorted-src`, while the `src` attribute points to a distorted value that's not revealed in the sandbox.
-
-Lightning Web Security's distortion for the `src` getter obtains the original value from `data-distorted-src`.
-
-In some scenarios, a `<script>` element is already present in the DOM, inserted by the system through some other mechanisms. In these cases, LWS accesses the original `src` attribute.
+Lightning Web Security doesn't allow the use of inline scripts even when a nonce is used. Malicious code with access to the `nonce` value can use it to bypass the Content Security Policy that determines whether a given script is allowed to proceed, and then run inline scripts.
 
 ### Distorted Behavior
 
-This distortion returns the value of `data-distorted-src` when code in the sandbox tries to access `src` attribute on a `<script>` element.
+This distortion blocks access to `HTMLScriptElement.prototype.nonce` in Chrome, Edge.
 <hr>
 <a name="htmlscriptelementdocssrc-settermd"></a>
 
@@ -972,32 +1186,9 @@ This distortion returns the value of `data-distorted-src` when code in the sandb
 
 To ensure that JavaScript code loaded through a `script` element runs in the sandbox, Lightning Web Security evaluates the source text in the same sandbox before the browser evaluates it. This prevents the native behavior of the `script` element from triggering.
 
-LWS stores the value of `src` in a different attribute `data-distorted-src`. LWS fetches the script file using an XHR request and sets the `src` attribute value to a distorted value that uses the script fetched by LWS. The browser reads the distorted value of the `src` attribute which kicks off the evaluation process in the sandbox.
-
-These steps ensure that different browsers work as expected, while preventing them from running script source before LWS can evaluate it.
 ### Distorted Behavior
 
 This distortion prevents a script from running before LWS can evaluate it.
-<hr>
-<a name="historydocspushstate-valuemd"></a>
-
-## History.prototype.pushState
-
-In an HTML document, the [`History.prototype.pushState()`](https://developer.mozilla.org/en-US/docs/Web/API/History/pushState) method adds an entry to the browser's session history stack.
-
-### Distorted Behavior
-
-This distortion preserves the `pushState()` method's native behavior in the sandbox by ensuring that the [structured clone algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) works correctly on the `state` parameter. 
-<hr>
-<a name="historydocsreplacestate-valuemd"></a>
-
-## History.prototype.replaceState
-
-The [`History.prototype.replaceState()`](https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState) method modifies the current history entry, replacing it with the state object and URL passed in the method parameters. This method is particularly useful when you want to update the state object or URL of the current history entry in response to some user action.
-
-### Distorted Behavior
-
-This distortion preserves the `replaceState()` method's native behavior in the sandbox by ensuring that the [structured clone algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) works correctly on the `state` parameter. 
 <hr>
 <a name="namednodemapdocssetnameditem-valuemd"></a>
 
@@ -1152,16 +1343,6 @@ Lightning Web Security runs in the main window, where the `<html>`, `<head>`, an
 This distortion sanitizes the given text to prevent replacing the DOM within the shared elements `<html>`, `<head>`, and `<body>`.
 
 <hr>
-<a name="notificationdocsconstructor-valuemd"></a>
-
-## Notification Constructor
-
-The [`Notification()`](https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification) constructor creates a new [Notification](https://developer.mozilla.org/en-US/docs/Web/API/Notification) object instance, which represents a user notification.
-
-### Distorted Behavior
-
-This distortion preserves the `Notification()` constructor's native behavior in the sandbox by ensuring that the [structured clone algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) works correctly on the `options.data` parameter. 
-<hr>
 <a name="rangedocscreatecontextualfragment-valuemd"></a>
 
 ## Range.prototype.createContextualFragment
@@ -1301,7 +1482,7 @@ When you set the SVG resource dynamically with the `values` attribute, the SVG r
 
 This distortion sanitizes SVG files that are passed with the `values` attribute of the `<animate>` element.
 <hr>
-<a name="svgelementdocsblocked-propertiesmd"></a>
+<a name="svgelementdocsblocked-properties-noncemd"></a>
 
 ## SVGElement.prototype.nonce
 
@@ -1311,20 +1492,11 @@ Lightning Web Security doesn't allow the use of inline scripts even when a nonce
 
 ### Distorted Behavior
 
-This distortion blocks access to `SVGElement.prototype.nonce` in Chrome, Edge.<hr>
-<a name="svgelementdocsdataset-gettermd"></a>
-
-## SVGElement.prototype.dataset getter
-
-The [`SVGElement.prototype.dataset`](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/dataset) read-only property of the SVGElement interface provides read/write access to custom data attributes (`data-*`) on elements. It exposes a map of strings (`DOMStringMap`) with an entry for each `data-*` attribute.
-
-### Distorted Behavior
-
-This distortion alters the getter of the `dataset` property for any `SVGElement`. The `dataset` object is marked as live such that any properties changed from within the sandbox are reflected in the DOM.
+This distortion blocks access to `SVGElement.prototype.nonce` in Chrome, Edge.
 <hr>
-<a name="svgscriptelementdocshref-attributemd"></a>
+<a name="svgscriptelementdocshref-settermd"></a>
 
-## SVGScriptElement.prototype.href
+## SVGScriptElement.prototype.href setter
 
 The [`SVGScriptElement.prototype.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGScriptElement) property is an `SVGAnimatedString` corresponding to the `href` or `xlink:href` attribute of the given `<script>` element.
 
@@ -1333,10 +1505,6 @@ The `SVGScriptElement.prototype.href` property reflects the `href` attribute of 
 The default value for `href` is `undefined` in the `SVGScriptElement.prototype`. Access to the raw `window` object could be attained by running scripts using the SVG `<script>` element.
 
 To ensure that JavaScript code loaded through an SVG `<script>` element runs in the sandbox, Lightning Web Security evaluates the script source in the same sandbox before the browser evaluates it. This preemptive evaluation prevents the native behavior of the SVG `<script>` element from triggering.
-
-Lightning Web Security stores the value of `href` in a different attribute `data-distorted-href`. LWS fetches the script file using an XHR request and sets the `href` attribute value to a distorted value that uses the script fetched by LWS. The browser then reads the distorted value of the `href` attribute, which kicks off the evaluation process in the sandbox.
-
-These steps ensure that different browsers work as expected, while preventing them from running script source before LWS can evaluate it.
 
 ### Distorted Behavior
 
@@ -1666,7 +1834,7 @@ const blob = new Blob([
 const url = URL.createObjectURL(blob);
 const iframe = document.createElement('iframe');
 iframe.src = url;
-document.body.appendChild(iframe);
+document.body.append(iframe);
 ```
 
 Without protection from Lightning Web Security, upon loading the content of the `iframe`, the browser runs the code in the `<script>` tag which bypasses the sandbox. If the code is running on the same domain, it gains access to all cookies and displays them in a popup window.
@@ -1724,20 +1892,6 @@ However, the distorted `window.frames` doesn't allow access to `window` or provi
 framelist !== window; // evaluates to true with this distortion
 ```
 <hr>
-<a name="windowdocsgetcomputedstyle-valuemd"></a>
-
-## Window.prototype.getComputedStyle
-
-The [`Window.prototype.getComputedStyle()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle) method returns an object containing the values of all CSS properties of an element, after applying active style sheets and resolving any basic computation those values may contain.
-
-The returned object is the same `CSSStyleDeclaration` type as the object returned from the element's `style` property. However, the two objects have different purposes:
-  - The object returned by `getComputedStyle` is read-only, and should be used to inspect the element's style — including those set by a `<style>` element or an external stylesheet.
-  - The `element.style` object should be used to set styles on that element, or inspect styles directly added to it from JavaScript manipulation or the global `style` attribute.
-
-### Distorted Behavior
-
-This distortion alters the returned style object. The style object is marked as live so that its native behavior is preserved and any attempt to mutate its read-only CSS properties results in the expected DOM exception.
-<hr>
 <a name="windowdocslength-gettermd"></a>
 
 ## window.length getter
@@ -1750,11 +1904,27 @@ The `window.length` property always returns `0`.
 
 Instead of `window.length`, use the `window.frames.length` value and `window.frames` object to iterate over the list of frames (either `<frame>` or `<iframe>` elements) attached to the `document`.
 <hr>
+<a name="windowdocsonsecuritypolicyviolation-settermd"></a>
+
+## Window securitypolicyviolation event
+
+The [securitypolicyviolation](https://developer.mozilla.org/en-US/docs/Web/API/Element/securitypolicyviolation_event) event is fired when a Content Security Policy is violated.
+
+The event is fired on the element that violates the policy and bubbles. It is normally handled by an event handler on the `Window` or `Document` object.
+
+The handler can be assigned using the `onsecuritypolicyviolation` property or using `EventTarget.addEventListener()`.
+
+The event object associated with the `securitypolicyviolation` event exposes a property called `originalPolicy` which contains the `nonce` value. Malicious code with access to the `nonce` value can use it to bypass the Content Security Policy that determines whether a given script is allowed to proceed, and then run inline scripts.
+
+### Distorted Behavior
+
+Currently, Lightning Web Security doesn't support the `securitypolicyviolation` event, so setting the `onsecuritypolicyviolation` property, or adding a `securitypolicyviolation` event listener is not allowed and returns an error.
+<hr>
 <a name="windowdocsonstorage-settermd"></a>
 
 ## WindowEventHandlers.onstorage
 
-The [`onstorage`]https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onstorage) property of the `WindowEventHandlers` mixin is an event handler for processing storage events.
+The [`onstorage`](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onstorage) property of the `WindowEventHandlers` mixin is an event handler for processing storage events.
 
 The `storage` event fires when a storage area has been changed in the context of another document.
 
@@ -1779,16 +1949,6 @@ This distortion returns an artificial `window` object that allows only safe meth
 - `postMessage`
 
 [//]: # (This will change after multi-window support)
-<hr>
-<a name="windowdocspostmessage-valuemd"></a>
-
-## Window.prototype.postMessage
-
-The [`Window.prototype.postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method safely enables cross-origin communication between `Window` objects; e.g., between a page and a pop-up that it spawned, or between a page and an iframe embedded within it.
-
-### Distorted Behavior
-
-This distortion preserves the `postMessage()` method's native behavior in the sandbox by ensuring that the [structured clone algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) works correctly on the `message` parameter. 
 <hr>
 <a name="windowdocssetinterval-valuemd"></a>
 
@@ -1817,16 +1977,6 @@ Lightning Web Security must evaluate the string in the sandbox.
 ### Distorted Behavior
 
 If the first argument provided to `setTimeout` is a string value, this distortion evaluates the string in the sandbox.
-<hr>
-<a name="windowdocsstructuredclone-valuemd"></a>
-
-## Window.prototype.structuredClone
-
-The global [`Window.prototype.structuredClone()`](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone)  method creates a [deep clone](https://developer.mozilla.org/en-US/docs/Glossary/Deep_copy) of a given value using the [structured clone algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm).
-
-### Distorted Behavior
-
-This distortion preserves the `structuredClone()` method's native behavior in the sandbox by ensuring that the [structured clone algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) works correctly on the `value` parameter. 
 <hr>
 <a name="workerdocsconstructor-valuemd"></a>
 
@@ -1876,7 +2026,7 @@ Malicious code can add `<script>` tags that run without being sanitized.
 
 This distortion sanitizes the `responseXML` property value.
 <hr>
-<a name="xsltprocessordocstransformtodocument-valuemd"></a>
+<a name="xsltprocessordocsblocked-properties-transformtodocument-valuemd"></a>
 
 ## XSLTProcessor.prototype.transformToDocument
 
@@ -1890,7 +2040,7 @@ This function can be used to parse and transform XML documents with XSLT into va
 
 This method is blocked by LWS, and an exception is thrown if code attempts to call it.
 <hr>
-<a name="xsltprocessordocstransformtofragment-valuemd"></a>
+<a name="xsltprocessordocsblocked-properties-transformtofragment-valuemd"></a>
 
 ## XSLTProcessor.prototype.transformToFragment
 
