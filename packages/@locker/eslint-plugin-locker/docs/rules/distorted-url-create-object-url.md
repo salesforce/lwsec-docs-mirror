@@ -23,7 +23,7 @@ const blob = new Blob([
 const url = URL.createObjectURL(blob);
 const iframe = document.createElement('iframe');
 iframe.src = url;
-document.body.appendChild(iframe);
+document.body.append(iframe);
 ```
 
 Without protection from Lightning Web Security, upon loading the content of the `iframe`, the browser runs the code in the `<script>` tag which bypasses the sandbox. If the code is running on the same domain, it gains access to all cookies and displays them in a popup window.

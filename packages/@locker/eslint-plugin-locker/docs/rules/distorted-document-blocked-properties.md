@@ -14,7 +14,6 @@ The following `Document` properties are prohibited when Lightning Web Security i
 -   onmozfullscreenchange
 -   onmozfullscreenerror
 -   onrejectionhandled
--   onsecuritypolicyviolation
 -   onunhandledrejection
 -   releaseCapture
 -   releaseEvents

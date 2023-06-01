@@ -21,9 +21,6 @@ This distortion logs a console warning for `HTMLIFrameElement.src` values that d
 
 To ensure that JavaScript code loaded through a `script` element runs in the sandbox, Lightning Web Security evaluates the source text in the same sandbox before the browser evaluates it. This prevents the native behavior of the `script` element from triggering.
 
-LWS stores the value of `src` in a different attribute `data-distorted-src`. LWS fetches the script file using an XHR request and sets the `src` attribute value to a distorted value that uses the script fetched by LWS. The browser reads the distorted value of the `src` attribute which kicks off the evaluation process in the sandbox.
-
-These steps ensure that different browsers work as expected, while preventing them from running script source before LWS can evaluate it.
 ### Distorted Behavior
 
 This distortion prevents a script from running before LWS can evaluate it.

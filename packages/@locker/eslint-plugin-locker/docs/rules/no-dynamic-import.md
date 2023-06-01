@@ -15,7 +15,7 @@ Example of **correct** code:
 
 ```js
 const newScript = document.createElement('script');
-document.head.appendChild(newScript);
+document.head.append(newScript);
 newScript.src = './example.js';
 ```
 

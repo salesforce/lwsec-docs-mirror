@@ -7,9 +7,10 @@ For security the following `CustomElementRegistry` properties are disallowed by 
 
 The [`define`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define) method of the `CustomElementRegistry` interface defines a new custom element.
 
-Lightning Web Security doesn't allow defining custom elements because the registry is global to the page. You can't register custom elements in the sandbox.
+Lightning Web Security controls the definition of custom elements by virtualizing the registry per sandbox to prevent usage of custom elements defined by system mode or others namespaces.
+
 ### Distorted Behavior
 
-This distortion prevents invoking `define` method from `CustomElementRegistry` and displays an error.
+Custom Elements defined by the sandbox will never conflict with custom elements with the same name defined by another sandbox or by the system.
 <!-- END generated embed, please keep comment -->
 
