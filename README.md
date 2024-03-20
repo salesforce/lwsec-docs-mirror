@@ -6,7 +6,7 @@ Read-only external facing mirror for documentation from the internal Lightning W
 
 To ensure you are viewing the documentation that matches the version of LWSec you are using, match the Github tag of this project with the LWSec release version. The Github tags can be viewed [here](https://github.com/salesforce/lwsec-docs-mirror/tags).
 
-For example, if you are using `@locker/eslint-config-locker@0.19.17` in your project, view the repo at the [`v0.19.17` tag](https://github.com/salesforce/lwsec-docs-mirror/tree/v0.19.17).
+For example, if you are using `@locker/eslint-config-locker@0.20.17` in your project, view the repo at the [`v0.20.17` tag](https://github.com/salesforce/lwsec-docs-mirror/tree/v0.20.17).
 
 
 ## Contributing

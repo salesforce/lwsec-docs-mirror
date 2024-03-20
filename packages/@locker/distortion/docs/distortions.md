@@ -2,14 +2,13 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.19.17<br>
+Version: 0.20.17<br>
 Generated: Mar 20, 2024
 
 ## Table of Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 
 - [Attr.prototype.value setter](#attrprototypevalue-setter)
   - [Distorted Behavior](#distorted-behavior)
@@ -692,10 +691,13 @@ When an HTML document has been switched to `designMode`, its `document` object e
 
 The `insertHTML` command inserts new elements on the currently active editable element.
 
+The `selectAll` command selects all of the content of the editable region.
+
 Lightning Web Security runs in the main window, where the `<html>`, `<head>` and `<body>` elements are shared. If malicious code can insert any specified text as HTML into the DOM tree, even outside of the shared `<head>` and `<body>` elements, it can pollute the DOM. For this reason, any elements added to this shared DOM are sanitized to strip out malicious code.
 ### Distorted Behavior
 
-This distortion sanitizes the inserted HTML string.
+- For `insertHTML` commands, this distortion sanitizes the inserted HTML string.
+- For `selectAll` commands, this distortion blocks selecting all contents if the document is the top-level document.
 <hr>
 <a name="documentdocsonsecuritypolicyviolation-settermd"></a>
 
