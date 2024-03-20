@@ -23,11 +23,5 @@ This new browsing context isn’t sandboxed properly and malicious code can acce
 
 ### Distorted Behavior
 
-This distortion returns an artificial `window` object that allows only safe methods.
-
-- `close`
-- `focus`
-- `postMessage`
-
-[//]: # (This will change after multi-window support)
+The returned `window` object has the same distortions applied to it as the originating sandbox.
 <!-- END generated embed, please keep comment -->

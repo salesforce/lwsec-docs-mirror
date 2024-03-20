@@ -25,5 +25,5 @@ This distortion prevents code from accessing cookies outside of the sandbox.
 
 ### Distorted Behavior
 
-Currently, Lightning Web Security doesn't support the `CookieStore.onchange` event, so setting the `onchange` property is not allowed and returns an error.
+Currently, Lightning Web Security doesn't support the `CookieStore.onchange` event, so setting the `onchange` property, or adding a `change` event listener is not allowed and throws an exception.
 <!-- END generated embed, please keep comment -->

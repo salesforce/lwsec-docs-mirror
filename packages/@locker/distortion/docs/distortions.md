@@ -2,7 +2,7 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.18.24<br>
+Version: 0.19.17<br>
 Generated: Mar 20, 2024
 
 ## Table of Contents
@@ -67,7 +67,7 @@ Generated: Mar 20, 2024
   - [Distorted Behavior](#distorted-behavior-26)
 - [Document.prototype.execCommand](#documentprototypeexeccommand)
   - [Distorted Behavior](#distorted-behavior-27)
-- [Document securitypolicyviolation event](#document-securitypolicyviolation-event)
+- [Document "securitypolicyviolation" event](#document-securitypolicyviolation-event)
   - [Distorted Behavior](#distorted-behavior-28)
 - [Document.prototype.open](#documentprototypeopen)
   - [Distorted Behavior](#distorted-behavior-29)
@@ -196,23 +196,23 @@ Generated: Mar 20, 2024
   - [Distorted Behavior](#distorted-behavior-90)
 - [Range.prototype.*](#rangeprototype)
   - [Distorted Behavior](#distorted-behavior-91)
-- [SVGAnimateElement: `attributeName` attribute](#svganimateelement-attributename-attribute)
+- [SVGAnimateElement: "attributeName" attribute](#svganimateelement-attributename-attribute)
   - [Distorted Behavior](#distorted-behavior-92)
-- [SVGAnimateElement: `from` attribute](#svganimateelement-from-attribute)
+- [SVGAnimateElement: "from" attribute](#svganimateelement-from-attribute)
   - [Distorted Behavior](#distorted-behavior-93)
-- [SVGAnimateElement: `to` attribute](#svganimateelement-to-attribute)
+- [SVGAnimateElement: "to" attribute](#svganimateelement-to-attribute)
   - [Distorted Behavior](#distorted-behavior-94)
-- [SVGAnimateElement: `values` attribute](#svganimateelement-values-attribute)
+- [SVGAnimateElement: "values" attribute](#svganimateelement-values-attribute)
   - [Distorted Behavior](#distorted-behavior-95)
 - [SVGElement.prototype.nonce](#svgelementprototypenonce)
   - [Distorted Behavior](#distorted-behavior-96)
 - [SVGScriptElement.prototype.href setter](#svgscriptelementprototypehref-setter)
   - [Distorted Behavior](#distorted-behavior-97)
-- [SVGSetElement: `attributeName` attribute](#svgsetelement-attributename-attribute)
+- [SVGSetElement: "attributeName" attribute](#svgsetelement-attributename-attribute)
   - [Distorted Behavior](#distorted-behavior-98)
-- [SVGSetElement: `to` attribute](#svgsetelement-to-attribute)
+- [SVGSetElement: "to" attribute](#svgsetelement-to-attribute)
   - [Distorted Behavior](#distorted-behavior-99)
-- [SVGUseElement: `href` attribute](#svguseelement-href-attribute)
+- [SVGUseElement: "href" attribute](#svguseelement-href-attribute)
   - [Distorted Behavior](#distorted-behavior-100)
   - [Distorted Behavior for setAttribute](#distorted-behavior-for-setattribute)
   - [Distorted Behavior for setAttributeNode](#distorted-behavior-for-setattributenode)
@@ -267,9 +267,9 @@ Generated: Mar 20, 2024
   - [Distorted Behavior](#distorted-behavior-124)
 - [Window "rejectionhandled" event](#window-rejectionhandled-event)
   - [Distorted Behavior](#distorted-behavior-125)
-- [Window securitypolicyviolation event](#window-securitypolicyviolation-event)
+- [Window "securitypolicyviolation" event](#window-securitypolicyviolation-event)
   - [Distorted Behavior](#distorted-behavior-126)
-- [WindowEventHandlers.onstorage](#windoweventhandlersonstorage)
+- [Window "storage" event](#window-storage-event)
   - [Distorted Behavior](#distorted-behavior-127)
 - [Window "unhandledrejection" event](#window-unhandledrejection-event)
   - [Distorted Behavior](#distorted-behavior-128)
@@ -458,7 +458,7 @@ This distortion prevents code from accessing cookies outside of the sandbox.
 
 ### Distorted Behavior
 
-Currently, Lightning Web Security doesn't support the `CookieStore.onchange` event, so setting the `onchange` property is not allowed and returns an error.
+Currently, Lightning Web Security doesn't support the `CookieStore.onchange` event, so setting the `onchange` property, or adding a `change` event listener is not allowed and throws an exception.
 <hr>
 <a name="cookiestoredocsset-valuemd"></a>
 
@@ -680,9 +680,9 @@ Firefox doesn't allow setting this property and throws a SecurityError, but Chro
 The distortion doesn't allow code in a sandbox to change the domain of the root document even if the browser allows it.
 ### Distorted Behavior
 
-On Firefox the distortion throws an Error instead of SecurityError.
+On Firefox the distortion throws an exception instead of SecurityError.
 
-On Chrome, Safari and Edge (Webkit) it throws an Error instead of allowing the setter to execute.
+On Chrome, Safari and Edge (Webkit) it throws an exception instead of allowing the setter to execute.
 <hr>
 <a name="documentdocsexeccommand-valuemd"></a>
 
@@ -699,7 +699,7 @@ This distortion sanitizes the inserted HTML string.
 <hr>
 <a name="documentdocsonsecuritypolicyviolation-settermd"></a>
 
-## Document securitypolicyviolation event
+## Document "securitypolicyviolation" event
 
 The [securitypolicyviolation](https://developer.mozilla.org/en-US/docs/Web/API/Element/securitypolicyviolation_event) event is fired when a Content Security Policy is violated.
 
@@ -711,7 +711,7 @@ The event object associated with the `securitypolicyviolation` event exposes a p
 
 ### Distorted Behavior
 
-Currently, Lightning Web Security doesn't support the `securitypolicyviolation` event, so setting the `onsecuritypolicyviolation` property, or adding a `securitypolicyviolation` event listener is not allowed and returns an error.
+Currently, Lightning Web Security doesn't support the `securitypolicyviolation` event, so setting the `onsecuritypolicyviolation` property, or adding a `securitypolicyviolation` event listener is not allowed and throws an exception.
 <hr>
 <a name="documentdocsopen-valuemd"></a>
 
@@ -722,6 +722,8 @@ The [`document.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Documen
 The `document.open()` method normally takes no arguments. However, there is a lesser-known variation: if you pass three arguments, `document.open()` acts as an alias for `window.open()`. This new window context is not sandboxed properly and malicious code can access system mode, so Lightning Web Security must apply a distortion to prevent such access.
 
 ### Distorted Behavior
+
+When `document.open()` is invoked with zero arguments, the distortion throws an exception.
 
 When `document.open()` is invoked with three arguments, the distortion returns an artificial `window` object that contains safe methods.
 <hr>
@@ -1613,7 +1615,7 @@ This distortion prevents `setEnd()`, `selectNode()`, `selectNodeContents()`, `se
 <hr>
 <a name="svganimateelementdocsattributename-attributemd"></a>
 
-## SVGAnimateElement: `attributeName` attribute
+## SVGAnimateElement: "attributeName" attribute
 
 The [`attributeName`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/attributeName) attribute indicates the name of the CSS property or attribute of the target element that is going to be changed during an animation.
 
@@ -1628,7 +1630,7 @@ This distortion sanitizes SVG files that are passed with `from`, `to`, or `value
 <hr>
 <a name="svganimateelementdocsfrom-attributemd"></a>
 
-## SVGAnimateElement: `from` attribute
+## SVGAnimateElement: "from" attribute
 
 The [`from`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/From) attribute indicates the initial value of the attribute that will be modified during the animation.
 
@@ -1642,7 +1644,7 @@ This distortion sanitizes SVG files that are passed with the `from` attribute of
 <hr>
 <a name="svganimateelementdocsto-attributemd"></a>
 
-## SVGAnimateElement: `to` attribute
+## SVGAnimateElement: "to" attribute
 
 The [`to`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/To) attribute indicates the final value of the attribute that will be modified during the animation.
 
@@ -1657,7 +1659,7 @@ This distortion sanitizes SVG files that are passed with the `to` attribute of t
 <hr>
 <a name="svganimateelementdocsvalues-attributemd"></a>
 
-## SVGAnimateElement: `values` attribute
+## SVGAnimateElement: "values" attribute
 
 The [`values`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/values#animate_animatecolor_animatemotion_animatetransform) attribute provides a list of values defining the sequence of values over the course of the animation. If this attribute is specified, any `from`, `to`, and `by` attribute values set on the element are ignored.
 
@@ -1697,7 +1699,7 @@ This distortion for the `href` or `xlink:href` getter provides a distorted versi
 <hr>
 <a name="svgsetelementdocsattributename-attributemd"></a>
 
-## SVGSetElement: `attributeName` attribute
+## SVGSetElement: "attributeName" attribute
 
 The [`attributeName`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/attributeName) attribute indicates the name of the CSS property or attribute of the target element that is going to be changed during an animation.
 
@@ -1712,7 +1714,7 @@ This distortion sanitizes SVG files passed with the `to` attribute of the `<set>
 <hr>
 <a name="svgsetelementdocsto-attributemd"></a>
 
-## SVGSetElement: `to` attribute
+## SVGSetElement: "to" attribute
 
 The [`to`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/To#set) attribute specifies the value for the attribute during the duration of the element.
 
@@ -1725,7 +1727,7 @@ This distortion sanitizes SVG files that are passed with the `to` attribute of t
 <hr>
 <a name="svguseelementdocshref-attributemd"></a>
 
-## SVGUseElement: `href` attribute
+## SVGUseElement: "href" attribute
 
 The [`SVGUseElement.href`](https://developer.mozilla.org/en-US/docs/Web/API/SVGUseElement) property is an `SVGAnimatedString` corresponding to the `href` or `xlink:href` attribute of the given `<use>` element.
 
@@ -2197,7 +2199,7 @@ Currently, Lightning Web Security doesn't support setting the `onrejectionhandle
 <hr>
 <a name="windowdocsonsecuritypolicyviolation-settermd"></a>
 
-## Window securitypolicyviolation event
+## Window "securitypolicyviolation" event
 
 The [securitypolicyviolation](https://developer.mozilla.org/en-US/docs/Web/API/Element/securitypolicyviolation_event) event is fired when a Content Security Policy is violated.
 
@@ -2209,19 +2211,19 @@ The event object associated with the `securitypolicyviolation` event exposes a p
 
 ### Distorted Behavior
 
-Currently, Lightning Web Security doesn't support the `securitypolicyviolation` event, so setting the `onsecuritypolicyviolation` property, or adding a `securitypolicyviolation` event listener is not allowed and returns an error.
+Currently, Lightning Web Security doesn't support setting the `onsecuritypolicyviolation` event handler or adding a `securitypolicyviolation` event listener; attempting to do so throws an exception.
 <hr>
 <a name="windowdocsonstorage-settermd"></a>
 
-## WindowEventHandlers.onstorage
+## Window "storage" event
 
-The [`onstorage`](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onstorage) property of the `WindowEventHandlers` mixin is an event handler for processing storage events.
+The [`storage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event) event of the `Window` interface fires when a storage area (such as `localStorage`) has been modified in the context of another document.
 
-The `storage` event fires when a storage area has been changed in the context of another document.
+The event object associated with the `storage` event exposes `key`, `newValue`, `oldValue`, `storageArea` and `url` data, which can contain sensitive information.
 
 ### Distorted Behavior
 
-Currently, Lightning Web Security doesn't support the `window.onstorage` event, so setting the `onstorage` property is not allowed and returns an error.
+Currently, Lightning Web Security doesn't support setting the `onstorage` event handler or adding a `storage` event listener; attempting to do so throws an exception.
 <hr>
 <a name="windowdocsonunhandledrejection-settermd"></a>
 
@@ -2247,13 +2249,7 @@ This new browsing context isn’t sandboxed properly and malicious code can acce
 
 ### Distorted Behavior
 
-This distortion returns an artificial `window` object that allows only safe methods.
-
-- `close`
-- `focus`
-- `postMessage`
-
-[//]: # (This will change after multi-window support)
+The returned `window` object has the same distortions applied to it as the originating sandbox.
 <hr>
 <a name="windowdocssetinterval-valuemd"></a>
 

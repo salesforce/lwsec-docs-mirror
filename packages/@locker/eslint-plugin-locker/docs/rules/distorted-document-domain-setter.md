@@ -26,7 +26,7 @@ Firefox doesn't allow setting this property and throws a SecurityError, but Chro
 The distortion doesn't allow code in a sandbox to change the domain of the root document even if the browser allows it.
 ### Distorted Behavior
 
-On Firefox the distortion throws an Error instead of SecurityError.
+On Firefox the distortion throws an exception instead of SecurityError.
 
-On Chrome, Safari and Edge (Webkit) it throws an Error instead of allowing the setter to execute.
+On Chrome, Safari and Edge (Webkit) it throws an exception instead of allowing the setter to execute.
 <!-- END generated embed, please keep comment -->
