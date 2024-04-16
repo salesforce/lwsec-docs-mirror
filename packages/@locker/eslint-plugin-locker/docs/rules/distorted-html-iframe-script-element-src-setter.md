@@ -7,11 +7,11 @@ For security the `HTML{IFrame|Script}Element#src` setter is distorted by Lightni
 
 The [`HTMLIFrameElement.prototype.src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/src) property reflects the HTML `referrerpolicy` attribute of the `<iframe>` element defining which referrer is sent when fetching the resource. The `src` value is a string that reflects the `src` HTML attribute, containing the address of the content to be embedded.
 
-Lightning Web Security sanitizes the `src` value and only permits `http://` and `https://` schemes. URL schemes like `javascript://` aren't allowed.
+Lightning Web Security restricts the `src` attribute to values that use the `http://`, `https://`, and `about:blank` schemes, or relative urls. URL schemes like `javascript://` aren't allowed.
 
 ### Distorted Behavior
 
-This distortion logs a console warning for `HTMLIFrameElement.src` values that don't sanitize to `http://` or `https://` schemes.
+This distortion throws an exception for values that don't sanitize to `http://`, `https://`, and `about:blank` schemes, or relative urls.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLScriptElement/docs/src-setter.md -->

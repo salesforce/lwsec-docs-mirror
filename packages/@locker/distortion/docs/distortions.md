@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.20.17<br>
-Generated: Mar 20, 2024
+Version: 0.21.5<br>
+Generated: Apr 16, 2024
 
 ## Table of Contents
 
@@ -483,7 +483,7 @@ Lightning Web Security controls the definition of custom elements by virtualizin
 
 ### Distorted Behavior
 
-Custom Elements defined by the sandbox will never conflict with custom elements with the same name defined by another sandbox or by the system.
+Custom Elements defined by the sandbox will only conflict with custom elements of the same tag name defined by another sandbox or by the system if the definition has a differing value for the static class property `formAssociated`.
 <hr>
 <a name="customelementregistrydocsget-valuemd"></a>
 
@@ -777,7 +777,7 @@ When the `attachShadow()` method provides an options object with `mode` set to `
 
 ### Distorted Behavior
 
-This distortion throws an exception when the `mode` value is not `closed`, which prevents exposing the shadow DOM and also guards against additional modes potentially added later.
+This distortion restricts access to the element's `shadowRoot` property. Only code that's running in the same sandbox can access the property.
 <hr>
 <a name="elementdocsattributes-gettermd"></a>
 
@@ -1016,10 +1016,10 @@ The [`Element.prototype.shadowRoot`](https://developer.mozilla.org/en-US/docs/We
 
 This property allows retrieving the shadow DOM of custom elements created with `attachShadow({mode: 'open'})`.
 
-In a sandbox, the distortion for `attachShadow()` prevents code from creating elements with `mode: 'open'`, but doesn't prevent code that's running outside a sandbox from creating custom elements in `open` mode. Elements that are passed as function arguments or queried from the Light DOM or shadow DOM are at risk.
+
 ### Distorted Behavior
 
-This distortion returns `null` when you try to access the `shadowRoot` property on a Light DOM element.
+This distortion returns `null` when you try to access an element's `shadowRoot` property from outside of the sandbox that it was created in. Elements or `shadowRoot` objects that are passed as function arguments are not protected.
 <hr>
 <a name="eventdocsblocked-properties-explicitoriginaltarget-valuemd"></a>
 
@@ -1281,11 +1281,11 @@ This distortion blocks access to `HTMLIFrameElement.prototype.srcdoc`.
 
 The [`HTMLIFrameElement.prototype.src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/src) property reflects the HTML `referrerpolicy` attribute of the `<iframe>` element defining which referrer is sent when fetching the resource. The `src` value is a string that reflects the `src` HTML attribute, containing the address of the content to be embedded.
 
-Lightning Web Security sanitizes the `src` value and only permits `http://` and `https://` schemes. URL schemes like `javascript://` aren't allowed.
+Lightning Web Security restricts the `src` attribute to values that use the `http://`, `https://`, and `about:blank` schemes, or relative urls. URL schemes like `javascript://` aren't allowed.
 
 ### Distorted Behavior
 
-This distortion logs a console warning for `HTMLIFrameElement.src` values that don't sanitize to `http://` or `https://` schemes.
+This distortion throws an exception for values that don't sanitize to `http://`, `https://`, and `about:blank` schemes, or relative urls.
 <hr>
 <a name="htmllinkelementdocsrel-settermd"></a>
 
@@ -1334,11 +1334,11 @@ This distortion blocks access to `HTMLObjectElement.prototype.getSVGDocument`.
 
 The [`HTMLObjectElement.prototype.data`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/data) property of the `HTMLObjectElement` interface returns a string that reflects the `data` HTML attribute, specifying the address of a resource's data.
 
-Lightning Web Security restricts the `data` attribute to values that use the `http://` and `https://` schemes. URL schemes like `javascript://` aren't allowed. LWS also prevents access to URL endpoints containing `"/aura"` and `"/webruntime"` because they are part of the Lightning Component framework.
+Lightning Web Security restricts the `data` attribute to values that use the `http://`, `https://`, and `about:blank` schemes, or relative urls. URL schemes like `javascript://` aren't allowed. LWS also prevents access to URL endpoints containing `"/aura"` and `"/webruntime"` because they are part of the Lightning Component framework.
 
 ### Distorted Behavior
 
-This distortion throws an exception for values that use schemes other than `http://` or `https://`, or contain the `"/aura"` and `"/webruntime"` endpoints.
+This distortion throws an exception for values that don't sanitize to `http://`, `https://`, and `about:blank` schemes, or relative urls. It will also throw an exception for values that  contain the `"/aura"` and `"/webruntime"` endpoints.
 <hr>
 <a name="htmlscriptelementdocsblocked-properties-noncemd"></a>
 

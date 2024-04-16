@@ -1,18 +1,6 @@
-# Disallow usage of Element.shadowRoot getter (distorted-element-shadow-root-getter)
+# Access to element.shadowRoot (distorted-element-shadow-root-getter)
 
-The `Element.shadowRoot` getter returns `null` when Lightning Web Security is enabled.
-
-See [Related Distortions](#related-distortions) below for more details.
-
-## Rule Details
-
-Example of **incorrect** code:
-
-```js
-element.shadowRoot.querySelector('div');
-```
-
-## Related Distortions
+Lightning Web Security limits `element.shadowRoot` access to the sandbox that the element was created in.
 
 <!-- START generated embed: @locker/distortion/src/Element/docs/shadowRoot-getter.md -->
 ## Element.prototype.shadowRoot getter
@@ -21,8 +9,8 @@ The [`Element.prototype.shadowRoot`](https://developer.mozilla.org/en-US/docs/We
 
 This property allows retrieving the shadow DOM of custom elements created with `attachShadow({mode: 'open'})`.
 
-In a sandbox, the distortion for `attachShadow()` prevents code from creating elements with `mode: 'open'`, but doesn't prevent code that's running outside a sandbox from creating custom elements in `open` mode. Elements that are passed as function arguments or queried from the Light DOM or shadow DOM are at risk.
+
 ### Distorted Behavior
 
-This distortion returns `null` when you try to access the `shadowRoot` property on a Light DOM element.
+This distortion returns `null` when you try to access an element's `shadowRoot` property from outside of the sandbox that it was created in. Elements or `shadowRoot` objects that are passed as function arguments are not protected.
 <!-- END generated embed, please keep comment -->

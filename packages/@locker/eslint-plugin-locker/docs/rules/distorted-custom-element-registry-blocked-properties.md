@@ -11,6 +11,6 @@ Lightning Web Security controls the definition of custom elements by virtualizin
 
 ### Distorted Behavior
 
-Custom Elements defined by the sandbox will never conflict with custom elements with the same name defined by another sandbox or by the system.
+Custom Elements defined by the sandbox will only conflict with custom elements of the same tag name defined by another sandbox or by the system if the definition has a differing value for the static class property `formAssociated`.
 <!-- END generated embed, please keep comment -->
 

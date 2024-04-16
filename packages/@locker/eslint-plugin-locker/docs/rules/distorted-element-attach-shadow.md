@@ -11,5 +11,5 @@ When the `attachShadow()` method provides an options object with `mode` set to `
 
 ### Distorted Behavior
 
-This distortion throws an exception when the `mode` value is not `closed`, which prevents exposing the shadow DOM and also guards against additional modes potentially added later.
+This distortion restricts access to the element's `shadowRoot` property. Only code that's running in the same sandbox can access the property.
 <!-- END generated embed, please keep comment -->
