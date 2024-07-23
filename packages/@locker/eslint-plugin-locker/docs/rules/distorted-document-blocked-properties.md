@@ -15,6 +15,7 @@ The following `Document` properties are prohibited when Lightning Web Security i
 -   onmozfullscreenerror
 -   onrejectionhandled
 -   onunhandledrejection
+-   parseHTMLUnsafe
 -   releaseCapture
 -   releaseEvents
 -   webkitFullScreenKeyboardInputAllowed

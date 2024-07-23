@@ -23,5 +23,5 @@ This new browsing context isn’t sandboxed properly and malicious code can acce
 
 ### Distorted Behavior
 
-The returned `window` object has the same distortions applied to it as the originating sandbox.
+The returned `window` object has the same distortions applied to it as the originating sandbox. `eval`, `Function`, `setInterval` and `setTimeout` are blocked.
 <!-- END generated embed, please keep comment -->
