@@ -2,8 +2,8 @@
 
 This is the list of the currently implemented distortions.
 
-Version: 0.21.5<br>
-Generated: Apr 16, 2024
+Version: 0.21.11<br>
+Generated: Jul 19, 2024
 
 ## Table of Contents
 
@@ -79,219 +79,207 @@ Generated: Apr 16, 2024
   - [Distorted Behavior](#distorted-behavior-32)
 - [Element.prototype.attachShadow](#elementprototypeattachshadow)
   - [Distorted Behavior](#distorted-behavior-33)
-- [Element.prototype.attributes getter](#elementprototypeattributes-getter)
-  - [Distorted Behavior](#distorted-behavior-34)
 - [Element.prototype.before](#elementprototypebefore)
-  - [Distorted Behavior](#distorted-behavior-35)
+  - [Distorted Behavior](#distorted-behavior-34)
 - [Fullscreen API: Element.prototype](#fullscreen-api-elementprototype)
-  - [Distorted Behavior](#distorted-behavior-36)
+  - [Distorted Behavior](#distorted-behavior-35)
 - [Element.prototype.getInnerHTML](#elementprototypegetinnerhtml)
-  - [Distorted Behavior](#distorted-behavior-37)
+  - [Distorted Behavior](#distorted-behavior-36)
 - [Element.prototype.innerHTML setter](#elementprototypeinnerhtml-setter)
-  - [Distorted Behavior](#distorted-behavior-38)
+  - [Distorted Behavior](#distorted-behavior-37)
 - [Element.prototype.insertAdjacentElement](#elementprototypeinsertadjacentelement)
-  - [Distorted Behavior](#distorted-behavior-39)
+  - [Distorted Behavior](#distorted-behavior-38)
 - [Element.prototype.insertAdjacentHTML](#elementprototypeinsertadjacenthtml)
-  - [Distorted Behavior](#distorted-behavior-40)
+  - [Distorted Behavior](#distorted-behavior-39)
 - [Element.prototype.outerHTML setter](#elementprototypeouterhtml-setter)
-  - [Distorted Behavior](#distorted-behavior-41)
+  - [Distorted Behavior](#distorted-behavior-40)
 - [Element.prototype.prepend](#elementprototypeprepend)
-  - [Distorted Behavior](#distorted-behavior-42)
+  - [Distorted Behavior](#distorted-behavior-41)
 - [Element.prototype.remove](#elementprototyperemove)
-  - [Distorted Behavior](#distorted-behavior-43)
+  - [Distorted Behavior](#distorted-behavior-42)
 - [Element.prototype.replaceChildren](#elementprototypereplacechildren)
-  - [Distorted Behavior](#distorted-behavior-44)
+  - [Distorted Behavior](#distorted-behavior-43)
 - [Element.prototype.replaceWith](#elementprototypereplacewith)
-  - [Distorted Behavior](#distorted-behavior-45)
+  - [Distorted Behavior](#distorted-behavior-44)
 - [Element.prototype.setAttribute*](#elementprototypesetattribute)
-  - [Distorted Behavior](#distorted-behavior-46)
+  - [Distorted Behavior](#distorted-behavior-45)
 - [Element.prototype.setHTML](#elementprototypesethtml)
-  - [Distorted Behavior](#distorted-behavior-47)
+  - [Distorted Behavior](#distorted-behavior-46)
 - [Element.prototype.shadowRoot getter](#elementprototypeshadowroot-getter)
-  - [Distorted Behavior](#distorted-behavior-48)
+  - [Distorted Behavior](#distorted-behavior-47)
 - [Event.prototype.explicitOriginalTarget](#eventprototypeexplicitoriginaltarget)
-  - [Distorted Behavior](#distorted-behavior-49)
+  - [Distorted Behavior](#distorted-behavior-48)
 - [Event.prototype.originalTarget](#eventprototypeoriginaltarget)
-  - [Distorted Behavior](#distorted-behavior-50)
+  - [Distorted Behavior](#distorted-behavior-49)
 - [Event.prototype.composedPath](#eventprototypecomposedpath)
-  - [Distorted Behavior](#distorted-behavior-51)
+  - [Distorted Behavior](#distorted-behavior-50)
 - [Function Constructor](#function-constructor)
-  - [Distorted Behavior](#distorted-behavior-52)
+  - [Distorted Behavior](#distorted-behavior-51)
 - [HTMLBodyElement "rejectionhandled" event](#htmlbodyelement-rejectionhandled-event)
-  - [Distorted Behavior](#distorted-behavior-53)
+  - [Distorted Behavior](#distorted-behavior-52)
 - [HTMLBodyElement "storage" event](#htmlbodyelement-storage-event)
-  - [Distorted Behavior](#distorted-behavior-54)
+  - [Distorted Behavior](#distorted-behavior-53)
 - [HTMLBodyElement "unhandledrejection" event](#htmlbodyelement-unhandledrejection-event)
-  - [Distorted Behavior](#distorted-behavior-55)
+  - [Distorted Behavior](#distorted-behavior-54)
 - [HTMLElement.prototype.nonce](#htmlelementprototypenonce)
-  - [Distorted Behavior](#distorted-behavior-56)
+  - [Distorted Behavior](#distorted-behavior-55)
 - [HTMLElement.prototype.onrejectionhandled and HTMLElement.prototype.onunhandledrejection [Safari]](#htmlelementprototypeonrejectionhandled-and-htmlelementprototypeonunhandledrejection-safari)
-  - [Distorted Behavior](#distorted-behavior-57)
+  - [Distorted Behavior](#distorted-behavior-56)
 - [HTMLElement.prototype.innerText setter](#htmlelementprototypeinnertext-setter)
-  - [Distorted Behavior](#distorted-behavior-58)
+  - [Distorted Behavior](#distorted-behavior-57)
 - [HTMLElement.prototype.outerText setter](#htmlelementprototypeoutertext-setter)
-  - [Distorted Behavior](#distorted-behavior-59)
+  - [Distorted Behavior](#distorted-behavior-58)
 - [HTMLEmbedElement.prototype.getSVGDocument](#htmlembedelementprototypegetsvgdocument)
-  - [Distorted Behavior](#distorted-behavior-60)
+  - [Distorted Behavior](#distorted-behavior-59)
 - [HTMLFrameSetElement "rejectionhandled" event](#htmlframesetelement-rejectionhandled-event)
-  - [Distorted Behavior](#distorted-behavior-61)
+  - [Distorted Behavior](#distorted-behavior-60)
 - [HTMLFrameSetElement "storage" event](#htmlframesetelement-storage-event)
-  - [Distorted Behavior](#distorted-behavior-62)
+  - [Distorted Behavior](#distorted-behavior-61)
 - [HTMLFrameSetElement "unhandledrejection" event](#htmlframesetelement-unhandledrejection-event)
-  - [Distorted Behavior](#distorted-behavior-63)
-- [HTMLIFrameElement.prototype.allowPaymentRequest](#htmliframeelementprototypeallowpaymentrequest)
-  - [Distorted Behavior](#distorted-behavior-64)
-- [HTMLIFrameElement.prototype.csp](#htmliframeelementprototypecsp)
-  - [Distorted Behavior](#distorted-behavior-65)
-- [HTMLIFrameElement.prototype.featurePolicy](#htmliframeelementprototypefeaturepolicy)
-  - [Distorted Behavior](#distorted-behavior-66)
+  - [Distorted Behavior](#distorted-behavior-62)
 - [HTMLIFrameElement.prototype.getSVGDocument](#htmliframeelementprototypegetsvgdocument)
-  - [Distorted Behavior](#distorted-behavior-67)
-- [HTMLIFrameElement.prototype.referrerPolicy](#htmliframeelementprototypereferrerpolicy)
-  - [Distorted Behavior](#distorted-behavior-68)
+  - [Distorted Behavior](#distorted-behavior-63)
 - [HTMLIFrameElement.prototype.srcdoc](#htmliframeelementprototypesrcdoc)
-  - [Distorted Behavior](#distorted-behavior-69)
+  - [Distorted Behavior](#distorted-behavior-64)
 - [HTMLIFrameElement.prototype.src setter](#htmliframeelementprototypesrc-setter)
-  - [Distorted Behavior](#distorted-behavior-70)
+  - [Distorted Behavior](#distorted-behavior-65)
 - [HTMLLinkElement.prototype.rel setter](#htmllinkelementprototyperel-setter)
-  - [Distorted Behavior](#distorted-behavior-71)
+  - [Distorted Behavior](#distorted-behavior-66)
 - [HTMLLinkElement.prototype.relList setter](#htmllinkelementprototyperellist-setter)
-  - [Distorted Behavior](#distorted-behavior-72)
+  - [Distorted Behavior](#distorted-behavior-67)
 - [HTMLObjectElement.prototype.getSVGDocument](#htmlobjectelementprototypegetsvgdocument)
-  - [Distorted Behavior](#distorted-behavior-73)
+  - [Distorted Behavior](#distorted-behavior-68)
 - [HTMLObjectElement.prototype.data setter](#htmlobjectelementprototypedata-setter)
-  - [Distorted Behavior](#distorted-behavior-74)
+  - [Distorted Behavior](#distorted-behavior-69)
 - [HTMLScriptElement.prototype.nonce](#htmlscriptelementprototypenonce)
-  - [Distorted Behavior](#distorted-behavior-75)
+  - [Distorted Behavior](#distorted-behavior-70)
 - [HTMLScriptElement.prototype.src setter](#htmlscriptelementprototypesrc-setter)
-  - [Distorted Behavior](#distorted-behavior-76)
+  - [Distorted Behavior](#distorted-behavior-71)
 - [HTMLScriptElement.prototype.text setter](#htmlscriptelementprototypetext-setter)
-  - [Distorted Behavior](#distorted-behavior-77)
+  - [Distorted Behavior](#distorted-behavior-72)
 - [NamedNodeMap.prototype.setNamedItem](#namednodemapprototypesetnameditem)
-  - [Distorted Behavior](#distorted-behavior-78)
+  - [Distorted Behavior](#distorted-behavior-73)
 - [NamedNodeMap.prototype.setNamedItemNS](#namednodemapprototypesetnameditemns)
-  - [Distorted Behavior](#distorted-behavior-79)
+  - [Distorted Behavior](#distorted-behavior-74)
 - [Navigator.sendBeacon()](#navigatorsendbeacon)
-  - [Distorted Behavior](#distorted-behavior-80)
+  - [Distorted Behavior](#distorted-behavior-75)
 - [Navigator.prototype.serviceWorker getter](#navigatorprototypeserviceworker-getter)
-  - [Distorted Behavior](#distorted-behavior-81)
+  - [Distorted Behavior](#distorted-behavior-76)
 - [Node.prototype.appendChild](#nodeprototypeappendchild)
-  - [Distorted Behavior](#distorted-behavior-82)
+  - [Distorted Behavior](#distorted-behavior-77)
 - [Node.prototype.insertBefore](#nodeprototypeinsertbefore)
-  - [Distorted Behavior](#distorted-behavior-83)
+  - [Distorted Behavior](#distorted-behavior-78)
 - [Node.prototype.removeChild](#nodeprototyperemovechild)
-  - [Distorted Behavior](#distorted-behavior-84)
+  - [Distorted Behavior](#distorted-behavior-79)
 - [Node.prototype.replaceChild](#nodeprototypereplacechild)
-  - [Distorted Behavior](#distorted-behavior-85)
+  - [Distorted Behavior](#distorted-behavior-80)
 - [Node.prototype.textContent setter](#nodeprototypetextcontent-setter)
-  - [Distorted Behavior](#distorted-behavior-86)
+  - [Distorted Behavior](#distorted-behavior-81)
 - [Range.prototype.createContextualFragment](#rangeprototypecreatecontextualfragment)
-  - [Distorted Behavior](#distorted-behavior-87)
+  - [Distorted Behavior](#distorted-behavior-82)
 - [Range.prototype.deleteContents](#rangeprototypedeletecontents)
-  - [Distorted Behavior](#distorted-behavior-88)
+  - [Distorted Behavior](#distorted-behavior-83)
 - [Range.prototype.extractContents](#rangeprototypeextractcontents)
-  - [Distorted Behavior](#distorted-behavior-89)
+  - [Distorted Behavior](#distorted-behavior-84)
 - [Range.prototype.insertNode](#rangeprototypeinsertnode)
-  - [Distorted Behavior](#distorted-behavior-90)
+  - [Distorted Behavior](#distorted-behavior-85)
 - [Range.prototype.*](#rangeprototype)
-  - [Distorted Behavior](#distorted-behavior-91)
+  - [Distorted Behavior](#distorted-behavior-86)
 - [SVGAnimateElement: "attributeName" attribute](#svganimateelement-attributename-attribute)
-  - [Distorted Behavior](#distorted-behavior-92)
+  - [Distorted Behavior](#distorted-behavior-87)
 - [SVGAnimateElement: "from" attribute](#svganimateelement-from-attribute)
-  - [Distorted Behavior](#distorted-behavior-93)
+  - [Distorted Behavior](#distorted-behavior-88)
 - [SVGAnimateElement: "to" attribute](#svganimateelement-to-attribute)
-  - [Distorted Behavior](#distorted-behavior-94)
+  - [Distorted Behavior](#distorted-behavior-89)
 - [SVGAnimateElement: "values" attribute](#svganimateelement-values-attribute)
-  - [Distorted Behavior](#distorted-behavior-95)
+  - [Distorted Behavior](#distorted-behavior-90)
 - [SVGElement.prototype.nonce](#svgelementprototypenonce)
-  - [Distorted Behavior](#distorted-behavior-96)
+  - [Distorted Behavior](#distorted-behavior-91)
 - [SVGScriptElement.prototype.href setter](#svgscriptelementprototypehref-setter)
-  - [Distorted Behavior](#distorted-behavior-97)
+  - [Distorted Behavior](#distorted-behavior-92)
 - [SVGSetElement: "attributeName" attribute](#svgsetelement-attributename-attribute)
-  - [Distorted Behavior](#distorted-behavior-98)
+  - [Distorted Behavior](#distorted-behavior-93)
 - [SVGSetElement: "to" attribute](#svgsetelement-to-attribute)
-  - [Distorted Behavior](#distorted-behavior-99)
+  - [Distorted Behavior](#distorted-behavior-94)
 - [SVGUseElement: "href" attribute](#svguseelement-href-attribute)
-  - [Distorted Behavior](#distorted-behavior-100)
+  - [Distorted Behavior](#distorted-behavior-95)
   - [Distorted Behavior for setAttribute](#distorted-behavior-for-setattribute)
   - [Distorted Behavior for setAttributeNode](#distorted-behavior-for-setattributenode)
   - [Distorted Behavior for setAttributeNS](#distorted-behavior-for-setattributens)
 - [Selection.prototype.collapse](#selectionprototypecollapse)
-  - [Distorted Behavior](#distorted-behavior-101)
+  - [Distorted Behavior](#distorted-behavior-96)
 - [Selection.prototype.extend](#selectionprototypeextend)
-  - [Distorted Behavior](#distorted-behavior-102)
+  - [Distorted Behavior](#distorted-behavior-97)
 - [Selection.prototype.selectAllChildren](#selectionprototypeselectallchildren)
-  - [Distorted Behavior](#distorted-behavior-103)
+  - [Distorted Behavior](#distorted-behavior-98)
 - [Selection.prototype.setBaseAndExtent](#selectionprototypesetbaseandextent)
-  - [Distorted Behavior](#distorted-behavior-104)
+  - [Distorted Behavior](#distorted-behavior-99)
 - [Selection.prototype.setPosition](#selectionprototypesetposition)
-  - [Distorted Behavior](#distorted-behavior-105)
+  - [Distorted Behavior](#distorted-behavior-100)
 - [ServiceWorkerContainer.prototype](#serviceworkercontainerprototype)
-  - [Distorted Behavior](#distorted-behavior-106)
+  - [Distorted Behavior](#distorted-behavior-101)
 - [ShadowRoot.prototype.innerHTML setter](#shadowrootprototypeinnerhtml-setter)
-  - [Distorted Behavior](#distorted-behavior-107)
-- [ShadowRoot.prototype.mode getter](#shadowrootprototypemode-getter)
-  - [Distorted Behavior](#distorted-behavior-108)
+  - [Distorted Behavior](#distorted-behavior-102)
 - [SharedWorker Constructor](#sharedworker-constructor)
-  - [Distorted Behavior](#distorted-behavior-109)
+  - [Distorted Behavior](#distorted-behavior-103)
 - [Storage.prototype.clear](#storageprototypeclear)
-  - [Distorted Behavior](#distorted-behavior-110)
+  - [Distorted Behavior](#distorted-behavior-104)
 - [Storage API: Storage.prototype](#storage-api-storageprototype)
-  - [Distorted Behavior](#distorted-behavior-111)
+  - [Distorted Behavior](#distorted-behavior-105)
 - [Storage.prototype.getItem](#storageprototypegetitem)
-  - [Distorted Behavior](#distorted-behavior-112)
+  - [Distorted Behavior](#distorted-behavior-106)
 - [Storage.prototype.key](#storageprototypekey)
-  - [Distorted Behavior](#distorted-behavior-113)
+  - [Distorted Behavior](#distorted-behavior-107)
 - [Storage.prototype.length getter](#storageprototypelength-getter)
-  - [Distorted Behavior](#distorted-behavior-114)
+  - [Distorted Behavior](#distorted-behavior-108)
 - [Storage.prototype.removeItem](#storageprototyperemoveitem)
-  - [Distorted Behavior](#distorted-behavior-115)
+  - [Distorted Behavior](#distorted-behavior-109)
 - [Storage.prototype.setItem](#storageprototypesetitem)
-  - [Distorted Behavior](#distorted-behavior-116)
+  - [Distorted Behavior](#distorted-behavior-110)
 - [TrustedTypePolicyFactory.createPolicy](#trustedtypepolicyfactorycreatepolicy)
-  - [Distorted Behavior](#distorted-behavior-117)
+  - [Distorted Behavior](#distorted-behavior-111)
 - [UIEvent.prototype.rangeParent](#uieventprototyperangeparent)
-  - [Distorted Behavior](#distorted-behavior-118)
+  - [Distorted Behavior](#distorted-behavior-112)
 - [URL.createObjectURL](#urlcreateobjecturl)
-  - [Distorted Behavior](#distorted-behavior-119)
+  - [Distorted Behavior](#distorted-behavior-113)
 - [Window.find](#windowfind)
-  - [Distorted Behavior](#distorted-behavior-120)
+  - [Distorted Behavior](#distorted-behavior-114)
 - [Window.requestFileSystem](#windowrequestfilesystem)
-  - [Distorted Behavior](#distorted-behavior-121)
+  - [Distorted Behavior](#distorted-behavior-115)
 - [Window.fetch](#windowfetch)
-  - [Distorted Behavior](#distorted-behavior-122)
+  - [Distorted Behavior](#distorted-behavior-116)
 - [window.frames getter](#windowframes-getter)
-  - [Distorted Behavior](#distorted-behavior-123)
+  - [Distorted Behavior](#distorted-behavior-117)
 - [window.length getter](#windowlength-getter)
-  - [Distorted Behavior](#distorted-behavior-124)
+  - [Distorted Behavior](#distorted-behavior-118)
 - [Window "rejectionhandled" event](#window-rejectionhandled-event)
-  - [Distorted Behavior](#distorted-behavior-125)
+  - [Distorted Behavior](#distorted-behavior-119)
 - [Window "securitypolicyviolation" event](#window-securitypolicyviolation-event)
-  - [Distorted Behavior](#distorted-behavior-126)
+  - [Distorted Behavior](#distorted-behavior-120)
 - [Window "storage" event](#window-storage-event)
-  - [Distorted Behavior](#distorted-behavior-127)
+  - [Distorted Behavior](#distorted-behavior-121)
 - [Window "unhandledrejection" event](#window-unhandledrejection-event)
-  - [Distorted Behavior](#distorted-behavior-128)
+  - [Distorted Behavior](#distorted-behavior-122)
 - [window.open](#windowopen)
-  - [Distorted Behavior](#distorted-behavior-129)
+  - [Distorted Behavior](#distorted-behavior-123)
 - [window.setInterval](#windowsetinterval)
-  - [Distorted Behavior](#distorted-behavior-130)
+  - [Distorted Behavior](#distorted-behavior-124)
 - [window.setTimeout](#windowsettimeout)
-  - [Distorted Behavior](#distorted-behavior-131)
+  - [Distorted Behavior](#distorted-behavior-125)
 - [Worker Constructor](#worker-constructor)
-  - [Distorted Behavior](#distorted-behavior-132)
+  - [Distorted Behavior](#distorted-behavior-126)
 - [XMLHttpRequest.prototype.open](#xmlhttprequestprototypeopen)
-  - [Distorted Behavior](#distorted-behavior-133)
+  - [Distorted Behavior](#distorted-behavior-127)
 - [XMLHttpRequest.prototype.response getter](#xmlhttprequestprototyperesponse-getter)
-  - [Distorted Behavior](#distorted-behavior-134)
+  - [Distorted Behavior](#distorted-behavior-128)
 - [XMLHttpRequest.prototype.responseXML getter](#xmlhttprequestprototyperesponsexml-getter)
-  - [Distorted Behavior](#distorted-behavior-135)
+  - [Distorted Behavior](#distorted-behavior-129)
 - [XSLTProcessor.prototype.transformToDocument](#xsltprocessorprototypetransformtodocument)
-  - [Distorted Behavior](#distorted-behavior-136)
+  - [Distorted Behavior](#distorted-behavior-130)
 - [XSLTProcessor.prototype.transformToFragment](#xsltprocessorprototypetransformtofragment)
-  - [Distorted Behavior](#distorted-behavior-137)
+  - [Distorted Behavior](#distorted-behavior-131)
 - [eval](#eval)
-  - [Distorted Behavior](#distorted-behavior-138)
+  - [Distorted Behavior](#distorted-behavior-132)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -779,20 +767,6 @@ When the `attachShadow()` method provides an options object with `mode` set to `
 
 This distortion restricts access to the element's `shadowRoot` property. Only code that's running in the same sandbox can access the property.
 <hr>
-<a name="elementdocsattributes-gettermd"></a>
-
-## Element.prototype.attributes getter
-
-The [`Element.prototype.attributes`](https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) property returns a live collection of all attribute nodes registered to the specified node. It is a `NamedNodeMap`, not an `Array`, so it has no `Array` methods and the `Attr` nodes' indexes may differ among browsers.
-
-The `attributes` collection can be used to set and remove attributes on an element.
-
-The distortion on this getter doesn't alter its functionality. It pairs an `Element` instance with a `NamedNodeMap` instance so that the  distortion on `NamedNodeMap.prototype.setNamedItem` can retrieve the element.
-
-### Distorted Behavior
-
-No distorted behavior.
-<hr>
 <a name="elementdocsbefore-valuemd"></a>
 
 ## Element.prototype.before
@@ -1211,36 +1185,6 @@ The event object associated with the `unhandledrejection` event exposes a proper
 
 Currently, Lightning Web Security doesn't support setting the `onunhandledrejection` event handler or adding a `unhandledrejection` event listener; attempting to do so throws an exception.
 <hr>
-<a name="htmliframeelementdocsblocked-properties-allowpaymentrequestmd"></a>
-
-## HTMLIFrameElement.prototype.allowPaymentRequest
-
-The [`HTMLIFrameElement.prototype.allowPaymentRequest`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/allowPaymentRequest) property of the HTMLIFrameElement interface returns a boolean value indicating whether the Payment Request API may be invoked on a cross-origin iframe.
-
-### Distorted Behavior
-
-This distortion blocks access to `HTMLIFrameElement.prototype.allowPaymentRequest`.
-<hr>
-<a name="htmliframeelementdocsblocked-properties-cspmd"></a>
-
-## HTMLIFrameElement.prototype.csp
-
-The [`HTMLIFrameElement.prototype.csp`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/csp) property of the HTMLIFrameElement interface specifies the Content Security Policy that an embedded document must agree to enforce upon itself.
-
-### Distorted Behavior
-
-This distortion blocks access to `HTMLIFrameElement.prototype.csp`.
-<hr>
-<a name="htmliframeelementdocsblocked-properties-featurepolicymd"></a>
-
-## HTMLIFrameElement.prototype.featurePolicy
-
-The [`HTMLIFrameElement.prototype.featurePolicy`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/featurePolicy) read-only property of the Document interface returns the FeaturePolicy interface which provides a simple API for inspecting the Permissions Policies applied to a specific document.
-
-### Distorted Behavior
-
-This distortion blocks access to `HTMLIFrameElement.prototype.featurePolicy`.
-<hr>
 <a name="htmliframeelementdocsblocked-properties-getsvgdocument-valuemd"></a>
 
 ## HTMLIFrameElement.prototype.getSVGDocument
@@ -1252,16 +1196,6 @@ Malicious code can use `getSVGDocument` of an SVG element to bypass Lightning We
 ### Distorted Behavior
 
 This distortion blocks access to `HTMLIFrameElement.prototype.getSVGDocument`.
-<hr>
-<a name="htmliframeelementdocsblocked-properties-referrerpolicymd"></a>
-
-## HTMLIFrameElement.prototype.referrerPolicy
-
-The [`HTMLIFrameElement.prototype.referrerPolicy`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/referrerPolicy) property reflects the HTML `referrerpolicy` attribute of the `<iframe>` element defining which referrer is sent when fetching the resource.
-
-### Distorted Behavior
-
-This distortion blocks access to `HTMLIFrameElement.prototype.referrerPolicy`.
 <hr>
 <a name="htmliframeelementdocsblocked-properties-srcdocmd"></a>
 
@@ -1924,15 +1858,6 @@ Malicious code can add `<script>` elements to the DOM tree inside the shadow roo
 
 This distortion sanitizes the string provided to the `innerHTML` setter.
 <hr>
-<a name="shadowrootdocsmode-gettermd"></a>
-
-## ShadowRoot.prototype.mode getter
-
-The [`ShadowRoot.prototype.mode`](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/mode) property determines whether the shadow root is accessible from JavaScript. When the value is `closed` the shadow root is not exposed to the scripting environment. The shadow root’s implementation internals are inaccessible and unchangeable from JavaScript.
-
-### Distorted Behavior
-
-This distortion returns `closed` when a getter accesses the `mode` property on any element with an attached shadow DOM. <hr>
 <a name="sharedworkerdocsconstructor-valuemd"></a>
 
 ## SharedWorker Constructor
