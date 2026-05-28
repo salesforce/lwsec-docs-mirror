@@ -51,7 +51,6 @@ sharable configuration package.
 | [@locker/locker/distorted-document-domain-setter] | distort Document#domain setter |   |
 | [@locker/locker/distorted-document-element-replacechildren] | distort {Document|Element}.prototype.replaceChildren |   |
 | [@locker/locker/distorted-document-exec-command] | distorted document.execCommand |   |
-| [@locker/locker/distorted-promise-try] | disallow Promise.try with eval |   |
 | [@locker/locker/distorted-element-attach-shadow] | distorted Element.prototype.attachShadow |   |
 | [@locker/locker/distorted-element-blocked-properties] | disallow blocked Element properties |   |
 | [@locker/locker/distorted-element-get-inner-html] | distort Element.prototype.getInnerHTML |   |
@@ -78,10 +77,12 @@ sharable configuration package.
 | [@locker/locker/distorted-idb-factory-databases] | distorted IDBFactory.prototype.databases |   |
 | [@locker/locker/distorted-idb-factory-delete-database] | distorted IDBFactory.prototype.deleteDatabase |   |
 | [@locker/locker/distorted-idb-factory-open] | distorted IDBFactory.prototype.open |   |
+| [@locker/locker/distorted-intersection-observer-observe] | distorted IntersectionObserver.prototype.observe |   |
 | [@locker/locker/distorted-mutation-observer-observe] | distorted MutationObserver.prototype.observe |   |
 | [@locker/locker/distorted-named-node-map-set-named-item] | distorted NamedNodeMap.prototype.setNamedItem |   |
 | [@locker/locker/distorted-navigator-sendbeacon] | distorted navigator.sendBeacon |   |
 | [@locker/locker/distorted-observable] | distorted Observable.prototype.subscribe and Observable.prototype.forEach |   |
+| [@locker/locker/distorted-performance-observer-observe] | distorted PerformanceObserver.prototype.observe |   |
 | [@locker/locker/distorted-navigator-service-worker-getter] | distorted navigator.serviceWorker getter |   |
 | [@locker/locker/distorted-node-insertbefore] | distort Node.prototype.insertBefore |   |
 | [@locker/locker/distorted-node-removechild] | distort Node.prototype.removeChild |   |
@@ -95,6 +96,8 @@ sharable configuration package.
 | [@locker/locker/distorted-range-extract-contents] | distorted Range.prototype.extractContents |   |
 | [@locker/locker/distorted-range-get-bounding-client-rect] | distorted Range.prototype.getBoundingClientRect |   |
 | [@locker/locker/distorted-range-insertnode] | distorted Range.prototype.insertNode |   |
+| [@locker/locker/distorted-reporting-observer-constructor] | distorted ReportingObserver constructor |   |
+| [@locker/locker/distorted-resize-observer-observe] | distorted ResizeObserver.prototype.observe |   |
 | [@locker/locker/distorted-selection-anchor-node-getter] | distorted Selection.prototype.anchorNode getter |   |
 | [@locker/locker/distorted-selection-focus-node-getter] | distorted Selection.prototype.focusNode getter |   |
 | [@locker/locker/distorted-shared-worker-constructor] | distorted SharedWorker constructor |   |
@@ -130,152 +133,158 @@ https://eslint.org/docs/user-guide/command-line-interface#-fix
 
 <!-- START generated content -->
 [@locker/locker/distorted-cachestorage-properties]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-cookie-store-properties.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-cookie-store-properties.md
 [@locker/locker/distorted-cookie-store-blocked-properties]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-cookie-store-blocked-properties.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-cookie-store-blocked-properties.md
 [@locker/locker/distorted-cookie-store-properties]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-cookie-store-properties.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-cookie-store-properties.md
 [@locker/locker/distorted-data-transfer-blocked-properties]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-data-transfer-blocked-properties.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-data-transfer-blocked-properties.md
 [@locker/locker/distorted-document-blocked-properties]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-document-blocked-properties.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-document-blocked-properties.md
 [@locker/locker/distorted-document-cookie]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-document-cookie.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-document-cookie.md
 [@locker/locker/distorted-document-domain-setter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-document-domain-setter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-document-domain-setter.md
 [@locker/locker/distorted-document-element-replacechildren]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-document-element-replacechildren.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-document-element-replacechildren.md
 [@locker/locker/distorted-document-exec-command]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-document-exec-command.md
-[@locker/locker/distorted-promise-try]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-promise-try.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-document-exec-command.md
 [@locker/locker/distorted-element-attach-shadow]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-attach-shadow.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-attach-shadow.md
 [@locker/locker/distorted-element-blocked-properties]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-blocked-properties.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-blocked-properties.md
 [@locker/locker/distorted-element-get-inner-html]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-get-inner-html.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-get-inner-html.md
 [@locker/locker/distorted-element-inner-html-getter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-inner-html-getter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-inner-html-getter.md
 [@locker/locker/distorted-element-inner-html-setter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-inner-html-setter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-inner-html-setter.md
 [@locker/locker/distorted-element-insert-adjacent-html]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-insert-adjacent-html.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-insert-adjacent-html.md
 [@locker/locker/distorted-element-outer-html-setter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-outer-html-setter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-outer-html-setter.md
 [@locker/locker/distorted-element-set-attribute]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-set-attribute.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-set-attribute.md
 [@locker/locker/distorted-element-set-html]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-set-html.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-set-html.md
 [@locker/locker/distorted-element-sethtmlunsafe]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-sethtmlunsafe.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-sethtmlunsafe.md
 [@locker/locker/distorted-element-shadow-root-getter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-shadow-root-getter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-shadow-root-getter.md
 [@locker/locker/distorted-element-toggle-attribute]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-toggle-attribute.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-element-toggle-attribute.md
 [@locker/locker/distorted-html-element-blocked-properties]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-element-blocked-properties.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-element-blocked-properties.md
 [@locker/locker/distorted-html-element-inner-text-getter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-element-inner-text-getter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-element-inner-text-getter.md
 [@locker/locker/distorted-html-element-inner-text-setter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-element-inner-text-setter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-element-inner-text-setter.md
 [@locker/locker/distorted-html-element-outer-text-setter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-element-outer-text-setter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-element-outer-text-setter.md
 [@locker/locker/distorted-formaction-setter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-formaction-setter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-formaction-setter.md
 [@locker/locker/distorted-html-embed-object-element-blocked-properties]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-embed-object-element-blocked-properties.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-embed-object-element-blocked-properties.md
 [@locker/locker/distorted-html-iframe-element-blocked-properties]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-iframe-element-blocked-properties.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-iframe-element-blocked-properties.md
 [@locker/locker/distorted-html-iframe-script-element-src-setter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-iframe-script-element-src-setter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-iframe-script-element-src-setter.md
 [@locker/locker/distorted-html-link-element-rel-list-setter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-link-element-rel-list-setter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-link-element-rel-list-setter.md
 [@locker/locker/distorted-html-link-element-rel-setter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-link-element-rel-setter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-link-element-rel-setter.md
 [@locker/locker/distorted-html-script-element-text-getter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-script-element-text-getter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-html-script-element-text-getter.md
 [@locker/locker/distorted-idb-factory-databases]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-idb-factory-databases.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-idb-factory-databases.md
 [@locker/locker/distorted-idb-factory-delete-database]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-idb-factory-delete-database.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-idb-factory-delete-database.md
 [@locker/locker/distorted-idb-factory-open]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-idb-factory-open.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-idb-factory-open.md
+[@locker/locker/distorted-intersection-observer-observe]:
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-intersection-observer-observe.md
 [@locker/locker/distorted-mutation-observer-observe]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-mutation-observer-observe.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-mutation-observer-observe.md
 [@locker/locker/distorted-named-node-map-set-named-item]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-named-node-map-set-named-item.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-named-node-map-set-named-item.md
 [@locker/locker/distorted-navigator-sendbeacon]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-navigator-sendbeacon.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-navigator-sendbeacon.md
 [@locker/locker/distorted-observable]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-observable.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-observable.md
+[@locker/locker/distorted-performance-observer-observe]:
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-performance-observer-observe.md
 [@locker/locker/distorted-navigator-service-worker-getter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-navigator-service-worker-getter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-navigator-service-worker-getter.md
 [@locker/locker/distorted-node-insertbefore]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-node-insertbefore.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-node-insertbefore.md
 [@locker/locker/distorted-node-removechild]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-node-removechild.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-node-removechild.md
 [@locker/locker/distorted-node-replacechild]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-node-replacechild.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-node-replacechild.md
 [@locker/locker/distorted-node-text-content-getter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-node-text-content-getter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-node-text-content-getter.md
 [@locker/locker/distorted-node-text-content-setter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-node-text-content-setter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-node-text-content-setter.md
 [@locker/locker/distorted-range-clone-contents]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-clone-contents.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-clone-contents.md
 [@locker/locker/distorted-range-clone-range]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-clone-range.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-clone-range.md
 [@locker/locker/distorted-range-create-contextual-fragment]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-create-contextual-fragment.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-create-contextual-fragment.md
 [@locker/locker/distorted-range-delete-contents]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-delete-contents.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-delete-contents.md
 [@locker/locker/distorted-range-extract-contents]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-extract-contents.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-extract-contents.md
 [@locker/locker/distorted-range-get-bounding-client-rect]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-get-bounding-client-rect.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-get-bounding-client-rect.md
 [@locker/locker/distorted-range-insertnode]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-insertnode.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-range-insertnode.md
+[@locker/locker/distorted-reporting-observer-constructor]:
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-reporting-observer-constructor.md
+[@locker/locker/distorted-resize-observer-observe]:
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-resize-observer-observe.md
 [@locker/locker/distorted-selection-anchor-node-getter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-selection-anchor-node-getter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-selection-anchor-node-getter.md
 [@locker/locker/distorted-selection-focus-node-getter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-selection-focus-node-getter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-selection-focus-node-getter.md
 [@locker/locker/distorted-shared-worker-constructor]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-shared-worker-constructor.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-shared-worker-constructor.md
 [@locker/locker/distorted-storage-constructor]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-storage-constructor.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-storage-constructor.md
 [@locker/locker/distorted-svg-animated-string-base-val]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-svg-animated-string-base-val.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-svg-animated-string-base-val.md
 [@locker/locker/distorted-trusted-type-policy-factory-create-policy]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-trusted-type-policy-factory-create-policy.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-trusted-type-policy-factory-create-policy.md
 [@locker/locker/distorted-url-create-object-url]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-url-create-object-url.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-url-create-object-url.md
 [@locker/locker/distorted-window-blocked-properties]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-blocked-properties.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-blocked-properties.md
 [@locker/locker/distorted-window-fetch]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-fetch.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-fetch.md
 [@locker/locker/distorted-window-fetchLater]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-fetchLater.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-fetchLater.md
 [@locker/locker/distorted-window-frames-getter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-frames-getter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-frames-getter.md
 [@locker/locker/distorted-window-length-getter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-length-getter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-length-getter.md
 [@locker/locker/distorted-window-name]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-name.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-name.md
 [@locker/locker/distorted-window-onstorage-setter]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-onstorage-setter.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-onstorage-setter.md
 [@locker/locker/distorted-window-set-interval]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-set-interval.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-set-interval.md
 [@locker/locker/distorted-window-set-timeout]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-set-timeout.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-window-set-timeout.md
 [@locker/locker/distorted-worker-constructor]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-worker-constructor.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-worker-constructor.md
 [@locker/locker/distorted-xml-http-request-window-open]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-xml-http-request-window-open.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-xml-http-request-window-open.md
 [@locker/locker/distorted-xsltprocessor-transformtodocument]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-xsltprocessor-transformtodocument.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-xsltprocessor-transformtodocument.md
 [@locker/locker/distorted-xsltprocessor-transformtofragment]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-xsltprocessor-transformtofragment.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/distorted-xsltprocessor-transformtofragment.md
 [@locker/locker/undefined-document-all]:
-https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.0/packages/%40locker/eslint-plugin-locker/docs/rules/undefined-document-all.md
+https://github.com/salesforce/lwsec-docs-mirror/blob/v0.28.1/packages/%40locker/eslint-plugin-locker/docs/rules/undefined-document-all.md
 
 <!-- END generated content, please keep comment -->
