@@ -24,4 +24,6 @@ This new browsing context isn’t sandboxed properly and malicious code can acce
 ### Distorted Behavior
 
 The returned `window` object has the same distortions applied to it as the originating sandbox. `eval`, `Function`, `setInterval` and `setTimeout` are blocked.
+
+If the target argument is "_blank", an empty string, or the name of a browsing context that is not the current browsing context, Lightning Web Security checks the url of the new window against the intended url. If those values don't match, the intended url is enforced. In some cases, this can result in two requests being made to the specified url.
 <!-- END generated embed, please keep comment -->
