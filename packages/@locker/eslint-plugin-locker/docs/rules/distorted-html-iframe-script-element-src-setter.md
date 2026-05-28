@@ -11,7 +11,7 @@ Lightning Web Security restricts the `src` attribute to values that use the `htt
 
 ### Distorted Behavior
 
-This distortion throws an exception for values that don't sanitize to `http://`, `https://`, and `about:blank` schemes, or relative urls.
+This distortion throws an exception for values that don't sanitize to `http://`, `https://`, and `about:blank` schemes, or relative urls. If set to a same-origin url, the iframe will be sandboxed.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLScriptElement/docs/src-setter.md -->
