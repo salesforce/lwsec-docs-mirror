@@ -30,9 +30,17 @@ Without protection from Lightning Web Security, upon loading the content of the 
 
 To guard against exploits, Lightning Web Security fetches the content of the URL and scans `Blob` and `File` objects that have their MIME type set to `text/html`, `image/svg+xml` or `text/xml`. If malicious content is detected, the code doesn't execute.
 
+Additionally, the distortion blocks XML External Entity (XXE) injection attacks that use DOCTYPE declarations with internal DTD subsets or external entity references. Attackers can embed malicious content inside ENTITY definitions that get expanded when XML/SVG content is rendered, bypassing HTML-based sanitization.
+
 ### Distorted Behavior
 
 This distortion throws an exception when MIME types `text/html`, `text/xml`, `image/svg+xml` are used with `Blob` or `File` objects that try to load malicious content: `Lightning Web Security: Cannot 'createObjectURL' using an unsecure [object Blob]!`
+
+The distortion specifically blocks:
+
+- DOCTYPE declarations with internal DTD subsets (e.g., `<!DOCTYPE svg [...]>`)
+- DOCTYPE declarations with SYSTEM external entity references
+- DOCTYPE declarations with PUBLIC external entity references
 
 If no malicious content is detected when these MIME types are used, the content is allowed to load but the distortion enforces `charset=utf-8` to prevent exploits where the browser auto-interprets charset and special characters that can lead to XSS.
 

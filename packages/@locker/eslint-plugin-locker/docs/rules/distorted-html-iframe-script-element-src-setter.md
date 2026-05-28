@@ -9,9 +9,11 @@ The [`HTMLIFrameElement.prototype.src`](https://developer.mozilla.org/en-US/docs
 
 Lightning Web Security restricts the `src` attribute to values that use the `http://`, `https://`, and `about:blank` schemes, or relative urls. URL schemes like `javascript://` aren't allowed.
 
+Lightning Web Security disallows access to URL endpoints containing `"/aura"` and `"/webruntime"` because they are part of the Lightning Component framework.
+
 ### Distorted Behavior
 
-This distortion throws an exception for values that don't sanitize to `http://`, `https://`, and `about:blank` schemes, or relative urls.
+This distortion throws an exception for values that don't sanitize to `http://`, `https://`, and `about:blank` schemes, or relative urls. If set to a same-origin url, the iframe will be sandboxed. This distortion also examines the `hostname` and the `pathname` of the URL. If there's a match to a disallowed endpoint, it throws an exception.
 <!-- END generated embed, please keep comment -->
 
 <!-- START generated embed: @locker/distortion/src/HTMLScriptElement/docs/src-setter.md -->

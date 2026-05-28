@@ -5,7 +5,6 @@ The following `Element` properties are prohibited when Lightning Web Security is
 -   onfullscreenchange
 -   onfullscreenerror
 -   requestFullscreen
--   setHTMLUnsafe
 -   webkitRequestFullScreen
 -   webkitRequestFullscreen
 
